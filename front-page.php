@@ -1,0 +1,306 @@
+<?php get_header(); ?>
+
+<?php // get_template_part('tmp/content/slide', 'front'); ?>
+
+
+<article class="mt__9 mt__10--md">
+
+<section class="l-row--container c-gutter__row c-replace__flex-start js-replace-height">
+  <div class="c-replace__content--left">
+    <h2 class="c-ttl__large">c-replace__flex-start</h2>
+    <div class="c-replace__pic--right js-replace-pic">
+    <img src='<?php echo get_template_directory_uri(); ?>/img/a_.jpg' alt="">
+    </div>
+    <div class="c-replace__detail">
+      <p class="c-ttl__small clr__2 mt__2">ダミーテキストです。ダミーテキストです。</p>
+      <p class="c-typ mt__2">
+      この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。</p>
+    </div>
+  </div>
+</section>
+
+<section class="l-row--container c-gutter__row c-replace__flex-end js-replace-height mt__5 ">
+  <div class="c-replace__content--right">
+    <h2 class="c-ttl__large">c-replace__flex-end</h2>
+    <div class="c-replace__pic--left js-replace-pic">
+    <img src='<?php echo get_template_directory_uri(); ?>/img/a_.jpg' alt="">
+    </div>
+    <div class="c-replace__detail">
+      <p class="c-ttl__small clr__2 mt__2">ダミーテキストです。ダミーテキストです。</p>
+      <p class="c-typ mt__2">
+      この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。</p>
+    </div>
+  </div>
+</section>
+
+</article>
+
+
+
+<article>
+  <div class="l-row--container c-gutter__row">
+    <div class="c-col--12 c-col__md--10 c-col__xl--9 l-row js-inview__fade--pre">
+      <div class="c-col--12 c-col__sm--7 c-col__md--8 c-gutter__sm--right">
+        <h2 class="c-ttl__small ">この文章はダミーテキストです。</h2>
+        <p class="c-typ__xs">.c-typ__xs / この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。</p>
+        <p class="mt__2 mt__3--md c-typ">.c-typ / この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。</p>
+        <p class="mt__2 mt__3--md c-typ__s">.c-typ__s / この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。</p>
+        <p class="mt__2 mt__3--md c-typ__m">.c-typ__m / この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。</p>
+        <p class="mt__2 mt__3--md c-typ__l">.c-typ__l / この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。</p>
+      </div>
+      <div class="c-col--12 c-col__sm--5 c-col__md--4">
+        <img src='<?php echo get_template_directory_uri(); ?>/img/a_.jpg' alt="">
+      </div>
+    </div>
+  </div>
+</article>
+
+<article class="mt__6">
+<h1>レイアウト / c-split</h1>
+<div class="l-container">
+
+  <div class="l-split__outer">
+    <div class="l-split__thumbnail--left">
+    <img src='<?php echo get_template_directory_uri(); ?>/img/a_.jpg' alt="">
+    </div>
+    <div class="l-split__content--right l-split__content--pt">
+      <p class="c-typ">この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。</p>
+    </div>
+  </div>
+
+  <div class="l-split__outer--reverse mt__6">
+    <div class="l-split__thumbnail--right">
+    <img src='<?php echo get_template_directory_uri(); ?>/img/a_.jpg' alt="">
+    </div>
+    <div class="l-split__content--left ">
+    <ul class="c-bgi_list">
+        <li>文字サイズや行間などを確認するために入れています。</li>
+        <li>この文章はダミーテキストです<br class="hide__sm--down">文字サイズや行間などを確認するために入れています。</li>
+        <li>文字サイズや行間などを確認するために入れています。文字サイズや行間などを確認するために入れています。</li>
+        <li>この文章はダミーテキストですこの文章はダミーテキストです。</li>
+        <li>この文章はダミーテキストです。</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+  </div>
+  </div>
+</article>
+
+
+
+<article class="test">
+<div class="l-row--container c-gutter__row">
+  <div class="c-col--12 c-col__sm--12 c-col__md--12">
+    <ul class="l-grid c-grid--1 c-grid__sm--1 c-grid__lg--3 c-likepost__list js-fadeup__stagger--list">
+<?php
+$args = array(
+    'link_slug' => 'campaign',
+    'image_src' => 'b_01.jpg',
+    'lead_text' => 'CAMPAIGN',
+    'content' => 'セットメニューがとってもお得な<br class="display__none--md display__block--xl">キャンペーン実施中！',
+);
+component_listItemLikepost($args)
+?>
+<?php
+$args = array(
+    'link_slug' => 'staff',
+    'image_src' => 'b_02.jpg',
+    'lead_text' => 'STAFF',
+    'content' => '誰からも好かれ、愛される<br class="display__none--md display__block--xl">ギッシュグループのスタッフ達',
+);
+component_listItemLikepost($args)
+?>
+<?php
+$args = array(
+    'link_slug' => 'recruit',
+    'image_src' => 'b_03.jpg',
+    'lead_text' => 'RECRUIT',
+    'content' => 'あなたの夢が叶うトータル<br class="display__none--md display__block--xl">ビューティーサロンで働きませんか？',
+);
+component_listItemLikepost($args)
+?>
+
+    </ul>
+  </div>
+</div>
+</article>
+
+<!-- salon -->
+<article class="mt__7 mt__8--md p-front-salon__outer">
+    <div class="l-row--container c-gutter__row">
+      <div class="c-col--12 c-col__md--12">
+      <div class="p-front-salon__content">
+        <span class="p-front-salon__lead">SALON</span>
+        <div class="p-front-salon__pic">
+          <span class="p-front-salon__pic--ract"></span>
+          <img src='<?php echo get_template_directory_uri(); ?>/img/a_01.jpg' alt="ギッシュのサロン">
+        </div>
+        <h1 class="p-front-salon__title"><span class="c-ttl__large">居心地の良い<br class="hide__sm--down">ギッシュのサロン</span></h1>
+        <div class="p-front-salon__detail--wrap">
+          <p class="p-front-salon__detail c-typ">リゾートをイメージした店舗はとても居心地の良い空間です。日頃の疲れを癒し、キレイにリフレッシュして笑顔でお帰り頂くようおもてなし致します。<br>小牧市・江南市・北名古屋市・名古屋市でネイルサロンも含め8店舗展開しておりますので、ぜひお近くの店舗までお越しください。</p>
+          <div class="p-front-salon__button">
+<?php
+$args = array(
+    'link_slug' => 'salon',
+    'className' => 'c-button__grd',
+    'text' => 'サロン一覧はこちら',
+);
+component_buttonLink($args)
+?>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+</article>
+
+
+
+<!-- service -->
+<article class="p-front-service__outer">
+    <div class="l-row--container c-gutter__row jc__start">
+      <div class="c-col--12 c-col__md--10">
+      <div class="p-front-service__content">
+        <span class="p-front-service__lead">SERVICE</span>
+        <h1 class="p-front-service__title"><span class="c-ttl__medium">あなたに満足していただくために </span></h1>
+        </div>
+      </div>
+      <div class="c-col--12 c-col__md--11 c-col__xl--10">
+          <ul class="l-grid c-grid--1 c-grid__sm--2 c-grid__md--2 p-front-service__list js-fadeup__stagger--list">
+<?php
+$args = array(
+    'number' => '01',
+    'title' => 'カスタマーズカード',
+    'content' => '初回ご来店時に差し上げるカード。初回ご来店から3度目までの技術料金を割引させて頂きます。',
+);
+// component_listItemService($args);
+?>
+
+          </ul>
+        </div>
+
+        </div>
+
+
+      <div class="p-front-service__pic js-fadeup__once"><img src='<?php echo get_template_directory_uri(); ?>/img/a_02.jpg' alt="ギッシュのサロン"></div>
+      <div class="l-row--container c-gutter__row  mt__5">
+        <div class="p-button__wrap">
+  <?php
+  $args = array(
+      'link_slug' => 'message#anc_service',
+      'className' => 'c-button__grd',
+      'text' => '詳しくはこちら',
+  );
+  component_buttonLink($args)
+  ?>
+            </div>
+        </div>
+
+    </div>
+</article>
+
+
+<!-- menu -->
+<article class="p-front-menu__outer">
+<div class="l-row--container c-gutter__row">
+      <div class="c-col--12">
+        <span class="p-front-menu__lead">MENU</span>
+        <h1 class="p-front-menu__title"><span class="c-ttl__large">ギッシュこだわりの<br class="hide__sm--up">メニュー紹介</span></h1>
+      </div>
+</div>
+
+<div class="l-row--container c-gutter__row">
+  <div class="c-col--12 c-col__sm--12 c-col__md--12">
+    <ul class="l-grid c-grid--1 c-grid__sm--1 c-grid__lg--3 p-front-menu__list js-fadeup__stagger--list">
+<?php
+$args = array(
+    'image_src' => 'b_04.jpg',
+    'lead_text' => 'CUT',
+    'content' => '一人ひとりの骨格に合わせて髪の毛一本一本を切るかのごとく綿密に計算されたカットは、再現性が高くお手入れしやすいと好評です。',
+);
+component_listItemMenuIntroduction($args);
+?>
+<?php
+$args = array(
+    'image_src' => 'b_05.jpg',
+    'lead_text' => 'COLOR',
+    'content' => 'お客様に合うトレンドのカラーをご提案させて頂きます。流行を取り入れたワンランク上のカラーをお楽しみ下さい。',
+);
+component_listItemMenuIntroduction($args);
+?>
+<?php
+$args = array(
+    'image_src' => 'b_06.jpg',
+    'lead_text' => 'TREATMENT',
+    'content' => '素敵なヘアスタイルは健康な髪があってこそ。お客様の髪の状態、なりたいイメージに合わせて各種取り揃えております。',
+);
+component_listItemMenuIntroduction($args);
+?>
+
+    </ul>
+  </div>
+</div>
+
+<div class="l-row--container c-gutter__row  mt__5">
+        <div class="p-button__wrap">
+  <?php
+  $args = array(
+      'link_slug' => 'menu',
+      'className' => 'c-button__grd',
+      'text' => 'メニューページはこちら',
+  );
+  component_buttonLink($args)
+  ?>
+            </div>
+        </div>
+</article>
+
+
+
+
+<!-- staff -->
+<article class="p-front-staff__outer">
+    <div class="l-row--container c-gutter__row">
+      <div class="c-col--12 c-col__md--12">
+      <div class="p-front-staff__content">
+        <span class="p-front-staff__lead">STAFF</span>
+            <div class="p-front-staff__pic--frame">
+              <ul class="p-front-staff__list">
+                <li><img src='<?php echo get_template_directory_uri(); ?>/img/stf_morikawa.jpg' alt="ギッシュのスタッフ"></li>
+                <li><img src='<?php echo get_template_directory_uri(); ?>/img/stf_tamura.jpg' alt="ギッシュのスタッフ"></li>
+                <li><img src='<?php echo get_template_directory_uri(); ?>/img/stf_aragaki.jpg' alt="ギッシュのスタッフ"></li>
+                <li><img src='<?php echo get_template_directory_uri(); ?>/img/stf_ono.jpg' alt="ギッシュのスタッフ"></li>
+                <li><img src='<?php echo get_template_directory_uri(); ?>/img/stf_miyachi.jpg' alt="ギッシュのスタッフ"></li>
+                <li><img src='<?php echo get_template_directory_uri(); ?>/img/stf_nauchi.jpg' alt="ギッシュのスタッフ"></li>
+              </ul>
+            </div>
+            <h1 class="p-front-staff__title"><span class="c-ttl__large">誰からも愛される<br class="hide__sm--down">ギッシュのスタッフ</span></h1>
+            <div class="p-front-staff__detail--wrap">
+              <p class="p-front-staff__detail c-typ">ギッシュグループはスタッフが伸び伸び活躍できる自主性を尊重した社風です。明るく元気で、オシャレで礼儀正しく、誰からも好かれ、愛され、たくさんの「ありがとう」を言っていただけるスタッフ育成を目指しています。</p>
+              <div class="p-front-staff__button">
+            <?php
+            $args = array(
+                'link_slug' => 'staff',
+                'className' => 'c-button__grd',
+                'text' => 'スタッフ一覧はこちら',
+            );
+            component_buttonLink($args)
+            ?>
+              </div>
+            </div>
+      </div>
+
+      </div>
+    </div>
+</article>
+
+
+
+
+
+
+<?php get_footer(); ?>

@@ -1,0 +1,23 @@
+@charset "utf-8";
+body.mceContentBody {
+  font-family:"游ゴシック体",YuGothic,"游ゴシック Medium","Yu Gothic Medium","ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","Meiryo UI","メイリオ",Meiryo,sans-serif !important;
+}
+
+blockquote {
+    position: relative;
+    padding: 8px 16px;
+    font-style: italic;
+    background: #efefef;
+    color: #555;
+}
+blockquote p {
+    padding: 0;
+    margin: 10px 0;
+    line-height: 1.7;
+}
+blockquote cite {
+    display: block;
+    text-align: right;
+    color: #888888;
+    font-size: 14px;
+}

@@ -1,0 +1,53 @@
+<article class="">
+
+  <section class="p-recruit__outer--message">
+  <div class="l-row--container c-gutter__row">
+    <div class="c-col--12 p-ttl__recruit">
+      <h2 class="p-ttl__recruit--main"><span class="clr__3">代表あいさつ</span></h2>
+      <p class="p-ttl__recruit--sub clr__1">MESSAGE</p>
+    </div>
+  </div>
+  <div class="l-row--container c-gutter__row p-recruit__content--istop">
+      <div class="c-col--12 c-col__sm--8 c-col__md--8 c-col__lg--9">
+        <p class="c-typ">創業当時を振り返ると、髪が伸びてボサボサの人は、大抵元気がないです。身なりをきちんとすれば、もっと晴れやかな気分になるのにと歯がゆい気持ちになりました。それから店舗を拡大して地域に身近なサロンとして運営を進めてきました。そして今では8店舗展開するまでに成長しました。<br>小牧周辺に店舗を増やしてきたのは理由があります。僕は、自分自身が輝くよりも、まず身のまわりを良くしようと励むことを大切にしています。小牧一帯の人たちがイキイキとすれば、社員の士気もあがり、好環境が生まれる。そのエネルギーを感じながら僕自身も前へ歩んで行きたいと思うんです。まわりを良くするというポリシーからギッシュでは、人とのつながりを大切にした教育をしています。人の温かみを体感することが、人に優しく接する基盤になるからです。</p>
+        <p class="c-typ__s fw__500 mt__2 mt__3--md clr__4">10人の社長をつくることが目標</p>
+        <p class="c-typ mt__2">新人研修ではアカデミーで半年間学ぶため、同期の絆が生まれ、この”横のつながり”は将来新人たちが別々の店舗に配属されても活かすことができます。また、1年目でも接客やシャンプーを担当してお客様と接する事ができるため、やりがいを感じられます。全員練習や新年会、バーベキュー、社員旅行などのイベントも社員同士絆を強くし、幸せに働き続けてもらうために大切なことだと思っています。<br>さらに、社員が叶えたい店づくりを応援したい、若いメンバーがこれからの美容業界を盛り上げてほしいという思いから、10人の社長をつくることが目標です。自分ひとりではなく、みんなを巻き込んで業界を輝かせ、また、お店のある地域を輝かせるような人材を輩出したいと思っています。</p>
+      </div>
+      <div class="c-col--12 c-col__sm--4 c-col__md--4 c-col__lg--3  c-gutter__sm--left">
+        <picture class="p-message__pic">
+          <source srcset='<?php echo get_template_directory_uri(); ?>/img/niwa.jpg' media="(min-width:576px)">
+          <img src='<?php echo get_template_directory_uri(); ?>/img/niwa_sq.jpg' alt="代表　丹羽 英之">
+        </picture>
+        <p class="p-message__name">有限会社ギッシュ<br>代表　丹羽 英之</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="l-row--container c-gutter__row mt__4 mt__5--md">
+  <div class="c-button-2columns__frame--button">
+    <div class="c-button-2columns__button">
+<?php
+  $args = array(
+    'link_slug' => 'recruit/info-guiches',
+    'className' => 'c-button__grd',
+    'text' => 'guiches募集要項はこちら',
+);
+component_buttonLink($args);
+?>
+    </div>
+    <div class="c-button-2columns__button--low">
+<?php
+  $args = array(
+    'link_slug' => 'recruit/info-soho',
+    'className' => 'c-button__grd',
+    'text' => 'soho募集要項はこちら',
+);
+component_buttonLink($args);
+?>
+    </div>
+  </div>
+</div>
+
+
+</article>
+
