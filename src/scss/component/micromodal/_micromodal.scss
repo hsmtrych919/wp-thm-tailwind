@@ -1,0 +1,92 @@
+@charset "utf-8";
+@use "../../global/" as g;
+
+// -----------------------------------------------------------------
+// mixin
+// -----------------------------------------------------------------
+
+
+// -----------------------------------------------------------------
+// style
+// -----------------------------------------------------------------
+
+.c-micromodal__outer {
+  display: none;
+  &.is-open {
+    display: block;
+  }
+  button {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    // margin: 0;
+    outline: 0;
+    background: transparent;
+    // color: inherit;
+    font: inherit;
+    text-align: inherit;
+    vertical-align: middle;
+    appearance: none;
+  }
+}
+
+.c-micromodal {
+  &__overlay {
+    display: flex;
+    position: fixed;
+    z-index: g.get_zindex(micromodal);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.75);
+  }
+  &__container {
+    width: 100%;
+    max-width: 500px;
+    max-height: 75vh;
+    padding: g.rem(24);
+    overflow-y: auto;
+    border-radius: g.$border-radius;
+    // background-color: #fff;
+    @media #{g.$sm} {
+      width: 100%;
+      max-width: 640px;
+    }
+  }
+  &__close {
+    display: block;
+    width: g.rem(50);
+    margin: g.rem(8) auto 0;
+    transition: g.$transition-base;
+    outline: 0;
+    color: #fff;
+    &:focus {
+      outline: 0;
+    }
+    svg {
+      pointer-events: none;
+    }
+  }
+}
+
+@keyframes mmfadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes mmfadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.c-micromodal__outer[aria-hidden="false"] .c-micromodal__overlay {
+  // animation: mmfadeIn .3s ease;
+}
+
+.c-micromodal__outer[aria-hidden="true"] .c-micromodal__overlay {
+  animation: mmfadeOut .3s ease;
+}
+

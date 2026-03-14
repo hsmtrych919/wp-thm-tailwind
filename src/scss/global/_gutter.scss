@@ -1,0 +1,18 @@
+@use "../foundation/_variables" as v;
+@use "_media-queries" as g;
+
+@mixin gutter {
+  padding: 0 var(--gutter-row);
+
+  @media #{g.$md} {
+    padding: 0;
+  }
+}
+
+@mixin gutter_row {
+  padding: 0 var(--gutter-row);
+
+  @media #{g.$xl} {
+    padding: 0 ;
+  }
+}

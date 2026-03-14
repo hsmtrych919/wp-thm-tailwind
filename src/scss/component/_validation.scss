@@ -1,0 +1,24 @@
+@charset "utf-8";
+@use "sass:color";
+@use "../global" as g;
+
+// -----------------------------------------------------------------
+// style
+// -----------------------------------------------------------------
+
+.js-error_submit {
+  display: block;
+  margin-bottom: g.rem(8);
+  color: #f00;
+  font-size: g.rem(14);
+  font-weight: 500 !important;
+}
+
+.js-error {
+  display: block;
+  margin-bottom: g.rem(8);
+  background-color: #ff0000; /* was color.scale(#f00, $lightness: 0%) */
+  color: #fff;
+  font-size: g.rem(14);
+  font-weight: 500 !important;
+}

@@ -1,0 +1,29 @@
+@charset "UTF-8";
+@use "../../global" as g;
+
+//
+// Ultimate Member プラグインカスタム
+//
+.um-field {
+  padding-top: 16px !important;
+}
+
+.um-field-label {
+  margin-bottom: 4px !important;
+}
+
+.c-umform-caution {
+  padding-top: 6px;
+  color: g.$clrg600;
+  font-size: 14px;
+}
+
+.um input[type="submit"].um-button, .um input[type="submit"].um-button:focus, .um a.um-button, .um a.um-button.um-disabled:hover, .um a.um-button.um-disabled:focus, .um a.um-button.um-disabled:active {
+  // background: #3ba1da;
+  background: g.$clrg500 !important;
+}
+
+.um input[type="submit"].um-button:hover, .um a.um-button:hover {
+  // background: #44b0ec;
+  background: g.$clrg600 !important;
+}

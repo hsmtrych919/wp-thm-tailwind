@@ -1,0 +1,50 @@
+@charset "utf-8";
+@use "../global" as g;
+
+// .js-inview__fade--pre {
+//   transform: translate3d(0, 60px, 0);
+//   opacity: 0;
+// }
+
+// .js-inview__fade {
+//   // -webkit-animation: scroll_fade 1s 1 0s ease-in-out forwards;
+//   animation: scroll_fade 0.8s 1 0.4s ease-out forwards;
+
+//   @media #{g.$md} {
+//     // -webkit-animation: scroll_fade 1.5s 1 .3s ease-in-out forwards;
+//     animation: scroll_fade 1s 1 0.2s ease-out forwards;
+//   }
+// }
+
+// @-webkit-keyframes scroll_fade {
+
+//   0% {
+//     transform: translate3d(0, 60px, 0);
+//     opacity: 0;
+//   }
+
+//   100% {
+//     transform: translate3d(0, 0, 0);
+//     opacity: 1;
+//   }
+// }
+
+// @keyframes scroll_fade {
+
+//   0% {
+//     transform: translate3d(0, 60px, 0);
+//     opacity: 0;
+//   }
+
+//   100% {
+//     transform: translate3d(0, 0, 0);
+//     opacity: 1;
+//   }
+// }
+
+
+// for gsap
+
+.js-fadeup, .js-fadeup__once, .js-fadeup__stagger--list li {
+  opacity: 0;
+}

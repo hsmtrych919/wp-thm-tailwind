@@ -1,0 +1,62 @@
+@use "sass:map";
+@use "../global" as g;
+//
+// Visibility utilities
+//
+
+.invisible {
+  visibility: hidden !important;
+}
+
+// Responsive visibility utilities
+
+@each $bp in map.keys(g.$grid-breakpoints) {
+  .hide__#{$bp}--up {
+
+    @include g.media-breakpoint-up($bp) {
+      display: none !important;
+    }
+  }
+  .hide__#{$bp}--down {
+
+    @include g.media-breakpoint-down($bp) {
+      display: none !important;
+    }
+  }
+}
+
+
+// Print utilities
+//
+// Media queries are placed on the inside to be mixin-friendly.
+
+.visible-print__block {
+  display: none !important;
+
+  @media print {
+    display: block !important;
+  }
+}
+
+.visible-print__inline {
+  display: none !important;
+
+  @media print {
+    display: inline !important;
+  }
+}
+
+.visible-print__inline-block {
+  display: none !important;
+
+  @media print {
+    display: inline-block !important;
+  }
+}
+
+.hidden-print {
+
+  @media print {
+    display: none !important;
+  }
+}

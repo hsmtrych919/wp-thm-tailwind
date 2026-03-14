@@ -1,0 +1,194 @@
+@use "sass:color";
+@use "sass:map";
+@use "../global" as g;
+
+.fz__12 {
+  font-size: g.rem(12) !important;
+  @media (min-width: 1600px) {
+    font-size: g.rem(13) !important;
+  }
+}
+
+.fz__14 {
+  font-size: g.rem(14) !important;
+  @media (min-width: 1600px) {
+    font-size: g.rem(15) !important;
+  }
+}
+
+.fz__15 {
+  font-size: g.rem(15) !important;
+  @media (min-width: 1600px) {
+    font-size: g.rem(16) !important;
+  }
+}
+
+.fz__16 {
+  font-size: g.rem(16) !important;
+  @media (min-width: 1600px) {
+    font-size: g.rem(17) !important;
+  }
+}
+
+.fz__18 {
+  font-size: g.rem(18) !important;
+  @media (min-width: 1600px) {
+    font-size: g.rem(19) !important;
+  }
+}
+
+.fz__20 {
+  font-size: g.rem(20) !important;
+  @media (min-width: 1600px) {
+    font-size: g.rem(21) !important;
+  }
+}
+
+// .tac {
+//   text-align: center !important;
+// }
+
+// .tal {
+//   text-align: left !important;
+// }
+
+// .tar {
+//   text-align: right !important;
+// }
+
+@each $breakpoint in map.keys(g.$grid-breakpoints) {
+
+  @include g.media-breakpoint-up($breakpoint) {
+    $infix: g.breakpoint-infix-element($breakpoint, g.$grid-breakpoints);
+
+    .tac#{$infix} {
+      text-align: center !important;
+    }
+
+    .tal#{$infix} {
+      text-align: left !important;
+    }
+
+    .tar#{$infix} {
+      text-align: right !important;
+    }
+  }
+}
+
+.fwl, .fw__300 {
+  font-weight: 300;
+}
+
+.fw__400 {
+  font-weight: 400;
+}
+
+.fw__500 {
+  font-weight: 500;
+}
+
+.fwb, .fw__600 {
+  font-weight: 600;
+}
+
+
+.tdu {
+  text-decoration: underline !important;
+}
+
+.clr__1 {
+  color: var(--clr1) !important;
+}
+
+.clr__2 {
+  color: var(--clr2) !important;
+}
+
+.clr__3 {
+  color: var(--clr3) !important;
+}
+
+.clr__4 {
+  color: var(--clr4) !important;
+}
+
+// .clr__5 {
+//   color: var(--clr5) !important;
+// }
+
+// .clr__6 {
+//   color: var(--clr6) !important;
+// }
+
+// .clr__7 {
+//   color: var(--clr7) !important;
+// }
+
+.clr__black {
+  color: var(--black) !important;
+}
+
+.clr__g50 {
+  color: var(--clrg50) !important;
+}
+
+.clr__g100 {
+  color: var(--clrg100) !important;
+}
+
+.clr__g200 {
+  color: var(--clrg200) !important;
+}
+
+.clr__g300 {
+  color: var(--clrg300) !important;
+}
+
+.clr__g400 {
+  color: var(--clrg400) !important;
+}
+
+.clr__g500 {
+  color: var(--clrg500) !important;
+}
+
+.clr__g600 {
+  color: var(--clrg600) !important;
+}
+
+.clr__g700, .clr__gray {
+  color: var(--clrg700) !important;
+}
+
+.clr__g800 {
+  color: var(--clrg800) !important;
+}
+
+.clr__g900 {
+  color: var(--clrg900) !important;
+}
+
+
+.clr__w, .clr__white {
+  color: #fff !important;
+}
+
+.clr__red {
+  color: #f00 !important;
+}
+
+
+strong {
+  color: #47a73c; /* was color.scale(g.$clr1, $lightness: -10%) */
+  // font-size: min(calc(var(--unit) * 16), g.rem(17));
+  @media #{g.$md} {
+    font-size: min(calc(var(--unit) * 17), g.rem(18));
+  }
+
+  @media #{g.$xl} {
+    font-size: min(calc(var(--unit) * 18), g.rem(19));
+  }
+  // font-weight: normal;
+  // padding: 0 2px;
+  // background: linear-gradient(transparent 60%, rgba(255, 169, 177, 0.5) 40%);
+}
