@@ -1,0 +1,420 @@
+@charset "utf-8";
+@use "sass:color";
+@use "../global" as g;
+
+// -----------------------------------------------------------------
+// mixin
+// -----------------------------------------------------------------
+
+@mixin c-button {
+  display: block;
+  position: relative;
+  max-width: 100%;
+  border-radius: g.$border-radius;
+  font-weight: 500;
+  line-height: 1;
+  // text-align: center;
+  cursor: pointer;
+}
+
+@mixin button__color(
+  $clr: #fff,
+  $bgc: g.$clr1,
+  $clr-hover: #fff,
+  $bgc-hover: #57be4c
+) {
+  background-color: $bgc;
+  color: $clr;
+
+  @include g.hover {
+    background-color: $bgc-hover;
+    color: $clr-hover;
+  }
+
+  &.ignore:hover, &.ignore:focus {
+    background-color: $bgc;
+    color: $clr;
+  }
+}
+
+@mixin button__color--border(
+  $clr: g.$clr1,
+  $bgc: #fff,
+  $bdc: g.$clr1,
+  $clr-hover: #fff,
+  $bgc-hover: g.$clr1,
+  $bdc-hover: g.$clr1
+) {
+  border-width: 1px;
+  border-style: solid;
+  border-color: $bdc;
+  background-color: $bgc;
+  color: $clr;
+
+  @include g.hover {
+    border-color: $bdc-hover;
+    background-color: $bgc-hover;
+    color: $clr-hover;
+  }
+
+  &.ignore:hover, &.ignore:focus {
+    border-color: $bdc;
+    background-color: $bgc;
+    color: $clr;
+  }
+}
+
+@mixin button-arrow-hover {
+  @include g.hover {
+    .c-button__icon--arrow {
+      transform: translate3d(g.rem(4), -50%, 0);
+    }
+  }
+}
+
+@mixin btn-ec-flare($clr:$clr1, $delay: 0) {
+  animation: flare-anime 2s $delay infinite;
+  box-shadow: 0 0 0 0px rgba($clr, 0.4);
+}
+@keyframes flare-anime {
+  50% {
+    box-shadow: 0 0 0 30px rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes iconAnimation {
+  0% {
+    right: 35px;
+    opacity: 0;
+  }
+  15% {
+    right: 20px;
+    opacity: 1;
+  }
+  92% {
+    right: 20px;
+    opacity: 1;
+  }
+  100% {
+    right: 20px;
+    opacity: 0;
+  }
+}
+
+// -----------------------------------------------------------------
+// style
+// -----------------------------------------------------------------
+.c-button {
+  @include c-button;
+  padding: g.rem(20) g.rem(18) g.rem(16);
+  font-size: g.rem(17);
+  @media #{g.$lg} {
+    // padding: 20px g.rem(18) g.rem(16);
+    font-size: g.rem(18);
+  }
+  @media #{g.$xxl} {
+    padding: g.rem(22) g.rem(18) g.rem(18);
+    font-size: g.rem(19);
+  }
+  &--thin {
+    @include c-button;
+    padding: g.rem(16) g.rem(14) g.rem(14);
+    font-size: g.rem(17);
+    @media #{g.$xxl} {
+      font-size: g.rem(18);
+    }
+  }
+}
+
+.c-button__icon--arrow {
+  position: absolute;
+  top: 50%;
+  right: g.rem(6);
+  width: g.rem(26);
+  transform: translate3d(0, -50%, 0);
+  transition: transform .2s ease-in-out;
+  animation: iconAnimation 3.5s infinite;
+}
+
+.c-button__icon--external {
+  position: absolute;
+  top: 50%;
+  right: g.rem(8);
+  width: g.rem(24);
+  transform: translate3d(0, -50%, 0);
+}
+
+.c-button__icon--tel {
+  position: absolute;
+  top: 52.5%;
+  left: g.rem(12);
+  width: g.rem(24);
+  transform: translate3d(0, -50%, 0);
+}
+
+
+.c-button__grd {
+  @include button__color(
+    $clr: #fff,
+    $bgc: g.$clr1,
+    $clr-hover: #fff,
+    $bgc-hover: #60c255
+  );
+  background: var(--grd-recruit);
+  @include g.hover {
+    opacity: var(--img-hover-opacity);
+  }
+  @include button-arrow-hover;
+  // .c-button__arrow {
+  //   color: #fff;
+  // }
+}
+
+
+.c-button__clr1 {
+  @include button__color(
+    $clr: #fff,
+    $bgc: #4fba43, /* = $clr1 */
+    $clr-hover: #fff,
+    $bgc-hover: #47a73c
+  );
+  @include button-arrow-hover;
+}
+
+.c-button__clr1--border {
+  @include button__color--border(
+    $clr: g.$clr1,
+    $bgc: #fff,
+    $bdc: g.$clr1,
+    $clr-hover: #fff,
+    $bgc-hover: g.$clr1,
+    $bdc-hover: g.$clr1
+  );
+  @include button-arrow-hover;
+}
+
+.c-button__clr1--toc {
+  @include button__color--border(
+    $clr: g.$clr1,
+    $bgc: #fff,
+    $bdc: g.$clr1,
+    $clr-hover: #47a73c,
+    $bgc-hover: #ffdee1,
+    $bdc-hover: g.$clr1
+  );
+  @include button-arrow-hover;
+}
+
+
+.c-button__clr2 {
+  @include button__color(
+    $clr: #fff,
+    $bgc: #9bd22d, /* = $clr2 */
+    $clr-hover: #fff,
+    $bgc-hover: #8cbd29
+  );
+  @include button-arrow-hover;
+}
+
+
+.c-button__clr2--border {
+  @include button__color--border(
+    $clr: g.$clr2,
+    $bgc: #fff,
+    $bdc: g.$clr2,
+    $clr-hover: #fff,
+    $bgc-hover: g.$clr2,
+    $bdc-hover: g.$clr2
+  );
+  @include button-arrow-hover;
+}
+
+.c-button__clr3 {
+  @include button__color(
+    $clr: #fff,
+    $bgc: #846708,
+    $clr-hover: #fff,
+    $bgc-hover: #725907 /* = $clr3 */
+  );
+  @include button-arrow-hover;
+}
+
+
+.c-button__rakuten {
+  @include button__color(
+    $clr: #fff,
+    $bgc: #bf0000,
+    $clr-hover: #fff,
+    $bgc-hover: #df0000
+  );
+  @include btn-ec-flare($clr:#bf0000, $delay:0.5s);
+}
+
+.c-button__amazon {
+  @include button__color(
+    $clr: #fff,
+    $bgc: #ff9900,
+    $clr-hover: #fff,
+    $bgc-hover: #ffa31a
+  );
+  @include btn-ec-flare($clr:#ff9900, $delay:1s);
+}
+
+.c-button__tel--salon {
+  @include button__color(
+    $clr: #fff,
+    $bgc: #4fba43, /* = $clr1 */
+    $clr-hover: #fff,
+    $bgc-hover: #47a73c
+  );
+  padding-left: g.rem(48) !important;
+  @include g.hover {
+    .c-button__icon--tel {
+      color: #fff;
+    }
+  }
+  .c-button__icon--tel {
+    color: #fff;
+  }
+}
+
+.c-button__tel--family {
+  @include button__color(
+    $clr: #fff,
+    $bgc: #9bd22d, /* = $clr2 */
+    $clr-hover: #fff,
+    $bgc-hover: #8cbd29
+  );
+  padding-left: g.rem(48) !important;
+  @include g.hover {
+    .c-button__icon--tel {
+      color: #fff;
+    }
+  }
+  .c-button__icon--tel {
+    color: #fff;
+  }
+}
+// .c-button__green {
+//   @include button__color(
+//     $clr: #fff,
+//     $bgc: g.$clr-prim-green,
+//     $clr-hover: #fff,
+//     $bgc-hover: color.scale(g.$clr-prim-green, $lightness: 5%)
+//   );
+// }
+
+
+.ignore {
+  opacity: 1 !important;
+  cursor: default !important;
+}
+
+
+//
+// animate
+//
+
+
+@-webkit-keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+// .c-anime__pulse {
+//   overflow: hidden;
+//   backface-visibility: hidden;
+//   animation-name: pulse;
+//   animation-duration: 1.5s;
+//   animation-iteration-count: infinite;
+//   animation-fill-mode: both
+// }
+
+
+@-webkit-keyframes shake {
+  from, to {
+    transform: translate3d(0, 0, 0);
+  }
+  5%, 15%, 25% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  10%, 20% {
+    transform: translate3d(4px, 0, 0);
+  }
+  30% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes shake {
+  from, to {
+    transform: translate3d(0, 0, 0);
+  }
+  5%, 15%, 25% {
+    transform: translate3d(-4px, 0, 0);
+  }
+  10%, 20% {
+    transform: translate3d(4px, 0, 0);
+  }
+  30% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+// .c-anime__shake {
+//   overflow: hidden;
+//   backface-visibility: hidden;
+//   animation-name: shake;
+//   animation-duration: 3.5s;
+//   animation-iteration-count: infinite;
+//   animation-fill-mode: both
+// }
+
+
+@-webkit-keyframes swing {
+  0%, 40%, 90% {transform: rotate(0deg);}
+  50% {transform: rotate(2deg);}
+  60% {transform: rotate(-1deg);}
+  70% {transform: rotate(3deg);}
+  80% {transform: rotate(-2deg);}
+}
+
+@keyframes swing {
+  0%, 50%, 70% {transform: rotate(0deg);}
+  54% {transform: rotate(4deg);}
+  58% {transform: rotate(-3deg);}
+  62% {transform: rotate(5deg);}
+  66% {transform: rotate(-4deg);}
+}
+
+// .c-anime__swing {
+//   overflow: hidden;
+//   backface-visibility: hidden;
+//   animation-name: swing;
+//   animation-duration: 3.5s;
+//   animation-iteration-count: infinite;
+//   animation-fill-mode: both
+// }
+

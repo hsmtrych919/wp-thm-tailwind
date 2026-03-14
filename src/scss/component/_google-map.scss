@@ -1,0 +1,36 @@
+@charset "utf-8";
+@use "../global" as g;
+
+// -----------------------------------------------------------------
+// style
+// -----------------------------------------------------------------
+
+.c-gmap {
+  width: 100%;
+  height: g.rem(360);
+  overflow: hidden;
+
+  @media #{g.$sm} {
+    height: g.rem(400);
+  }
+
+  @media #{g.$md} {
+    height: g.rem(450);
+  }
+  @media #{g.$lg} {
+    height: g.rem(560);
+  }
+}
+
+.c-gmap__link {
+  font-size: g.rem(15);
+  text-decoration: underline;
+  @media #{g.$xl} {
+    font-size: g.rem(16);
+  }
+
+  &--wrap {
+    margin-top: g.rem(16);
+    text-align: right;
+  }
+}

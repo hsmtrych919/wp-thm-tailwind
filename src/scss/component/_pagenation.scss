@@ -1,0 +1,56 @@
+@charset "utf-8";
+@use "../global" as g;
+
+// -----------------------------------------------------------------
+// style
+// -----------------------------------------------------------------
+
+.c-pagenation {
+  $fz:g.rem(14);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: g.rem(48);
+
+  @media #{g.$md} {
+    margin-top: g.rem(36);
+  }
+
+
+  & li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: g.rem(40);
+    height: g.rem(40);
+    margin: 0 g.rem(8) g.rem(16);
+    border: 1px solid var(--clrg800);
+    @media #{g.$lg} {
+      margin: 0 g.rem(6) g.rem(12);
+    }
+  }
+
+  & li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    color: var(--clrg800);
+    font-size: $fz;
+    @include g.hover {
+      background-color: var(--clrg200);
+    }
+  }
+
+  & li.current {
+    background-color: var(--clrg800);
+    color: #fff;
+    font-size: $fz;
+  }
+}
+
+.c-pagenation__icon {
+  width: g.rem(16);
+}

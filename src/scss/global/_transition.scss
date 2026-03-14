@@ -1,0 +1,11 @@
+@use "../foundation/_variables" as v;
+
+$transition: v.$transition-base !default;
+
+// @mixin transition($transition...) {
+//   @if length($transition) == 0 {
+//     transition: v.$transition-base;
+//   } @else {
+//     transition: $transition;
+//   }
+// }

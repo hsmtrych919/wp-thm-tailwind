@@ -1,0 +1,234 @@
+@charset "utf-8";
+@use "sass:map";
+@use "sass:math";
+@use "../global" as g;
+
+// -----------------------------------------------------------------
+// mixin
+// -----------------------------------------------------------------
+
+@function breakpoint-infix-direct($name, $breakpoints: g.$grid-breakpoints) {
+  @return "#{$name}";
+}
+
+@function breakpoint-infix-before($name, $breakpoints: g.$grid-breakpoints) {
+  @return "#{$name}-";
+}
+
+// @mixin make-container($gutters: g.$grid-gutter-widths) {
+@mixin make-container() {
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+  // padding-right: ($grid-gutter-width-base / 2);
+  // padding-left:  ($grid-gutter-width-base / 2);
+}
+
+@mixin make-container-max-widths(
+  $max-widths: g.$container-max-widths,
+  $breakpoints: g.$grid-breakpoints
+) {
+
+  @each $breakpoint, $container-max-width in $max-widths {
+
+    @if $breakpoint == sm {
+
+      @include g.media-breakpoint-up($breakpoint, $breakpoints) {
+        width: 100%;
+      }
+    }
+
+    @else {
+
+      @include g.media-breakpoint-up($breakpoint, $breakpoints) {
+        width: $container-max-width;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+
+@mixin make-col($size, $columns: g.$grid-columns) {
+  // max-width: percentage($size / $columns);
+  // width: percentage($size / $columns);
+  width: percentage(math.div($size, $columns));
+}
+
+@mixin make-grid-columns(
+  $columns: g.$grid-columns,
+  $breakpoints: g.$grid-breakpoints
+) {
+
+  %grid-column {
+    flex: 0 0 auto;
+    min-height: 1px; // Prevent columns from collapsing when empty
+  }
+
+  @each $breakpoint in map.keys($breakpoints) {
+    $infix: g.breakpoint-infix-element($breakpoint, $breakpoints);
+
+    @for $i from 1 through $columns {
+
+      .c-col#{$infix}--#{$i} {
+
+        @extend %grid-column;
+      }
+    }
+
+    @include g.media-breakpoint-up($breakpoint, $breakpoints) {
+      .c-col#{$infix} {
+        flex: 1 0 0%;
+      }
+      .c-col#{$infix}--auto {
+        flex: 0 0 auto;
+        width: auto;
+      }
+
+      @for $i from 1 through $columns {
+
+        .c-col#{$infix}--#{$i} {
+
+          @include make-col($i, $columns);
+        }
+      }
+    }
+  }
+}
+
+@mixin flex-grid-layout($n, $selector: ".c-col") {
+
+  > li,
+  > #{$selector} {
+    // $pct: percentage(1 / $n);
+    $pct: percentage(math.div(1, $n));
+    // max-width: $pct;
+    width: $pct;
+  }
+}
+
+// -----------------------------------------------------------------
+// style
+// -----------------------------------------------------------------
+
+:root {
+  --unit: #{g.get_vw(1, 390)};
+  --space: #{g.get_vw(8, 390)};
+  --gutter: #{g.get_vw(6, 390)};
+  --gutter-row: #{g.get_vw(16, 390)};
+  @media #{g.$sm} {
+    // min 576
+    --unit: #{g.get_vw(1, 768)};
+    --space: #{g.get_vw(8, 768)};
+    // 576で 1vw 0.733333px
+    // 768で 1vw 0.983333px
+    // 810で 1vw 1.05px
+    --gutter: #{g.get_vw(12, 768)};
+    --gutter-row: #{g.get_vw(42, 768)};
+  }
+  @media #{g.$md} {
+    // min 811
+    --unit: #{g.get_vw(1, 960)};
+    --space: #{g.get_vw(8, 960)};
+    // 811で 1vw 0.833333px
+    // 1024で 1vw 1.05px
+    --gutter: #{g.get_vw(16, 960)};
+    --gutter-row: #{g.get_vw(32, 960)};
+  }
+  @media #{g.$lg} {
+    // min 1025
+    --unit: #{g.get_vw(1, 1025)};
+    --space: #{g.get_vw(8, 1025)};
+    --gutter: #{g.get_vw(16, 1025)};
+    --gutter-row: #{g.get_vw(32, 1025)};
+  }
+  @media #{g.$xl} {
+    // min 1280
+    --unit: #{g.get_vw(1, 1280)};
+    --space: #{g.get_vw(8, 1280)};
+    --gutter: #{g.get_vw(16, 1280)};
+    --gutter-row: #{g.get_vw(32, 1280)};
+  }
+  @media #{g.$xxl} {
+    // min 1366
+    --unit: #{g.get_vw(1, 1366)};
+    --space: #{g.get_vw(8, 1366)};
+    --gutter: #{g.get_vw(16, 1366)};
+    --gutter-row: #{g.get_vw(32, 1366)};
+  }
+  // 1366以降はそのままサイズアップ
+  // @media (min-width: 1600px) {
+  //   --unit: #{g.get_vw(1, 1600)};
+  //   --gutter: #{g.get_vw(16, 1600)};
+  //   --gutter-row: #{g.get_vw(32, 1600)};
+  // }
+}
+
+//
+// columns
+//
+.l-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  &--container {
+
+    @extend .l-row;
+    @include make-container();
+    @include make-container-max-widths();
+  }
+}
+
+@include make-grid-columns();
+
+
+//
+// block grid
+//
+.l-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  // @include make-row-gutters();
+  margin-right: calc(var(--gutter) * -1);
+  margin-left: calc(var(--gutter) * -1);
+}
+
+%l-grid__col {
+  // position: relative;
+  flex: 0 0 auto;
+  min-height: 1px;
+
+  // @include make-gutters();
+  padding-right: var(--gutter);
+  padding-left: var(--gutter);
+}
+
+@each $breakpoint in map.keys(g.$grid-breakpoints) {
+  $infix: g.breakpoint-infix-element($breakpoint, g.$grid-breakpoints);
+  $block-grid-max: 12;
+
+  @for $i from 1 through $block-grid-max {
+
+    .c-grid--#{$i} {
+
+      & > li, & > .c-col {
+
+        @extend %l-grid__col;
+      }
+    }
+  }
+
+  @include g.media-breakpoint-up($breakpoint) {
+
+    @for $i from 1 through $block-grid-max {
+
+      .c-grid#{$infix}--#{$i} {
+
+        @include flex-grid-layout($i);
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+@charset "utf-8";
+@use "../global" as g;
+
+// -----------------------------------------------------------------
+// style
+// -----------------------------------------------------------------
+
+
+.c-toggle__wrap {
+  border: 1px solid #FFD5FF;
+}
+
+.c-toggle__title {
+  position: relative;
+  padding: g.rem(13) 0 g.rem(10) g.rem(48);
+  transition: all .15s ease;
+  background-color: #FFE8FF;
+  color: #500036;
+  font-size: g.rem(18);
+  font-weight: 400;
+  line-height: 1;
+  cursor: pointer;
+  &::before, &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: g.$clr1;
+  }
+  &::before {
+    top: 50%;
+    left: g.rem(15);
+    width: g.rem(16);
+    height: g.rem(2);
+    transform: translateY(-50%);
+  }
+  &::after {
+    top: 50%;
+    left: g.rem(22);
+    width: g.rem(2);
+    height: g.rem(16);
+    transform: translateY(-50%) rotate(0deg);
+    transition: all .15s ease;
+  }
+}
+
+.c-toggle__content {
+  visibility: hidden;
+  padding: g.rem(20);
+  opacity: 0;
+}
+
+.c-toggle__wrap.js-active {
+  .c-toggle__title::before {
+    display: none;
+  }
+  .c-toggle__title::after {
+    transform: translateY(-50%) rotate(90deg);
+  }
+}
