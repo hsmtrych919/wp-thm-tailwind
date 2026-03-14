@@ -2,3 +2,5 @@ node_modules/
 .next/
 img/
 font/
+package-lock.json
+css/init.css
