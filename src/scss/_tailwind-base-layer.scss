@@ -1,0 +1,383 @@
+@use "global" as g;
+
+// =================================================================
+// @layer base — CSS 変数 + リセット補足
+// =================================================================
+
+@layer base {
+
+  // -----------------------------------------------------------------
+  // C-1: :root CSS 変数（カテゴリ A: 22 変数）
+  // 出典: _variable-inventory.md カテゴリ A + _variables-color.scss
+  // -----------------------------------------------------------------
+  :root {
+    --clr1: #4FBA43;
+    --clr2: #9BD22D;
+    --clr3: #725907;
+    --clr4: #B69941;
+    --clr5: #f6f0dd;
+    --clr-prim-green: #41c45d;
+    --grd1: linear-gradient(120deg, #9BD22D, #4FBA43);
+    --grd2: linear-gradient(90deg, #FDD88A, #9E8004);
+    --black: #222;
+    --clrg50: #fbfbfb;
+    --clrg100: #f5f5f5;
+    --clrg200: #e8e8e8;
+    --clrg300: #d5d5d5;
+    --clrg400: #b0b0b0;
+    --clrg500: #959595;
+    --clrg600: #858585;
+    --clrg700: #767676;
+    --clrg800: #5b5b5b;
+    --clrg900: #3f3f3f;
+    --gray: var(--clrg700);
+    --link-color: var(--clrg800);
+    --link-hover-color: #747474;
+  }
+
+  // -----------------------------------------------------------------
+  // C-2: gutter 系 CSS 変数
+  // 出典: layout/_grid.scss L114-165 → Phase 1 で @layer base に移動
+  // -----------------------------------------------------------------
+  :root {
+    --unit: #{g.get_vw(1, 390)};
+    --space: #{g.get_vw(8, 390)};
+    --gutter: #{g.get_vw(6, 390)};
+    --gutter-row: #{g.get_vw(16, 390)};
+    @media #{g.$sm} {
+      // min 576
+      --unit: #{g.get_vw(1, 768)};
+      --space: #{g.get_vw(8, 768)};
+      --gutter: #{g.get_vw(12, 768)};
+      --gutter-row: #{g.get_vw(42, 768)};
+    }
+    @media #{g.$md} {
+      // min 811
+      --unit: #{g.get_vw(1, 960)};
+      --space: #{g.get_vw(8, 960)};
+      --gutter: #{g.get_vw(16, 960)};
+      --gutter-row: #{g.get_vw(32, 960)};
+    }
+    @media #{g.$lg} {
+      // min 1025
+      --unit: #{g.get_vw(1, 1025)};
+      --space: #{g.get_vw(8, 1025)};
+      --gutter: #{g.get_vw(16, 1025)};
+      --gutter-row: #{g.get_vw(32, 1025)};
+    }
+    @media #{g.$xl} {
+      // min 1280
+      --unit: #{g.get_vw(1, 1280)};
+      --space: #{g.get_vw(8, 1280)};
+      --gutter: #{g.get_vw(16, 1280)};
+      --gutter-row: #{g.get_vw(32, 1280)};
+    }
+    @media #{g.$xxl} {
+      // min 1366
+      --unit: #{g.get_vw(1, 1366)};
+      --space: #{g.get_vw(8, 1366)};
+      --gutter: #{g.get_vw(16, 1366)};
+      --gutter-row: #{g.get_vw(32, 1366)};
+    }
+  }
+
+  // -----------------------------------------------------------------
+  // C-3: リセット CSS 補足
+  // 出典: _reset-diff-inventory.md L370-661
+  // -----------------------------------------------------------------
+
+  /* ===== Box Model ===== */
+  *::before,
+  *::after {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    text-size-adjust: 100%;
+  }
+
+  /* ===== Document ===== */
+  body {
+    position: relative;
+    background-color: #fff;
+    color: #222;
+    font-family:
+      avenir, "Noto Sans JP", "游ゴシック体", yugothic, "游ゴシック Medium",
+      "Yu Gothic Medium", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN",
+      "メイリオ", meiryo, sans-serif;
+    font-size: 16px;
+    font-weight: normal;
+  }
+
+  /* ===== Headings ===== */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: inherit;
+  }
+
+  /* ===== Lists ===== */
+  dt {
+    font-weight: bold;
+  }
+  ul {
+    list-style-position: inside;
+  }
+
+  /* ===== Links ===== */
+  a {
+    background-color: transparent;
+    text-decoration: none;
+    color: var(--link-color, #222);
+    transition: all 0.2s ease-in-out;
+
+    &:active,
+    &:focus {
+      outline: 0;
+    }
+
+    &:hover {
+      color: var(--link-hover-color);
+    }
+  }
+
+  a:not([href]):not([tabindex]) {
+    color: inherit;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  /* ===== Text-level Semantics ===== */
+  abbr[title],
+  abbr[data-original-title] {
+    cursor: help;
+  }
+
+  address {
+    font-style: inherit;
+  }
+
+  code,
+  kbd,
+  samp {
+    font-family: monospace, monospace;
+    font-size: inherit;
+  }
+
+  pre {
+    font-family: monospace, monospace;
+    font-size: inherit;
+    overflow: auto;
+  }
+
+  /* ===== Images ===== */
+  embed,
+  object,
+  iframe {
+    vertical-align: bottom;
+  }
+
+  a img {
+    backface-visibility: hidden;
+    transition: all 0.2s ease-in-out;
+    box-shadow: #fff 0 0 0;
+  }
+
+  /* ===== Forms ===== */
+  button,
+  input,
+  optgroup,
+  textarea {
+    -webkit-appearance: none;
+    appearance: none;
+    vertical-align: middle;
+    outline: 0;
+    text-align: inherit;
+  }
+
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+    cursor: pointer;
+  }
+
+  button[disabled],
+  [type="button"][disabled],
+  [type="reset"][disabled],
+  [type="submit"][disabled] {
+    cursor: default;
+  }
+
+  input[type="radio"]:disabled,
+  input[type="checkbox"]:disabled {
+    cursor: not-allowed;
+  }
+
+  button,
+  select {
+    text-transform: none;
+  }
+
+  button,
+  input {
+    overflow: visible;
+  }
+
+  button:focus {
+    outline: 5px auto -webkit-focus-ring-color;
+  }
+
+  label {
+    display: inline-block;
+    margin-bottom: 5px;
+  }
+
+  label[for] {
+    cursor: pointer;
+  }
+
+  fieldset {
+    min-width: 0;
+  }
+
+  legend {
+    color: inherit;
+    display: table;
+    max-width: 100%;
+    white-space: normal;
+    margin-bottom: 5px;
+    font-size: 15px;
+    line-height: inherit;
+  }
+
+  textarea {
+    overflow: auto;
+  }
+
+  [type="search"] {
+    outline-offset: -2px;
+    appearance: none;
+  }
+
+  input[type="date"],
+  input[type="time"],
+  input[type="datetime-local"],
+  input[type="month"] {
+    appearance: listbox;
+  }
+
+  output {
+    display: inline-block;
+  }
+
+  select {
+    border-width: revert;
+    border-style: revert;
+    outline: 0;
+    text-align: inherit;
+  }
+
+  /* Placeholder */
+  ::placeholder {
+    color: var(--clrg500);
+    font-weight: 400;
+  }
+
+  input:-webkit-autofill {
+    box-shadow: 0 0 0 1000px white inset;
+  }
+
+  /* ===== Tables ===== */
+  caption {
+    text-align: left;
+  }
+
+  td,
+  th {
+    vertical-align: top;
+  }
+
+  th {
+    text-align: left;
+  }
+
+  /* ===== Grouping / Misc ===== */
+  hr {
+    overflow: visible;
+    clear: both;
+  }
+
+  [contenteditable] {
+    outline: none;
+  }
+
+  /* ===== Custom ===== */
+  ::selection {
+    background: #afe14a;
+  }
+
+  a,
+  area,
+  button,
+  [role="button"],
+  input,
+  label,
+  select,
+  summary,
+  textarea {
+    touch-action: manipulation;
+  }
+
+  [role="button"] {
+    cursor: pointer;
+  }
+
+  [tabindex="-1"]:focus {
+    outline: none !important;
+  }
+
+  .clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+// =================================================================
+// @layer components — .p-form CSS 変数
+// =================================================================
+
+@layer components {
+  .p-form {
+    /* --- input 系（10 変数） --- */
+    --form-padding-x: 0.625rem;
+    --form-padding-y: 0.625rem;
+    --form-line-height: 1.25;
+    --form-bg: #fff;
+    --form-color: var(--clrg700);
+    --form-border-color: var(--clrg500);
+    --form-border-width: 1px;
+    --form-border-radius: 6px;
+    --form-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    --form-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+
+    /* --- select 固有（3 変数） --- */
+    --form-select-bg: #fff;
+    --form-select-bg-size: 12px;
+    --form-select-indicator: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+  }
+}

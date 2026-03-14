@@ -1,84 +1,67 @@
 # 移行進捗
 
-## 現在: Phase 1（基盤構築）— 計画策定完了・実行未着手
+## 現在: Phase 1（基盤構築）— 完了
 
 ---
 
 ## Phase 1: 基盤構築
 
-### 状態: 計画策定完了（v6）
+### 状態: 完了（2026-03-14）
 
-作業計画は `plan.md` を参照。v1 → v6 まで 5 回の修正を経て確定。
+### 実施した作業
 
-### 作業項目
+- [x] A: 依存パッケージ更新 + ビルドパイプライン構築
+  - tailwindcss v4.2.1, @tailwindcss/postcss v4.2.1 を devDependencies に追加
+  - postcss-cli を 7.1.1 → 11.0.1 に更新（PostCSS 8 対応）
+  - autoprefixer を 9.8.6 → 10.4.27 に更新（PostCSS 8 対応、dependencies → devDependencies に移動）
+  - postcss.config.js に `@tailwindcss/postcss` プラグインを追加
+  - package.json scripts を更新:
+    - `css:concat`, `css:postcss`, `css:build` を新規追加
+    - `watch:scss` → `watch:css` に置き換え（css:build を実行）
+    - `watch:templates` を新規追加（PHP 変更検知 → css:build）
+    - `build` を `prd:scss → prd:concat → prd:postcss → prd:webpack` の逐次実行に変更
+    - `start` を `watch:css watch:templates watch:webpack watch:img watch:server` の並列実行に変更
+- [x] B: tailwind.config.js 作成
+  - screens, container, colors, spacing, zIndex, fontFamily, borderRadius, transitionDuration, extend.maxWidth, extend.padding (gutter), extend.gap を定義
+  - content: `./**/*.php` のみ（JS は除外）
+- [x] C: `_tailwind-base-layer.scss` 作成
+  - C-1: `:root` CSS 変数（カテゴリ A: 22 変数）
+  - C-2: gutter 系 CSS 変数（layout/_grid.scss L114-165 から移動）
+  - C-3: リセット CSS 補足（destyle + _reboot の差分を @layer base で補足）
+  - C-4: destyle / _reboot の廃止（style.scss からコメントアウト）
+  - C-5: `.p-form` スコープ CSS 変数（@layer components で 13 変数定義）
+- [x] D: SCSS 計算関数の維持確認
+  - g.rem(), g.get_vw() 等の出力値が変わっていないことを確認（rem: 716件, vw: 31件）
+- [x] `src/scss/tailwind-base.css` 作成（@import "tailwindcss" + @config）
+- [x] `src/scss/style.scss` 更新（destyle/reboot コメントアウト、_tailwind-base-layer 追加）
+- [x] `src/scss/layout/_grid.scss` から `:root` ブロック削除（グリッドクラス本体は維持）
 
-- [ ] A: 依存パッケージ更新 + ビルドパイプライン構築
-- [ ] B: tailwind.config.js 作成
-- [ ] C: `_tailwind-base-layer.scss` 作成（`:root` CSS 変数 + gutter + リセット + `.p-form`）
-- [ ] D: SCSS 計算関数の維持確認
-- [ ] ビルド後の CSS が現状と同等であることを確認（完了条件 #1〜#8）
+### 検証結果
 
-### 計画策定の経緯（v1 → v6 の修正履歴）
+| # | 条件 | 結果 |
+|---|---|---|
+| 1 | ビルドが通る | PASS — CSS pipeline (prd:scss → prd:concat → prd:postcss) 成功 |
+| 2 | Tailwind Preflight が出力に含まれている | PASS — `box-sizing: border-box` 9件 |
+| 3 | `:root` カラー CSS 変数が出力されている | PASS — --clr1, --clrg500, --link-hover-color 確認 |
+| 4 | gutter 系 CSS 変数が出力されている | PASS — --gutter 6件, --gutter-row 6件, @media breakpoint あり |
+| 5 | リセット補足コードが出力されている | PASS — ::selection, a text-decoration, ul list-style, ::placeholder 確認 |
+| 6 | `.p-form` スコープ CSS 変数が出力されている | PASS — --form-padding-x, --form-border-color, --form-select-indicator 確認 |
+| 7 | 既存コンポーネント CSS が出力されている | PASS — .c-button 67件, .p-header 6件, .l-row 7件, .c-col--12 2件 |
+| 8 | SCSS 計算関数の出力値が変わっていない | PASS — rem/vw 値が出力に含まれている |
 
-| 版 | 修正内容 |
-|---|---|
-| v1 → v2 | Tailwind v4 依存、CSS エントリ分離、gutter 変数の出典明記、.p-form 変数の Phase 1 包含、ファイル一覧の分離 |
-| v2 → v3 | watch:templates 追加、theme.container 追加、gutter を SCSS 方式に統一（ハードコード廃止）、BrowserSync 責務の明確化 |
-| v3 → v4 | watch:templates の Tailwind 出力重複バグ修正（css:tailwind → css:build）、@use パスの実構成整合（`"../global"` → `"global"`） |
-| v4 → v5 | content から JS 除外（実コード確認の結果、JS で Tailwind クラス文字列を生成していない） |
-| v5 → v6 | postcss-cli / autoprefixer の PostCSS 8 対応版への更新を明記（lockfile 上の PostCSS 7/8 不整合） |
+### plan.md との差異
 
----
+- `tailwind-base.css` の `@config` パス: plan.md では `../../tailwind.config.js` だが、実際は `../tailwind.config.js` に変更。理由: concat 後の CSS は `css/style.css` として PostCSS に処理されるため、`css/` ディレクトリからの相対パスで解決される。`css/` → `../tailwind.config.js` が正しいパス
 
-## 計画策定の反省と改善策（Phase 2 以降で 1 回で通すために）
+### 注意事項
 
-### 犯したミスのパターン分析
+- 既存コンポーネント（.c-button, .p-header 等）は `@layer` の外側に出力される。これは Tailwind の layer 順序の外側であり、最高の優先度を持つため既存の見た目に影響しない
+- Tailwind Preflight により `img { display: block }` が適用される。インラインで画像を使用している箇所があれば個別対応が必要（Phase 4/5 で確認）
+- webpack は CSS パイプラインとは独立しており、Phase 1 の CSS 変更の影響を受けない
 
-**1. 実ファイル構成を確認せずにパスや依存バージョンを書いた**
+### 次に進める状態か
 
-- `@use "../global"` と書いたが、ファイル配置は `src/scss/` 直下で `../` は不要だった（v4 で修正）
-- `postcss-cli` (7.1.1) を「そのまま使う」と書いたが、lockfile 上で PostCSS 7 を引いており不整合だった（v6 で修正）
-- `content` に `./src/**/*.js` を含めたが、実際の JS を確認していなかった（v5 で修正）
-
-→ **共通原因: 「たぶんこうだろう」で書き、実ファイルや実依存を確認しなかった**
-
-**2. パイプラインの状態遷移を追跡しなかった**
-
-- `css:tailwind`（concat → PostCSS のみ）が、すでに Tailwind 展開済みの css/style.css に再度 tailwind-base.css を結合し、出力が重複するバグに気づかなかった（v4 で修正）
-
-→ **共通原因: 各コマンド実行後のファイル内容がどう変わるかを追跡せず、コマンドの「やること」だけ見て組み合わせた**
-
-**3. 設計意図を汲まず機械的にコピーした**
-
-- gutter 変数を「ハードコードする」と書いたが、SCSS ファイルなので `g.get_vw()` をそのまま使える（v3 で修正）
-- BrowserSync の責務と CSS 生成の責務を区別せず曖昧に記述した（v3 で修正）
-
-→ **共通原因: 既存コードの設計意図（なぜそう書かれているか）を理解せず、表面的に移動・変換した**
-
-### Phase 2 以降の計画策定ルール
-
-**ルール 1: 書く前に実物を確認する（推測で書くな）**
-
-- ファイルパス → `ls` / `glob` で実在確認してから書く
-- `@use` / `@import` パス → 同階層の既存ファイルのパターンを `grep` で確認してから書く
-- 依存バージョン → `package.json` と `package-lock.json` の両方を読み、lockfile 上の依存ツリーも確認する
-- content 対象 → 実際のファイル内容を検索し、Tailwind クラス文字列の有無を確認してから含めるか判断する
-
-**ルール 2: パイプラインは「各ステップ後のファイル状態」を書き出して検証する**
-
-- コマンドを並べるだけでなく、各コマンド実行後に対象ファイルの中身がどうなるかを明記する
-- 特に「同じファイルに入力と出力が重なる」ケース（css/style.css を読んで css/style.css に書く等）は、前のステップの出力が次のステップの入力として正しいか必ず確認する
-
-**ルール 3: 「そのまま使う」「変更なし」と書く前に根拠を確認する**
-
-- 「そのまま使う」は「互換性に問題がないことを確認した」という意味。確認していないなら書くな
-- 既存の依存・設定・コードが新しく導入するものと本当に互換性があるか、ドキュメントまたは実依存ツリーで裏を取る
-
-**ルール 4: 既存コードの「なぜ」を理解してから移行方法を決める**
-
-- SCSS 関数が使われている → なぜその関数が必要か → 移行先でも同じ関数が使えるか
-- 変数が特定スコープにある → なぜそのスコープか → 移行先でもスコープを維持すべきか
-- 表面的な「何を」だけでなく「なぜ」を把握してから書く
+**Yes** — Phase 2（ユーティリティ層の移行）に着手可能
 
 ---
 

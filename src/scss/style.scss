@@ -11,8 +11,9 @@
 // Foundation
 // -----------------------------------------------------------------
 
-@use "foundation/_destyle";
-@use "foundation/_reboot";
+// @use "foundation/_destyle";  // Phase 1: Tailwind Preflight に移行
+// @use "foundation/_reboot";   // Phase 1: _tailwind-base-layer.scss に移行
+@use "_tailwind-base-layer";
 
 // -----------------------------------------------------------------
 // Layout
