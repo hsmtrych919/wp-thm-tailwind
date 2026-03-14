@@ -38,7 +38,7 @@
     <?php endif; ?>
 
   <!-- wp_get_archives -->
-  <ul class="mt__1_25 mt__2--md">
+  <ul class="mt-1.25 md:mt-2">
 <select name="archive-dropdown" style="width: 100%;" onChange='document.location.href=this.options[this.selectedIndex].value;'>
 <option value=""><?php echo esc_attr(__('月を選択', 'text-domain')); ?></option>
 <?php wp_get_archives('type=monthly&format=option&show_post_count=1'); ?>

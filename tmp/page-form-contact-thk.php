@@ -1,11 +1,11 @@
 <article class="">
 <div class="c-headline__outer">
-    <div class="l-row--container c-gutter__row jc__start">
+    <div class="l-row--container c-gutter__row justify-start">
       <div class="c-headline__frame" >
         <h1 class="c-headline__title c-headline__title--long"><span class="">THANKS</span></h1>
         <div class="c-headline__detail">
     <p class="">
-    <span class="c-ttl__xsmall clr__3"><span class="clr__1">#</span> 送信完了</span></p>
+    <span class="c-ttl__xsmall text-clr3"><span class="text-clr1">#</span> 送信完了</span></p>
         </div>
       </div>
     </div>
@@ -25,13 +25,13 @@
 
   <div class="l-row--container c-gutter__row">
     <div class="c-col--12 c-col__md--11 c-col__xl--10 p-entrystep__caption">
-      <p class="c-typ">フォーム送信が完了いたしました。<br class="hide__sm--up">記入いただいたメールアドレスに<br class="hide__xs--down">自動返信メールをお送りしていますのでご確認ください。</p>
-      <p class="c-typ mt__2 mt__3--md">自動返信メールが誤って迷惑メールと判断されてしまい<br class="hide__xs--down">「迷惑メールフォルダ」や「削除フォルダ」「スパムフォルダ」等に<br class="hide__xs--down">届いてしまう可能性がございます。<br><strong>自動返信メールが届かない場合、</strong><br class="hide__xs--down">恐れ入りますが一度「迷惑メールフォルダ」などをご確認ください。</p>
-      <p class="c-typ mt__2 mt__3--md">弊社にてお問い合わせ内容を確認後、担当者より<br class="hide__xs--down">ご連絡致しますので今しばらくお待ちくださいませ。</p>
+      <p class="c-typ">フォーム送信が完了いたしました。<br class="sm:hidden">記入いただいたメールアドレスに<br class="max-sm:hidden">自動返信メールをお送りしていますのでご確認ください。</p>
+      <p class="c-typ mt-2 md:mt-3">自動返信メールが誤って迷惑メールと判断されてしまい<br class="max-sm:hidden">「迷惑メールフォルダ」や「削除フォルダ」「スパムフォルダ」等に<br class="max-sm:hidden">届いてしまう可能性がございます。<br><strong>自動返信メールが届かない場合、</strong><br class="max-sm:hidden">恐れ入りますが一度「迷惑メールフォルダ」などをご確認ください。</p>
+      <p class="c-typ mt-2 md:mt-3">弊社にてお問い合わせ内容を確認後、担当者より<br class="max-sm:hidden">ご連絡致しますので今しばらくお待ちくださいませ。</p>
     </div>
   </div>
 
-  <div class="l-row--container c-gutter__row  mt__6 mt__8--md">
+  <div class="l-row--container c-gutter__row  mt-6 md:mt-8">
     <div class="p-button__wrap">
 <?php
   $args = array(

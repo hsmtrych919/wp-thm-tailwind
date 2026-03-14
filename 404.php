@@ -22,7 +22,7 @@ $title = (is_404()) ? '見つかりません' : 'キーワード未入力' ;
   <div class="l-container">
   <div class="l-row--container c-gutter__row">
     <div class="c-col--12 c-col__sm--8 c-col__lg--7 c-col__xl--6">
-      <p class="c-typ tac__lg">
+      <p class="c-typ lg:text-center">
   <?php if ( is_404() ) : ?>
     お探しのページは見つかりませんでした。<br>検索フォームをお試しいただくか、トップページをご覧ください。</p>
   <?php else  : ?>
@@ -30,7 +30,7 @@ $title = (is_404()) ? '見つかりません' : 'キーワード未入力' ;
       <?php endif; ?>
     </p>
 
-        <div class="mt__4">
+        <div class="mt-4">
           <?php  get_search_form(); ?>
         </div>
 
@@ -38,7 +38,7 @@ $title = (is_404()) ? '見つかりません' : 'キーワード未入力' ;
   </div>
 
 
-  <div class="l-row--container c-gutter__row mt__8 ">
+  <div class="l-row--container c-gutter__row mt-8 ">
     <div class="p-button__wrap">
 <?php
   $args = array(
@@ -55,7 +55,7 @@ component_buttonLink($args);
 </article>
 
 
-<article class="mt__7 mt__8--lg">
+<article class="mt-7 lg:mt-8">
 <?php get_template_part('tmp/content/container', 'feed-post'); ?>
 </article>
 

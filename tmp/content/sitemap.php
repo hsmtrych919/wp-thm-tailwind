@@ -1,4 +1,4 @@
-    <div class="l-row--container c-gutter__row jc__start">
+    <div class="l-row--container c-gutter__row justify-start">
     <div class="c-col--12 c-col__md--12 c-col__xl--10">
 
 

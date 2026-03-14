@@ -1,6 +1,6 @@
 <article class="">
   <div class="c-headline-pic__outer">
-    <div class="l-row--container c-gutter__row jc__start">
+    <div class="l-row--container c-gutter__row justify-start">
       <div class="c-headline-pic__frame js-headline-frame" >
         <h1 class="c-headline-pic__title c-headline-pic__title--long"><span class="c-headline-pic__typ--for-gsap">COMPANY</span></h1>
         <div class="c-headline-pic__pic js-headline-pic" >
@@ -14,17 +14,17 @@
     </div>
   </div>
 
-  <div class="mt__7 mt__8--md">
+  <div class="mt-7 md:mt-8">
     <div class="l-row--container c-gutter__row p-company__frame">
     <div class="c-col--12 c-col__sm--12 c-col__lg--8">
 
       <section class="">
       <div class="l-row--container">
           <div class="c-col--12">
-            <h2 class="p-salonlist__title "><span class="c-ttl__small"><span class="clr__1">#</span> 会社概要</span></h2>
+            <h2 class="p-salonlist__title "><span class="c-ttl__small"><span class="text-clr1">#</span> 会社概要</span></h2>
           </div>
         </div>
-        <div class="l-row--container p-company__content jc__start">
+        <div class="l-row--container p-company__content justify-start">
         <div class="c-col--12">
           <dl class="p-company-detail__dl">
       <?php
@@ -56,13 +56,13 @@
         </div>
           </div>
       </section>
-      <section class="mt__7 mt__8--md">
+      <section class="mt-7 md:mt-8">
       <div class="l-row--container ">
           <div class="c-col--12">
-            <h2 class="p-salonlist__title "><span class="c-ttl__small"><span class="clr__1">#</span> 沿革</span></h2>
+            <h2 class="p-salonlist__title "><span class="c-ttl__small"><span class="text-clr1">#</span> 沿革</span></h2>
           </div>
         </div>
-        <div class="l-row--container  p-company__content jc__start">
+        <div class="l-row--container  p-company__content justify-start">
         <div class="c-col--12">
           <dl class="p-company-detail__dl">
       <?php
@@ -99,7 +99,7 @@
           </div>
       </section>
     </div>
-    <div class="c-col__lg--4  c-gutter__md--left display__none display__block--lg">
+    <div class="c-col__lg--4  c-gutter__md--left hidden lg:block">
       <div class="p-company__thumbnail">
         <img src='<?php echo get_template_directory_uri(); ?>/img/a_03.jpg' alt="COMPANY">
 

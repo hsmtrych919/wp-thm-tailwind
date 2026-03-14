@@ -12,7 +12,7 @@ $post_slug = $post_obj->post_name;
 <div class="l-row--container c-gutter__row">
   <div class="c-col--12">
     <h2 class="p-salonlist__title ">
-    <span class="c-ttl__small"><span class="clr__1">#</span> サロン情報</h2>
+    <span class="c-ttl__small"><span class="text-clr1">#</span> サロン情報</h2>
   </div>
   </div><!-- /.l-row -->
 
@@ -29,7 +29,7 @@ $post_slug = $post_obj->post_name;
         <dd>
 <?php echo $data['address'] ?>
 <?php if( isset($data['address_append']) && $data['address_append'] !== '') : ?>
-  <p class="fz__14 clr__gray "><?php echo $data['address_append'] ?></p>
+  <p class="text-fz14 2xl:text-fz15 text-gray-700 "><?php echo $data['address_append'] ?></p>
 <?php endif; ?>
         </dd>
       </div>
@@ -61,7 +61,7 @@ $post_slug = $post_obj->post_name;
 カット＋カラー＋パーマ受付 9:00～15:00<br>
 カット＋アイロンストレート受付 9:00～15:00</p>
 <?php elseif( is_page('komaki')) : ?>
-<p class="fw__500">月〜土曜日</p>
+<p class="font-medium">月〜土曜日</p>
 <p>カット受付 10:00～18:00<br>
 カラー受付 10:00～18:00<br>
 パーマ受付 10:00～18:00<br>
@@ -69,7 +69,7 @@ $post_slug = $post_obj->post_name;
 カット＋パーマ受付 10:00～17:00<br>
 カット＋カラー＋パーマ受付 10:00～16:00<br>
 カット＋アイロンストレート受付 10:00～16:00</p>
-<p class="fw__500 mt__1">日曜日</p>
+<p class="font-medium mt-1">日曜日</p>
 <p>カット受付 9:00～17:00<br>
 カラー受付 9:00～17:00<br>
 パーマ受付 9:00～17:00<br>
@@ -86,7 +86,7 @@ $post_slug = $post_obj->post_name;
 カット＋カラー＋パーマ受付 9:00～15:00<br>
 カット＋アイロンストレート受付 9:00～15:00</p>
 <?php elseif( is_page('konan')) : ?>
-<p class="fw__500">月〜土曜日</p>
+<p class="font-medium">月〜土曜日</p>
 <p>カット受付 10:00～18:00<br>
 カラー受付 10:00～18:00<br>
 パーマ受付 10:00～18:00<br>
@@ -94,7 +94,7 @@ $post_slug = $post_obj->post_name;
 カット＋パーマ受付 10:00～17:00<br>
 カット＋カラー＋パーマ受付 10:00～16:00<br>
 カット＋アイロンストレート受付 10:00～16:00</p>
-<p class="fw__500 mt__1">日曜日</p>
+<p class="font-medium mt-1">日曜日</p>
 <p>カット受付 9:00～17:00<br>
 カラー受付 9:00～17:00<br>
 パーマ受付 9:00～17:00<br>
@@ -114,7 +114,7 @@ $post_slug = $post_obj->post_name;
 
 
 
-        <p class="fz__14 clr__3 mt__1">※予約優先</p>
+        <p class="text-fz14 2xl:text-fz15 text-clr3 mt-1">※予約優先</p>
       </dd>
       </div>
 
@@ -132,15 +132,15 @@ $post_slug = $post_obj->post_name;
       </div>
 <?php if( is_page('kitatoyama')) : ?>
   <div class="p-salon-info__dl--row">
-    <dt>備考</dt><dd><span class="clr__3">キッズルームあり</span></dd>
+    <dt>備考</dt><dd><span class="text-clr3">キッズルームあり</span></dd>
   </div>
 <?php elseif( is_page('komaki')) : ?>
   <div class="p-salon-info__dl--row">
-    <dt>備考</dt><dd><span class="clr__3">ネイルあり</span></dd>
+    <dt>備考</dt><dd><span class="text-clr3">ネイルあり</span></dd>
   </div>
 <?php elseif( is_page('tokadai')) : ?>
   <div class="p-salon-info__dl--row">
-    <dt>備考</dt><dd><span class="clr__3">ネイルあり・エステあり・託児所あり</span></dd>
+    <dt>備考</dt><dd><span class="text-clr3">ネイルあり・エステあり・託児所あり</span></dd>
   </div>
 <?php endif; ?>
 
@@ -156,7 +156,7 @@ $post_slug = $post_obj->post_name;
 
     </div>
 
-<div class="l-row--container c-gutter__row mt__5 mt__6--md">
+<div class="l-row--container c-gutter__row mt-5 md:mt-6">
   <div class="c-button-2columns__frame--button">
     <div class="c-button-2columns__button">
 <?php

@@ -15,12 +15,12 @@
 
 <article class="" id="post-<?php the_ID(); ?>">
 <div class="c-headline__outer">
-    <div class="l-row--container c-gutter__row jc__start">
+    <div class="l-row--container c-gutter__row justify-start">
       <div class="c-headline__frame" >
         <h1 class="c-headline__title"><span class="">STYLE</span></h1>
         <div class="c-headline__detail">
     <p class="">
-    <span class="c-ttl__xsmall clr__3"><span class="clr__1">#</span> <?php the_title(); ?></span></p>
+    <span class="c-ttl__xsmall text-clr3"><span class="text-clr1">#</span> <?php the_title(); ?></span></p>
         </div>
 
       </div>
@@ -28,7 +28,7 @@
   </div>
 
   <div class="p-style__content">
-    <div class="l-row--container c-gutter__row jc__start">
+    <div class="l-row--container c-gutter__row justify-start">
       <div class="p-style__frame">
 
       <div class="p-style__pic">

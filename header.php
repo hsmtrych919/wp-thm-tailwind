@@ -37,7 +37,7 @@ if ( is_archive() || is_404() || is_search()){
   <header class="l-header--static">
     <div class="p-header__row">
       <div class="c-header__logo-block c-header__logo-block--login">
-        <h1 class="c-header__logo ai__center"><img src='<?php echo get_template_directory_uri(); ?>/img/logo.svg' alt=""></h1>
+        <h1 class="c-header__logo items-center"><img src='<?php echo get_template_directory_uri(); ?>/img/logo.svg' alt=""></h1>
       </div>
     </div>
   </header>

@@ -53,6 +53,7 @@ module.exports = {
         800: 'var(--clrg800)',
         900: 'var(--clrg900)',
       },
+      red: '#f00',
       link: 'var(--link-color)',
       'link-hover': 'var(--link-hover-color)',
     },
@@ -134,6 +135,36 @@ module.exports = {
     },
 
     extend: {
+      // --- fontSize (fz系) ---
+      // 出典: _font.scss の fz__ クラス。基本サイズ + 2xl サイズアップ用
+      fontSize: {
+        fz12: '0.75rem',
+        fz13: '0.8125rem',
+        fz14: '0.875rem',
+        fz15: '0.9375rem',
+        fz16: '1rem',
+        fz17: '1.0625rem',
+        fz18: '1.125rem',
+        fz19: '1.1875rem',
+        fz20: '1.25rem',
+        fz21: '1.3125rem',
+        fz22: '1.375rem',
+        fz23: '1.4375rem',
+        fz24: '1.5rem',
+        fz25: '1.5625rem',
+        fz26: '1.625rem',
+        fz27: '1.6875rem',
+        fz28: '1.75rem',
+        fz29: '1.8125rem',
+        fz30: '1.875rem',
+        fz31: '1.9375rem',
+        fz32: '2rem',
+        fz33: '2.0625rem',
+        fz34: '2.125rem',
+        fz35: '2.1875rem',
+        fz36: '2.25rem',
+      },
+
       // --- maxWidth ---
       // 出典: _variables.scss L37-41 ($container-max-*)
       maxWidth: {
