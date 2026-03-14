@@ -2,6 +2,9 @@
   "name": "wp_npm_script",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": ">=20"
+  },
   "config": {
     "cssDir": "./css",
     "scssDir": "./src/scss",
