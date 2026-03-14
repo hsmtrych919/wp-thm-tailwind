@@ -1,12 +1,12 @@
 <div class="l-row--container c-gutter__row">
       <div class="c-col--12">
-        <h2 class="p-salonlist__title"><span class="c-ttl__small"><span class="clr__1">#</span> カット</span></h2>
+        <h2 class="p-salonlist__title"><span class="c-ttl__small"><span class="text-clr1">#</span> カット</span></h2>
       </div>
     </div>
 
     <div class="l-row--container c-gutter__row p-menu__content">
       <div class="c-col--12">
-        <p class="c-typ__xs clr__gray">※シャンプー・ブロー・5分間マッサージサービス。</p>
+        <p class="c-typ__xs text-gray-700">※シャンプー・ブロー・5分間マッサージサービス。</p>
       </div>
       <div class="p-menu__frame">
         <div class="p-menu__left">

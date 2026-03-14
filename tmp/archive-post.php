@@ -45,7 +45,7 @@ echo '<a href="' . get_category_link( $category[0]->term_id ) . '" class="p-post
 <?php endif; ?>
 </p>
 
-  <div class="l-row jc__start--sm mt__2">
+  <div class="l-row sm:justify-start mt-2">
       <div class="p-button__wrap--readmore">
 <?php
 $args = array(

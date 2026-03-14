@@ -61,7 +61,7 @@ $salonPageSlugs = array(
 
 <?php if ( $isContactPage ): ?>
   <footer class="l-footer  p-footer">
-    <div class="l-row--container c-gutter__row jc__between--md">
+    <div class="l-row--container c-gutter__row md:justify-between">
       <div class="c-footer__info c-footer__info--alone">
       <?php echo $logo_element . $message_element . $copy_element; ?>
       </div>
@@ -69,7 +69,7 @@ $salonPageSlugs = array(
   </footer>
 <?php else : ?>
   <footer class="l-footer  p-footer c-footer--have-footernavi">
-    <div class="l-row--container c-gutter__row jc__between--md">
+    <div class="l-row--container c-gutter__row md:justify-between">
       <div class="c-footer__info">
       <?php echo $logo_element . $message_element . $copy_element; ?>
       </div>
@@ -162,7 +162,7 @@ $salonPageSlugs = array(
   <div class="c-micromodal__overlay" tabindex="-1" data-micromodal-close>
     <div class="c-micromodal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
       <div class="p-footer-modal__wrap">
-          <p class="p-footer-modal__title">ギッシュ各店へのご予約<span class="hide__sm--down">はこちら</span></p>
+          <p class="p-footer-modal__title">ギッシュ各店へのご予約<span class="max-md:hidden">はこちら</span></p>
           <ul class="p-footer-modal__list">
             <li><?php linkReserveSalon('kitatoyama') ?></li>
             <li><?php linkReserveSalon('komaki') ?></li>
@@ -196,11 +196,11 @@ function listItemSalon($salonKey, $icon_reserve) {
   $url = $data['hotpepper'];
   $tel = $data['tel_href'];
       echo '<li class="p-footernav__item--for-salon">';
-      echo '<a class="display__none--sm c-footernav__button ' . $class_name_reserve . '" href="' . esc_url($url) . '" target="_blank" rel="noopener noreferrer">';
+      echo '<a class="sm:hidden c-footernav__button ' . $class_name_reserve . '" href="' . esc_url($url) . '" target="_blank" rel="noopener noreferrer">';
       echo '<span>予約する</span>';
       echo '<svg class="c-footernav__button--icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path clip-rule="evenodd" fill-rule="evenodd" d="M6.75 2.25A.75.75 0 017.5 3v1.5h9V3A.75.75 0 0118 3v1.5h.75a3 3 0 013 3v11.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V7.5a3 3 0 013-3H6V3a.75.75 0 01.75-.75zm13.5 9a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5z"></path></svg>';
       echo '</a>';
-      echo '<a class="display__none display__block--sm c-footernav__button--reserve ' . $class_name_reserve . '" href="' . esc_url($url) . '" target="_blank" rel="noopener noreferrer">';
+      echo '<a class="hidden sm:block c-footernav__button--reserve ' . $class_name_reserve . '" href="' . esc_url($url) . '" target="_blank" rel="noopener noreferrer">';
       echo '<div class="c-footernav__button--reserve-inner">';
       echo $icon_reserve;
       echo '<span>予約する</span>';

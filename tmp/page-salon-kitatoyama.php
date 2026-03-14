@@ -1,7 +1,7 @@
 
 <article class="">
 <div class="c-headline-salon__outer">
-    <div class="l-row--container c-gutter__row jc__start">
+    <div class="l-row--container c-gutter__row justify-start">
       <div class="c-headline-salon__frame js-headline-frame" >
         <p class="c-headline-salon__alphabet"><span class="">GUICHES<br>KITATOYAMA</span></p>
         <div class="c-headline-salon__pic js-headline-pic" >

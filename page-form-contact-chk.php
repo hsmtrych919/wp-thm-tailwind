@@ -233,12 +233,12 @@ if($isSubmit){
 
 <article class="">
 <div class="c-headline__outer">
-    <div class="l-row--container c-gutter__row jc__start">
+    <div class="l-row--container c-gutter__row justify-start">
       <div class="c-headline__frame" >
         <h1 class="c-headline__title c-headline__title--long"><span class="">CONTACT</span></h1>
         <div class="c-headline__detail">
     <p class="">
-    <span class="c-ttl__xsmall clr__3"><span class="clr__1">#</span> 入力内容の確認</span></p>
+    <span class="c-ttl__xsmall text-clr3"><span class="text-clr1">#</span> 入力内容の確認</span></p>
         </div>
       </div>
     </div>
@@ -255,9 +255,9 @@ if($isSubmit){
     </div>
   </div>
   <div class="l-row--container c-gutter__row">
-  <p class="c-col--12 c-col__sm--10 p-entrystep__caption">以下の内容で間違いがなければ、<br class="hide__xs--down">「送信する」ボタンを押してください。</p>
+  <p class="c-col--12 c-col__sm--10 p-entrystep__caption">以下の内容で間違いがなければ、<br class="max-sm:hidden">「送信する」ボタンを押してください。</p>
   </div>
-  <div class="l-row--container mt__1_5 mt__2--md"><div class="c-col--12 c-col__md--10 c-col__lg--9 c-col__xl--8">
+  <div class="l-row--container mt-1.5 md:mt-2"><div class="c-col--12 c-col__md--10 c-col__lg--9 c-col__xl--8">
     <div class="p-form">
 
 <div class="form_confirm">
@@ -360,7 +360,7 @@ if( isset( $inputInquiry ) && $inputInquiry !== "" ){
 ?>
 <div class="p-form__group--confirm" >
 <div class="p-form__ttl--confirm"><span class="c-form__ttl">お問い合わせ内容</span></div>
-<div class="p-form__input--confirm fz__16">
+<div class="p-form__input--confirm text-fz16 2xl:text-fz17">
 <?php
   // textareaの改行をhtmlに反映。取得データには加工無しで反映されている
   echo nl2br($inputInquiry);
@@ -377,22 +377,22 @@ if( isset( $inputInquiry ) && $inputInquiry !== "" ){
   <?php if(!$tokenValidateError): ?>
     <input type="hidden" name="recaptchaToken" id="recaptchaToken">
     <input type="hidden" name="input_submit" value="isSubmit">
-    <div class="c-col--12 mt__3 mt__4--md"><input type="submit" value="送信する" class="p-submit__button"></div>
+    <div class="c-col--12 mt-3 md:mt-4"><input type="submit" value="送信する" class="p-submit__button"></div>
   <?php endif; ?>
-    <div class="c-col--12 mt__3 mt__4--md"><input type="button" value="入力画面に戻る" onClick="history.back()" class="p-submit__button--back"></div>
+    <div class="c-col--12 mt-3 md:mt-4"><input type="button" value="入力画面に戻る" onClick="history.back()" class="p-submit__button--back"></div>
 <?php } else if ($emailValidationError) { ?>
-  <div class="c-col--12 mt__3 mt__4--md">
-    <p class="tac__sm fz__14 clr__alert">メールアドレスの形式が正しくありません。<br>お手数おかけしますが正しいメールアドレスを入力してください。</p>
+  <div class="c-col--12 mt-3 md:mt-4">
+    <p class="sm:text-center text-fz14 2xl:text-fz15 text-red">メールアドレスの形式が正しくありません。<br>お手数おかけしますが正しいメールアドレスを入力してください。</p>
   </div>
-  <div class="c-col--12 mt__3 mt__4--md">
-  <a class="p-submit__button--back fz__16" href='<?php echo home_url('/form-contact'); ?>'>フォーム入力に戻る</a>
+  <div class="c-col--12 mt-3 md:mt-4">
+  <a class="p-submit__button--back text-fz16 2xl:text-fz17" href='<?php echo home_url('/form-contact'); ?>'>フォーム入力に戻る</a>
   </div>
 <?php } else { ?>
-  <div class="c-col--12 mt__3 mt__4--md">
-    <p class="tac__sm fz__14">申し訳ございません。プログラムによりスパムの疑いが検出されました。<br>お手数おかけしますがフォームの再入力をお願いいたします。</p>
+  <div class="c-col--12 mt-3 md:mt-4">
+    <p class="sm:text-center text-fz14 2xl:text-fz15">申し訳ございません。プログラムによりスパムの疑いが検出されました。<br>お手数おかけしますがフォームの再入力をお願いいたします。</p>
   </div>
-  <div class="c-col--12 mt__3 mt__4--md">
-  <a class="p-submit__button--back fz__16" href='<?php echo home_url('/form-contact'); ?>'>フォーム入力に戻る</a>
+  <div class="c-col--12 mt-3 md:mt-4">
+  <a class="p-submit__button--back text-fz16 2xl:text-fz17" href='<?php echo home_url('/form-contact'); ?>'>フォーム入力に戻る</a>
   </div>
 <?php } ?>
 

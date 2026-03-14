@@ -11,7 +11,7 @@
   <?php endif; ?>
 <!-- /post -->
 
-    <div class="l-row--container c-gutter__row mt__5">
+    <div class="l-row--container c-gutter__row mt-5">
       <?php fn_pagination($wp_query); ?>
     </div>
     </div>

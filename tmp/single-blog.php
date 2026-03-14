@@ -13,7 +13,7 @@
     <div class="p-post-single__info">
       <p class="p-post-single__date"><time datetime="<?php the_time('y-m-d'); ?>"><?php the_time('Y/m/d') ?></time></p>
       <div class="p-post-single__category--title">カテゴリー :</div>
-      <p class="display__inline-block">
+      <p class="inline-block">
 <?php
   $category = get_the_category();
   if ( $category[0] ) {
@@ -34,7 +34,7 @@
 
 
 
-  <div class="p-related mt__4 mt__5--md">
+  <div class="p-related mt-4 md:mt-5">
   <div class="p-ttl__widget">
     <p class="c-ttl__widget--caption">Related Posts</p>
     <h2 class="c-ttl__widget--bar"><span class="c-ttl__widget">おすすめ関連記事</span></h2>
@@ -123,7 +123,7 @@ $query = new WP_Query($args); ?>
       </article>
   <?php endwhile;?>
     <?php else:?>
-    <p class="mt__2">関連記事はありませんでした</p>
+    <p class="mt-2">関連記事はありませんでした</p>
   <?php endif; wp_reset_postdata(); ?>
   </div>
   <!-- /.relatedWidget -->

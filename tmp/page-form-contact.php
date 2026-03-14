@@ -8,12 +8,12 @@ $token = bin2hex($randomNumber);
 
 <article class="">
 <div class="c-headline__outer">
-    <div class="l-row--container c-gutter__row jc__start">
+    <div class="l-row--container c-gutter__row justify-start">
       <div class="c-headline__frame" >
         <h1 class="c-headline__title c-headline__title--long"><span class="">CONTACT</span></h1>
         <div class="c-headline__detail">
     <p class="">
-    <span class="c-ttl__xsmall clr__3"><span class="clr__1">#</span> お問合せフォーム</span></p>
+    <span class="c-ttl__xsmall text-clr3"><span class="text-clr1">#</span> お問合せフォーム</span></p>
         </div>
       </div>
     </div>
@@ -21,10 +21,10 @@ $token = bin2hex($randomNumber);
 
   <div class="l-container">
   <div class="l-row--container c-gutter__row">
-    <p class="c-col--12 c-col__sm--10  c-typ clr__1 tac__sm">本フォームはお問い合わせ専用でございます。<br>ご予約は各ページの予約ボタンからお願いいたします。</p>
+    <p class="c-col--12 c-col__sm--10  c-typ text-clr1 sm:text-center">本フォームはお問い合わせ専用でございます。<br>ご予約は各ページの予約ボタンからお願いいたします。</p>
   </div>
 
-  <div class="l-row--container mt__3 mt__4--md">
+  <div class="l-row--container mt-3 md:mt-4">
     <div class="c-col--12 c-col__md--10 c-col__lg--9 c-col_xl--8">
       <ul class="p-entrystep">
       <?php component_listItemEntrystep('input', '01', '入力画面', 'is-active'); ?>
@@ -35,7 +35,7 @@ $token = bin2hex($randomNumber);
     </div>
   </div>
   <div class="l-row--container c-gutter__row">
-    <p class="c-col--12 c-col__sm--10 p-entrystep__caption">下記項目にご入力いただき<br class="hide__sm--up">「内容を確認する」ボタンを押してください。<br class="hide__sm--up">ご確認後、入力内容を送信します。</p>
+    <p class="c-col--12 c-col__sm--10 p-entrystep__caption">下記項目にご入力いただき<br class="sm:hidden">「内容を確認する」ボタンを押してください。<br class="sm:hidden">ご確認後、入力内容を送信します。</p>
   </div>
 
   <div class="l-row--container"><div class="c-col--12 c-col__md--10 c-col__lg--9 c-col_xl--8">
@@ -95,7 +95,7 @@ echo '</label></span>';
 <div class="p-form__input">
 <input type="email" name="input_email" id="form_email" class="p-form__control--input" size="40" maxlength="50" value="" placeholder="メールアドレス" >
 <p></p>
-<p class="mt__075 mt__1--md fz__14">※必ず半角英数でご入力ください。</p>
+<p class="mt-0.75 md:mt-1 text-fz14 2xl:text-fz15">※必ず半角英数でご入力ください。</p>
 <!-- <p class="p-form__group--caution">※携帯電話のメールアドレスも可</p> -->
 </div>
 </div>
@@ -107,7 +107,7 @@ echo '</label></span>';
 <div class="p-form__input">
   <input type="hidden" class="p-country-name" value="Japan">
   <input type="tel" id="form_postalcode" name="input_postalcode" size="16" maxlength="16" class="p-form__control--input-half p-postal-code" placeholder="000-0000" />
-  <p class="mt__075 mt__1--md fz__14">※ハイフンは不要です。 <br class="">※郵便番号に応じた住所が以下に自動入力されます。</p>
+  <p class="mt-0.75 md:mt-1 text-fz14 2xl:text-fz15">※ハイフンは不要です。 <br class="">※郵便番号に応じた住所が以下に自動入力されます。</p>
 </div>
 </div>
 
@@ -128,9 +128,9 @@ echo '<option value="'.$region.'">'.$region.'</option>';
 }
 ?>
   </select>
-  <p class="mt__075 mt__1--md p-form__address--caption">市区町村</p>
+  <p class="mt-0.75 md:mt-1 p-form__address--caption">市区町村</p>
   <input type="text" id="form_add-city" name="input_city" class="p-form__control--input p-locality p-street-address" placeholder="市区町村" />
-  <p class="mt__075 mt__1--md p-form__address--caption">以降の住所</p>
+  <p class="mt-0.75 md:mt-1 p-form__address--caption">以降の住所</p>
   <input type="text" id="form_add-extend" name="input_extendadd" class="p-form__control--input p-extended-address" placeholder="以降の住所" />
 </div>
 </div>
@@ -152,7 +152,7 @@ echo '<option value="'.$region.'">'.$region.'</option>';
 
 
 
-<div class="mt__3 mt__4--md tac" id="form__group--submit">
+<div class="mt-3 md:mt-4 text-center" id="form__group--submit">
 <input type="submit" value="内容を確認する" class="p-submit__button" id="form_submit" />
 </div>
 

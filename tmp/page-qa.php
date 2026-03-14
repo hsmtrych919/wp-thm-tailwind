@@ -1,6 +1,6 @@
 <article class="">
   <div class="c-headline-pic__outer">
-    <div class="l-row--container c-gutter__row jc__start">
+    <div class="l-row--container c-gutter__row justify-start">
       <div class="c-headline-pic__frame js-headline-frame" >
         <h1 class="c-headline-pic__title"><span class="c-headline-pic__typ--for-gsap">Q&A</span></h1>
         <div class="c-headline-pic__pic js-headline-pic" >
@@ -13,7 +13,7 @@
       </div>
     </div>
   </div>
-  <div class="mt__7 mt__8--md">
+  <div class="mt-7 md:mt-8">
 
     <div class="l-row--container c-gutter__row">
       <div class="c-col--12 c-col__md--12">
@@ -80,7 +80,7 @@ $content = array(
 foreach ($content as $qa) {
     echo '<div class="p-qa__frame">';
     echo '<p class="p-qa__question">' . $qa['question'] . '</p>';
-    echo '<p class="p-qa__answer"><span class="clr__1">A. </span>' . wp_kses_post($qa['answer']) . '</p>';
+    echo '<p class="p-qa__answer"><span class="text-clr1">A. </span>' . wp_kses_post($qa['answer']) . '</p>';
     echo '</div>';
 }
 ?>

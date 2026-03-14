@@ -72,12 +72,12 @@
 // -----------------------------------------------------------------
 
 // @use "utility/_blockquote";
-@use "utility/_display";
-@use "utility/_flex";
-@use "utility/_font";
-@use "utility/_margin";
-@use "utility/_padding";
-@use "utility/_responsive-embed";
+// @use "utility/_display";       // Phase 2: Tailwind utility に移行
+// @use "utility/_flex";          // Phase 2: Tailwind utility に移行
+// @use "utility/_font";          // Phase 2: Tailwind utility に移行 (strong → @layer base)
+// @use "utility/_margin";        // Phase 2: Tailwind utility に移行
+// @use "utility/_padding";       // Phase 2: PHP 未使用、削除
+// @use "utility/_responsive-embed"; // Phase 2: youtube → @layer components に移動
 // @use "utility/_tables";
-@use "utility/_visibility";
+// @use "utility/_visibility";    // Phase 2: Tailwind utility に移行
 

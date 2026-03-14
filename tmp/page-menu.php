@@ -1,6 +1,6 @@
 <article class="">
   <div class="c-headline-pic__outer">
-    <div class="l-row--container c-gutter__row jc__start">
+    <div class="l-row--container c-gutter__row justify-start">
       <div class="c-headline-pic__frame js-headline-frame" >
         <h1 class="c-headline-pic__title"><span class="c-headline-pic__typ--for-gsap">MENU</span></h1>
         <div class="c-headline-pic__pic js-headline-pic" >
@@ -9,14 +9,14 @@
         </div>
         <div class="c-headline-pic__detail c-headline-pic__typ--for-gsap">
           <p class="c-typ">メニューの価格は全店共通です。すべてのお客様が至高のひとときを過ごしていただけるよう上質な技術をご提供いたします。</p>
-          <p class="fz__14 clr__gray mt__1">※価格は全て税込表示です。</p>
+          <p class="text-fz14 2xl:text-fz15 text-gray-700 mt-1">※価格は全て税込表示です。</p>
         </div>
       </div>
     </div>
   </div>
 
   <!-- カット -->
-  <section class=" mt__7 mt__8--md">
+  <section class=" mt-7 md:mt-8">
     <?php get_template_part('tmp/content/menu', 'cut'); ?>
   </section>
 

@@ -7,7 +7,7 @@
 
   <nav class="l-nav p-nav" id="grobal__nav">
     <ul class="p-nav__list">
-      <li class="p-nav__item hide__lg--up"><a class="c-nav__button" href='<?php echo home_url(''); ?>'>ホーム</a></li>
+      <li class="p-nav__item lg:hidden"><a class="c-nav__button" href='<?php echo home_url(''); ?>'>ホーム</a></li>
       <li class="p-nav__item"><a class="c-nav__button" href='<?php echo home_url('/message'); ?>'>メッセージ</a></li>
       <li class="p-nav__item p-nav__item--salon js-nav--dropdown" ><a class="c-nav__button" href='<?php echo home_url('/salon'); ?>'>サロン
 <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="p-nav__item--salon-icon">
@@ -23,7 +23,7 @@
         </ul>
       </li>
       <li class="p-nav__item"><a class="c-nav__button" href='<?php echo home_url('/menu'); ?>'>メニュー</a></li>
-      <li class="p-nav__item hide__lg--up"><a class="c-nav__button" href='<?php echo home_url('/campaign'); ?>'>キャンペーン</a></li>
+      <li class="p-nav__item lg:hidden"><a class="c-nav__button" href='<?php echo home_url('/campaign'); ?>'>キャンペーン</a></li>
       <li class="p-nav__item"><a class="c-nav__button" href='<?php echo home_url('/staff'); ?>'>スタッフ</a></li>
       <li class="p-nav__item"><a class="c-nav__button" href='<?php echo home_url('/style'); ?>'>スタイル</a></li>
       <li class="p-nav__item"><a class="c-nav__button" href='<?php echo home_url('/company'); ?>'>会社概要</a></li>

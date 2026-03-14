@@ -16,7 +16,7 @@ function component_listItemService($args) {
             </p>
             <div class="p-service__content">
                 <h2 class="p-service__content--title">
-                    <span class="clr__gray"><?php echo $number; ?>.</span>
+                    <span class="text-gray-700"><?php echo $number; ?>.</span>
                     <?php echo $title; ?>
                 </h2>
                 <p class="p-service__content--detail">
