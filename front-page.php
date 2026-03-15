@@ -63,7 +63,7 @@
     <div class="l-split__thumbnail--left">
     <img src='<?php echo get_template_directory_uri(); ?>/img/a_.jpg' alt="">
     </div>
-    <div class="l-split__content--right l-split__content--pt">
+    <div class="l-split__content--right">
       <p class="c-typ">この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。</p>
     </div>
   </div>

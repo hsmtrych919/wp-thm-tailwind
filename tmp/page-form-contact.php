@@ -25,7 +25,7 @@ $token = bin2hex($randomNumber);
   </div>
 
   <div class="l-row--container mt-3 md:mt-4">
-    <div class="c-col--12 c-col__md--10 c-col__lg--9 c-col_xl--8">
+    <div class="c-col--12 c-col__md--10 c-col__lg--9 c-col__xl--8">
       <ul class="p-entrystep">
       <?php component_listItemEntrystep('input', '01', '入力画面', 'is-active'); ?>
       <?php component_listItemEntrystep('confirm', '02', '内容確認'); ?>
@@ -38,7 +38,7 @@ $token = bin2hex($randomNumber);
     <p class="c-col--12 c-col__sm--10 p-entrystep__caption">下記項目にご入力いただき<br class="sm:hidden">「内容を確認する」ボタンを押してください。<br class="sm:hidden">ご確認後、入力内容を送信します。</p>
   </div>
 
-  <div class="l-row--container"><div class="c-col--12 c-col__md--10 c-col__lg--9 c-col_xl--8">
+  <div class="l-row--container"><div class="c-col--12 c-col__md--10 c-col__lg--9 c-col__xl--8">
     <div class="p-form">
 
 <!-- form -->
@@ -163,7 +163,7 @@ echo '<option value="'.$region.'">'.$region.'</option>';
   </div></div>
 
   <div class="l-row--container">
-    <div class="c-col--12 c-col__md--10 c-col__lg--9 c-col_xl--8">
+    <div class="c-col--12 c-col__md--10 c-col__lg--9 c-col__xl--8">
       <?php get_template_part('tmp/tmp', 'form-caution'); ?>
     </div>
   </div>
