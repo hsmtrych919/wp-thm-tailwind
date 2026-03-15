@@ -8,7 +8,7 @@ $title = (is_404()) ? '見つかりません' : 'キーワード未入力' ;
 
 <article class="">
 <div class="c-headline__outer">
-    <div class="l-row--container c-gutter__row">
+    <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
       <div class="c-headline__content" >
         <h1 class=""><span class="c-headline__title c-ttl__large"><?php echo $title ?></span></h1>
         <p class="c-headline__lead">404 not fount</p>
@@ -20,8 +20,8 @@ $title = (is_404()) ? '見つかりません' : 'キーワード未入力' ;
   </div>
 
   <div class="l-container">
-  <div class="l-row--container c-gutter__row">
-    <div class="c-col--12 c-col__sm--8 c-col__lg--7 c-col__xl--6">
+  <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+    <div class="w-full sm:w-8/12 lg:w-7/12 xl:w-6/12">
       <p class="c-typ lg:text-center">
   <?php if ( is_404() ) : ?>
     お探しのページは見つかりませんでした。<br>検索フォームをお試しいただくか、トップページをご覧ください。</p>
@@ -38,7 +38,7 @@ $title = (is_404()) ? '見つかりません' : 'キーワード未入力' ;
   </div>
 
 
-  <div class="l-row--container c-gutter__row mt-8 ">
+  <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 mt-8 ">
     <div class="p-button__wrap">
 <?php
   $args = array(

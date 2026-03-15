@@ -9,16 +9,16 @@ $post_slug = $post_obj->post_name;
 
 <section class="p-salon-info__outer">
 
-<div class="l-row--container c-gutter__row">
-  <div class="c-col--12">
+<div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+  <div class="w-full">
     <h2 class="p-salonlist__title ">
     <span class="c-ttl__small"><span class="text-clr1">#</span> サロン情報</h2>
   </div>
   </div><!-- /.l-row -->
 
-  <div class="l-row--container c-gutter__row p-salon-info__content">
+  <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 p-salon-info__content">
 
-    <div class="c-col--12 c-col__md--12 c-col__lg--7">
+    <div class="w-full md:w-full lg:w-7/12">
       <dl class="p-salon-info__dl">
       <div class="p-salon-info__dl--row">
         <dt class="p-salon-info__dt--first">サロン名</dt>
@@ -37,7 +37,7 @@ $post_slug = $post_obj->post_name;
         <dt>TEL</dt>
         <dd>
       <?php if( is_mobile()) : ?>
-        <div class="l-row ">
+        <div class="flex flex-wrap justify-center ">
             <div class="p-button__wrap">
               <a href="tel:<?php echo esc_attr($data['tel_href']); ?>" class="c-button c-button__tel">
               <?php echo $icon_tel; ?><span>電話する</span>
@@ -148,7 +148,7 @@ $post_slug = $post_obj->post_name;
       </dl>
 
     </div>
-    <div class="c-col--11 c-col__sm--10 c-col__md--11 c-col__lg--5 c-gutter__md--left p-salon-info__map">
+    <div class="w-11/12 sm:w-10/12 md:w-11/12 lg:w-5/12 md:pl-gutter-3 p-salon-info__map">
       <div id="c-gmap" class="c-gmap"><iframe src="<?php echo esc_url($data['map_src']) ?>" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe></div>
       <p class="c-gmap__link--wrap"><a href="<?php echo esc_url($data['map_link']) ?>" target="_blank" rel=”noopener noreferrer” class="c-gmap__link">Google Map で開く</a></p>
     </div>
@@ -156,7 +156,7 @@ $post_slug = $post_obj->post_name;
 
     </div>
 
-<div class="l-row--container c-gutter__row mt-5 md:mt-6">
+<div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 mt-5 md:mt-6">
   <div class="c-button-2columns__frame--button">
     <div class="c-button-2columns__button">
 <?php

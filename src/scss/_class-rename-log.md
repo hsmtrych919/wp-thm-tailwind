@@ -152,31 +152,69 @@
 
 ---
 
-## Phase 3: グリッド・レイアウト層（⏳ 未着手）
+## Phase 3: グリッド・レイアウト層（✅ 完了）
+
+### l-row 系
+
+| 旧クラス | 新クラス | 備考 | ステータス |
+|---|---|---|---|
+| `l-row--container` | `container mx-auto flex flex-wrap justify-center` | justify-start/between がある行では justify-center を省略 | ✅ |
+| `l-row` | `flex flex-wrap justify-center` | 同上 | ✅ |
 
 ### c-col 系（ベース幅）
 
 | 旧クラス | 新クラス | ステータス |
 |---|---|---|
-| （Phase 3 開始時に記入） | | |
+| `c-col--12` | `w-full` | ✅ |
+| `c-col--11` | `w-11/12` | ✅ |
 
 ### c-col 系（レスポンシブ）
 
 | 旧クラス | 新クラス | ステータス |
 |---|---|---|
-| （Phase 3 開始時に記入） | | |
+| `c-col__sm--4` | `sm:w-4/12` | ✅ |
+| `c-col__sm--5` | `sm:w-5/12` | ✅ |
+| `c-col__sm--7` | `sm:w-7/12` | ✅ |
+| `c-col__sm--8` | `sm:w-8/12` | ✅ |
+| `c-col__sm--10` | `sm:w-10/12` | ✅ |
+| `c-col__sm--12` | `sm:w-full` | ✅ |
+| `c-col__md--4` | `md:w-4/12` | ✅ |
+| `c-col__md--8` | `md:w-8/12` | ✅ |
+| `c-col__md--10` | `md:w-10/12` | ✅ |
+| `c-col__md--11` | `md:w-11/12` | ✅ |
+| `c-col__md--12` | `md:w-full` | ✅ |
+| `c-col__lg--3` | `lg:w-3/12` | ✅ |
+| `c-col__lg--4` | `lg:w-4/12` | ✅ |
+| `c-col__lg--5` | `lg:w-5/12` | ✅ |
+| `c-col__lg--7` | `lg:w-7/12` | ✅ |
+| `c-col__lg--8` | `lg:w-8/12` | ✅ |
+| `c-col__lg--9` | `lg:w-9/12` | ✅ |
+| `c-col__lg--10` | `lg:w-10/12` | ✅ |
+| `c-col__xl--6` | `xl:w-6/12` | ✅ |
+| `c-col__xl--8` | `xl:w-8/12` | ✅ |
+| `c-col__xl--9` | `xl:w-9/12` | ✅ |
+| `c-col__xl--10` | `xl:w-10/12` | ✅ |
 
-### c-grid 系
+### l-grid / c-grid 系
 
 | 旧クラス | 新クラス | ステータス |
 |---|---|---|
-| （Phase 3 開始時に記入） | | |
+| `l-grid` | `grid gap-x-grid-gutter` | ✅ |
+| `c-grid--1` | `grid-cols-1` | ✅ |
+| `c-grid__sm--1` | `sm:grid-cols-1` | ✅ |
+| `c-grid__sm--2` | `sm:grid-cols-2` | ✅ |
+| `c-grid__md--2` | `md:grid-cols-2` | ✅ |
+| `c-grid__lg--3` | `lg:grid-cols-3` | ✅ |
 
-### c-gutter 方向指定
+### c-gutter 系
 
 | 旧クラス | 新クラス | ステータス |
 |---|---|---|
-| （Phase 3 開始時に記入） | | |
+| `c-gutter__row` | `px-gutter-row xl:px-0` | ✅ |
+| `c-gutter__post` | `md:px-gutter-row xl:px-0` | ✅ |
+| `c-gutter__sm--left` | `sm:pl-gutter-2 md:pl-gutter-3` | ✅ |
+| `c-gutter__sm--right` | `sm:pr-gutter-2 md:pr-gutter-3` | ✅ |
+| `c-gutter__md--left` | `md:pl-gutter-3` | ✅ |
 
 ---
 
@@ -194,3 +232,4 @@
 | 2026-02-26 | — | 初版作成（テンプレートのみ） |
 | 2026-03-14 | 2 | Phase 2 全変換表を転記（ステータスは ⏳ 未着手） |
 | 2026-03-14 | 2 | Phase 2 全 Step 完了。全ステータスを ✅ に更新 |
+| 2026-03-15 | 3 | Phase 3 全変換表を記入。全ステータスを ✅ に更新 |

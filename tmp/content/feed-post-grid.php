@@ -1,6 +1,6 @@
 
 
-    <ul class="l-grid c-grid--1 c-grid__sm--2">
+    <ul class="grid gap-x-grid-gutter grid-cols-1 sm:grid-cols-2">
 
 <!-- post -->
 <?php

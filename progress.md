@@ -1,6 +1,6 @@
 # 移行進捗
 
-## 現在: Phase 2（ユーティリティ層の移行）— 完了 → Phase 3 へ進む
+## 現在: Phase 3（グリッド・レイアウト層の移行）— 完了 → Phase 4 へ進む
 
 ---
 
@@ -92,6 +92,64 @@
 
 ---
 
-## Phase 3〜5: 未着手
+## Phase 3: グリッド・レイアウト層の移行
 
-Phase 3 以降の詳細は開始時に追記する。
+### 状態: 完了（2026-03-15）
+
+### 実施した作業
+
+- [x] Step 3-1: `tailwind.config.js` の確認（gutter padding, gap, container — 全て定義済み）
+- [x] Step 3-2: PHP クラス名置換（l-row 系）: `l-row--container` → `container mx-auto flex flex-wrap justify-center`, `l-row` → `flex flex-wrap justify-center`
+  - l-row 系は行単位で判定。justify-start がある行では justify-center を省略、md:justify-between がある行では justify-center を維持
+  - c-replace__flex-start / c-replace__flex-end を持つ行は justify-center を含めて置換（コンポーネントが sm+ で上書き）
+- [x] Step 3-3: PHP クラス名置換（c-col 系）: `c-col--12` → `w-full`, `c-col__BP--N` → `BP:w-N/12`
+- [x] Step 3-4: PHP クラス名置換（l-grid / c-grid 系）: `l-grid` → `grid gap-x-grid-gutter`, `c-grid--N` → `grid-cols-N`, `c-grid__BP--N` → `BP:grid-cols-N`
+- [x] Step 3-5: PHP クラス名置換（c-gutter 系）: `c-gutter__row` → `px-gutter-row xl:px-0`, `c-gutter__post` → `md:px-gutter-row xl:px-0`, 方向指定 gutter も置換
+- [x] Step 3-6: SCSS ファイル更新 + 削除
+  - `style.scss` から `@use "layout/_grid"` と `@use "component/_gutter"` をコメントアウト
+  - `component/_gutter.scss` を削除
+  - `layout/_grid.scss` は `make-col` mixin のみ残存（`component/_style.scss` と `project/_style.scss` が `@use` で参照しているため、Phase 4 で解消予定）
+- [x] Step 3-7: `global/_gutter.scss` が維持されていることを確認
+- [x] `_class-rename-log.md` を更新（Phase 3 全変換表、全ステータス ✅）
+
+### 計画書
+
+- `phase3-plan.md` — Phase 3 の詳細計画・変換表・検証計画
+
+### 検証結果
+
+| # | 条件 | 結果 |
+|---|---|---|
+| 1 | ビルドが通る | PASS — CSS pipeline (prd:scss → prd:concat → prd:postcss) 成功 |
+| 2 | 旧クラス (l-row, c-col, l-grid, c-grid, c-gutter) が PHP から消えている | PASS — grep 結果ゼロ（HTML コメント 2 件のみ残存） |
+| 3 | 旧クラスが CSS 出力から消えている | PASS — css/style.css に旧クラス定義なし |
+| 4 | 新 Tailwind utility が CSS に生成されている | PASS — flex-wrap, justify-center, w-full, grid-cols-*, gap, gutter-row 全て確認 |
+| 5 | justify 系が正しく処理されている | PASS — justify-start 行に justify-center 混在なし、md:justify-between 行に justify-center 維持、c-replace__flex-* 行に justify-center 含む |
+| 6 | global/_gutter.scss が維持されている | PASS — ファイル存在、global/_index.scss から参照あり |
+
+### 代表テンプレート照合
+
+| テンプレート | 確認ポイント | 結果 |
+|---|---|---|
+| front-page.php L41 | `container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0` | 一致 |
+| front-page.php L42 | `w-full md:w-10/12 xl:w-9/12 flex flex-wrap justify-center` | 一致 |
+| front-page.php L165 | `container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0` | 一致 |
+| front-page.php L97 | `grid gap-x-grid-gutter grid-cols-1 sm:grid-cols-1 lg:grid-cols-3` | 一致 |
+| footer.php L64 | `container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 md:justify-between` | 一致 |
+| page-form-contact.php L28 | `w-full md:w-10/12 lg:w-9/12 xl:w-8/12` | 一致 |
+| page-recruit.php L16 | `w-full sm:w-4/12 md:w-4/12 lg:w-3/12 sm:pl-gutter-2 md:pl-gutter-3` | 一致 |
+
+### 注意事項
+
+- `layout/_grid.scss` は完全削除ではなく `make-col` mixin のみ残したスタブに変更。`component/_style.scss` と `project/_style.scss` が `@use "../layout/grid"` で参照しているため。Phase 4 のコンポーネント層移行で解消する
+- `c-col` の `flex: 0 0 auto; min-height: 1px` は明示的に追加していない（未確定事項 #1 の選択肢 B）。`w-N/12` のみで旧挙動が再現されると判断
+
+### 次に進める状態か
+
+**Yes** — Phase 4（コンポーネント・プロジェクト層の移行）に着手可能
+
+---
+
+## Phase 4〜5: 未着手
+
+Phase 4 以降の詳細は開始時に追記する。

@@ -1,5 +1,5 @@
-    <div class="l-row--container c-gutter__row justify-start">
-    <div class="c-col--12 c-col__md--12 c-col__xl--10">
+    <div class="container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
+    <div class="w-full md:w-full xl:w-10/12">
 
 
     <ul class="p-sitemap__list">
