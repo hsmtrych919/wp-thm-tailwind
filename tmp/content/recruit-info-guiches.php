@@ -41,7 +41,7 @@ echo '</div>';
 
       <p>受付・面接は桃花台店まで</p>
       <?php if( is_mobile()) : ?>
-        <div class="l-row mt-1">
+        <div class="flex flex-wrap justify-center mt-1">
             <div class="p-button__wrap">
               <a href="tel:<?php echo esc_attr($dataTokadai['tel_href']); ?>" class="c-button c-button__tel">
               <?php echo $icon_tel; ?><span>電話する</span>

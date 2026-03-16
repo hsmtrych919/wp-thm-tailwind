@@ -1,6 +1,6 @@
 <article class="">
 <div class="c-headline__outer">
-    <div class="l-row--container justify-start">
+    <div class="container mx-auto flex flex-wrap justify-start">
       <div class="c-headline__content" >
         <h1 class="c-ttl__small"><span class="text-clr1">プライバシーポリシー</span></h1>
       </div>
@@ -10,8 +10,8 @@
 
 
   <div class="l-container">
-    <div class="l-row--container c-gutter__row justify-start">
-    <div class="c-col--12 c-col__md--10 c-col__lg--9 c-col__xl--8">
+    <div class="container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
+    <div class="w-full md:w-10/12 lg:w-9/12 xl:w-8/12">
     <p class="c-typ">XXX（以下 弊社）は、弊社webサイト（以下 当サイト）を閲覧されるお客様の個人情報について、以下のとおりのポリシーを定めております。</p>
 
       <div class="c-typ__s text-clr1 mt-4">個人情報の取得</div>

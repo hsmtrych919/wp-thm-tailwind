@@ -1,6 +1,6 @@
-  <div class="l-row--container c-gutter__post">
+  <div class="container mx-auto flex flex-wrap justify-center md:px-gutter-row xl:px-0">
 
-    <div class="c-col--12 c-col__md--8 l-blog__main">
+    <div class="w-full md:w-8/12 l-blog__main">
 <!-- post -->
   <?php if ( have_posts() ) : ?>
     <?php while ( have_posts() ) : the_post(); ?>
@@ -11,11 +11,11 @@
   <?php endif; ?>
 <!-- /post -->
 
-    <div class="l-row--container c-gutter__row mt-5">
+    <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 mt-5">
       <?php fn_pagination($wp_query); ?>
     </div>
     </div>
-    <div class="c-col--12 c-col__md--4 l-blog__sidebar">
+    <div class="w-full md:w-4/12 l-blog__sidebar">
 <?php if( !is_search() ) : ?>
       <?php get_sidebar( $name = 'search' ) ?>
 <?php endif; ?>

@@ -1,2 +1,36 @@
 @import "tailwindcss" important;
 @config "../tailwind.config.js";
+
+/* ---------------------------------------------------------------
+ * container ユーティリティ
+ * 出典: _variables.scss L37-41 ($container-max-*)
+ * 計画書 §7 / Step 3-1 の BP→max-width 対応を単一定義で実現する。
+ *
+ * Tailwind v4 の built-in container は screens 値をそのまま max-width に
+ * 使うため、breakpoint と異なる max-width（例: 811px→960px）を設定できない。
+ * v3 compat の container.screens を併用すると二重定義になる。
+ * @source not inline で built-in を抑制し、@layer utilities で定義する。
+ * --------------------------------------------------------------- */
+@source not inline("container");
+
+@layer utilities {
+  .container {
+    margin-inline: auto !important;
+    width: 100% !important;
+    @media (width >= 576px) {
+      max-width: 540px !important;
+    }
+    @media (width >= 811px) {
+      max-width: 960px !important;
+    }
+    @media (width >= 1025px) {
+      max-width: 1152px !important;
+    }
+    @media (width >= 1280px) {
+      max-width: 1200px !important;
+    }
+    @media (width >= 1366px) {
+      max-width: 1260px !important;
+    }
+  }
+}

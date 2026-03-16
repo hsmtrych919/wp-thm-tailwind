@@ -1,6 +1,6 @@
 <article class="">
   <div class="c-headline-pic__outer">
-    <div class="l-row--container c-gutter__row justify-start">
+    <div class="container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
       <div class="c-headline-pic__frame js-headline-frame" >
         <h1 class="c-headline-pic__title"><span class="c-headline-pic__typ--for-gsap">MENU</span></h1>
         <div class="c-headline-pic__pic js-headline-pic" >

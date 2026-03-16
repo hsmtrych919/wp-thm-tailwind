@@ -5,7 +5,7 @@ $notice_all = '<p class="text-fz14 2xl:text-fz15 text-gray-700 mt-1">※価格�
 
 <article class="">
   <div class="c-headline-pic__outer">
-    <div class="l-row--container c-gutter__row justify-start">
+    <div class="container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
       <div class="c-headline-pic__frame js-headline-frame" >
         <h1 class="c-headline-pic__title c-headline-pic__title--long"><span class="c-headline-pic__typ--for-gsap">CAMPAIGN</span></h1>
         <div class="c-headline-pic__pic js-headline-pic" >
@@ -20,15 +20,15 @@ $notice_all = '<p class="text-fz14 2xl:text-fz15 text-gray-700 mt-1">※価格�
   </div>
 
   <section class=" mt-6">
-      <div class="l-row--container c-gutter__row justify-between">
+      <div class="container mx-auto flex flex-wrap justify-between px-gutter-row xl:px-0">
         <div class="p-campaign__content">
 
-        <div class="l-row">
-          <div class="c-col--12">
+        <div class="flex flex-wrap justify-center">
+          <div class="w-full">
             <p class=""><span class="c-ttl__small text-clr3"><span class="text-clr1">#</span> スペシャルチョイスメニュー</span></p>
           </div>
         </div>
-            <div class="l-row justify-start mt-2">
+            <div class="flex flex-wrap justify-start mt-2">
         <ul class="p-campaign__list">
             <li>
               <div class="p-campaign__item">
@@ -51,12 +51,12 @@ $notice_all = '<p class="text-fz14 2xl:text-fz15 text-gray-700 mt-1">※価格�
           </li>
           </ul>
             </div>
-        <div class="l-row mt-5">
-          <div class="c-col--12">
+        <div class="flex flex-wrap justify-center mt-5">
+          <div class="w-full">
             <p class=""><span class="c-ttl__small text-clr3"><span class="text-clr1">#</span> 至高シリーズ</span></p>
           </div>
         </div>
-        <div class="l-row justify-start mt-2">
+        <div class="flex flex-wrap justify-start mt-2">
         <ul class="p-campaign__list">
         <?php
 $campaigns = array(

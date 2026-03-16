@@ -17,16 +17,12 @@ module.exports = {
 
     // --- container ---
     // 出典: _variables.scss L37-41 ($container-max-*)
-    container: {
-      center: true,
-      screens: {
-        sm: '540px',
-        md: '960px',
-        lg: '1152px',
-        xl: '1200px',
-        '2xl': '1260px',
-      },
-    },
+    // 計画書 §7 / Step 3-1: container の max-width を BP 別に定義。
+    // Tailwind v4 では v3 compat の container.screens が二重定義を生成するため、
+    // tailwind-base.css 側で @source not inline("container") + @layer utilities
+    // による単一定義に移行した。BP→max-width 対応は計画書と同一:
+    //   sm(576px)→540px, md(811px)→960px, lg(1025px)→1152px,
+    //   xl(1280px)→1200px, 2xl(1366px)→1260px
 
     // --- colors ---
     // 出典: _variables-color.scss → CSS 変数参照

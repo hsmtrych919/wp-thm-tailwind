@@ -61,7 +61,7 @@ $salonPageSlugs = array(
 
 <?php if ( $isContactPage ): ?>
   <footer class="l-footer  p-footer">
-    <div class="l-row--container c-gutter__row md:justify-between">
+    <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 md:justify-between">
       <div class="c-footer__info c-footer__info--alone">
       <?php echo $logo_element . $message_element . $copy_element; ?>
       </div>
@@ -69,7 +69,7 @@ $salonPageSlugs = array(
   </footer>
 <?php else : ?>
   <footer class="l-footer  p-footer c-footer--have-footernavi">
-    <div class="l-row--container c-gutter__row md:justify-between">
+    <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 md:justify-between">
       <div class="c-footer__info">
       <?php echo $logo_element . $message_element . $copy_element; ?>
       </div>

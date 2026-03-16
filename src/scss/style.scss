@@ -19,7 +19,7 @@
 // Layout
 // -----------------------------------------------------------------
 
-@use "layout/_grid";
+// @use "layout/_grid";           // Phase 3: Tailwind utility に移行
 @use "layout/_content";
 @use "layout/_header" as l-header;
 @use "layout/_footer" as l-footer;
@@ -35,7 +35,7 @@
 // @use "component/wp-instagram-feed/_wp-instagram-feed";
 @use "component/scroll-hint";
 
-@use "component/_gutter";
+// @use "component/_gutter";       // Phase 3: Tailwind utility に移行
 @use "component/_header" as c-header;
 @use "component/_footer" as c-footer;
 @use "component/_button" as c-button;

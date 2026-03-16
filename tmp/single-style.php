@@ -15,7 +15,7 @@
 
 <article class="" id="post-<?php the_ID(); ?>">
 <div class="c-headline__outer">
-    <div class="l-row--container c-gutter__row justify-start">
+    <div class="container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
       <div class="c-headline__frame" >
         <h1 class="c-headline__title"><span class="">STYLE</span></h1>
         <div class="c-headline__detail">
@@ -28,7 +28,7 @@
   </div>
 
   <div class="p-style__content">
-    <div class="l-row--container c-gutter__row justify-start">
+    <div class="container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
       <div class="p-style__frame">
 
       <div class="p-style__pic">

@@ -1,6 +1,6 @@
 <article class="">
 <div class="c-headline__outer">
-    <div class="l-row--container c-gutter__row justify-start">
+    <div class="container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
       <div class="c-headline__frame" >
         <h1 class="c-headline__title c-headline__title--long"><span class="">SITE MAP</span></h1>
         <div class="c-headline__detail">

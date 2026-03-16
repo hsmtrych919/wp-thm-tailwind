@@ -5,7 +5,7 @@
 
 <article class="mt-9 md:mt-10">
 
-<section class="l-row--container c-gutter__row c-replace__flex-start js-replace-height">
+<section class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 c-replace__flex-start js-replace-height">
   <div class="c-replace__content--left">
     <h2 class="c-ttl__large">c-replace__flex-start</h2>
     <div class="c-replace__pic--right js-replace-pic">
@@ -19,7 +19,7 @@
   </div>
 </section>
 
-<section class="l-row--container c-gutter__row c-replace__flex-end js-replace-height mt-5 ">
+<section class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 c-replace__flex-end js-replace-height mt-5 ">
   <div class="c-replace__content--right">
     <h2 class="c-ttl__large">c-replace__flex-end</h2>
     <div class="c-replace__pic--left js-replace-pic">
@@ -38,9 +38,9 @@
 
 
 <article>
-  <div class="l-row--container c-gutter__row">
-    <div class="c-col--12 c-col__md--10 c-col__xl--9 l-row js-inview__fade--pre">
-      <div class="c-col--12 c-col__sm--7 c-col__md--8 c-gutter__sm--right">
+  <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+    <div class="w-full md:w-10/12 xl:w-9/12 flex flex-wrap justify-center js-inview__fade--pre">
+      <div class="w-full sm:w-7/12 md:w-8/12 sm:pr-gutter-2 md:pr-gutter-3">
         <h2 class="c-ttl__small ">この文章はダミーテキストです。</h2>
         <p class="c-typ__xs">.c-typ__xs / この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。</p>
         <p class="mt-2 md:mt-3 c-typ">.c-typ / この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。</p>
@@ -48,7 +48,7 @@
         <p class="mt-2 md:mt-3 c-typ__m">.c-typ__m / この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。</p>
         <p class="mt-2 md:mt-3 c-typ__l">.c-typ__l / この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。この文章はダミーテキストです。文字サイズや行間などを確認するために入れています。</p>
       </div>
-      <div class="c-col--12 c-col__sm--5 c-col__md--4">
+      <div class="w-full sm:w-5/12 md:w-4/12">
         <img src='<?php echo get_template_directory_uri(); ?>/img/a_.jpg' alt="">
       </div>
     </div>
@@ -92,9 +92,9 @@
 
 
 <article class="test">
-<div class="l-row--container c-gutter__row">
-  <div class="c-col--12 c-col__sm--12 c-col__md--12">
-    <ul class="l-grid c-grid--1 c-grid__sm--1 c-grid__lg--3 c-likepost__list js-fadeup__stagger--list">
+<div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+  <div class="w-full sm:w-full md:w-full">
+    <ul class="grid gap-x-grid-gutter grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 c-likepost__list js-fadeup__stagger--list">
 <?php
 $args = array(
     'link_slug' => 'campaign',
@@ -130,8 +130,8 @@ component_listItemLikepost($args)
 
 <!-- salon -->
 <article class="mt-7 md:mt-8 p-front-salon__outer">
-    <div class="l-row--container c-gutter__row">
-      <div class="c-col--12 c-col__md--12">
+    <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+      <div class="w-full md:w-full">
       <div class="p-front-salon__content">
         <span class="p-front-salon__lead">SALON</span>
         <div class="p-front-salon__pic">
@@ -162,15 +162,15 @@ component_buttonLink($args)
 
 <!-- service -->
 <article class="p-front-service__outer">
-    <div class="l-row--container c-gutter__row justify-start">
-      <div class="c-col--12 c-col__md--10">
+    <div class="container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
+      <div class="w-full md:w-10/12">
       <div class="p-front-service__content">
         <span class="p-front-service__lead">SERVICE</span>
         <h1 class="p-front-service__title"><span class="c-ttl__medium">あなたに満足していただくために </span></h1>
         </div>
       </div>
-      <div class="c-col--12 c-col__md--11 c-col__xl--10">
-          <ul class="l-grid c-grid--1 c-grid__sm--2 c-grid__md--2 p-front-service__list js-fadeup__stagger--list">
+      <div class="w-full md:w-11/12 xl:w-10/12">
+          <ul class="grid gap-x-grid-gutter grid-cols-1 sm:grid-cols-2 md:grid-cols-2 p-front-service__list js-fadeup__stagger--list">
 <?php
 $args = array(
     'number' => '01',
@@ -187,7 +187,7 @@ $args = array(
 
 
       <div class="p-front-service__pic js-fadeup__once"><img src='<?php echo get_template_directory_uri(); ?>/img/a_02.jpg' alt="ギッシュのサロン"></div>
-      <div class="l-row--container c-gutter__row  mt-5">
+      <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0  mt-5">
         <div class="p-button__wrap">
   <?php
   $args = array(
@@ -206,16 +206,16 @@ $args = array(
 
 <!-- menu -->
 <article class="p-front-menu__outer">
-<div class="l-row--container c-gutter__row">
-      <div class="c-col--12">
+<div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+      <div class="w-full">
         <span class="p-front-menu__lead">MENU</span>
         <h1 class="p-front-menu__title"><span class="c-ttl__large">ギッシュこだわりの<br class="sm:hidden">メニュー紹介</span></h1>
       </div>
 </div>
 
-<div class="l-row--container c-gutter__row">
-  <div class="c-col--12 c-col__sm--12 c-col__md--12">
-    <ul class="l-grid c-grid--1 c-grid__sm--1 c-grid__lg--3 p-front-menu__list js-fadeup__stagger--list">
+<div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+  <div class="w-full sm:w-full md:w-full">
+    <ul class="grid gap-x-grid-gutter grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 p-front-menu__list js-fadeup__stagger--list">
 <?php
 $args = array(
     'image_src' => 'b_04.jpg',
@@ -245,7 +245,7 @@ component_listItemMenuIntroduction($args);
   </div>
 </div>
 
-<div class="l-row--container c-gutter__row  mt-5">
+<div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0  mt-5">
         <div class="p-button__wrap">
   <?php
   $args = array(
@@ -264,8 +264,8 @@ component_listItemMenuIntroduction($args);
 
 <!-- staff -->
 <article class="p-front-staff__outer">
-    <div class="l-row--container c-gutter__row">
-      <div class="c-col--12 c-col__md--12">
+    <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+      <div class="w-full md:w-full">
       <div class="p-front-staff__content">
         <span class="p-front-staff__lead">STAFF</span>
             <div class="p-front-staff__pic--frame">

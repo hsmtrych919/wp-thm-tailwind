@@ -233,7 +233,7 @@ if($isSubmit){
 
 <article class="">
 <div class="c-headline__outer">
-    <div class="l-row--container c-gutter__row justify-start">
+    <div class="container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
       <div class="c-headline__frame" >
         <h1 class="c-headline__title c-headline__title--long"><span class="">CONTACT</span></h1>
         <div class="c-headline__detail">
@@ -245,8 +245,8 @@ if($isSubmit){
   </div>
 
   <div class="l-container">
-  <div class="l-row--container">
-  <div class="c-col--12 c-col__md--10 c-col__lg--9 c-col__xl--8">
+  <div class="container mx-auto flex flex-wrap justify-center">
+  <div class="w-full md:w-10/12 lg:w-9/12 xl:w-8/12">
   <ul class="p-entrystep">
       <?php component_listItemEntrystep('input', '01', '入力画面'); ?>
       <?php component_listItemEntrystep('confirm', '02', '内容確認', 'is-active'); ?>
@@ -254,10 +254,10 @@ if($isSubmit){
       </ul>
     </div>
   </div>
-  <div class="l-row--container c-gutter__row">
-  <p class="c-col--12 c-col__sm--10 p-entrystep__caption">以下の内容で間違いがなければ、<br class="max-sm:hidden">「送信する」ボタンを押してください。</p>
+  <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+  <p class="w-full sm:w-10/12 p-entrystep__caption">以下の内容で間違いがなければ、<br class="max-sm:hidden">「送信する」ボタンを押してください。</p>
   </div>
-  <div class="l-row--container mt-1.5 md:mt-2"><div class="c-col--12 c-col__md--10 c-col__lg--9 c-col__xl--8">
+  <div class="container mx-auto flex flex-wrap justify-center mt-1.5 md:mt-2"><div class="w-full md:w-10/12 lg:w-9/12 xl:w-8/12">
     <div class="p-form">
 
 <div class="form_confirm">
@@ -377,21 +377,21 @@ if( isset( $inputInquiry ) && $inputInquiry !== "" ){
   <?php if(!$tokenValidateError): ?>
     <input type="hidden" name="recaptchaToken" id="recaptchaToken">
     <input type="hidden" name="input_submit" value="isSubmit">
-    <div class="c-col--12 mt-3 md:mt-4"><input type="submit" value="送信する" class="p-submit__button"></div>
+    <div class="w-full mt-3 md:mt-4"><input type="submit" value="送信する" class="p-submit__button"></div>
   <?php endif; ?>
-    <div class="c-col--12 mt-3 md:mt-4"><input type="button" value="入力画面に戻る" onClick="history.back()" class="p-submit__button--back"></div>
+    <div class="w-full mt-3 md:mt-4"><input type="button" value="入力画面に戻る" onClick="history.back()" class="p-submit__button--back"></div>
 <?php } else if ($emailValidationError) { ?>
-  <div class="c-col--12 mt-3 md:mt-4">
+  <div class="w-full mt-3 md:mt-4">
     <p class="sm:text-center text-fz14 2xl:text-fz15 text-red">メールアドレスの形式が正しくありません。<br>お手数おかけしますが正しいメールアドレスを入力してください。</p>
   </div>
-  <div class="c-col--12 mt-3 md:mt-4">
+  <div class="w-full mt-3 md:mt-4">
   <a class="p-submit__button--back text-fz16 2xl:text-fz17" href='<?php echo home_url('/form-contact'); ?>'>フォーム入力に戻る</a>
   </div>
 <?php } else { ?>
-  <div class="c-col--12 mt-3 md:mt-4">
+  <div class="w-full mt-3 md:mt-4">
     <p class="sm:text-center text-fz14 2xl:text-fz15">申し訳ございません。プログラムによりスパムの疑いが検出されました。<br>お手数おかけしますがフォームの再入力をお願いいたします。</p>
   </div>
-  <div class="c-col--12 mt-3 md:mt-4">
+  <div class="w-full mt-3 md:mt-4">
   <a class="p-submit__button--back text-fz16 2xl:text-fz17" href='<?php echo home_url('/form-contact'); ?>'>フォーム入力に戻る</a>
   </div>
 <?php } ?>

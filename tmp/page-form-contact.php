@@ -8,7 +8,7 @@ $token = bin2hex($randomNumber);
 
 <article class="">
 <div class="c-headline__outer">
-    <div class="l-row--container c-gutter__row justify-start">
+    <div class="container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
       <div class="c-headline__frame" >
         <h1 class="c-headline__title c-headline__title--long"><span class="">CONTACT</span></h1>
         <div class="c-headline__detail">
@@ -20,12 +20,12 @@ $token = bin2hex($randomNumber);
   </div>
 
   <div class="l-container">
-  <div class="l-row--container c-gutter__row">
-    <p class="c-col--12 c-col__sm--10  c-typ text-clr1 sm:text-center">本フォームはお問い合わせ専用でございます。<br>ご予約は各ページの予約ボタンからお願いいたします。</p>
+  <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+    <p class="w-full sm:w-10/12  c-typ text-clr1 sm:text-center">本フォームはお問い合わせ専用でございます。<br>ご予約は各ページの予約ボタンからお願いいたします。</p>
   </div>
 
-  <div class="l-row--container mt-3 md:mt-4">
-    <div class="c-col--12 c-col__md--10 c-col__lg--9 c-col__xl--8">
+  <div class="container mx-auto flex flex-wrap justify-center mt-3 md:mt-4">
+    <div class="w-full md:w-10/12 lg:w-9/12 xl:w-8/12">
       <ul class="p-entrystep">
       <?php component_listItemEntrystep('input', '01', '入力画面', 'is-active'); ?>
       <?php component_listItemEntrystep('confirm', '02', '内容確認'); ?>
@@ -34,11 +34,11 @@ $token = bin2hex($randomNumber);
 
     </div>
   </div>
-  <div class="l-row--container c-gutter__row">
-    <p class="c-col--12 c-col__sm--10 p-entrystep__caption">下記項目にご入力いただき<br class="sm:hidden">「内容を確認する」ボタンを押してください。<br class="sm:hidden">ご確認後、入力内容を送信します。</p>
+  <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+    <p class="w-full sm:w-10/12 p-entrystep__caption">下記項目にご入力いただき<br class="sm:hidden">「内容を確認する」ボタンを押してください。<br class="sm:hidden">ご確認後、入力内容を送信します。</p>
   </div>
 
-  <div class="l-row--container"><div class="c-col--12 c-col__md--10 c-col__lg--9 c-col__xl--8">
+  <div class="container mx-auto flex flex-wrap justify-center"><div class="w-full md:w-10/12 lg:w-9/12 xl:w-8/12">
     <div class="p-form">
 
 <!-- form -->
@@ -162,8 +162,8 @@ echo '<option value="'.$region.'">'.$region.'</option>';
     </div>
   </div></div>
 
-  <div class="l-row--container">
-    <div class="c-col--12 c-col__md--10 c-col__lg--9 c-col__xl--8">
+  <div class="container mx-auto flex flex-wrap justify-center">
+    <div class="w-full md:w-10/12 lg:w-9/12 xl:w-8/12">
       <?php get_template_part('tmp/tmp', 'form-caution'); ?>
     </div>
   </div>
