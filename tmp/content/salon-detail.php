@@ -151,7 +151,7 @@ $post_slug = $post_obj->post_name;
     </div>
     <div class="w-11/12 sm:w-10/12 md:w-11/12 lg:w-5/12 md:pl-gutter-3 p-salon-info__map">
       <div id="c-gmap" class="c-gmap"><iframe src="<?php echo esc_url($data['map_src']) ?>" width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen=""></iframe></div>
-      <p class="c-gmap__link--wrap"><a href="<?php echo esc_url($data['map_link']) ?>" target="_blank" rel=”noopener noreferrer” class="c-gmap__link">Google Map で開く</a></p>
+      <p class="c-gmap__link--wrap"><a href="<?php echo esc_url($data['map_link']) ?>" target="_blank" rel="noopener noreferrer" class="c-gmap__link">Google Map で開く</a></p>
     </div>
 
 

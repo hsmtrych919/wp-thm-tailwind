@@ -16,17 +16,9 @@ module.exports = {
     },
 
     // --- container ---
-    // 出典: _variables.scss L37-41 ($container-max-*)
-    container: {
-      center: true,
-      screens: {
-        sm: '540px',
-        md: '960px',
-        lg: '1152px',
-        xl: '1200px',
-        '2xl': '1260px',
-      },
-    },
+    // @utility container で定義（tailwind-base.css）。
+    // v4 compat の container.screens は breakpoint 名→値の解決にバグがあり
+    // 二重定義になるため、ここでは設定しない。
 
     // --- colors ---
     // 出典: _variables-color.scss → CSS 変数参照
