@@ -144,6 +144,17 @@
 - `layout/_grid.scss` は完全削除ではなく `make-col` mixin のみ残したスタブに変更。`component/_style.scss` と `project/_style.scss` が `@use "../layout/grid"` で参照しているため。Phase 4 のコンポーネント層移行で解消する
 - `c-col` の `flex: 0 0 auto; min-height: 1px` は明示的に追加していない（未確定事項 #1 の選択肢 B）。`w-N/12` のみで旧挙動が再現されると判断
 
+### 計画どおりに進まなかった点と対応
+
+- PR レビューで `container` の二重定義が発生した。初回実装では `tailwind.config.js` の `container.screens` と `tailwind-base.css` 側の追加定義が競合し、生成後の `css/style.css` に `.container` が 2 回出力された
+- 解決: `tailwind.config.js` から v3 compat の `container.screens` 定義を外し、`src/scss/tailwind-base.css` で `@source not inline("container")` + `@layer utilities` により `.container` を単一定義に変更した。これで計画書どおりの BP→max-width 対応を維持したまま、レビュー指摘を解消した
+- 修正方針の判断でも一度ズレがあった。レビューを通すだけなら別名 utility に逃がす案もあり得たが、`phase3-plan.md` の `l-row--container -> container mx-auto flex flex-wrap justify-center` という置換方針とずれるため不採用とした
+- 解決: 実装判断を計画書ベースに戻し、「`container` の名前は維持したまま、生成結果を単一定義にする」ことを修正条件として再整理した。Phase 3 はレビュー通過より計画準拠を優先する方針で完了させた
+- テンプレート移行中に `tmp/content/salon-detail.php` で HTML 崩れも発生した。見出しの閉じタグ構造が崩れ、さらに外部リンクの `rel` 属性にスマートクォートが混入していた
+- 解決: 見出し部分を正しいタグ階層に修正し、`rel="noopener noreferrer"` を ASCII クォートへ修正した。最終 PR では container 問題とあわせてこのテンプレート不整合も解消済み
+- 進捗管理ファイルの更新も実装完了より後ろ倒しになった。Phase 3 本体の置換は進んでいたが、PR 修正が落ち着くまで `CLAUDE.md` / `progress.md` / `_class-rename-log.md` の完了記録が揃っていなかった
+- 解決: 最終修正コミットで Phase 3 完了状態、検証結果、変換表をまとめて反映し、作業内容とドキュメントの状態を一致させた
+
 ### 次に進める状態か
 
 **Yes** — Phase 4（コンポーネント・プロジェクト層の移行）に着手可能
