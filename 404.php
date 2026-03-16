@@ -11,7 +11,7 @@ $title = (is_404()) ? '見つかりません' : 'キーワード未入力' ;
     <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
       <div class="c-headline__content" >
         <h1 class=""><span class="c-headline__title c-ttl__large"><?php echo $title ?></span></h1>
-        <p class="c-headline__lead">404 not fount</p>
+        <p class="c-headline__lead">404 not found</p>
       </div>
     </div>
   </div>
