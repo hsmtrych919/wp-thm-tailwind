@@ -5,24 +5,12 @@
 // style
 // -----------------------------------------------------------------
 
-:root {
-  --header-height: #{g.rem(50)};
-  @media #{g.$sm} {
-  }
-  @media #{g.$md} {
-    --header-height: #{g.rem(56)};
-  }
-  @media #{g.$lg} {
-    --header-height: #{g.rem(80)};
-  }
-  @media #{g.$xxl} {
-  }
-}
-
 
 //
 // header
 //
+
+@layer components {
 
 .l-header {
   position: fixed;
@@ -102,4 +90,4 @@
 //   }
 // }
 
-
+} // @layer components

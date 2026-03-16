@@ -1,11 +1,11 @@
 @charset "utf-8";
 @use "sass:math";
-@use "sass:color";
 @use "../global" as g;
 // -----------------------------------------------------------------
 // style
 // -----------------------------------------------------------------
 
+@layer components {
 
 @mixin footer__item-width {
   width: 100%;
@@ -68,7 +68,7 @@
   }
   &__copy {
     margin-top: g.rem(16);
-    color: g.$clrg700;
+    color: var(--clrg700);
     font-size: g.rem(14);
   }
 }
@@ -92,7 +92,7 @@
   z-index: 510;
   right: 0;
   bottom: g.rem(24);
-  transition: g.$transition-base;
+  transition: all 0.2s ease-in-out;
   opacity: 0;
 
   @media #{g.$maxMd} {
@@ -112,7 +112,7 @@
   width: g.rem(56);
   padding: g.rem(20) 0;
   // transform: translate3d(0, -50%, 0);
-  transition: g.$transition-base;
+  transition: all 0.2s ease-in-out;
   border-radius: g.rem(12) 0 0 g.rem(12);
   // opacity: 0;
   background-color: var(--clr2);
@@ -200,3 +200,5 @@
     }
   }
 }
+
+} // @layer components

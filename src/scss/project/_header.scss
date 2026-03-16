@@ -1,5 +1,4 @@
 @charset "utf-8";
-@use "sass:color";
 @use "../global" as g;
 
 // -----------------------------------------------------------------
@@ -7,6 +6,8 @@
 // -----------------------------------------------------------------
 
 $z: overlay, nav, toolbar;
+
+@layer components {
 
 //
 // header
@@ -18,7 +19,7 @@ $z: overlay, nav, toolbar;
 
 
   &__logo {
-    transition: g.$transition-base;
+    transition: all 0.2s ease-in-out;
 
     @include g.hover() {
       opacity: 0.65;
@@ -36,13 +37,13 @@ $z: overlay, nav, toolbar;
     @media #{g.$lg} {
       align-items: stretch;
       justify-content: space-between;
-      // transition: g.$transition-base;
+      // transition: all 0.2s ease-in-out;
       border-bottom: none;
       background: transparent;
     }
     &.js-scroll {
       background: #fff;
-      box-shadow: 3px 3px 6px rgba(g.$black, .1);
+      box-shadow: 3px 3px 6px rgba(#222, .1);
     }
   }
 }
@@ -196,8 +197,8 @@ $z: overlay, nav, toolbar;
   &__item--recruit {
     @media #{g.$lg} {
       margin-left: g.rem(8);
-      transition: g.$transition-base;
-      background-image: g.$grd1;
+      transition: all 0.2s ease-in-out;
+      background-image: var(--grd1);
 
       @include g.hover {
         opacity: 0.85;
@@ -234,7 +235,7 @@ $z: overlay, nav, toolbar;
       opacity: 0;
       background-color: #fff;
       // background-color: color.scale(g.$clr1, $lightness: 5%);
-      box-shadow: 3px 3px 4px rgba(g.$clrg400, .5);
+      box-shadow: 3px 3px 4px rgba(#b0b0b0, .5);
     }
     &.js-active {
       opacity: 1;
@@ -279,3 +280,5 @@ $z: overlay, nav, toolbar;
     color: #fff;
   }
 }
+
+} // @layer components

@@ -1,5 +1,4 @@
 @charset "utf-8";
-@use "sass:color";
 @use "../global" as g;
 
 // -----------------------------------------------------------------
@@ -7,7 +6,9 @@
 // -----------------------------------------------------------------
 
 $nav__button:#fff !default;
-$nav__button-bdc:rgba(g.$clrg200, .5) !default;
+$nav__button-bdc:rgba(#e8e8e8, .5) !default;
+
+@layer components {
 
 
 //
@@ -25,7 +26,7 @@ $nav__button-bdc:rgba(g.$clrg200, .5) !default;
       flex: 0 1 176px;
       margin-right: auto;
       padding: 0 g.rem(12);
-      transition: g.$transition-base;
+      transition: all 0.2s ease-in-out;
     }
     @media #{g.$xl} {
       flex: 0 1 200px;
@@ -87,8 +88,8 @@ $nav__button-bdc:rgba(g.$clrg200, .5) !default;
   display: block;
   width: 100%;
   height: $border_height;
-  transition: g.$transition;
-  background-color: #4db441; /* was color.scale(g.$clr1, $lightness: -3%) */
+  transition: all 0.2s ease-in-out;
+  background-color: #4db441; /* was color.scale(var(--clr1), $lightness: -3%) */
 
   &::before, &::after {
     content: "";
@@ -96,8 +97,8 @@ $nav__button-bdc:rgba(g.$clrg200, .5) !default;
     position: absolute;
     width: 100%;
     height: $border_height;
-    transition: g.$transition;
-    background-color: #4db441; /* was color.scale(g.$clr1, $lightness: -3%) */
+    transition: all 0.2s ease-in-out;
+    background-color: #4db441; /* was color.scale(var(--clr1), $lightness: -3%) */
   }
   &::before {
     top: $border-position;
@@ -156,7 +157,7 @@ $nav__button-bdc:rgba(g.$clrg200, .5) !default;
     // padding変化のtransition防止のため個別設定
     transition: color .2s ease-in-out, background-color .2s ease-in-out;
     border: none;
-    color: g.$clr1;
+    color: var(--clr1);
     font-size: g.rem(14);
     line-height: 1;
     @include g.hover() {
@@ -182,9 +183,9 @@ $nav__button-bdc:rgba(g.$clrg200, .5) !default;
   }
   &__button--recruit {
     background-color: #fff;
-    color: g.$clr1;
+    color: var(--clr1);
     @include g.hover() {
-      color: g.$clr1;
+      color: var(--clr1);
     }
     @media #{g.$lg} {
       padding: 0 g.rem(24);
@@ -233,7 +234,7 @@ $nav__button-bdc:rgba(g.$clrg200, .5) !default;
 
   &__close-button {
     padding: g.rem(14) 0 g.rem(14) g.rem(20);
-    transition: g.$transition;
+    transition: all 0.2s ease-in-out;
     border-top: 1px solid $nav__button-bdc;
     border-bottom: 1px solid $nav__button-bdc;
     color: $nav__button;
@@ -252,4 +253,6 @@ $nav__button-bdc:rgba(g.$clrg200, .5) !default;
     left: 0;
   }
 }
+
+} // @layer components
 

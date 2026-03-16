@@ -1,13 +1,11 @@
 @charset "utf-8";
-@use "sass:color";
 @use "../global" as g;
-@use "../foundation/variables-form" as f;
 
 // -----------------------------------------------------------------
 // style
 // -----------------------------------------------------------------
 $input-border-focus:var(--clr1) !default;
-$input-box-shadow-focus: 0 0 3px rgba(g.$clr1, 0.5) !default;
+$input-box-shadow-focus: 0 0 3px rgba(#4FBA43, 0.5) !default;
 $active-indicator-color:var(--clr1) !default;
 $form-bgc:var(--clrg100) !default;
 $form-bdc: #47a73c !default; /* was color.scale(g.$clr1, $lightness: -10%) */
@@ -25,6 +23,8 @@ $radio-padding :g.rem(8);
 $select-padding :g.rem(4);
 $dt-width:30%;
 
+@layer components {
+
 .p-form {
   // @include gutter;
   margin-top: g.rem(16);
@@ -35,7 +35,7 @@ $dt-width:30%;
   @media #{g.$md} {
     padding: g.rem(24) g.rem(24) g.rem(32);
     // border: 1px solid $form-bdc;
-    border-radius: f.$input-border-radius;
+    border-radius: var(--form-border-radius);
     // box-shadow: 1px 1px 2px #d1d1d1;
   }
 
@@ -139,7 +139,7 @@ $dt-width:30%;
   strong {
     margin-left: g.rem(10);
     padding: g.rem(1) g.rem(8) 0;
-    border-radius: f.$input-border-radius;
+    border-radius: var(--form-border-radius);
     background-color: $form__required-bgc;
     color: $form__required;
     font-size: g.rem(13);
@@ -296,14 +296,14 @@ $dt-width:30%;
 
 .p-form__control--input, .p-form__control--input-half, .p-form__control--textarea, .p-form__control--textarea-half {
   // margin-bottom: 5px;
-  padding: f.$input-padding-y f.$input-padding-x;
-  transition: f.$input-transition;
-  border: f.$input-btn-border-width solid f.$input-border-color;
-  border-radius: f.$input-border-radius;
-  background-color: f.$input-bg;
+  padding: var(--form-padding-y) var(--form-padding-x);
+  transition: var(--form-transition);
+  border: var(--form-border-width) solid var(--form-border-color);
+  border-radius: var(--form-border-radius);
+  background-color: var(--form-bg);
   background-image: none;
-  color: f.$input-color;
-  line-height: f.$input-line-height;
+  color: var(--form-color);
+  line-height: var(--form-line-height);
   appearance: none;
 
   &::-ms-expand {
@@ -314,9 +314,9 @@ $dt-width:30%;
   &:focus {
     border-color: $input-border-focus;
     outline: none;
-    background-color: f.$input-bg;
+    background-color: var(--form-bg);
     box-shadow: $input-box-shadow-focus;
-    color: f.$input-color;
+    color: var(--form-color);
   }
 }
 
@@ -349,15 +349,15 @@ $dt-width:30%;
 
 .p-form__control--select, .p-form__control--select-half, .p-form__control--select-reserve {
   padding: g.rem(12) g.rem(8);
-  border: f.$custom-select-border-width solid f.$custom-select-border-color;
-  border-radius: f.$input-border-radius;
-  background-color: f.$custom-select-bg;
-  background-image: f.$custom-select-indicator-bgi;
-  background-repeat: f.$custom-select-indicator-repeat;
-  background-position: f.$custom-select-indicator-position;
-  background-size: f.$custom-select-bg-size;
-  color: f.$custom-select-color;
-  line-height: f.$custom-select-line-height;
+  border: var(--form-border-width) solid var(--form-border-color);
+  border-radius: var(--form-border-radius);
+  background-color: var(--form-select-bg);
+  background-image: var(--form-select-indicator);
+  background-repeat: no-repeat;
+  background-position: right 6px center;
+  background-size: var(--form-select-bg-size);
+  color: var(--form-color);
+  line-height: var(--form-line-height);
   vertical-align: middle;
   appearance: none;
 
@@ -367,8 +367,8 @@ $dt-width:30%;
     box-shadow: $input-box-shadow-focus;
 
     &::-ms-value {
-      background-color: f.$input-bg;
-      color: f.$input-color;
+      background-color: var(--form-bg);
+      color: var(--form-color);
     }
   }
 
@@ -524,9 +524,9 @@ $dt-width:30%;
   padding-right: g.rem(18) * 2;
   padding-bottom: g.rem(18);
   padding-left: g.rem(18) * 2;
-  transition: g.$transition;
+  transition: all 0.2s ease-in-out;
   border: none;
-  border-radius: g.$border-radius;
+  border-radius: 6px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   font-size: g.rem(18);
   font-weight: 500;
@@ -602,7 +602,8 @@ $dt-width:30%;
 // .mw_wp_form_confirm form .p-form__input--rsp {
 
 //   @media #{g.$md} {
-//     padding-top: f.$input-padding-y;
+//     padding-top: var(--form-padding-y);
 //   }
 // }
 
+} // @layer components

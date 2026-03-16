@@ -6,6 +6,8 @@
 // -----------------------------------------------------------------
 
 
+@layer components {
+
 .l-main {
 
   position: relative;
@@ -221,4 +223,6 @@
     margin-top: 0;
   }
 }
+
+} // @layer components
 

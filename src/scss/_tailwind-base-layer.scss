@@ -33,6 +33,8 @@
     --gray: var(--clrg700);
     --link-color: var(--clrg800);
     --link-hover-color: #747474;
+    --clr1-hover: #3f9536;
+    --img-hover-opacity: 0.9;
   }
 
   // -----------------------------------------------------------------
@@ -78,6 +80,20 @@
       --space: #{g.get_vw(8, 1366)};
       --gutter: #{g.get_vw(16, 1366)};
       --gutter-row: #{g.get_vw(32, 1366)};
+    }
+  }
+
+  // -----------------------------------------------------------------
+  // C-2b: header-height CSS 変数
+  // 出典: layout/_header.scss → Phase 4 で @layer base に移動
+  // -----------------------------------------------------------------
+  :root {
+    --header-height: #{g.rem(50)};
+    @media #{g.$md} {
+      --header-height: #{g.rem(56)};
+    }
+    @media #{g.$lg} {
+      --header-height: #{g.rem(80)};
     }
   }
 

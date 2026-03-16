@@ -1,11 +1,11 @@
 @charset "utf-8";
-@use "sass:color";
 @use "../global" as g;
 
 // -----------------------------------------------------------------
 // mixin
 // -----------------------------------------------------------------
 
+@layer components {
 
 %font-min {
   font-family: "Times New Roman",
@@ -508,3 +508,5 @@ h1, h2 {
 // .c-typ__inter--600 {
 //   @extend %inter600;
 // }
+
+} // @layer components

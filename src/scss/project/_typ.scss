@@ -1,5 +1,4 @@
 @charset "utf-8";
-@use "sass:color";
 @use "../global" as g;
 // -----------------------------------------------------------------
 // mixin
@@ -14,6 +13,8 @@
 // タイトル
 //
 
+
+@layer components {
 
 .p-ttl__rhombus {
   padding: g.rem(25) g.rem(15);
@@ -99,7 +100,7 @@
 }
 
 .p-ttl__post--widget-grid {
-  color: g.$link-color;
+  color: var(--link-color);
 }
 
 // .p-ttl__post--single {
@@ -163,3 +164,5 @@
     font-size: g.rem(20);
   }
 }
+
+} // @layer components

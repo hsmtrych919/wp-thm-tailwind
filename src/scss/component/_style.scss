@@ -1,12 +1,12 @@
 @charset "utf-8";
 @use "sass:math";
-@use "sass:color";
 @use "../global" as g;
-@use "../layout/grid" as grid;
 
 // -----------------------------------------------------------------
 // style
 // -----------------------------------------------------------------
+
+@layer components {
 
 // %list__bgi {
 //   margin-top: g.rem(8);
@@ -175,10 +175,10 @@ c-replace__pic の高さはjsで取得してmin-heightとして追記
   position: relative;
   width: 100%;
   @media #{g.$sm} {
-    @include grid.make-col(7);
+    width: percentage(math.div(7, 12));
   }
   @media #{g.$lg} {
-    @include grid.make-col(6);
+    width: percentage(math.div(6, 12));
   }
 }
 
@@ -189,19 +189,19 @@ c-replace__pic の高さはjsで取得してmin-heightとして追記
     position: absolute;
     top: 0;
     width: calc((100vw - var(--gutter-row) * 2) / 12 * 5);
-    max-width: calc((g.$container-max-md - var(--gutter-row) * 2) / 12 * 5);
+    max-width: calc((960px - var(--gutter-row) * 2) / 12 * 5);
     margin-top: 0
   }
   @media #{g.$lg} {
     width: calc((100vw - var(--gutter-row) * 2) / 12 * 6);
-    max-width: calc((g.$container-max-lg - var(--gutter-row) * 2) / 12 * 6);
+    max-width: calc((1152px - var(--gutter-row) * 2) / 12 * 6);
   }
   @media #{g.$xl} {
-    width: calc(g.$container-max-xl / 12 * 6);
+    width: calc(1200px / 12 * 6);
     max-width: none;
   }
   @media #{g.$xxl} {
-    width: calc(g.$container-max-xxl / 12 * 6);
+    width: calc(1260px / 12 * 6);
   }
 }
 
@@ -371,7 +371,7 @@ c-replace__pic の高さはjsで取得してmin-heightとして追記
     }
     @media #{g.$lg} {
       flex: 0 0 100%;
-      transition: g.$transition-base;
+      transition: all 0.2s ease-in-out;
     }
   }
   &__content {
@@ -402,7 +402,7 @@ c-replace__pic の高さはjsで取得してmin-heightとして追記
     position: relative;
     margin-top: g.rem(8);
     padding-right: g.rem(32);
-    transition: g.$transition-base;
+    transition: all 0.2s ease-in-out;
     font-size: g.rem(17);
     font-weight: 600;
     @media #{g.$lg} {
@@ -526,7 +526,7 @@ c-replace__pic の高さはjsで取得してmin-heightとして追記
   &__button {
     display: block;
     padding: g.rem(12) 0 g.rem(10);
-    color: g.$clr3;
+    color: var(--clr3);
     font-size: g.rem(15);
     line-height: 1;
     text-align: center;
@@ -569,7 +569,9 @@ c-replace__pic の高さはjsで取得してmin-heightとして追記
     }
   }
   &__pic {
-    transition: g.$transition-base;
+    transition: all 0.2s ease-in-out;
   }
 }
 // サムネイルリスト staff,style
+
+} // @layer components

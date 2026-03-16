@@ -161,6 +161,75 @@
 
 ---
 
-## Phase 4〜5: 未着手
+## Phase 4: コンポーネント・プロジェクト層の移行
 
-Phase 4 以降の詳細は開始時に追記する。
+### 状態: 完了（2026-03-16）
+
+### 実施した作業
+
+- [x] Step 4-0: `_tailwind-base-layer.scss` の `:root` に `--clr1-hover: #3f9536` と `--img-hover-opacity: 0.9` を追加
+- [x] Step 4-1: `project/_style.scss` の `:root` から重複 22 色変数 + `--clr1-hover` + `--img-hover-opacity` を削除。`--bdrs`, `--bdrs-lg` のみ残存。`@use "../layout/grid"` 未使用 import を削除
+- [x] Step 4-2: `project/_style.scss` の SCSS 変数置換（`g.$clrg600` → `var(--clrg600)`, `rgba(g.$black, 0.8)` → `rgba(#222, 0.8)`）
+- [x] Step 4-3: `component/_style.scss` の `grid.make-col` 依存解消（`percentage(math.div(7, 12))` / `percentage(math.div(6, 12))` に直接記述）。`@use "../layout/grid"` を削除。`g.$container-max-*` → ハードコード化
+- [x] Step 4-4: `component/_style.scss` の残り SCSS 変数置換（`g.$clr3` → `var(--clr3)`, `g.$transition-base` → `all 0.2s ease-in-out`）
+- [x] Step 4-5: `project/_form.scss` の `f.$input-*` / `f.$custom-select-*` → `var(--form-*)` CSS 変数に切り替え。`@use "../foundation/variables-form"` を削除
+- [x] Step 4-6: `component/_button.scss` の SCSS 変数置換（`g.$clr1` / `g.$clr2` → `var(--clr1)` / `var(--clr2)`, `g.$border-radius` → `6px`）。mixin 定義側デフォルト引数と呼び出し側引数の両方を置換
+- [x] Step 4-7: 残り全ファイルの SCSS 変数置換（`g.$transition-base` / `g.$transition` → `all 0.2s ease-in-out`, `g.$border-radius` → `6px`, 色変数 → CSS 変数, `rgba()` 内 → ハードコード化）
+- [x] Step 4-8: 全 Phase 4 対象ファイル（25 ファイル）を `@layer components { ... }` で囲み。`:root` は `@layer` 外、`@keyframes` は `@layer` 外に配置
+- [x] Step 4-9: `layout/_header.scss` の `:root { --header-height }` を `_tailwind-base-layer.scss` の `@layer base` に移動
+- [x] Step 4-10: `layout/_grid.scss` スタブを削除
+- [x] Step 4-11: `foundation/_variables-form.scss` を削除
+
+### 計画書
+
+- `phase4-plan.md` — Phase 4 の詳細計画
+
+### 検証結果
+
+| # | 条件 | 結果 |
+|---|---|---|
+| 1 | `npm run css:build` 成功 | PASS |
+| 2 | `npm run build` 成功 | PASS |
+| 3 | `@layer components` が CSS 出力に含まれる | PASS — 26 ブロック |
+| 4 | `.c-button` の `border-radius` が `6px` | PASS |
+| 5 | `.c-replace__content--left` の sm 時 `width` が `58.3333333333%`、lg 時 `50%` | PASS |
+| 6 | `.p-form__control--input` の `padding`, `border`, `border-radius` が `var(--form-*)` | PASS |
+| 7 | `--header-height` が `_tailwind-base-layer.scss` のみで定義 | PASS |
+| 8 | `--clr1-hover`, `--img-hover-opacity` が `:root` に出力 | PASS |
+| 9 | `.l-container` の `padding-top` が `2rem` | PASS |
+| 10 | `layout/_grid.scss` 削除後にビルドエラーなし | PASS |
+| 11 | `foundation/_variables-form.scss` 削除後にビルドエラーなし | PASS |
+
+### 代表セレクタ照合
+
+| セレクタ | 確認ポイント | 結果 |
+|---|---|---|
+| `.c-button` | `border-radius: 6px`, `padding` に `rem` 値 | 一致 |
+| `.c-button__clr1` | `background-color` | `var(--clr1)` で出力 |
+| `.c-replace__content--left` | sm: `width: 58.3333333333%`, lg: `width: 50%` | 一致 |
+| `.p-form__control--input` | `padding: var(--form-padding-y) var(--form-padding-x)`, `border`, `border-radius` | 一致 |
+| `.l-container` | `padding-top: 2rem`, `padding-bottom: 2rem` | 一致 |
+| `--header-height` | `:root` に `3.125rem` / `3.5rem` / `5rem` | 一致 |
+
+### 計画どおりに進まなかった点と対応
+
+- `--clr1-hover` の値: 計画書では `#3c9536` と記載していたが、実際の `color.scale(#4FBA43, $lightness: -20%)` 出力は `#3f9536`。移行前 CSS の値を確認し `#3f9536` を採用した
+
+### Phase 5 へ送る残件
+
+- ベンダー CSS（FontAwesome, Swiper, Micromodal, scroll-hint, Ultimate Member, WP Instagram Feed）の SCSS 変数→ CSS 変数置換
+- `foundation/_variables-color.scss` の削除（ベンダー CSS が `g.$clr1` 等を参照中）
+- `foundation/_variables.scss` の削除（`get_zindex()` 等の参照が残る）
+- `global/_gutter.scss` の廃止判断（マスター計画書 §5.5）
+- `style.scss` でコメントアウト済みファイルの整理（`_tab.scss`, `_table.scss`, `_toggle.scss`, `_blockquote.scss`）
+- `@layer components` 内スタイルとベンダー CSS（`@layer` 外）の優先順位問題の確認
+
+### 次に進める状態か
+
+**Yes** — Phase 5（ベンダー CSS の整理）に着手可能
+
+---
+
+## Phase 5: 未着手
+
+Phase 5 の詳細は開始時に追記する。

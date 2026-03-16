@@ -6,6 +6,8 @@
 // -----------------------------------------------------------------
 
 
+@layer components {
+
 body.login {
   display: flex;
   flex-direction: column;
@@ -105,3 +107,5 @@ div#login form#loginform p.submit input#wp-submit {
 .login form .input, .login form input[type="checkbox"], .login input[type="text"] {
   background-color: #fff;
 }
+
+} // @layer components

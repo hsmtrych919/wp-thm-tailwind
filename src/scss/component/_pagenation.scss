@@ -5,6 +5,8 @@
 // style
 // -----------------------------------------------------------------
 
+@layer components {
+
 .c-pagenation {
   $fz:g.rem(14);
   display: flex;
@@ -54,3 +56,5 @@
 .c-pagenation__icon {
   width: g.rem(16);
 }
+
+} // @layer components

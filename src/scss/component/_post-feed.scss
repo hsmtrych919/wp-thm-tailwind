@@ -5,6 +5,7 @@
 // style
 // -----------------------------------------------------------------
 
+@layer components {
 
 .c-post-feed {
   $border: 1px dashed var(--clrg600);
@@ -94,3 +95,5 @@
     }
   }
 }
+
+} // @layer components
