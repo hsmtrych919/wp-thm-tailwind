@@ -12,7 +12,8 @@ $post_slug = $post_obj->post_name;
 <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
   <div class="w-full">
     <h2 class="p-salonlist__title ">
-    <span class="c-ttl__small"><span class="text-clr1">#</span> サロン情報</h2>
+      <span class="c-ttl__small"><span class="text-clr1">#</span> サロン情報</span>
+    </h2>
   </div>
   </div><!-- /.l-row -->
 
