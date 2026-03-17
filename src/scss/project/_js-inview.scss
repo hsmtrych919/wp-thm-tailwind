@@ -45,6 +45,10 @@
 
 // for gsap
 
+@layer components {
+
 .js-fadeup, .js-fadeup__once, .js-fadeup__stagger--list li {
   opacity: 0;
 }
+
+} // @layer components

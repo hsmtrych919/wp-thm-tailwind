@@ -18,6 +18,8 @@
 // style
 // -----------------------------------------------------------------
 
+@layer components {
+
 .p-button__wrap {
   @include button__width;
 }
@@ -52,3 +54,4 @@
   }
 }
 
+} // @layer components

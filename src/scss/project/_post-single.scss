@@ -1,10 +1,11 @@
 @charset "utf-8";
-@use "sass:color";
 @use "../global" as g;
 
 // -----------------------------------------------------------------
 // style
 // -----------------------------------------------------------------
+@layer components {
+
 .p-post-single {
   width: 100%;
 
@@ -53,7 +54,7 @@
     display: block;
     margin-left: g.rem(12);
     padding: g.rem(8) g.rem(16) g.rem(6);
-    transition: g.$transition;
+    transition: all 0.2s ease-in-out;
     border: 1px solid var(--clr1);
     background-color: #fff;
     color: var(--clr1);
@@ -213,3 +214,5 @@ img.aligncenter { display: block; margin: 0 auto; }
     }
   }
 }
+
+} // @layer components

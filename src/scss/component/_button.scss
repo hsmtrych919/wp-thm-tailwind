@@ -1,5 +1,4 @@
 @charset "utf-8";
-@use "sass:color";
 @use "../global" as g;
 
 // -----------------------------------------------------------------
@@ -10,7 +9,7 @@
   display: block;
   position: relative;
   max-width: 100%;
-  border-radius: g.$border-radius;
+  border-radius: 6px;
   font-weight: 500;
   line-height: 1;
   // text-align: center;
@@ -19,7 +18,7 @@
 
 @mixin button__color(
   $clr: #fff,
-  $bgc: g.$clr1,
+  $bgc: var(--clr1),
   $clr-hover: #fff,
   $bgc-hover: #57be4c
 ) {
@@ -38,12 +37,12 @@
 }
 
 @mixin button__color--border(
-  $clr: g.$clr1,
+  $clr: var(--clr1),
   $bgc: #fff,
-  $bdc: g.$clr1,
+  $bdc: var(--clr1),
   $clr-hover: #fff,
-  $bgc-hover: g.$clr1,
-  $bdc-hover: g.$clr1
+  $bgc-hover: var(--clr1),
+  $bdc-hover: var(--clr1)
 ) {
   border-width: 1px;
   border-style: solid;
@@ -107,6 +106,8 @@
 // -----------------------------------------------------------------
 // style
 // -----------------------------------------------------------------
+@layer components {
+
 .c-button {
   @include c-button;
   padding: g.rem(20) g.rem(18) g.rem(16);
@@ -159,7 +160,7 @@
 .c-button__grd {
   @include button__color(
     $clr: #fff,
-    $bgc: g.$clr1,
+    $bgc: var(--clr1),
     $clr-hover: #fff,
     $bgc-hover: #60c255
   );
@@ -186,24 +187,24 @@
 
 .c-button__clr1--border {
   @include button__color--border(
-    $clr: g.$clr1,
+    $clr: var(--clr1),
     $bgc: #fff,
-    $bdc: g.$clr1,
+    $bdc: var(--clr1),
     $clr-hover: #fff,
-    $bgc-hover: g.$clr1,
-    $bdc-hover: g.$clr1
+    $bgc-hover: var(--clr1),
+    $bdc-hover: var(--clr1)
   );
   @include button-arrow-hover;
 }
 
 .c-button__clr1--toc {
   @include button__color--border(
-    $clr: g.$clr1,
+    $clr: var(--clr1),
     $bgc: #fff,
-    $bdc: g.$clr1,
+    $bdc: var(--clr1),
     $clr-hover: #47a73c,
     $bgc-hover: #ffdee1,
-    $bdc-hover: g.$clr1
+    $bdc-hover: var(--clr1)
   );
   @include button-arrow-hover;
 }
@@ -222,12 +223,12 @@
 
 .c-button__clr2--border {
   @include button__color--border(
-    $clr: g.$clr2,
+    $clr: var(--clr2),
     $bgc: #fff,
-    $bdc: g.$clr2,
+    $bdc: var(--clr2),
     $clr-hover: #fff,
-    $bgc-hover: g.$clr2,
-    $bdc-hover: g.$clr2
+    $bgc-hover: var(--clr2),
+    $bdc-hover: var(--clr2)
   );
   @include button-arrow-hover;
 }
@@ -312,6 +313,8 @@
   opacity: 1 !important;
   cursor: default !important;
 }
+
+} // @layer components
 
 
 //

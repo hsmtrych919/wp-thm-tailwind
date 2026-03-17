@@ -1,10 +1,11 @@
 @charset "utf-8";
-@use "sass:color";
 @use "../global" as g;
 
 // -----------------------------------------------------------------
 // style
 // -----------------------------------------------------------------
+
+@layer components {
 
 .js-error_submit {
   display: block;
@@ -22,3 +23,5 @@
   font-size: g.rem(14);
   font-weight: 500 !important;
 }
+
+} // @layer components

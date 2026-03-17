@@ -5,6 +5,8 @@
 // style
 // -----------------------------------------------------------------
 
+@layer components {
+
 .c-gmap {
   width: 100%;
   height: g.rem(360);
@@ -34,3 +36,5 @@
     text-align: right;
   }
 }
+
+} // @layer components
