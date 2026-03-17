@@ -230,6 +230,63 @@
 
 ---
 
-## Phase 5: 未着手
+## Phase 5: ベンダー CSS の整理
 
-Phase 5 の詳細は開始時に追記する。
+### 状態: 完了（2026-03-17）
+
+### 実施した作業
+
+- [x] Step 5-0: 移行前 CSS バックアップ更新（`css/style.css.bak`）
+- [x] Step 5-1: Scroll Hint の SCSS 変数置換（`g.$border-radius` → `6px`）
+- [x] Step 5-2: Micromodal の SCSS 変数置換（`g.$border-radius` → `6px`, `g.$transition-base` → `all 0.2s ease-in-out`）
+- [x] Step 5-3: Active vendor ファイルの `@layer components` 囲み
+  - Micromodal: `@layer components` で囲み。`@keyframes mmfadeIn/mmfadeOut` は `@layer` 外に配置
+  - Swiper: `@layer components` で囲み。`:root` ブロック 3 箇所と `@font-face`、`@keyframes swiper-preloader-spin` は `@layer` 外に配置。`%swiper-btn-circle` と `@extend` は同一 `@layer` 内
+  - Scroll Hint: `@layer components` で囲み。`@keyframes scroll-hint-appear` は `@layer` 外に配置
+  - FontAwesome: `@font-face` のみでクラス出力なし → `@layer` 囲み不要（変更なし）
+- [x] Step 5-4: `foundation/_variables-color.scss` の削除
+  - `global/_index.scss` の `@forward` をコメントアウト → ビルド成功を確認 → ファイル削除
+  - build graph 内に `_variables-color.scss` 由来のアクティブコード参照ゼロ（コメント内のプレーンテキスト記述のみ）
+
+### 計画書
+
+- `phase5-plan.md` — Phase 5 の詳細計画
+
+### 検証結果
+
+| # | 条件 | 結果 |
+|---|---|---|
+| 1 | `npm run build` 成功 | PASS |
+| 2 | `.c-micromodal__container` の `border-radius` が `6px` | PASS |
+| 3 | `.c-micromodal__container` の `padding` が `1.5rem`（`g.rem(24)` 出力） | PASS |
+| 4 | `.c-micromodal__close` の `transition` が `all .2s ease-in-out` | PASS |
+| 5 | `.c-micromodal__overlay` の `z-index` が `2000` | PASS |
+| 6 | `.scroll-hint-icon` の `border-radius` が `6px` | PASS |
+| 7 | `.scroll-hint-icon-wrap` の md 時 `display: none` | PASS |
+| 8 | `--swiper-navigation-size` sm 時 `28px` | PASS |
+| 9 | `@layer components` ブロック数: 34（Phase 4 の 26 から増加） | PASS |
+| 10 | `@font-face` が `@layer` 外 | PASS |
+| 11 | `@keyframes` が `@layer` 外 | PASS |
+| 12 | Phase 4 セレクタ維持（`.c-button__clr1`, `.p-form__control--input`, `.l-container`） | PASS |
+| 13 | `_variables-color.scss` 削除後のビルド成功 | PASS |
+
+### build graph 外の残件（Phase 5 では対応しない）
+
+`_variables-color.scss` 削除後、以下の build graph 外ファイルに SCSS 変数参照が残存。style.scss でコメントアウト / 未記載のためビルドに影響しないが、active 化時には先に置換が必要。
+
+| ファイル | 参照数 | 参照内容 |
+|---|---|---|
+| `foundation/_reboot.scss` | 4 | `g.$body-bg`, `g.$body-color`, `g.$link-color`, `g.$link-hover-color` |
+| `utility/_tables.scss` | 5 | `g.$body-bg` × 3, `g.$black` × 2 |
+| `component/_table.scss` | 2 | `g.$black` × 2 |
+| `component/_toggle.scss` | 1 | `g.$clr1` |
+| `component/ultimate-member/_ultimate-member.scss` | 3 | `g.$clrg500`, `g.$clrg600` × 2 |
+| `component/wp-instagram-feed/_wp-instagram-feed.scss` | 1 | `g.$clr1` |
+
+その他の残件:
+- `global/_gutter.scss` L1 の未使用 `@use` は Phase 5 vendor 本体ステップから除外（計画書 §10.3）
+- `_tab.scss`, `_table.scss`, `_toggle.scss`, `_blockquote.scss` は Phase 5 の主対象外（計画書 §2.3）
+
+### 次に進める状態か
+
+Phase 5 完了。次の Phase は計画書に未定義。

@@ -4,7 +4,7 @@
 
 // foundation
 @forward "../foundation/_variables";
-@forward "../foundation/_variables-color";
+// @forward "../foundation/_variables-color";  // Phase 5: 削除済み（build graph 内の参照ゼロ）
 
 // mixin
 @forward "_breakpoints";
