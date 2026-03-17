@@ -1,6 +1,6 @@
 @use "sass:color";
 @use "sass:map";
-@use "../global" as g;
+@use "../../global" as g;
 
 .fz__12 {
   font-size: g.rem(12) !important;

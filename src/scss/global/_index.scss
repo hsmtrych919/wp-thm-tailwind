@@ -2,8 +2,7 @@
 
 // @use "../global" as g; で利用
 
-// foundation
-@forward "../foundation/_variables";
+@forward "_variables";
 // @forward "../foundation/_variables-color";  // Phase 5: 削除済み（build graph 内の参照ゼロ）
 
 // mixin

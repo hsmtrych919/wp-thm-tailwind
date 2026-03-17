@@ -1,5 +1,5 @@
 @use "sass:map";
-@use "../global" as g;
+@use "../../global" as g;
 
 @each $breakpoint in map.keys(g.$grid-breakpoints) {
 

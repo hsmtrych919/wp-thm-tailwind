@@ -11,8 +11,8 @@
 // Foundation
 // -----------------------------------------------------------------
 
-// @use "foundation/_destyle";  // Phase 1: Tailwind Preflight に移行
-// @use "foundation/_reboot";   // Phase 1: _tailwind-base-layer.scss に移行
+// archived: _archive/foundation/_destyle.css  // Phase 1: Tailwind Preflight に移行
+// archived: _archive/foundation/_reboot.scss  // Phase 1: _tailwind-base-layer.scss に移行
 @use "_tailwind-base-layer";
 
 // -----------------------------------------------------------------
@@ -32,7 +32,7 @@
 @use "component/fontawesome-free-5.14.0";
 @use "component/micromodal/micromodal";
 @use "component/swiper/swiper-bundle";
-// @use "component/wp-instagram-feed/_wp-instagram-feed";
+// archived: component/_archive/wp-instagram-feed/_wp-instagram-feed.scss
 @use "component/scroll-hint";
 
 // @use "component/_gutter";       // Phase 3: Tailwind utility に移行
@@ -45,9 +45,9 @@
 @use "component/_post" as c-post;
 @use "component/_post-feed";
 @use "component/_search";
-// @use "component/_tab";
-// @use "component/_table";
-// @use "component/_toggle";
+// archived: component/_archive/_tab.scss
+// archived: component/_archive/_table.scss
+// archived: component/_archive/_toggle.scss
 @use "component/_style" as c-content;
 @use "component/_typ" as c-typ;
 @use "component/_validation";
@@ -71,13 +71,13 @@
 // Object / Utility
 // -----------------------------------------------------------------
 
-// @use "utility/_blockquote";
-// @use "utility/_display";       // Phase 2: Tailwind utility に移行
-// @use "utility/_flex";          // Phase 2: Tailwind utility に移行
-// @use "utility/_font";          // Phase 2: Tailwind utility に移行 (strong → @layer base)
-// @use "utility/_margin";        // Phase 2: Tailwind utility に移行
-// @use "utility/_padding";       // Phase 2: PHP 未使用、削除
-// @use "utility/_responsive-embed"; // Phase 2: youtube → @layer components に移動
-// @use "utility/_tables";
-// @use "utility/_visibility";    // Phase 2: Tailwind utility に移行
+// archived: _archive/utility/_blockquote.scss
+// archived: _archive/utility/_display.scss       // Phase 2: Tailwind utility に移行
+// archived: _archive/utility/_flex.scss          // Phase 2: Tailwind utility に移行
+// archived: _archive/utility/_font.scss          // Phase 2: Tailwind utility に移行 (strong → @layer base)
+// archived: _archive/utility/_margin.scss        // Phase 2: Tailwind utility に移行
+// archived: _archive/utility/_padding.scss       // Phase 2: PHP 未使用、削除
+// archived: _archive/utility/_responsive-embed.scss // Phase 2: youtube → @layer components に移動
+// archived: _archive/utility/_tables.scss
+// archived: _archive/utility/_visibility.scss    // Phase 2: Tailwind utility に移行
 

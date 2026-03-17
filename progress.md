@@ -290,3 +290,46 @@
 ### 次に進める状態か
 
 Phase 5 完了。次の Phase は計画書に未定義。
+
+---
+
+## 2026-03-17 SCSS ファイル整理
+
+### 状態: 実施済み
+
+### 実施内容
+
+- `src/scss/_archive/` 配下に用途別ディレクトリを追加
+  - `foundation/`
+  - `utility/`
+  - `mixins/`
+- ルートの移行補助資料を `src/scss/_archive/` へ移動
+  - `_class-rename-log.md`
+  - `_reset-diff-inventory.md`
+  - `_variable-inventory.md`
+  - `tailwind-migration-plan.md`
+- Phase 1 完了済みの旧 foundation 資産を `src/scss/_archive/foundation/` へ移動
+  - `_destyle.css`
+  - `_reboot.scss`
+- 未使用 utility 9 ファイルを `src/scss/_archive/utility/` へ移動
+- 未使用 mixins 3 ファイルを `src/scss/_archive/mixins/` へ移動
+- `component/` 内で現在未使用の非 vendor 3 ファイルを `src/scss/component/_archive/` へ移動
+  - `_tab.scss`
+  - `_table.scss`
+  - `_toggle.scss`
+
+### 退避しなかったもの
+
+- inactive vendor は元位置に維持
+  - `component/ultimate-member/`
+  - `component/wp-instagram-feed/`
+- 理由: Phase 5 完了時点で build graph 外の vendor 残件として記録されており、将来 active 化時の対応対象だから
+
+### 補足
+
+- `src/scss/style.scss` 内のコメントは archive 先が分かる表記に更新
+
+## 2026-03-17 SCSS 現況整理
+
+- `src/scss/foundation/_variables.scss` から未使用の `$space_values_with_clamp` を削除
+- `src/scss/readme.md` を全面更新し、Tailwind との共存、build graph、現役ディレクトリ、archive、vendor の現配置まで 1 ファイルで追える現況ドキュメントに差し替え
