@@ -333,3 +333,35 @@ Phase 5 完了。次の Phase は計画書に未定義。
 
 - `src/scss/foundation/_variables.scss` から未使用の `$space_values_with_clamp` を削除
 - `src/scss/readme.md` を全面更新し、Tailwind との共存、build graph、現役ディレクトリ、archive、vendor の現配置まで 1 ファイルで追える現況ドキュメントに差し替え
+
+## 2026-03-17 Dead code 削除 + ファイル整理
+
+- `global/_transition.scss` 削除（`g.$transition` の参照ゼロ）
+- `global/_unicode.scss` の `unicode()` 関数を `global/_calc.scss` に統合、`_unicode.scss` 削除
+- `global/_font.scss` の import を `@use "_calc" as calc-fn` に変更
+- `global/_index.scss` から `@forward "_transition"` と `@forward "_unicode"` を除去
+- `foundation/_variables.scss` を `global/_variables.scss` に移動（foundation/ ディレクトリ解消）
+- `global/_variables.scss` から死んだ変数を削除（font-family, font-size, font-weight, line-height, border-radius, transition-base, container-max-*, grid-columns）
+- body `font-family` を `_tailwind-base-layer.scss` で `#{"theme(fontFamily.sans)"}` に統合（Tailwind native）
+- `--bdrs`, `--bdrs-lg` を `project/_style.scss` → `_tailwind-base-layer.scss` `:root` に移動
+- `--form-focus-color: var(--clr1)` をコメントで追加
+- `component/_archive/ultimate-member/_ultimate-member.scss` の SCSS 変数→CSS 変数化
+- `component/_archive/wp-instagram-feed/_wp-instagram-feed.scss` の SCSS 変数→CSS 変数化
+- `style.scss` 整理（archive コメント・Phase 移行コメント・utility セクション除去）
+- `src/scss/readme.md` を上記全変更に合わせて更新
+
+## 2026-03-17 Gutter mixin 廃止
+
+- 6 箇所の `@include g.gutter` を PHP テンプレートの Tailwind utility `px-gutter-row md:px-0` に置換
+  - `project/_form.scss` `.p-form-caution` → `tmp/tmp-form-caution.php`
+  - `project/_post.scss` `.p-sidebar` → `sidebar-blogs.php`（2 箇所）, `sidebar-latest.php`
+  - `project/_post.scss` `.p-related` → `tmp/single-blog.php`
+  - `project/_post-single.scss` `.p-post-single` → `tmp/single-blog.php`（`post_class()`）
+  - `project/_post-single.scss` `.p-author` → PHP テンプレートなし（`tmp/single-blog.php` L33 でコメントアウト済み）。SCSS 側のみ削除
+  - `project/_entrystep.scss` `.p-entrystep` → `page-form-contact-chk.php`, `tmp/page-form-contact.php`, `tmp/page-form-contact-thk.php`
+- `global/_gutter.scss` 削除
+- `global/_index.scss` から `@forward "_gutter"` 除去
+- `src/scss/readme.md` 更新（gutter 記述を削除済みに変更）
+- ビルド成功。CSS 比較: gutter mixin 由来の 6 ルールが消失、他のセレクタ・宣言は全て維持
+- `px-gutter-row` → `padding-inline: var(--gutter-row)` が CSS に生成されていることを確認
+- `.p-entrystep::after` の `calc(100% - var(--gutter-row) * 2)` は CSS 変数直参照であり mixin と無関係（影響なし）

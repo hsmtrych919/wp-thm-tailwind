@@ -9,8 +9,6 @@
 .p-post-single {
   width: 100%;
 
-  @include g.gutter;
-
   &__info {
     margin-top: g.rem(16);
   }
@@ -112,8 +110,6 @@ img.aligncenter { display: block; margin: 0 auto; }
 //
 
 .p-author {
-
-  @include g.gutter;
 
   &::before {
     content: "";

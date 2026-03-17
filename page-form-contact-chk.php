@@ -247,7 +247,7 @@ if($isSubmit){
   <div class="l-container">
   <div class="container mx-auto flex flex-wrap justify-center">
   <div class="w-full md:w-10/12 lg:w-9/12 xl:w-8/12">
-  <ul class="p-entrystep">
+  <ul class="p-entrystep px-gutter-row md:px-0">
       <?php component_listItemEntrystep('input', '01', '入力画面'); ?>
       <?php component_listItemEntrystep('confirm', '02', '内容確認', 'is-active'); ?>
       <?php component_listItemEntrystep('send', '03', '送信完了'); ?>

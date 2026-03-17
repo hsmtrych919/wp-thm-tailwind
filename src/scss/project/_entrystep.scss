@@ -19,8 +19,6 @@
   list-style: none;
   // text-align: center;
 
-  @include g.gutter;
-
   &::after {
     content: "";
     position: absolute;

@@ -354,23 +354,14 @@
   .aspect-video {
     aspect-ratio: var(--aspect-video) !important;
   }
-  .w-7 {
-    width: 56px !important;
-  }
   .w-7\/12 {
     width: calc(7 / 12 * 100%) !important;
-  }
-  .w-10 {
-    width: 80px !important;
   }
   .w-10\/12 {
     width: calc(10 / 12 * 100%) !important;
   }
   .w-11\/12 {
     width: calc(11 / 12 * 100%) !important;
-  }
-  .w-12 {
-    width: 96px !important;
   }
   .w-12\/12 {
     width: calc(12 / 12 * 100%) !important;
@@ -391,11 +382,6 @@
   .shrink-0 {
     -ms-flex-negative: 0 !important;
         flex-shrink: 0 !important;
-  }
-  .flex-grow {
-    -webkit-box-flex: 1 !important;
-        -ms-flex-positive: 1 !important;
-            flex-grow: 1 !important;
   }
   .grow {
     -webkit-box-flex: 1 !important;
@@ -4871,6 +4857,12 @@
             align-items: center;
     font-size: 0;
     list-style: none;
+    padding: 0 var(--gutter-row);
+  }
+  @media (min-width: 811px ) {
+    .p-entrystep {
+      padding: 0;
+    }
   }
   .p-entrystep::after {
     content: "";
@@ -5191,6 +5183,14 @@
     .p-form {
       margin-top: 2rem;
       padding: 2rem 2rem 2.5rem;
+    }
+  }
+  .p-form-caution {
+    padding: 0 var(--gutter-row);
+  }
+  @media (min-width: 811px ) {
+    .p-form-caution {
+      padding: 0;
     }
   }
   .p-form-caution__title {
@@ -5919,6 +5919,12 @@
   }
   .p-sidebar {
     margin-top: 2rem;
+    padding: 0 var(--gutter-row);
+  }
+  @media (min-width: 811px ) {
+    .p-sidebar {
+      padding: 0;
+    }
   }
   .p-sidebar__post-archive {
     width: 100%;
@@ -5973,6 +5979,14 @@
     }
     .p-sidebar__post--item:focus .p-sidebar__post--thumbnail img,.p-sidebar__post--item:hover .p-sidebar__post--thumbnail img {
       opacity: var(--img-hover-opacity);
+    }
+  }
+  .p-related {
+    padding: 0 var(--gutter-row);
+  }
+  @media (min-width: 811px ) {
+    .p-related {
+      padding: 0;
     }
   }
   .p-related__post-archive {
@@ -6155,6 +6169,12 @@
 @layer components {
   .p-post-single {
     width: 100%;
+    padding: 0 var(--gutter-row);
+  }
+  @media (min-width: 811px ) {
+    .p-post-single {
+      padding: 0;
+    }
   }
   .p-post-single__info {
     margin-top: 1rem;
@@ -6253,6 +6273,14 @@
   img.aligncenter {
     display: block;
     margin: 0 auto;
+  }
+  .p-author {
+    padding: 0 var(--gutter-row);
+  }
+  @media (min-width: 811px ) {
+    .p-author {
+      padding: 0;
+    }
   }
   .p-author::before {
     content: "";

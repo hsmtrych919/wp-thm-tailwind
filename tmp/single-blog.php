@@ -6,7 +6,7 @@
   if ( have_posts() ) :
     while ( have_posts() ) : the_post();
 ?>
-  <article id="post-<?php the_ID(); ?>" <?php post_class( 'p-post-single' ) ?> >
+  <article id="post-<?php the_ID(); ?>" <?php post_class( 'p-post-single px-gutter-row md:px-0' ) ?> >
     <div class="p-ttl__post--single">
       <h1 class="c-ttl__post--single c-ttl__ptn-dgnl"><?php the_title(); ?></h1>
     </div>
@@ -34,7 +34,7 @@
 
 
 
-  <div class="p-related mt-4 md:mt-5">
+  <div class="p-related px-gutter-row md:px-0 mt-4 md:mt-5">
   <div class="p-ttl__widget">
     <p class="c-ttl__widget--caption">Related Posts</p>
     <h2 class="c-ttl__widget--bar"><span class="c-ttl__widget">おすすめ関連記事</span></h2>

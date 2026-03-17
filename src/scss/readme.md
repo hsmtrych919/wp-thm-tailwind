@@ -153,7 +153,7 @@ Sass partial です。
 - 既存クラス構造の維持（`@layer components` 内で BEM クラスを定義）
 - `@use` / `@forward` による分割管理
 - `rem()`, `get_vw()`, `get_zindex()`, `unicode()` などの関数
-- `hover`, `gutter` などの mixin
+- `hover` などの mixin
 - コンポーネント内のレスポンシブ対応（`@media #{g.$md}` 等）
 
 ### breakpoints の二重定義について
@@ -197,7 +197,6 @@ breakpoints は SCSS (`global/_variables.scss`) と Tailwind (`tailwind.config.j
 - `_breakpoints`（BP 関数・mixin）
 - `_calc`（rem, get_vw, unicode 等の関数）
 - `_font`（FontAwesome mixin）
-- `_gutter`（gutter mixin）
 - `_hover`（hover mixin）
 - `_media-queries`（$sm, $md 等のメディアクエリ変数）
 
@@ -211,10 +210,11 @@ breakpoints は SCSS (`global/_variables.scss`) と Tailwind (`tailwind.config.j
 
 ### `global/_gutter.scss`
 
-現役です。
+削除済みです。
 
 理由:
-- `project/_form.scss`, `project/_post.scss`, `project/_post-single.scss`, `project/_entrystep.scss` で `@include g.gutter` が使われている
+- 6 箇所の `@include g.gutter` を PHP テンプレート側の Tailwind ユーティリティ `px-gutter-row md:px-0` に置換したため不要になった
+- `.p-author` はテンプレートがコメントアウト済みのため SCSS 側のみ削除
 
 ## 8. spacing / 単位の考え方
 
@@ -302,7 +302,7 @@ archive は単なるゴミ箱ではありません。
 `global/_variables.scss`
 → `global/_index.scss` が `@forward`
 → 各 SCSS が `@use "../global" as g;`
-→ `g.$md`, `g.rem()`, `g.gutter`, `g.hover`, `g.get_zindex()` を使う
+→ `g.$md`, `g.rem()`, `g.hover`, `g.get_zindex()` を使う
 
 ## 13. 参照の優先順位
 

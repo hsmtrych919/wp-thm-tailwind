@@ -1,4 +1,4 @@
-<div class="p-sidebar">
+<div class="p-sidebar px-gutter-row md:px-0">
   <div class="p-ttl__widget">
     <p class="c-ttl__widget--caption">Category</p>
     <h2 class="c-ttl__widget--bar"><span class="c-ttl__widget">ブログカテゴリー</span></h2>
@@ -18,7 +18,7 @@
 
   </ul>
 </div>
-<div class="p-sidebar">
+<div class="p-sidebar px-gutter-row md:px-0">
   <div class="p-ttl__widget">
     <p class="c-ttl__widget--caption">Monthly Archives</p>
     <h2 class="c-ttl__widget--bar"><span class="c-ttl__widget">月別記事</span></h2>

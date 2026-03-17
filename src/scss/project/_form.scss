@@ -48,8 +48,6 @@ $dt-width:30%;
 
 .p-form-caution {
 
-  @include g.gutter;
-
   &__title {
     margin-top: g.rem(32);
     color: $form__caution;

@@ -121,8 +121,6 @@ $archive__excerpt:var(--gray) !default;
 .p-sidebar {
   margin-top: g.rem(32);
 
-  @include g.gutter;
-
   &__post-archive {
 
     @include widget__post-archive;
@@ -189,8 +187,6 @@ $archive__excerpt:var(--gray) !default;
 //
 
 .p-related {
-
-  @include g.gutter;
 
   &__post-archive {
 

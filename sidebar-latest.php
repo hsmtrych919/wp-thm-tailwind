@@ -1,4 +1,4 @@
-<div class="p-sidebar">
+<div class="p-sidebar px-gutter-row md:px-0">
   <div class="p-ttl__widget">
     <p class="c-ttl__widget--caption">What's New</p>
     <h2 class="c-ttl__widget--bar"><span class="c-ttl__widget">おすすめ新着ブログ</span></h2>
