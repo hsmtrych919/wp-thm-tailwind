@@ -23,6 +23,8 @@
   --swiper-theme-color: #D7092F;
 }
 
+@layer components {
+
 .swiper {
   position: relative;
   /* Fix of Webkit flickering */
@@ -201,6 +203,8 @@
   height: var(--swiper-virtual-size);
 }
 
+} // @layer components (navigation root break)
+
 :root {
   --swiper-navigation-size: 20px;
   @media #{g.$sm} {
@@ -210,6 +214,8 @@
   --swiper-navigation-color: var(--swiper-theme-color);
   */
 }
+
+@layer components {
 
 .swiper-button-prev, .swiper-button-next {
   display: flex;
@@ -272,6 +278,8 @@
   display: none;
 }
 
+} // @layer components (pagination root break)
+
 :root {
   --swiper-pagination-bullet-size: 10px;
   --swiper-pagination-bullet-horizontal-gap: 5px;
@@ -285,6 +293,8 @@
   --swiper-pagination-bullet-vertical-gap: 6px;
   */
 }
+
+@layer components {
 
 .swiper-pagination {
   position: absolute;
@@ -516,12 +526,16 @@ button.swiper-pagination-bullet {
 // .swiper-slide-zoomed {
 //   cursor: move;
 // }
+} // @layer components (preloader root break)
+
 /* Preloader */
 :root {
   /*
   --swiper-preloader-color: var(--swiper-theme-color);
   */
 }
+
+@layer components {
 
 .swiper-lazy-preloader {
   position: absolute;
@@ -550,6 +564,9 @@ button.swiper-pagination-bullet {
 .swiper-lazy-preloader-black {
   --swiper-preloader-color: #000;
 }
+
+} // @layer components (keyframes break)
+
 @keyframes swiper-preloader-spin {
   0% {
     transform: rotate(0deg);
@@ -558,6 +575,9 @@ button.swiper-pagination-bullet {
     transform: rotate(360deg);
   }
 }
+
+@layer components {
+
 /* a11y */
 .swiper .swiper-notification {
   position: absolute;
@@ -727,3 +747,5 @@ button.swiper-pagination-bullet {
 .swiper-button-prev, .swiper-button-next {
   @extend %swiper-btn-circle;
 }
+
+} // @layer components

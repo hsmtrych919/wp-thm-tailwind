@@ -18,6 +18,8 @@
   }
 }
 
+@layer components {
+
 .scroll-hint.is-right-scrollable {
   background: linear-gradient(270deg, rgba(200, 200, 200) 0, transparent 16px, transparent);
 }
@@ -42,7 +44,7 @@
   padding: 20px 10px 4px 10px;
   transform: translate3d(-50%, -50%, 0);
   transition: opacity .3s;
-  border-radius: g.$border-radius;
+  border-radius: 6px;
   opacity: 0;
   background: rgba(0, 0, 0, .7);
   text-align: center;
@@ -125,3 +127,5 @@
 .scroll-hint-icon-white .scroll-hint-text {
   color: #000;
 }
+
+} // @layer components
