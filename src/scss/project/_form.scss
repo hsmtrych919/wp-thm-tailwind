@@ -5,7 +5,7 @@
 // style
 // -----------------------------------------------------------------
 $input-border-focus:var(--clr1) !default;
-$input-box-shadow-focus: 0 0 3px rgba(#4FBA43, 0.5) !default;
+$input-box-shadow-focus: 0 0 3px color-mix(in srgb, var(--clr1) 50%, transparent) !default;
 $active-indicator-color:var(--clr1) !default;
 $form-bgc:var(--clrg100) !default;
 $form-bdc: #47a73c !default; /* was color.scale(g.$clr1, $lightness: -10%) */
