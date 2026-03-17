@@ -1,10 +1,9 @@
 import { mediaQuerySm, mediaQueryMd, mediaQueryLg, mediaQueryXl, mediaQueryXxl } from './media-query';
 import { navDropdown, navMenuMobile } from './header';
 import { observer, observerDistant, observerFromTop } from './observer';
-import { newsTicker, setWidth_ticker } from './news-ticker';
 import { swiperFrontWithThumbnail, swiperFrontArrivals, swiperSingleArrivals } from './swiper';
 import { smooth_scroll } from './smooth-scroll';
-import { modal_footer, modal_form_notice } from './micromodal';
+import { modal_footer } from './micromodal';
 import { fixedButton, fadeUpContent, staggerFadeupForList, staggerFadeupForFrontStaffList, scrubForFrontPic, ractForHeadlinePic, fadeForSalon } from './gsap';
 
 
@@ -57,14 +56,7 @@ appInitializer.addInitializer('Observer', async () => {
     observerFromTop('#grobal__header', 'js-scroll', '150px', false, false);
   } else {
     observerFromTop('#grobal__header', 'js-scroll', '30px', false, false);
-    observerFromTop('#js-news-ticker', 'js-scroll', '50px', false, false);
   }
-});
-
-// ニュースティッカー
-appInitializer.addInitializer('News Ticker', async () => {
-  newsTicker();
-  setWidth_ticker();
 });
 
 // Smooth Scroll
@@ -94,7 +86,6 @@ appInitializer.addInitializer('Swiper', async () => {
 // micromodal
 appInitializer.addInitializer('Micromodal', async () => {
   modal_footer();
-  modal_form_notice();
 });
 
 // gsap

@@ -256,17 +256,8 @@
   .absolute {
     position: absolute !important;
   }
-  .fixed {
-    position: fixed !important;
-  }
   .relative {
     position: relative !important;
-  }
-  .static {
-    position: static !important;
-  }
-  .sticky {
-    position: sticky !important;
   }
   .z-header {
     z-index: 1000 !important;
@@ -498,9 +489,6 @@
        -moz-column-gap: calc(var(--gutter) * 2) !important;
             column-gap: calc(var(--gutter) * 2) !important;
   }
-  .rounded {
-    border-radius: 6px !important;
-  }
   .border {
     border-style: var(--tw-border-style) !important;
     border-width: 1px !important;
@@ -645,11 +633,6 @@
   .opacity-0 {
     opacity: 0% !important;
   }
-  .shadow {
-    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1)) !important;
-    -webkit-box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow) !important;
-            box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow) !important;
-  }
   .outline {
     outline-style: var(--tw-outline-style) !important;
     outline-width: 1px !important;
@@ -661,11 +644,6 @@
   }
   .grayscale {
     --tw-grayscale: grayscale(100%) !important;
-    -webkit-filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,) !important;
-            filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,) !important;
-  }
-  .invert {
-    --tw-invert: invert(100%) !important;
     -webkit-filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,) !important;
             filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,) !important;
   }
@@ -684,10 +662,6 @@
     --tw-ease: var(--ease-in-out) !important;
     -webkit-transition-timing-function: var(--ease-in-out) !important;
             transition-timing-function: var(--ease-in-out) !important;
-  }
-  .backface-hidden {
-    -webkit-backface-visibility: hidden !important;
-            backface-visibility: hidden !important;
   }
   .max-2xl\:hidden {
     @media (width < 1366px) {
@@ -5424,8 +5398,12 @@ button.swiper-pagination-bullet {
     border-color: var(--clr1);
     outline: none;
     background-color: var(--form-bg);
-    -webkit-box-shadow: 0 0 3px rgba(79,186,67,.5);
-            box-shadow: 0 0 3px rgba(79,186,67,.5);
+    -webkit-box-shadow: 0 0 3px var(--clr1);
+            box-shadow: 0 0 3px var(--clr1);
+    @supports (color: color-mix(in lab, red, red)) {
+      -webkit-box-shadow: 0 0 3px color-mix(in srgb, var(--clr1) 50%, transparent);
+              box-shadow: 0 0 3px color-mix(in srgb, var(--clr1) 50%, transparent);
+    }
     color: var(--form-color);
   }
   .p-form__control--input,.p-form__control--textarea {
@@ -5469,8 +5447,12 @@ button.swiper-pagination-bullet {
   .p-form__control--select:focus,.p-form__control--select-half:focus,.p-form__control--select-reserve:focus {
     border-color: var(--clr1);
     outline: none;
-    -webkit-box-shadow: 0 0 3px rgba(79,186,67,.5);
-            box-shadow: 0 0 3px rgba(79,186,67,.5);
+    -webkit-box-shadow: 0 0 3px var(--clr1);
+            box-shadow: 0 0 3px var(--clr1);
+    @supports (color: color-mix(in lab, red, red)) {
+      -webkit-box-shadow: 0 0 3px color-mix(in srgb, var(--clr1) 50%, transparent);
+              box-shadow: 0 0 3px color-mix(in srgb, var(--clr1) 50%, transparent);
+    }
   }
   .p-form__control--select:focus::-ms-value,.p-form__control--select-half:focus::-ms-value,.p-form__control--select-reserve:focus::-ms-value {
     background-color: var(--form-bg);
@@ -7061,71 +7043,6 @@ button.swiper-pagination-bullet {
   syntax: "*";
   inherits: false;
 }
-@property --tw-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-shadow-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-shadow-alpha {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 100%;
-}
-@property --tw-inset-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-inset-shadow-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-inset-shadow-alpha {
-  syntax: "<percentage>";
-  inherits: false;
-  initial-value: 100%;
-}
-@property --tw-ring-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-ring-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-inset-ring-color {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-inset-ring-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
-@property --tw-ring-inset {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-ring-offset-width {
-  syntax: "<length>";
-  inherits: false;
-  initial-value: 0px;
-}
-@property --tw-ring-offset-color {
-  syntax: "*";
-  inherits: false;
-  initial-value: #fff;
-}
-@property --tw-ring-offset-shadow {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0 0 #0000;
-}
 @property --tw-outline-style {
   syntax: "*";
   inherits: false;
@@ -7198,20 +7115,6 @@ button.swiper-pagination-bullet {
       --tw-skew-y: initial;
       --tw-border-style: solid;
       --tw-font-weight: initial;
-      --tw-shadow: 0 0 #0000;
-      --tw-shadow-color: initial;
-      --tw-shadow-alpha: 100%;
-      --tw-inset-shadow: 0 0 #0000;
-      --tw-inset-shadow-color: initial;
-      --tw-inset-shadow-alpha: 100%;
-      --tw-ring-color: initial;
-      --tw-ring-shadow: 0 0 #0000;
-      --tw-inset-ring-color: initial;
-      --tw-inset-ring-shadow: 0 0 #0000;
-      --tw-ring-inset: initial;
-      --tw-ring-offset-width: 0px;
-      --tw-ring-offset-color: #fff;
-      --tw-ring-offset-shadow: 0 0 #0000;
       --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;
@@ -7236,20 +7139,6 @@ button.swiper-pagination-bullet {
       --tw-skew-y: initial;
       --tw-border-style: solid;
       --tw-font-weight: initial;
-      --tw-shadow: 0 0 #0000;
-      --tw-shadow-color: initial;
-      --tw-shadow-alpha: 100%;
-      --tw-inset-shadow: 0 0 #0000;
-      --tw-inset-shadow-color: initial;
-      --tw-inset-shadow-alpha: 100%;
-      --tw-ring-color: initial;
-      --tw-ring-shadow: 0 0 #0000;
-      --tw-inset-ring-color: initial;
-      --tw-inset-ring-shadow: 0 0 #0000;
-      --tw-ring-inset: initial;
-      --tw-ring-offset-width: 0px;
-      --tw-ring-offset-color: #fff;
-      --tw-ring-offset-shadow: 0 0 #0000;
       --tw-outline-style: solid;
       --tw-blur: initial;
       --tw-brightness: initial;

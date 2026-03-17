@@ -5,28 +5,22 @@
   "engines": {
     "node": ">=20"
   },
-  "config": {
-    "cssDir": "./css",
-    "scssDir": "./src/scss",
-    "jsDir": "./js",
-    "bsProxy": "https://xxx.wp"
-  },
   "scripts": {
-    "scss:compile": "sass --no-charset $npm_package_config_scssDir/style.scss:$npm_package_config_cssDir/style.css --style=compressed",
-    "css:concat": "cat src/scss/tailwind-base.css css/style.css > css/style.tmp.css && mv css/style.tmp.css css/style.css",
-    "css:postcss": "postcss $npm_package_config_cssDir/style.css -o $npm_package_config_cssDir/style.css",
+    "scss:compile": "node ./scripts/scss-compile.cjs",
+    "css:concat": "node ./scripts/css-concat.cjs",
+    "css:postcss": "node ./scripts/css-postcss.cjs",
     "css:build": "npm-run-all -s scss:compile css:concat css:postcss",
-    "imagemin": "node imagemin.config.js",
+    "imagemin": "node ./scripts/imagemin.cjs",
     "start": "npm-run-all -p watch:css watch:templates watch:webpack watch:img watch:server",
-    "watch:css": "watch 'npm run css:build' ./src/scss",
+    "watch:css": "node ./scripts/watch-css.cjs",
     "watch:templates": "onchange './**/*.php' -e 'node_modules/**' -- npm run css:build",
-    "watch:img": "onchange './src/img' -e '**/*.DS_Store' -- npm run imagemin",
+    "watch:img": "node ./scripts/watch-img.cjs",
     "watch:webpack": "webpack --mode=development",
-    "watch:server": "browser-sync start -p $npm_package_config_bsProxy --port 3000 --listen localhost --no-ui --no-open -f 'css/style.css, js, **/*.php, **/*.html, !node_modules/**/*'",
+    "watch:server": "node ./scripts/watch-server.cjs",
     "build": "npm-run-all -s prd:scss prd:concat prd:postcss prd:webpack",
-    "prd:scss": "sass --no-charset $npm_package_config_scssDir/style.scss:$npm_package_config_cssDir/style.css --style=compressed",
-    "prd:concat": "cat src/scss/tailwind-base.css css/style.css > css/style.tmp.css && mv css/style.tmp.css css/style.css",
-    "prd:postcss": "postcss $npm_package_config_cssDir/style.css -o $npm_package_config_cssDir/style.css",
+    "prd:scss": "node ./scripts/scss-compile.cjs",
+    "prd:concat": "node ./scripts/css-concat.cjs",
+    "prd:postcss": "node ./scripts/css-postcss.cjs",
     "prd:webpack": "webpack --mode=production",
     "lint:css": "stylelint --fix ./**/*.scss"
   },
