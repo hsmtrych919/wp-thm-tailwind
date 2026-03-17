@@ -35,6 +35,8 @@
     --link-hover-color: #747474;
     --clr1-hover: #3f9536;
     --img-hover-opacity: 0.9;
+    --bdrs: #{g.rem(50)};
+    --bdrs-lg: #{g.rem(100)};
   }
 
   // -----------------------------------------------------------------
@@ -118,10 +120,7 @@
     position: relative;
     background-color: #fff;
     color: #222;
-    font-family:
-      avenir, "Noto Sans JP", "游ゴシック体", yugothic, "游ゴシック Medium",
-      "Yu Gothic Medium", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN",
-      "メイリオ", meiryo, sans-serif;
+    font-family: #{"theme(fontFamily.sans)"};
     font-size: 16px;
     font-weight: normal;
   }
@@ -401,6 +400,7 @@
     --form-border-radius: 6px;
     --form-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     --form-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    // --form-focus-color: var(--clr1);
 
     /* --- select 固有（3 変数） --- */
     --form-select-bg: #fff;

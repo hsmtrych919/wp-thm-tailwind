@@ -37,3 +37,8 @@
   $base-fz: 16;
   @return math.div($size , $base-fz) * 1rem;
 }
+
+// unicode（FontAwesome コードポイント用）
+@function unicode($str) {
+  @return unquote("\"")+unquote(str-insert($str, "\\", 1))+unquote("\"");
+}

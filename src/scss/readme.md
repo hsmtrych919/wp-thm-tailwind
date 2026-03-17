@@ -44,7 +44,7 @@
 - `tailwind-base.css`
   - Tailwind v4 の入口 CSS
 - `global/`
-  - 全体共通 API。変数定義、関数、mixin、breakpoint、shared token を公開（旧 `foundation/_variables.scss` を統合済み）
+  - 全体共通 API。変数定義、関数、mixin、breakpoint を公開
 - `layout/`
   - レイアウト層の現役 SCSS
 - `component/`
@@ -111,10 +111,12 @@ Sass partial です。
 役割:
 - Tailwind 側へ移した base / components レイヤーの CSS を保持する
 - reset 補足、CSS 変数、body 基本設定、共通コンポーネントをまとめる
+- body の font-family は `theme(fontFamily.sans)` で tailwind.config.js を参照する
 
 補足:
 - 先頭の `_` は Sass partial の命名です
 - 実ファイル名として `_tailwind-base-layer.scss` が正式名称です
+- SCSS 内で `theme()` を使う場合、Sass の interpolation `#{"theme(...)"}` で記述する（Sass を素通りさせ、後段の PostCSS/Tailwind が解決する）
 
 ## 5. ビルドの流れ
 
@@ -130,6 +132,7 @@ Sass partial です。
 
 3. `prd:postcss`
 - 連結後の `css/style.css` に Tailwind 展開と autoprefixer を適用
+- この段階で `theme()` 関数が tailwind.config.js の値に解決される
 
 4. `prd:webpack`
 - JS を production ビルド
@@ -141,16 +144,26 @@ Sass partial です。
 このテーマは段階移行で作られているため、Tailwind と SCSS は役割分担して共存しています。
 
 ### Tailwind が担うもの
-- utility 生成
+- utility 生成（PHP テンプレートで `sm:mt-4` 等を直接記述）
 - `theme.spacing`, `theme.screens`, `theme.zIndex`, `theme.fontFamily` などの設計値公開
 - Preflight などの base レイヤー
+- `theme()` 関数による SCSS → Tailwind config の値参照
 
 ### SCSS が担うもの
-- 既存クラス構造の維持
+- 既存クラス構造の維持（`@layer components` 内で BEM クラスを定義）
 - `@use` / `@forward` による分割管理
-- `rem()`, `get_vw()`, `get_zindex()` などの関数
+- `rem()`, `get_vw()`, `get_zindex()`, `unicode()` などの関数
 - `hover`, `gutter` などの mixin
-- Tailwind に完全移行していない component / project 層の実装
+- コンポーネント内のレスポンシブ対応（`@media #{g.$md}` 等）
+
+### breakpoints の二重定義について
+
+breakpoints は SCSS (`global/_variables.scss`) と Tailwind (`tailwind.config.js` screens) の両方で定義しているが、用途が異なるため二重管理ではない。
+
+- SCSS 側の `@media #{g.$md}`: コンポーネントクラス内でのスタイル展開。1 つのクラスの中でブレークポイントごとにスタイルを切り替える
+- Tailwind 側の `md:`: PHP テンプレートで独立した utility を適用する
+
+`@layer components` 内で `@media` を使ったレスポンシブ定義は Tailwind が公式に想定している使い方。値が揃っていれば問題ない。
 
 ### 共存の実態
 - Tailwind だけで完結しているわけではない
@@ -164,12 +177,14 @@ Sass partial です。
 旧 `foundation/_variables.scss` を `global/` に統合したもの。
 
 保持しているもの:
-- breakpoint 値
-- container max-width
-- font family
-- spacing map
-- z-index map
-- `get_zindex()`
+- breakpoint 値（`$grid-breakpoints` map）
+- spacing map（`$space_values`）
+- z-index map（`$layout_zindex`）+ `get_zindex()` 関数
+
+削除済みのもの（tailwind.config.js や @layer base に移行完了）:
+- font-family, font-size, font-weight, line-height
+- border-radius, transition-base
+- container max-width, grid-columns
 
 ### `global/_index.scss`
 
@@ -178,15 +193,13 @@ Sass partial です。
 各ファイルが `@use "../global" as g;` と書けるのは、ここで `@forward` しているためです。
 
 公開している主なもの:
-- `_variables`
-- `_breakpoints`
-- `_calc`
-- `_font`
-- `_gutter`
-- `_hover`
-- `_transition`
-- `_unicode`
-- `_media-queries`
+- `_variables`（breakpoint, spacing, zIndex）
+- `_breakpoints`（BP 関数・mixin）
+- `_calc`（rem, get_vw, unicode 等の関数）
+- `_font`（FontAwesome mixin）
+- `_gutter`（gutter mixin）
+- `_hover`（hover mixin）
+- `_media-queries`（$sm, $md 等のメディアクエリ変数）
 
 ### `global/_hover.scss`
 
@@ -198,11 +211,10 @@ Sass partial です。
 
 ### `global/_gutter.scss`
 
-これも現役です。
+現役です。
 
 理由:
-- `project/_form.scss`, `project/_post.scss`, `project/_post-single.scss`, `project/_entrystep.scss` などで `@include g.gutter` が使われている
-- 旧議論の一部に廃止予定の記録があるが、現コードではまだ使っている
+- `project/_form.scss`, `project/_post.scss`, `project/_post-single.scss`, `project/_entrystep.scss` で `@include g.gutter` が使われている
 
 ## 8. spacing / 単位の考え方
 
@@ -240,11 +252,7 @@ Sass partial です。
 - `component/_archive/ultimate-member/`
 - `component/_archive/wp-instagram-feed/`
 
-現時点では、この配置を現状として扱います。
-
-意味:
-- どちらも今は `style.scss` から読んでいない
-- ただし削除ではなく、参照復帰や再検討ができる形で保持している
+両ファイルとも旧 SCSS 変数を CSS 変数に置換済み。active 化時にそのまま使える状態。
 
 ## 10. archive の意味
 
@@ -263,7 +271,7 @@ archive は単なるゴミ箱ではありません。
 
 ### `component/_archive/` にあるもの
 - 現在未使用の component 系 SCSS
-- 現在 build graph 外の vendor 残置物
+- 現在 build graph 外の vendor（SCSS 変数は CSS 変数化済み）
 
 ## 11. 今このファイルだけ見れば押さえるべきこと
 
@@ -287,7 +295,7 @@ archive は単なるゴミ箱ではありません。
 → `style.scss` が Sass を束ねる
 → `style.scss` の中で `_tailwind-base-layer.scss` と各 SCSS モジュールを読む
 → `css/style.css` に統合
-→ PostCSS で Tailwind 展開と prefix 付与
+→ PostCSS で Tailwind 展開と prefix 付与（`theme()` もここで解決）
 
 共通 API の流れは次です。
 
@@ -308,6 +316,3 @@ archive は単なるゴミ箱ではありません。
 6. `src/scss/global/_variables.scss`
 
 この順に見れば、ほぼ全体像を見失いません。
-
-
-

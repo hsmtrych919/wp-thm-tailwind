@@ -1135,11 +1135,6 @@
     }
   }
 }
-/*!
- * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
- * Copyright 2011-2017 The Bootstrap Authors
- * Copyright 2011-2017 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)*/
 @layer base {
   :root {
     --clr1: #4FBA43;
@@ -1166,6 +1161,8 @@
     --link-hover-color: #747474;
     --clr1-hover: #3f9536;
     --img-hover-opacity: 0.9;
+    --bdrs: 3.125rem;
+    --bdrs-lg: 6.25rem;
   }
   :root {
     --unit: 0.2564102564vw;
@@ -1240,7 +1237,7 @@
     position: relative;
     background-color: #fff;
     color: #222;
-    font-family: avenir,"Noto Sans JP","游ゴシック体",yugothic,"游ゴシック Medium","Yu Gothic Medium","ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",meiryo,sans-serif;
+    font-family: avenir, "Noto Sans JP", "游ゴシック体", yugothic, "游ゴシック Medium", "Yu Gothic Medium", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", meiryo, sans-serif;
     font-size: 16px;
     font-weight: normal;
   }
@@ -6437,10 +6434,6 @@
     -webkit-transform-origin: bottom center;
             transform-origin: bottom center;
   }
-}
-:root {
-  --bdrs: 3.125rem;
-  --bdrs-lg: 6.25rem;
 }
 @layer components {
   .test {

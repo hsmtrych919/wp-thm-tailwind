@@ -3,16 +3,14 @@
 // @use "../global" as g; で利用
 
 @forward "_variables";
-// @forward "../foundation/_variables-color";  // Phase 5: 削除済み（build graph 内の参照ゼロ）
+// _variables-color.scss は Phase 5 で削除済み（全変数を :root CSS 変数に移行）
 
-// mixin
+// mixin / function
 @forward "_breakpoints";
 @forward "_calc";
 @forward "_font";
 @forward "_gutter";
 @forward "_hover";
-@forward "_transition";
-@forward "_unicode";
 
 // Media Queries
 @forward "_media-queries";

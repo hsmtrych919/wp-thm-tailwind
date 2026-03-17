@@ -1,6 +1,15 @@
 @charset "utf-8";
-@use "sass:color";
 @use "../../../global" as g;
+
+//
+// 旧 SCSS 変数を CSS 変数に置換（build graph 外・active 化時にそのまま使える状態）
+//
+
+:root {
+  --sbi-border-radius: 6px;
+  --sbi-btn-bg: var(--clr1);
+  --sbi-btn-bg-hover: #47a73c;
+}
 
 #sb_instagram {
   box-sizing: border-box;
@@ -349,7 +358,7 @@
   padding: 7px 14px;
   zoom: 1;
   border: none;
-  border-radius: g.$border-radius;
+  border-radius: var(--sbi-border-radius);
   background: #333;
   color: #fff;
   font-size: 13px;
@@ -408,7 +417,7 @@
   margin: 0;
   padding: 10px 15px;
   border: 1px solid #ddd;
-  border-radius: g.$border-radius;
+  border-radius: var(--sbi-border-radius);
   background: #eee;
   color: #333;
   font-size: 13px;
@@ -533,8 +542,8 @@
     margin-right: auto;
     margin-left: auto;
     padding: g.rem(14) 0;
-    border-radius: g.$border-radius !important;
-    background: g.$clr1 !important;
+    border-radius: var(--sbi-border-radius) !important;
+    background: var(--sbi-btn-bg) !important;
     box-shadow: none !important;
     color: #fff;
     font-size: g.rem(15);
@@ -546,7 +555,7 @@
 
     @include g.hover {
       opacity: 1;
-      background: #47a73c !important; /* was color.scale(g.$clr1, $lightness: -10%) */
+      background: var(--sbi-btn-bg-hover) !important;
       color: #fff;
     }
 

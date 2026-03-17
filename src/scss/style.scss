@@ -1,25 +1,15 @@
 @charset "utf-8";
 
-/*!
- * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
- * Copyright 2011-2017 The Bootstrap Authors
- * Copyright 2011-2017 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- */
-
 // -----------------------------------------------------------------
 // Foundation
 // -----------------------------------------------------------------
 
-// archived: _archive/foundation/_destyle.css  // Phase 1: Tailwind Preflight に移行
-// archived: _archive/foundation/_reboot.scss  // Phase 1: _tailwind-base-layer.scss に移行
 @use "_tailwind-base-layer";
 
 // -----------------------------------------------------------------
 // Layout
 // -----------------------------------------------------------------
 
-// @use "layout/_grid";           // Phase 3: Tailwind utility に移行
 @use "layout/_content";
 @use "layout/_header" as l-header;
 @use "layout/_footer" as l-footer;
@@ -28,14 +18,13 @@
 // Object / Component
 // -----------------------------------------------------------------
 
-//プラグイン優先
+// vendor
 @use "component/fontawesome-free-5.14.0";
 @use "component/micromodal/micromodal";
 @use "component/swiper/swiper-bundle";
-// archived: component/_archive/wp-instagram-feed/_wp-instagram-feed.scss
 @use "component/scroll-hint";
 
-// @use "component/_gutter";       // Phase 3: Tailwind utility に移行
+// component
 @use "component/_header" as c-header;
 @use "component/_footer" as c-footer;
 @use "component/_button" as c-button;
@@ -45,9 +34,6 @@
 @use "component/_post" as c-post;
 @use "component/_post-feed";
 @use "component/_search";
-// archived: component/_archive/_tab.scss
-// archived: component/_archive/_table.scss
-// archived: component/_archive/_toggle.scss
 @use "component/_style" as c-content;
 @use "component/_typ" as c-typ;
 @use "component/_validation";
@@ -66,18 +52,3 @@
 @use "project/_post-single";
 @use "project/_style" as p-content;
 @use "project/_typ" as p-typ;
-
-// -----------------------------------------------------------------
-// Object / Utility
-// -----------------------------------------------------------------
-
-// archived: _archive/utility/_blockquote.scss
-// archived: _archive/utility/_display.scss       // Phase 2: Tailwind utility に移行
-// archived: _archive/utility/_flex.scss          // Phase 2: Tailwind utility に移行
-// archived: _archive/utility/_font.scss          // Phase 2: Tailwind utility に移行 (strong → @layer base)
-// archived: _archive/utility/_margin.scss        // Phase 2: Tailwind utility に移行
-// archived: _archive/utility/_padding.scss       // Phase 2: PHP 未使用、削除
-// archived: _archive/utility/_responsive-embed.scss // Phase 2: youtube → @layer components に移動
-// archived: _archive/utility/_tables.scss
-// archived: _archive/utility/_visibility.scss    // Phase 2: Tailwind utility に移行
-

@@ -1,4 +1,4 @@
-@use "_unicode";
+@use "_calc" as calc-fn;
 
 // Font Awesome Free 5.14.0 の使用はフォームの疑似要素に限定
 // fa5-far でunicode を渡して出力
@@ -13,7 +13,7 @@
 }
 @mixin fa5-far($code) {
   @include fa-icon; //最初に追加
-  content: unicode.unicode($code);
+  content: calc-fn.unicode($code);
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
 }
