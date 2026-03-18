@@ -108,212 +108,203 @@
 // -----------------------------------------------------------------
 @layer components {
 
-.c-button {
-  @include c-button;
-  padding: g.rem(20) g.rem(18) g.rem(16);
-  font-size: g.rem(17);
-  @media #{g.$lg} {
-    // padding: 20px g.rem(18) g.rem(16);
-    font-size: g.rem(18);
-  }
-  @media #{g.$xxl} {
-    padding: g.rem(22) g.rem(18) g.rem(18);
-    font-size: g.rem(19);
-  }
-  &--thin {
+  .c-button {
     @include c-button;
-    padding: g.rem(16) g.rem(14) g.rem(14);
+    padding: g.rem(20) g.rem(18) g.rem(16);
     font-size: g.rem(17);
-    @media #{g.$xxl} {
+    @media #{g.$lg} {
+      // padding: 20px g.rem(18) g.rem(16);
       font-size: g.rem(18);
     }
+    @media #{g.$xxl} {
+      padding: g.rem(22) g.rem(18) g.rem(18);
+      font-size: g.rem(19);
+    }
+    &--thin {
+      @include c-button;
+      padding: g.rem(16) g.rem(14) g.rem(14);
+      font-size: g.rem(17);
+      @media #{g.$xxl} {
+        font-size: g.rem(18);
+      }
+    }
   }
-}
 
-.c-button__icon--arrow {
-  position: absolute;
-  top: 50%;
-  right: g.rem(6);
-  width: g.rem(26);
-  transform: translate3d(0, -50%, 0);
-  transition: transform .2s ease-in-out;
-  animation: iconAnimation 3.5s infinite;
-}
+  .c-button__icon--arrow {
+    position: absolute;
+    top: 50%;
+    right: g.rem(6);
+    width: g.rem(26);
+    transform: translate3d(0, -50%, 0);
+    transition: transform .2s ease-in-out;
+    animation: iconAnimation 3.5s infinite;
+  }
 
-.c-button__icon--external {
-  position: absolute;
-  top: 50%;
-  right: g.rem(8);
-  width: g.rem(24);
-  transform: translate3d(0, -50%, 0);
-}
+  .c-button__icon--external {
+    position: absolute;
+    top: 50%;
+    right: g.rem(8);
+    width: g.rem(24);
+    transform: translate3d(0, -50%, 0);
+  }
 
-.c-button__icon--tel {
-  position: absolute;
-  top: 52.5%;
-  left: g.rem(12);
-  width: g.rem(24);
-  transform: translate3d(0, -50%, 0);
-}
+  .c-button__icon--tel {
+    position: absolute;
+    top: 52.5%;
+    left: g.rem(12);
+    width: g.rem(24);
+    transform: translate3d(0, -50%, 0);
+  }
 
 
-.c-button__grd {
-  @include button__color(
-    $clr: #fff,
+  .c-button__grd {
+    @include button__color(
+      $clr: #fff,
     $bgc: var(--clr1),
     $clr-hover: #fff,
     $bgc-hover: #60c255
   );
-  background: var(--grd-recruit);
-  @include g.hover {
-    opacity: var(--img-hover-opacity);
+    background: var(--grd-recruit);
+    @include g.hover {
+      opacity: var(--img-hover-opacity);
+    }
+    @include button-arrow-hover;
+    // .c-button__arrow {
+    //   color: #fff;
+    // }
   }
-  @include button-arrow-hover;
-  // .c-button__arrow {
-  //   color: #fff;
-  // }
-}
 
 
-.c-button__clr1 {
-  @include button__color(
-    $clr: #fff,
-    $bgc: #4fba43, /* = $clr1 */
+  .c-button__clr1 {
+    @include button__color(
+      $clr: #fff,
+    $bgc: #4fba43, 
     $clr-hover: #fff,
     $bgc-hover: #47a73c
   );
-  @include button-arrow-hover;
-}
+    @include button-arrow-hover;
+  }
 
-.c-button__clr1--border {
-  @include button__color--border(
-    $clr: var(--clr1),
+  .c-button__clr1--border {
+    @include button__color--border(
+      $clr: var(--clr1),
     $bgc: #fff,
     $bdc: var(--clr1),
     $clr-hover: #fff,
     $bgc-hover: var(--clr1),
     $bdc-hover: var(--clr1)
   );
-  @include button-arrow-hover;
-}
+    @include button-arrow-hover;
+  }
 
-.c-button__clr1--toc {
-  @include button__color--border(
-    $clr: var(--clr1),
+  .c-button__clr1--toc {
+    @include button__color--border(
+      $clr: var(--clr1),
     $bgc: #fff,
     $bdc: var(--clr1),
     $clr-hover: #47a73c,
     $bgc-hover: #ffdee1,
     $bdc-hover: var(--clr1)
   );
-  @include button-arrow-hover;
-}
+    @include button-arrow-hover;
+  }
 
 
-.c-button__clr2 {
-  @include button__color(
-    $clr: #fff,
-    $bgc: #9bd22d, /* = $clr2 */
+  .c-button__clr2 {
+    @include button__color(
+      $clr: #fff,
+    $bgc: #9bd22d, 
     $clr-hover: #fff,
     $bgc-hover: #8cbd29
   );
-  @include button-arrow-hover;
-}
+    @include button-arrow-hover;
+  }
 
 
-.c-button__clr2--border {
-  @include button__color--border(
-    $clr: var(--clr2),
+  .c-button__clr2--border {
+    @include button__color--border(
+      $clr: var(--clr2),
     $bgc: #fff,
     $bdc: var(--clr2),
     $clr-hover: #fff,
     $bgc-hover: var(--clr2),
     $bdc-hover: var(--clr2)
   );
-  @include button-arrow-hover;
-}
+    @include button-arrow-hover;
+  }
 
-.c-button__clr3 {
-  @include button__color(
-    $clr: #fff,
+  .c-button__clr3 {
+    @include button__color(
+      $clr: #fff,
     $bgc: #846708,
     $clr-hover: #fff,
-    $bgc-hover: #725907 /* = $clr3 */
+    $bgc-hover: #725907 
   );
-  @include button-arrow-hover;
-}
+    @include button-arrow-hover;
+  }
 
 
-.c-button__rakuten {
-  @include button__color(
-    $clr: #fff,
+  .c-button__rakuten {
+    @include button__color(
+      $clr: #fff,
     $bgc: #bf0000,
     $clr-hover: #fff,
     $bgc-hover: #df0000
   );
-  @include btn-ec-flare($clr:#bf0000, $delay:0.5s);
-}
+    @include btn-ec-flare($clr:#bf0000, $delay:0.5s);
+  }
 
-.c-button__amazon {
-  @include button__color(
-    $clr: #fff,
+  .c-button__amazon {
+    @include button__color(
+      $clr: #fff,
     $bgc: #ff9900,
     $clr-hover: #fff,
     $bgc-hover: #ffa31a
   );
-  @include btn-ec-flare($clr:#ff9900, $delay:1s);
-}
+    @include btn-ec-flare($clr:#ff9900, $delay:1s);
+  }
 
-.c-button__tel--salon {
-  @include button__color(
-    $clr: #fff,
-    $bgc: #4fba43, /* = $clr1 */
+  .c-button__tel--salon {
+    @include button__color(
+      $clr: #fff,
+    $bgc: #4fba43, 
     $clr-hover: #fff,
     $bgc-hover: #47a73c
   );
-  padding-left: g.rem(48) !important;
-  @include g.hover {
+    padding-left: g.rem(48) !important;
+    @include g.hover {
+      .c-button__icon--tel {
+        color: #fff;
+      }
+    }
     .c-button__icon--tel {
       color: #fff;
     }
   }
-  .c-button__icon--tel {
-    color: #fff;
-  }
-}
 
-.c-button__tel--family {
-  @include button__color(
-    $clr: #fff,
-    $bgc: #9bd22d, /* = $clr2 */
+  .c-button__tel--family {
+    @include button__color(
+      $clr: #fff,
+    $bgc: #9bd22d, 
     $clr-hover: #fff,
     $bgc-hover: #8cbd29
   );
-  padding-left: g.rem(48) !important;
-  @include g.hover {
+    padding-left: g.rem(48) !important;
+    @include g.hover {
+      .c-button__icon--tel {
+        color: #fff;
+      }
+    }
     .c-button__icon--tel {
       color: #fff;
     }
   }
-  .c-button__icon--tel {
-    color: #fff;
+
+
+  .ignore {
+    opacity: 1 !important;
+    cursor: default !important;
   }
-}
-// .c-button__green {
-//   @include button__color(
-//     $clr: #fff,
-//     $bgc: g.$clr-prim-green,
-//     $clr-hover: #fff,
-//     $bgc-hover: color.scale(g.$clr-prim-green, $lightness: 5%)
-//   );
-// }
-
-
-.ignore {
-  opacity: 1 !important;
-  cursor: default !important;
-}
-
 } // @layer components
 
 

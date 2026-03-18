@@ -310,7 +310,7 @@ h1, h2 {
   }
 
   &--caption {
-    padding-bottom: rem4;
+    padding-bottom: g.rem(4);
     color: var(--clr1);
     font-size: g.rem(12);
   }

@@ -9,276 +9,262 @@ $z: overlay, nav, toolbar;
 
 @layer components {
 
-//
-// header
-//
+  //
+  // header
+  //
 
 
-.p-header {
-  z-index: g.get_zindex(header);
+  .p-header {
+    z-index: g.get_zindex(header);
 
 
-  &__logo {
-    transition: all 0.2s ease-in-out;
+    &__logo {
+      transition: all 0.2s ease-in-out;
 
-    @include g.hover() {
-      opacity: 0.65;
+      @include g.hover() {
+        opacity: 0.65;
+      }
     }
-  }
-  &__row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: var(--header-height);
-    // border-bottom: 1px solid g.$clrg200;
-    transition: background .2s ease-in-out, box-shadow .2s ease-in-out;
-    // background: #fff;
-    color: #fff;
-    @media #{g.$lg} {
-      align-items: stretch;
-      justify-content: space-between;
-      // transition: all 0.2s ease-in-out;
-      border-bottom: none;
-      background: transparent;
-    }
-    &.js-scroll {
-      background: #fff;
-      box-shadow: 3px 3px 6px rgba(#222, .1);
-    }
-  }
-}
-
-.p-header__row.js-active {
-  @media #{g.$lg} {
-    // background-color: #fff;
-  }
-}
-
-//
-// toolbar
-//
-.p-toolbar {
-  display: flex;
-  position: absolute;
-  z-index: index($z, toolbar);
-  top: g.rem(10);
-  left: g.rem(10);
-  align-items: center;
-  cursor: pointer;
-  @media #{g.$md} {
-    top: g.rem(13);
-  }
-  @media #{g.$lg} {
-    display: none;
-  }
-
-  &__subtitle {
-    display: none;
-
-    @media #{g.$sm} {
-      display: inline-block;
-      color: var(--gray);
-      font-size: g.rem(14);
-    }
-  }
-}
-
-// .p-toolbar.js-scroll--up {
-//   @media #{g.$maxSm} {
-//     transform: translate3d(0, g.rem(60), 0);
-//   }
-// }
-
-.p-toolbar[data-navmenu="open"] {
-
-  .p-toolbar__subtitle {
-
-    @media #{g.$sm} {
-      color: #fff;
-    }
-  }
-}
-
-.p-nav__overlay {
-  z-index: index($z, overlay);
-  background: var(--grd1);
-  // background: linear-gradient(140deg, var(--clr4), var(--clr2));
-}
-
-
-//
-// nav
-//
-
-
-.p-nav {
-  display: none;
-  z-index: index($z, nav);
-  padding-top: g.rem(70);
-  overflow: auto;
-  opacity: 0;
-  -webkit-overflow-scrolling: touch;
-
-  @media #{g.$lg} {
-    display: block !important;
-    position: relative;
-    padding-top: 0;
-    overflow: visible;
-    opacity: 1 !important;
-    // background: #ddd;
-    line-height: 1;
-  }
-  @media #{g.$lg} {
-    padding-left: g.rem(6);
-  }
-  @media #{g.$xl} {
-    padding-left: g.rem(20);
-  }
-  @media #{g.$xxl} {
-    padding-left: g.rem(24);
-  }
-
-  &__list {
-    //   list-style: none;
-    @media #{g.$lg} {
+    &__row {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      height: 100%;
-      // li:first-child::before {
-      //   display: none;
-      // }
-    }
-  }
-
-  &__item {
-    display: block;
-    width: 100%;
-
-    @media #{g.$lg} {
-      display: flex;
-      position: relative;
       align-items: center;
-      width: auto;
+      justify-content: center;
+      height: var(--header-height);
+      // border-bottom: 1px solid g.$clrg200;
+      transition: background .2s ease-in-out, box-shadow .2s ease-in-out;
+      // background: #fff;
+      color: #fff;
+      @media #{g.$lg} {
+        align-items: stretch;
+        justify-content: space-between;
+        // transition: all 0.2s ease-in-out;
+        border-bottom: none;
+        background: transparent;
+      }
+      &.js-scroll {
+        background: #fff;
+        box-shadow: 3px 3px 6px rgba(#222, .1);
+      }
+    }
+  }
+
+  .p-header__row.js-active {
+    @media #{g.$lg} {
+      // background-color: #fff;
+    }
+  }
+
+  //
+  // toolbar
+  //
+  .p-toolbar {
+    display: flex;
+    position: absolute;
+    z-index: index($z, toolbar);
+    top: g.rem(10);
+    left: g.rem(10);
+    align-items: center;
+    cursor: pointer;
+    @media #{g.$md} {
+      top: g.rem(13);
+    }
+    @media #{g.$lg} {
+      display: none;
+    }
+
+    &__subtitle {
+      display: none;
+
+      @media #{g.$sm} {
+        display: inline-block;
+        color: var(--gray);
+        font-size: g.rem(14);
+      }
+    }
+  }
+
+
+  .p-toolbar[data-navmenu="open"] {
+
+    .p-toolbar__subtitle {
+
+      @media #{g.$sm} {
+        color: #fff;
+      }
+    }
+  }
+
+  .p-nav__overlay {
+    z-index: index($z, overlay);
+    background: var(--grd1);
+    // background: linear-gradient(140deg, var(--clr4), var(--clr2));
+  }
+
+
+  //
+  // nav
+  //
+
+
+  .p-nav {
+    display: none;
+    z-index: index($z, nav);
+    padding-top: g.rem(70);
+    overflow: auto;
+    opacity: 0;
+    -webkit-overflow-scrolling: touch;
+
+    @media #{g.$lg} {
+      display: block !important;
+      position: relative;
+      padding-top: 0;
+      overflow: visible;
+      opacity: 1 !important;
+      // background: #ddd;
       line-height: 1;
     }
     @media #{g.$lg} {
-      // &::before {
-      //   content: "";
-      //   display: block;
-      //   position: absolute;
-      //   top: 50%;
-      //   left: 0;
-      //   width: 1px;
-      //   height: 18px;
-      //   transform: translate3d(-50%, -50%, 0);
-      //   background-color: g.$clrg500;
-      // }
+      padding-left: g.rem(6);
     }
     @media #{g.$xl} {
-      // &::before {
-      //   height: g.rem(24);
-      // }
+      padding-left: g.rem(20);
     }
-  }
-  &__item--salon {
-    @media #{g.$lg} {
-      white-space: nowrap
+    @media #{g.$xxl} {
+      padding-left: g.rem(24);
     }
-  }
-  &__item--salon-icon {
-    display: none;
-    @media #{g.$lg} {
-      display: block;
-      width: g.rem(20);
-      margin-left: g.rem(4);
-    }
-  }
-  &__item--recruit {
-    @media #{g.$lg} {
-      margin-left: g.rem(8);
-      transition: all 0.2s ease-in-out;
-      background-image: var(--grd1);
 
-      @include g.hover {
-        opacity: 0.85;
+    &__list {
+      //   list-style: none;
+      @media #{g.$lg} {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        height: 100%;
+        // li:first-child::before {
+        //   display: none;
+        // }
       }
-      // &::before {
-      //   display: none;
-      // }
     }
-  }
 
-  &__item--close {
-    display: block;
-    width: 100%;
+    &__item {
+      display: block;
+      width: 100%;
 
-    @media #{g.$lg} {
+      @media #{g.$lg} {
+        display: flex;
+        position: relative;
+        align-items: center;
+        width: auto;
+        line-height: 1;
+      }
+      @media #{g.$lg} {
+        // &::before {
+        //   content: "";
+        //   display: block;
+        //   position: absolute;
+        //   top: 50%;
+        //   left: 0;
+        //   width: 1px;
+        //   height: 18px;
+        //   transform: translate3d(-50%, -50%, 0);
+        //   background-color: g.$clrg500;
+        // }
+      }
+      @media #{g.$xl} {
+        // &::before {
+        //   height: g.rem(24);
+        // }
+      }
+    }
+    &__item--salon {
+      @media #{g.$lg} {
+        white-space: nowrap
+      }
+    }
+    &__item--salon-icon {
       display: none;
+      @media #{g.$lg} {
+        display: block;
+        width: g.rem(20);
+        margin-left: g.rem(4);
+      }
+    }
+    &__item--recruit {
+      @media #{g.$lg} {
+        margin-left: g.rem(8);
+        transition: all 0.2s ease-in-out;
+        background-image: var(--grd1);
+
+        @include g.hover {
+          opacity: 0.85;
+        }
+        // &::before {
+        //   display: none;
+        // }
+      }
+    }
+
+    &__item--close {
+      display: block;
+      width: 100%;
+
+      @media #{g.$lg} {
+        display: none;
+      }
     }
   }
-}
 
 
-.p-nav {
+  .p-nav {
 
-  &__list--children {
-    display: block;
+    &__list--children {
+      display: block;
 
-    @media #{g.$lg} {
-      display: none;
-      position: absolute;
-      top: var(--header-height);
-      left: 0%;
-      // transform: translate3d(-50%, 0, 0);
-      transition: opacity .2s ease-in-out;
-      opacity: 0;
-      background-color: #fff;
-      // background-color: color.scale(g.$clr1, $lightness: 5%);
-      box-shadow: 3px 3px 4px rgba(#b0b0b0, .5);
-    }
-    &.js-active {
-      opacity: 1;
+      @media #{g.$lg} {
+        display: none;
+        position: absolute;
+        top: var(--header-height);
+        left: 0%;
+        // transform: translate3d(-50%, 0, 0);
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+        background-color: #fff;
+        // background-color: color.scale(g.$clr1, $lightness: 5%);
+        box-shadow: 3px 3px 4px rgba(#b0b0b0, .5);
+      }
+      &.js-active {
+        opacity: 1;
+      }
     }
   }
-}
 
 
-// .p-nav.js-scroll--pre {
-// nav.l-nav.p-nav のスタイリング更新
-// @media #{g.$lg} {
-// overflow: hidden;
-// border-bottom: 1px solid var(--clr1);
-// background-color: rgba(var(--clr1), 0.9);
-// }
+  // dropdown使用時
+  // nav.l-nav.p-nav .p-nav__item.js-nav--dropdown .p-nav__list--children のスタイリング更新
+  // .p-nav__list--children {
+  //   @media #{g.$lg} {
+  //     top: g.rem(54);
+  //     background-color: rgba(color.scale(g.$clr1, $lightness: 5%), 0.9);
+  //   }
+  // }
 
-// dropdown使用時
-// nav.l-nav.p-nav .p-nav__item.js-nav--dropdown .p-nav__list--children のスタイリング更新
-// .p-nav__list--children {
-//   @media #{g.$lg} {
-//     top: g.rem(54);
-//     background-color: rgba(color.scale(g.$clr1, $lightness: 5%), 0.9);
-//   }
-// }
-
-// dropdown 含め各ボタン のスタイリング更新
-// nav.l-nav.p-nav .c-nav__button, nav.l-nav.p-nav .c-nav__buton--children
-// .c-nav__button, .c-nav__buton--children {
-//   @media #{g.$lg} {
-//     padding-top: g.rem(20);
-//     padding-bottom: g.rem(18);
-//     &::after {
-//       background-color: transparent !important;
-//     }
-//   }
-// }
-// }
+  // dropdown 含め各ボタン のスタイリング更新
+  // nav.l-nav.p-nav .c-nav__button, nav.l-nav.p-nav .c-nav__buton--children
+  // .c-nav__button, .c-nav__buton--children {
+  //   @media #{g.$lg} {
+  //     padding-top: g.rem(20);
+  //     padding-bottom: g.rem(18);
+  //     &::after {
+  //       background-color: transparent !important;
+  //     }
+  //   }
+  // }
+  // }
 
 
-.l-header.js-open {
-  .p-toolbar__login--typ, .p-toolbar__login::after {
-    color: #fff;
+  .l-header.js-open {
+    .p-toolbar__login--typ, .p-toolbar__login::after {
+      color: #fff;
+    }
   }
-}
-
 } // @layer components

@@ -3,7 +3,6 @@
 // @use "../global" as g; で利用
 
 @forward "_variables";
-// _variables-color.scss は Phase 5 で削除済み（全変数を :root CSS 変数に移行）
 
 // mixin / function
 @forward "_breakpoints";

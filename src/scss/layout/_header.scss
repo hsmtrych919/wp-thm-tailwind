@@ -12,82 +12,64 @@
 
 @layer components {
 
-.l-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-
-  @media #{g.$md} {
-    height: var(--header-height);
-  }
-  &--static {
+  .l-header {
+    position: fixed;
+    top: 0;
     width: 100%;
+
+    @media #{g.$md} {
+      height: var(--header-height);
+    }
+    &--static {
+      width: 100%;
+    }
+    &--absolute {
+      position: absolute;
+    }
   }
-  &--absolute {
-    position: absolute;
+
+  .l-header.js-scroll {
+    // smからは上部固定で表示させたまま
+    @media #{g.$maxSm} {
+      transform: translate3d(0, g.rem(-50), 0);
+      transition: transform 0.2s ease-in-out;
+    }
   }
-}
 
-.l-header.js-scroll {
-  // smからは上部固定で表示させたまま
-  @media #{g.$maxSm} {
-    transform: translate3d(0, g.rem(-50), 0);
-    transition: transform 0.2s ease-in-out;
-  }
-}
-
-.l-header.js-open {
-  top: 0 !important;
-  height: 100%;
-  transform: translate3d(0, 0, 0) !important;
-}
-
-.l-header.js-scroll--up {
-  // smからは上部固定で表示させたまま
-  @media #{g.$maxSm} {
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-
-//
-// nav
-//
-
-
-.l-nav {
-  position: fixed;
-  top: g.rem(-100);
-  width: 100%;
-  height: 0;
-  // max-height: 524px;
-  @media #{g.$lg} {
-    // position: absolute;
-    // top: var(--header-height) !important;
-    position: relative;
+  .l-header.js-open {
     top: 0 !important;
-    width: auto !important;
-    height: auto !important;
-    // max-height: none;
-    transform: translate3d(0, 0, 0);
+    height: 100%;
+    transform: translate3d(0, 0, 0) !important;
   }
-}
 
-// .l-nav.js-scroll--pre {
-//   // nav.l-nav.p-nav のスタイリング更新
-//   @media #{g.$lg} {
-//     position: fixed;
-//     transform: translate3d(0, calc(var(--header-height) * -1), 0);
-//     opacity: 0 !important;
-//   }
-// }
+  .l-header.js-scroll--up {
+    // smからは上部固定で表示させたまま
+    @media #{g.$maxSm} {
+      transform: translate3d(0, 0, 0);
+    }
+  }
 
-// .l-nav.js-scroll {
-//   // nav.l-nav.p-nav のスタイリング更新
-//   @media #{g.$lg} {
-//     transition: opacity 0.5s ease-in-out;
-//     opacity: 1 !important;
-//   }
-// }
 
+  //
+  // nav
+  //
+
+
+  .l-nav {
+    position: fixed;
+    top: g.rem(-100);
+    width: 100%;
+    height: 0;
+    // max-height: 524px;
+    @media #{g.$lg} {
+      // position: absolute;
+      // top: var(--header-height) !important;
+      position: relative;
+      top: 0 !important;
+      width: auto !important;
+      height: auto !important;
+      // max-height: none;
+      transform: translate3d(0, 0, 0);
+    }
+  }
 } // @layer components

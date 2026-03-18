@@ -34,34 +34,8 @@ $grid-breakpoints: (
 // Fonts — 定義は tailwind.config.js fontFamily に移行済み
 // body の font-family は tailwind-base.css @layer base で theme(fontFamily.sans) を参照
 
-$space_values: (
-  0_5: 4,
-  0_75: 6,
-  1: 8,
-  1_25: 10,
-  1_5: 12,
-  2: 16,
-  2_25: 18,
-  2_5: 20,
-  3: 24,
-  3_5: 28,
-  4: 32,
-  4_5: 36,
-  5: 40,
-  6: 48,
-  7: 56,
-  8: 64,
-  9: 72,
-  10: 80,
-  12: 96,
-  13: 104,
-  14: 112,
-  15: 120,
-  16: 128,
-  18: 144,
-  20: 160,
-) !default;
-
+// $space_values は Phase 2 で Tailwind spacing に移行済み（tailwind.config.js theme.spacing）
+// SCSS 内からの参照はゼロ。定義は tailwind.config.js を参照のこと。
 
 $layout_zindex: (
   micromodal : 2000,
