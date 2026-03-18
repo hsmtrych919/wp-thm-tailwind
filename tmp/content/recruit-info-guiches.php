@@ -49,7 +49,7 @@ echo '</div>';
             </div>
           </div>
       <?php else: ?>
-        <span class="c-typ__m">TEL. <?php echo esc_attr($dataTokadai['tel']); ?></span>
+        <span class="p-typ__m">TEL. <?php echo esc_attr($dataTokadai['tel']); ?></span>
       <?php endif; ?>
 
     </dd>

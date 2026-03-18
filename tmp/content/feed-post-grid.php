@@ -27,7 +27,7 @@ $query = new WP_Query(array(
     }
   ?>
           </h3>
-          <p class="p-latest-card__date c-post__archive--date"><time datetime="<?php the_time('y-m-d'); ?>"><?php the_time('Y/m/d') ?></time></p>
+          <p class="p-latest-card__date"><time datetime="<?php the_time('y-m-d'); ?>"><?php the_time('Y/m/d') ?></time></p>
           <p class="p-latest-card__excerpt"><?php echo mb_substr(get_the_excerpt(), 0, 28)." ..."; ?></p>
 
 <?php else : ?>
@@ -41,7 +41,7 @@ $query = new WP_Query(array(
     }
   ?>
           </h3>
-          <p class="p-latest-card__date c-post__archive--date"><time datetime="<?php the_time('y-m-d'); ?>"><?php the_time('Y/m/d') ?></time></p>
+          <p class="p-latest-card__date"><time datetime="<?php the_time('y-m-d'); ?>"><?php the_time('Y/m/d') ?></time></p>
           <p class="p-latest-card__excerpt"><?php echo mb_substr(get_the_excerpt(), 0, 48)." ...";  ?></p>
 <?php endif; ?>
 

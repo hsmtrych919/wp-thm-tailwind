@@ -20,7 +20,7 @@
         <h1 class="c-headline__title"><span class="">STYLE</span></h1>
         <div class="c-headline__detail">
     <p class="">
-    <span class="c-ttl__xsmall text-clr3"><span class="text-clr1">#</span> <?php the_title(); ?></span></p>
+    <span class="p-ttl__xsmall text-clr3"><span class="text-clr1">#</span> <?php the_title(); ?></span></p>
         </div>
 
       </div>

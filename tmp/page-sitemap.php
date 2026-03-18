@@ -5,7 +5,7 @@
         <h1 class="c-headline__title c-headline__title--long"><span class="">SITE MAP</span></h1>
         <div class="c-headline__detail">
     <p class="">
-    <span class="c-ttl__xsmall text-clr3"><span class="text-clr1">#</span> サイトマップ</span></p>
+    <span class="p-ttl__xsmall text-clr3"><span class="text-clr1">#</span> サイトマップ</span></p>
         </div>
       </div>
     </div>

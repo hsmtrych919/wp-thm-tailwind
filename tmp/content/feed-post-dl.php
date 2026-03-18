@@ -8,7 +8,7 @@ $queryNewBlog = new WP_Query( array(
 <?php if ( $queryNewBlog->have_posts() ) : ?>
 
 
-<dl id="feed" class="c-post-feed__dl">
+<dl id="feed" class="p-post-feed__dl">
 <?php while ( $queryNewBlog->have_posts() ) : $queryNewBlog->the_post(); ?>
 <?php
 //記事タイトルの文字数
@@ -19,7 +19,7 @@ if (!is_mobile()) {
   }
 }
 ?>
-  <div class="c-post-feed__dl--row">
+  <div class="p-post-feed__dl--row">
   <dt><?php the_time('Y/m/d') ?></dt>
   <dd>
     <a href="<?php echo get_permalink(); ?>">

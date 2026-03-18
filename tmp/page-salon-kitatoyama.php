@@ -25,7 +25,7 @@
       <div class="p-salon-introduction__frame">
         <div class="p-salon-introduction__pic"><img src='<?php echo get_template_directory_uri(); ?>/img/c_guiches_kitatoyama01.jpg' alt="ギッシュ北外山店"></div>
         <div class="p-salon-introduction__detail">
-          <p class="c-typ">穏やかなBGMとアロマの香りがリラックス効果を倍増させる洗練された雰囲気のサロン。シャンプー台からは、緑溢れるプール付きガーデンが眺められます。店内は広々としていて、ゆったり寛げる癒しの空間です。</p>
+          <p class="p-typ">穏やかなBGMとアロマの香りがリラックス効果を倍増させる洗練された雰囲気のサロン。シャンプー台からは、緑溢れるプール付きガーデンが眺められます。店内は広々としていて、ゆったり寛げる癒しの空間です。</p>
         </div>
       </div>
     </div>

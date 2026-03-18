@@ -1,7 +1,7 @@
 <div class="p-sidebar px-gutter-row md:px-0">
   <div class="p-ttl__widget">
-    <p class="c-ttl__widget--caption">Category</p>
-    <h2 class="c-ttl__widget--bar"><span class="c-ttl__widget">ブログカテゴリー</span></h2>
+    <p class="p-ttl__widget--caption">Category</p>
+    <h2 class="p-ttl__widget--bar"><span class="p-ttl__widget">ブログカテゴリー</span></h2>
   </div>
   <ul class="p-archive__list">
 
@@ -20,8 +20,8 @@
 </div>
 <div class="p-sidebar px-gutter-row md:px-0">
   <div class="p-ttl__widget">
-    <p class="c-ttl__widget--caption">Monthly Archives</p>
-    <h2 class="c-ttl__widget--bar"><span class="c-ttl__widget">月別記事</span></h2>
+    <p class="p-ttl__widget--caption">Monthly Archives</p>
+    <h2 class="p-ttl__widget--bar"><span class="p-ttl__widget">月別記事</span></h2>
   </div>
 
     <?php if( !wp_is_mobile() ) : ?>

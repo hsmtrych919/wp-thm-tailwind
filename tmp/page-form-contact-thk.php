@@ -5,7 +5,7 @@
         <h1 class="c-headline__title c-headline__title--long"><span class="">THANKS</span></h1>
         <div class="c-headline__detail">
     <p class="">
-    <span class="c-ttl__xsmall text-clr3"><span class="text-clr1">#</span> 送信完了</span></p>
+    <span class="p-ttl__xsmall text-clr3"><span class="text-clr1">#</span> 送信完了</span></p>
         </div>
       </div>
     </div>
@@ -25,9 +25,9 @@
 
   <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
     <div class="w-full md:w-11/12 xl:w-10/12 p-entrystep__caption">
-      <p class="c-typ">フォーム送信が完了いたしました。<br class="sm:hidden">記入いただいたメールアドレスに<br class="max-sm:hidden">自動返信メールをお送りしていますのでご確認ください。</p>
-      <p class="c-typ mt-2 md:mt-3">自動返信メールが誤って迷惑メールと判断されてしまい<br class="max-sm:hidden">「迷惑メールフォルダ」や「削除フォルダ」「スパムフォルダ」等に<br class="max-sm:hidden">届いてしまう可能性がございます。<br><strong>自動返信メールが届かない場合、</strong><br class="max-sm:hidden">恐れ入りますが一度「迷惑メールフォルダ」などをご確認ください。</p>
-      <p class="c-typ mt-2 md:mt-3">弊社にてお問い合わせ内容を確認後、担当者より<br class="max-sm:hidden">ご連絡致しますので今しばらくお待ちくださいませ。</p>
+      <p class="p-typ">フォーム送信が完了いたしました。<br class="sm:hidden">記入いただいたメールアドレスに<br class="max-sm:hidden">自動返信メールをお送りしていますのでご確認ください。</p>
+      <p class="p-typ mt-2 md:mt-3">自動返信メールが誤って迷惑メールと判断されてしまい<br class="max-sm:hidden">「迷惑メールフォルダ」や「削除フォルダ」「スパムフォルダ」等に<br class="max-sm:hidden">届いてしまう可能性がございます。<br><strong>自動返信メールが届かない場合、</strong><br class="max-sm:hidden">恐れ入りますが一度「迷惑メールフォルダ」などをご確認ください。</p>
+      <p class="p-typ mt-2 md:mt-3">弊社にてお問い合わせ内容を確認後、担当者より<br class="max-sm:hidden">ご連絡致しますので今しばらくお待ちくださいませ。</p>
     </div>
   </div>
 

@@ -8,7 +8,7 @@
         <img src='<?php echo get_template_directory_uri(); ?>/img/c_menu.jpg' alt="MENU">
         </div>
         <div class="c-headline-pic__detail c-headline-pic__typ--for-gsap">
-          <p class="c-typ">メニューの価格は全店共通です。すべてのお客様が至高のひとときを過ごしていただけるよう上質な技術をご提供いたします。</p>
+          <p class="p-typ">メニューの価格は全店共通です。すべてのお客様が至高のひとときを過ごしていただけるよう上質な技術をご提供いたします。</p>
           <p class="text-fz14 2xl:text-fz15 text-gray-700 mt-1">※価格は全て税込表示です。</p>
         </div>
       </div>

@@ -20,7 +20,7 @@ $cat_slug = $queried_object -> slug;
 <div class="c-headline__outer">
     <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
       <div class="c-headline__content" >
-        <h1 class=""><span class="c-headline__title c-ttl__large"><?php echo $cat_name; ?></span></h1>
+        <h1 class=""><span class="c-headline__title p-ttl__large"><?php echo $cat_name; ?></span></h1>
         <p class="c-headline__lead"><?php echo $cat_slug ?></p>
       </div>
     </div>
