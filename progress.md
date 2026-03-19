@@ -1,6 +1,6 @@
 # 移行進捗
 
-## 現在: Phase 3（グリッド・レイアウト層の移行）— 完了 → Phase 4 へ進む
+## 現在: Phase 5 完了 + 2026-03-19 SCSS 再構成後整理まで反映済み
 
 ---
 
@@ -365,3 +365,52 @@ Phase 5 完了。次の Phase は計画書に未定義。
 - ビルド成功。CSS 比較: gutter mixin 由来の 6 ルールが消失、他のセレクタ・宣言は全て維持
 - `px-gutter-row` → `padding-inline: var(--gutter-row)` が CSS に生成されていることを確認
 - `.p-entrystep::after` の `calc(100% - var(--gutter-row) * 2)` は CSS 変数直参照であり mixin と無関係（影響なし）
+
+---
+
+## 2026-03-19 SCSS 再構成後整理
+
+### 状態: 実施済み（main / origin/main 反映済み）
+
+### 現在のコード状態
+
+- 現在の HEAD は `4f58eb8` (`scss整理`)
+- ローカル main は origin/main と一致している
+- 直前の SCSS 再構成実装コミット `44eb232` と JS 追従コミット `572102d` は取り込み済み
+
+### 実施内容
+
+- `src/scss/component/` から再構成対象だった partial を削除
+  - `_header.scss`
+  - `_footer.scss`
+  - `_post.scss`
+  - `_post-feed.scss`
+  - `_search.scss`
+  - `_typ.scss`
+- `src/scss/style.scss` から上記 component import を削除
+- `src/scss/project/_header.scss` の `.p-nav__overlay` に overlay 基礎スタイルを統合
+  - `display: none`
+  - `position: fixed`
+  - `top/right/bottom/left: 0`
+- `src/scss/project/_post.scss` に `img.size-orig_thumbnail_small`, `img.size-square_thumbnail_small` を移動
+- `src/scss/project/_typ.scss` に typ 系残置スタイルを移設
+- `src/scss/_tailwind-base-layer.scss` の見出し reset に `font-weight: normal` を追加
+- `src/js/header.js` は `p-nav__overlay`, `p-toolbar__line`, `p-nav__*` セレクタ参照に統一済み
+- 生成物 `css/style.css`, `css/style.css.map`, `js/bundle.js`, `js/bundle.js.map` も更新済み
+
+### 整理後の SCSS 構成
+
+- `src/scss/component/` に残る非 vendor partial は次のみ
+  - `_button.scss`
+  - `_google-map.scss`
+  - `_login.scss`
+  - `_pagenation.scss`
+  - `_style.scss`
+  - `_validation.scss`
+- `src/scss/project/` が header / footer / post / search / typ の実体を保持する構成に整理済み
+
+### この時点で確認できる状態
+
+- `src/scss/style.scss` では再構成対象の component/project 二重 import は解消済み
+- `src/scss/component/_header.scss` は現時点で存在しない
+- `src/js/header.js` と `src/scss/project/_header.scss` の overlay クラス参照は `p-nav__overlay` に揃っている
