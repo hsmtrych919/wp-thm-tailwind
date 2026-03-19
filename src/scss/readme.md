@@ -2,7 +2,7 @@
 
 このファイルを見れば、現時点の SCSS と Tailwind の構成、役割分担、ビルド経路、archive の位置、どこが現役でどこが履歴かを把握できるようにまとめています。
 
-最終更新: 2026-03-17
+最終更新: 2026-03-19
 
 ## 1. 現在の結論
 
@@ -95,6 +95,11 @@ Sass 側の本体です。
 - ここに `@use` があるかで build graph 内外を判断する
 - archive 済みファイルは、ここから参照しない状態で保持する
 
+2026-03-19 時点の補足:
+- `component/_validation.scss` と `project/_entrystep.scss` は build graph から外れた
+- これらの定義は `project/_form.scss` に統合済み
+- したがって form 関連の現役定義は `project/_form.scss` を見ればよい
+
 ### `src/scss/tailwind-base.css`
 
 Tailwind v4 の入口です。SCSS ではなく CSS です。
@@ -169,6 +174,7 @@ breakpoints は SCSS (`global/_variables.scss`) と Tailwind (`tailwind.config.j
 - Tailwind だけで完結しているわけではない
 - SCSS だけでも完結していない
 - 既存テーマの class 設計を維持しながら、Tailwind を基盤へ差し込んでいる状態
+- 機能単位で統合が進んだ結果、以前は別 partial だった定義が `project/_form.scss` のような feature 単位の partial に集約されることがある
 
 ## 7. `global/` の役割
 
@@ -285,6 +291,7 @@ archive は単なるゴミ箱ではありません。
 6. `utility/` と `mixins/` は現役ディレクトリとしては消えており、内容は archive 側へ移っている。
 7. `component/_archive/` は現在ビルドに入っていない SCSS の保管場所。
 8. SCSS と Tailwind は並存ではあるが、出力は最終的に 1 本へ統合される。
+9. form 関連の現役定義は `project/_form.scss` に集約されており、旧 `component/_validation.scss` と旧 `project/_entrystep.scss` は現役ファイルではない。
 
 ## 12. 現在の参照順序
 
