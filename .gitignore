@@ -6,3 +6,4 @@ package-lock.json
 css/*.bak
 css/*.snapshot
 css/*.before-*
+*.html

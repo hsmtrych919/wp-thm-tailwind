@@ -33,7 +33,7 @@
     padding: 0 g.rem(36);
     font-size: g.rem(22);
     font-weight: 400;
-    letter-spacing: 2em;
+    letter-spacing: 0.1em;
     @media #{g.$sm} {
       font-size: g.rem(23);
     }
@@ -41,7 +41,7 @@
     @media #{g.$md} {
       padding: 0 g.rem(46);
       font-size: g.rem(25);
-      letter-spacing: 4em;
+      letter-spacing: 0.15em;
     }
 
     @media #{g.$lg} {
@@ -325,10 +325,10 @@
   line-height: 1.5;
 
   @media #{g.$sm} {
-    font-size: max(calc(var(--unit) * 18), 19rem);
+    font-size: max(calc(var(--unit) * 18), 1.1875rem);
   }
   @media #{g.$lg} {
-    font-size: max(calc(var(--unit) * 21), 20rem);
+    font-size: max(calc(var(--unit) * 21), 1.3125rem);
   }
 }
 
