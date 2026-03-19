@@ -2,101 +2,14 @@
 @use "../global" as g;
 
 // -----------------------------------------------------------------
-// mixin
-// -----------------------------------------------------------------
-
-$separate-thumbnail-xs: 28%;
-$separate-thumbnail-sm: 16%;
-$separate-info-xs: 100% - $separate-thumbnail-xs;
-$separate-info-sm: 100% - $separate-thumbnail-sm;
-
-// -----------------------------------------------------------------
-// style
+// Migrated to project/_post.scss
+// Remaining: img.size-orig_thumbnail_small, img.size-square_thumbnail_small (not in restructuring scope)
 // -----------------------------------------------------------------
 
 @layer components {
 
 img.size-orig_thumbnail_small, img.size-square_thumbnail_small {
   width: 100%;
-}
-
-//
-//archive
-//
-
-
-.c-post__archive--thumbnail {
-  display: block;
-  // position: relative;
-  // overflow: hidden;
-
-  img {
-    border: 2px solid #67c45d; /* was color.scale(g.$clr1, $lightness: 14%) */
-
-    @media #{g.$md} {
-      border-width: 3px;
-    }
-  }
-
-  @include g.hover {
-    img {
-      opacity: var(--img-hover-opacity);
-    }
-  }
-}
-
-
-.c-post__archive--date {
-  font-size: g.rem(14);
-}
-
-
-//
-// widget
-//
-
-
-.c-post__widget--item {
-  display: flex;
-  padding-bottom: g.rem(12);
-  border-bottom: 1px solid var(--clrg300);
-
-  &-latest {
-
-    @extend .c-post__widget--item;
-
-    @media #{g.$md} {
-      padding-bottom: g.rem(10);
-    }
-  }
-}
-
-.c-post__widget--thumbnail {
-  width: $separate-thumbnail-xs;
-  padding-right: g.rem(16);
-
-
-  @media #{g.$sm} {
-    width: $separate-thumbnail-sm;
-  }
-
-  img {
-    border: 1px solid #67c45d; /* was color.scale(g.$clr1, $lightness: 14%) */
-  }
-}
-
-
-.c-post__widget--info {
-  width: $separate-info-xs;
-  line-height: 1;
-
-  @media #{g.$sm} {
-    width: $separate-info-sm;
-  }
-
-  @media #{g.$md} {
-    width: 100%;
-  }
 }
 
 } // @layer components

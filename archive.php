@@ -15,7 +15,7 @@
   <div class="c-headline__outer">
     <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
       <div class="c-headline__content" >
-        <h1 class=""><span class="c-headline__title c-ttl__large"><?php echo $title; ?></span></h1>
+        <h1 class=""><span class="c-headline__title p-ttl__large"><?php echo $title; ?></span></h1>
         <p class="c-headline__lead">archives</p>
       </div>
     </div>

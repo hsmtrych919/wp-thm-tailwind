@@ -8,7 +8,7 @@
 ?>
   <article id="post-<?php the_ID(); ?>" <?php post_class( 'p-post-single px-gutter-row md:px-0' ) ?> >
     <div class="p-ttl__post--single">
-      <h1 class="c-ttl__post--single c-ttl__ptn-dgnl"><?php the_title(); ?></h1>
+      <h1 class="p-ttl__post--single p-ttl__ptn-dgnl"><?php the_title(); ?></h1>
     </div>
     <div class="p-post-single__info">
       <p class="p-post-single__date"><time datetime="<?php the_time('y-m-d'); ?>"><?php the_time('Y/m/d') ?></time></p>
@@ -36,8 +36,8 @@
 
   <div class="p-related px-gutter-row md:px-0 mt-4 md:mt-5">
   <div class="p-ttl__widget">
-    <p class="c-ttl__widget--caption">Related Posts</p>
-    <h2 class="c-ttl__widget--bar"><span class="c-ttl__widget">おすすめ関連記事</span></h2>
+    <p class="p-ttl__widget--caption">Related Posts</p>
+    <h2 class="p-ttl__widget--bar"><span class="p-ttl__widget">おすすめ関連記事</span></h2>
   </div>
 <?php
 //カテゴリ情報から半年分の関連記事を5個ランダムに呼び出す
@@ -64,12 +64,12 @@ $query = new WP_Query($args); ?>
   <?php if( $query -> have_posts() ): ?>
   <?php while ($query -> have_posts()) : $query -> the_post(); ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class( 'p-related__post-archive' ) ?> >
-        <a href="<?php the_permalink(); ?>" class="c-post__widget--item p-related__post--item">
-        <div class="p-related__post--thumbnail c-post__widget--thumbnail">
+        <a href="<?php the_permalink(); ?>" class="p-related__post--item">
+        <div class="p-related__post--thumbnail">
           <?php fn_thumbnail_square_thumbnail(); ?>
         </div>
-        <div class="c-post__widget--info">
-          <h3 class="p-ttl__post--widget-related c-ttl__post--widget">
+        <div class="p-related__post--info">
+          <h3 class="p-ttl__post--widget-related">
 <?php if( is_mobile()) : ?>
   <?php
     if (mb_strlen($post->post_title, 'UTF-8') > 20) {

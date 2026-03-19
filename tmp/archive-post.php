@@ -1,12 +1,12 @@
   <article id="post-<?php the_ID(); ?>" <?php post_class( 'p-post__archive' ) ?> >
     <div class="p-post__archive--thumbnail">
-      <a href="<?php the_permalink(); ?>" class="c-post__archive--thumbnail">
+      <a href="<?php the_permalink(); ?>" class="p-post__archive--thumbnail-link">
       <?php fn_thumbnail_rsp_thumbnail(); ?>
       </a>
     </div>
     <div class="p-post__archive--info">
       <h2 class="p-ttl__post--archives">
-        <a href="<?php the_permalink(); ?>" class="c-ttl__post--archives c-ttl__ptn-dgnl">
+        <a href="<?php the_permalink(); ?>" class="p-ttl__post--archives p-ttl__ptn-dgnl">
 <?php if( is_mobile()) : ?>
   <?php
     if (mb_strlen($post->post_title, 'UTF-8') > 20) {
@@ -30,7 +30,7 @@ $cat_slug  = $category[0]->category_nicename;
 if ( $category[0] ) {
 echo '<a href="' . get_category_link( $category[0]->term_id ) . '" class="p-post__archive--button-category ' . $cat_slug . '">' . $category[0]->cat_name . '</a>';
 } ?>
-        <p class="p-post__archive--date c-post__archive--date"><time datetime="<?php the_time('y-m-d'); ?>"><?php the_time('Y/m/d') ?></time></p>
+        <p class="p-post__archive--date"><time datetime="<?php the_time('y-m-d'); ?>"><?php the_time('Y/m/d') ?></time></p>
       </div>
 
 <p class="p-post__archive--excerpt">

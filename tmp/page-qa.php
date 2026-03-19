@@ -8,7 +8,7 @@
         <img src='<?php echo get_template_directory_uri(); ?>/img/c_qa.jpg' alt="Q&A">
         </div>
         <div class="c-headline-pic__detail c-headline-pic__typ--for-gsap">
-          <p class="c-typ">初めてギッシュにご来店される方に向けて、お客様からのよくある質問をご紹介します。</p>
+          <p class="p-typ">初めてギッシュにご来店される方に向けて、お客様からのよくある質問をご紹介します。</p>
         </div>
       </div>
     </div>

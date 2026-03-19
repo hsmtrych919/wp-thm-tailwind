@@ -36,8 +36,8 @@ if ( is_archive() || is_404() || is_search()){
   <?php echo get_template_part('tmp/google-tag-manager/tmp', 'gtm-body'); ?>
   <header class="l-header--static">
     <div class="p-header__row">
-      <div class="c-header__logo-block c-header__logo-block--login">
-        <h1 class="c-header__logo items-center"><img src='<?php echo get_template_directory_uri(); ?>/img/logo.svg' alt=""></h1>
+      <div class="p-header__logo-block p-header__logo-block--login">
+        <h1 class="p-header__logo items-center"><img src='<?php echo get_template_directory_uri(); ?>/img/logo.svg' alt=""></h1>
       </div>
     </div>
   </header>
@@ -53,11 +53,11 @@ if ( is_archive() || is_404() || is_search()){
     <div class="p-header__row" id="grobal__header">
 
     <?php if ( is_front_page() ) : ?>
-      <h1 class="c-header__logo-block js-initial" id="front-logo">
+      <h1 class="p-header__logo-block js-initial" id="front-logo">
     <?php else : ?>
-      <h1 class="c-header__logo-block">
+      <h1 class="p-header__logo-block">
     <?php endif; ?>
-        <a class="c-header__logo p-header__logo" href='<?php echo home_url('/'); ?>'><img src='<?php echo get_template_directory_uri(); ?>/img/logo.svg' alt=""></a>
+        <a class="p-header__logo" href='<?php echo home_url('/'); ?>'><img src='<?php echo get_template_directory_uri(); ?>/img/logo.svg' alt=""></a>
       </h1>
       <?php get_template_part('tmp/tmp', 'nav-main'); ?>
     </div>

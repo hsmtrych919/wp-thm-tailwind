@@ -2,8 +2,8 @@
 
 <article class="l-container__search">
   <div class="p-ttl__search px-gutter-row xl:px-0">
-    <p class="c-ttl__search--caption">検索キーワード</p>
-    <h1 class="c-ttl__search"><span><?php the_search_query(); ?></span></h1>
+    <p class="p-ttl__search--caption">検索キーワード</p>
+    <h1 class="p-ttl__search"><span><?php the_search_query(); ?></span></h1>
   </div>
   <div class="l-container">
 <?php if ( have_posts() ) : ?>

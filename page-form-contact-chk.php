@@ -238,7 +238,7 @@ if($isSubmit){
         <h1 class="c-headline__title c-headline__title--long"><span class="">CONTACT</span></h1>
         <div class="c-headline__detail">
     <p class="">
-    <span class="c-ttl__xsmall text-clr3"><span class="text-clr1">#</span> 入力内容の確認</span></p>
+    <span class="p-ttl__xsmall text-clr3"><span class="text-clr1">#</span> 入力内容の確認</span></p>
         </div>
       </div>
     </div>
@@ -273,7 +273,7 @@ if($isSubmit){
 if( isset( $inputSendtype ) && $inputSendtype !== "" ){
 ?>
 <div class="p-form__group--confirm" >
-<div class="p-form__ttl--confirm"><span class="c-form__ttl">送信内容</span></div>
+<div class="p-form__ttl--confirm"><span class="p-form__ttl">送信内容</span></div>
 <div class="p-form__input--confirm">
 <?php
   echo $inputSendtype ;
@@ -286,7 +286,7 @@ if( isset( $inputSendtype ) && $inputSendtype !== "" ){
 
 <!-- お名前 -->
 <div class="p-form__group--confirm" >
-<div class="p-form__ttl--confirm"><span class="c-form__ttl">お名前</span></div>
+<div class="p-form__ttl--confirm"><span class="p-form__ttl">お名前</span></div>
 <div class="p-form__input--confirm">
 <?php
   echo $inputName ;
@@ -297,7 +297,7 @@ if( isset( $inputSendtype ) && $inputSendtype !== "" ){
 
 <!-- 電話番号 -->
 <div class="p-form__group--confirm" >
-<div class="p-form__ttl--confirm"><span class="c-form__ttl">電話番号</span></div>
+<div class="p-form__ttl--confirm"><span class="p-form__ttl">電話番号</span></div>
 <div class="p-form__input--confirm">
 <?php
   echo $inputTel ;
@@ -308,7 +308,7 @@ if( isset( $inputSendtype ) && $inputSendtype !== "" ){
 
 <!-- メールアドレス -->
 <div class="p-form__group--confirm" >
-<div class="p-form__ttl--confirm"><span class="c-form__ttl">メールアドレス</span></div>
+<div class="p-form__ttl--confirm"><span class="p-form__ttl">メールアドレス</span></div>
 <div class="p-form__input--confirm">
 <?php
   echo $inputEmail ;
@@ -322,7 +322,7 @@ if( isset( $inputSendtype ) && $inputSendtype !== "" ){
 if( isset( $inputPostalCode ) && $inputPostalCode !== "" ){
 ?>
 <div class="p-form__group--confirm" >
-<div class="p-form__ttl--confirm"><span class="c-form__ttl">郵便番号</span></div>
+<div class="p-form__ttl--confirm"><span class="p-form__ttl">郵便番号</span></div>
 <div class="p-form__input--confirm">
 <?php
   $convert = mb_convert_kana($inputPostalCode, "na");
@@ -342,7 +342,7 @@ if( isset( $inputPostalCode ) && $inputPostalCode !== "" ){
 if( isset( $inputRegion ) && $inputRegion !== "" && isset( $inputCity ) && $inputCity !== "" ){
 ?>
 <div class="p-form__group--confirm" >
-<div class="p-form__ttl--confirm"><span class="c-form__ttl">ご住所</span></div>
+<div class="p-form__ttl--confirm"><span class="p-form__ttl">ご住所</span></div>
 <div class="p-form__input--confirm">
 <?php
   $out = $inputRegion." ".$inputCity." ".$inputExAdd;
@@ -359,7 +359,7 @@ if( isset( $inputRegion ) && $inputRegion !== "" && isset( $inputCity ) && $inpu
 if( isset( $inputInquiry ) && $inputInquiry !== "" ){
 ?>
 <div class="p-form__group--confirm" >
-<div class="p-form__ttl--confirm"><span class="c-form__ttl">お問い合わせ内容</span></div>
+<div class="p-form__ttl--confirm"><span class="p-form__ttl">お問い合わせ内容</span></div>
 <div class="p-form__input--confirm text-fz16 2xl:text-fz17">
 <?php
   // textareaの改行をhtmlに反映。取得データには加工無しで反映されている

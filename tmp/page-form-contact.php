@@ -13,7 +13,7 @@ $token = bin2hex($randomNumber);
         <h1 class="c-headline__title c-headline__title--long"><span class="">CONTACT</span></h1>
         <div class="c-headline__detail">
     <p class="">
-    <span class="c-ttl__xsmall text-clr3"><span class="text-clr1">#</span> お問合せフォーム</span></p>
+    <span class="p-ttl__xsmall text-clr3"><span class="text-clr1">#</span> お問合せフォーム</span></p>
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@ $token = bin2hex($randomNumber);
 
   <div class="l-container">
   <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
-    <p class="w-full sm:w-10/12  c-typ text-clr1 sm:text-center">本フォームはお問い合わせ専用でございます。<br>ご予約は各ページの予約ボタンからお願いいたします。</p>
+    <p class="w-full sm:w-10/12  p-typ text-clr1 sm:text-center">本フォームはお問い合わせ専用でございます。<br>ご予約は各ページの予約ボタンからお願いいたします。</p>
   </div>
 
   <div class="container mx-auto flex flex-wrap justify-center mt-3 md:mt-4">
@@ -53,7 +53,7 @@ echo '<input name="input_token" type="hidden" value="'.$token.'">';
 
 <!-- 送信内容 -->
 <div class="p-form__group">
-<div class="p-form__ttl--radio"><span class="c-form__ttl">送信内容</span></div>
+<div class="p-form__ttl--radio"><span class="p-form__ttl">送信内容</span></div>
 <div class="p-form__input">
 <?php
 $sendtypeCat = ['お問い合わせ' ];
@@ -72,7 +72,7 @@ echo '</label></span>';
 
 <!-- 名前 -->
 <div class="p-form__group">
-<div class="p-form__ttl"><span class="c-form__ttl">お名前</span><strong>必須</strong></div>
+<div class="p-form__ttl"><span class="p-form__ttl">お名前</span><strong>必須</strong></div>
 <div class="p-form__input">
 <input type="text" name="input_name" id="form_name" class="p-form__control--input-half" size="20" value="" placeholder="お名前">
 </div>
@@ -80,7 +80,7 @@ echo '</label></span>';
 
 <!-- 電話番号 -->
 <div class="p-form__group" >
-<div class="p-form__ttl"><span class="c-form__ttl">電話番号</span><strong>必須</strong></div>
+<div class="p-form__ttl"><span class="p-form__ttl">電話番号</span><strong>必須</strong></div>
 <div class="p-form__input">
 <input type="tel" name="input_tel" id="form_tel" class="p-form__control--input-half" size="26" value="" placeholder="電話番号" >
 <p></p>
@@ -91,7 +91,7 @@ echo '</label></span>';
 
 <!-- メールアドレス -->
 <div class="p-form__group" >
-<div class="p-form__ttl"><span class="c-form__ttl">メールアドレス</span><strong>必須</strong></div>
+<div class="p-form__ttl"><span class="p-form__ttl">メールアドレス</span><strong>必須</strong></div>
 <div class="p-form__input">
 <input type="email" name="input_email" id="form_email" class="p-form__control--input" size="40" maxlength="50" value="" placeholder="メールアドレス" >
 <p></p>
@@ -103,7 +103,7 @@ echo '</label></span>';
 
 <!-- 郵便番号 -->
 <div class="p-form__group">
-<div class="p-form__ttl"><span class="c-form__ttl">郵便番号</span></div>
+<div class="p-form__ttl"><span class="p-form__ttl">郵便番号</span></div>
 <div class="p-form__input">
   <input type="hidden" class="p-country-name" value="Japan">
   <input type="tel" id="form_postalcode" name="input_postalcode" size="16" maxlength="16" class="p-form__control--input-half p-postal-code" placeholder="000-0000" />
@@ -114,7 +114,7 @@ echo '</label></span>';
 
 <!-- 住所 -->
 <div class="p-form__group">
-<div class="p-form__ttl"><span class="c-form__ttl">ご住所</span></div>
+<div class="p-form__ttl"><span class="p-form__ttl">ご住所</span></div>
 <div class="p-form__input">
 <input type="hidden" class="p-country-name" value="Japan">
 <p class="p-form__address--caption">都道府県</p>
@@ -143,7 +143,7 @@ echo '<option value="'.$region.'">'.$region.'</option>';
 
 <!-- お問い合わせ内容 -->
 <div class="p-form__group" >
-<div class="p-form__ttl"><span class="c-form__ttl">お問い合わせ内容</span><strong>必須</strong></div>
+<div class="p-form__ttl"><span class="p-form__ttl">お問い合わせ内容</span><strong>必須</strong></div>
 <div class="p-form__input">
 <textarea name="input_inquiry" id="form_inquiry" class="p-form__control--textarea" cols="60" rows="5" placeholder="※140字以内でご記入ください。"></textarea>
 </div>

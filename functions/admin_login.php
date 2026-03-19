@@ -48,13 +48,13 @@ function custom_login_header() {
 ?>
   <header class="l-header--static">
     <div class="p-header__row">
-      <div class="c-header__logo-block c-header__logo-block--login">
-        <h1 class="c-header__logo items-center"><img src='<?php echo get_template_directory_uri(); ?>/img/logo.svg' alt=""></h1>
+      <div class="p-header__logo-block p-header__logo-block--login">
+        <h1 class="p-header__logo items-center"><img src='<?php echo get_template_directory_uri(); ?>/img/logo.svg' alt=""></h1>
       </div>
     </div>
   </header>
 <div class="l-main__nav-less">
-<div class="c-ttl__bg-grd">
+<div class="p-ttl__bg-grd--wrap">
   <h1><span class="p-ttl__bg-grd">ログイン画面</span></h1>
 </div>
 <?php }

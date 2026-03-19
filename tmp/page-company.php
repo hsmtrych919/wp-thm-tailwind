@@ -8,7 +8,7 @@
         <img src='<?php echo get_template_directory_uri(); ?>/img/c_company.jpg' alt="COMPANY">
         </div>
         <div class="c-headline-pic__detail c-headline-pic__typ--for-gsap">
-          <p class="c-typ">トータルビューティーサロンを愛知県小牧市・江南市・北名古屋市・名古屋市で8店舗展開中。ギッシュの会社概要と沿革。</p>
+          <p class="p-typ">トータルビューティーサロンを愛知県小牧市・江南市・北名古屋市・名古屋市で8店舗展開中。ギッシュの会社概要と沿革。</p>
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
       <section class="">
       <div class="container mx-auto flex flex-wrap justify-center">
           <div class="w-full">
-            <h2 class="p-salonlist__title "><span class="c-ttl__small"><span class="text-clr1">#</span> 会社概要</span></h2>
+            <h2 class="p-salonlist__title "><span class="p-ttl__small"><span class="text-clr1">#</span> 会社概要</span></h2>
           </div>
         </div>
         <div class="container mx-auto flex flex-wrap justify-start p-company__content">
@@ -59,7 +59,7 @@
       <section class="mt-7 md:mt-8">
       <div class="container mx-auto flex flex-wrap justify-center ">
           <div class="w-full">
-            <h2 class="p-salonlist__title "><span class="c-ttl__small"><span class="text-clr1">#</span> 沿革</span></h2>
+            <h2 class="p-salonlist__title "><span class="p-ttl__small"><span class="text-clr1">#</span> 沿革</span></h2>
           </div>
         </div>
         <div class="container mx-auto flex flex-wrap justify-start  p-company__content">

@@ -1,9 +1,14 @@
 @charset "utf-8";
 @use "sass:math";
 @use "../global" as g;
+@use "../component/fontawesome-free-5.14.0/_mixins" as m;
 // -----------------------------------------------------------------
 // style
 // -----------------------------------------------------------------
+
+:root {
+  --footernavi-height: #{g.rem(55)};
+}
 
 @layer components {
 
@@ -55,6 +60,14 @@
     margin-top: g.rem(96);
   }
 
+  &--have-footernavi {
+    margin-bottom: var(--footernavi-height);
+
+    @media #{g.$md} {
+      margin-bottom: 0;
+    }
+  }
+
   &__logo {
     width: 160px;
   }
@@ -71,17 +84,54 @@
     color: var(--clrg700);
     font-size: g.rem(14);
   }
+
+  &__info {
+    width: 100%;
+    @media #{g.$sm} {
+      width: g.px-to-per(310, 576);
+    }
+    @media #{g.$lg} {
+      width: auto;
+      margin-right: auto;
+    }
+  }
+  &__info--alone {
+    @media #{g.$sm} {
+      margin-right: auto;
+    }
+  }
 }
 
 .p-footer__links {
+  display: none;
+  @media #{g.$sm} {
+    display: flex;
+    flex: 1 0 auto;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 232px;
+    margin-top: g.rem(10);
+  }
+  @media #{g.$lg} {
+    max-width: 580px;
+    max-height: 160px;
+  }
+
   &--item {
     display: block;
-    width: 100%;
-    padding: g.rem(6) 0;
-    // color: g.$footer__info;
-    font-size: g.rem(15);
-    @include g.hover {
-      text-decoration: underline;
+    width: 48%;
+    @media #{g.$lg} {
+      width: 30%;
+    }
+
+    a {
+      display: block;
+      width: 100%;
+      padding: g.rem(6) 0;
+      font-size: g.rem(15);
+      @include g.hover {
+        text-decoration: underline;
+      }
     }
   }
 }
@@ -133,6 +183,120 @@
   }
 }
 
+
+.p-footer__fade-link {
+  display: block;
+  position: relative;
+  width: g.rem(56);
+  height: g.rem(56);
+  transition: all 0.2s ease-in-out;
+  border: 1px solid var(--clr1);
+  border-radius: g.rem(12) 0 0 g.rem(12);
+  background-color: #fff;
+  color: var(--clr1);
+  font-size: g.rem(26);
+  line-height: g.rem(60);
+  text-align: center;
+  @include g.hover {
+    background-color: #f3f9d7;
+    color: var(--clr1);
+  }
+}
+
+.p-footer__fade-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: g.rem(28);
+  transform: translate3d(-50%, -50%, 0);
+}
+
+
+%footernav__button {
+  display: block;
+  position: relative;
+  height: var(--footernavi-height);
+  background-color: #fff;
+  color: var(--clrg600);
+  font-size: g.rem(11);
+  letter-spacing: g.rem(1);
+  line-height: g.rem(90);
+  text-align: center;
+  text-indent: g.rem(1);
+  @include g.hover {
+    background-color: #fff;
+  }
+}
+
+%footernav__button__right {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: var(--footernavi-height);
+  padding: g.rem(6);
+  border-top: 1px solid var(--clrg300);
+  background-color: #fff;
+}
+%footernav__button__right__inner {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: g.rem(8) 0 g.rem(6);
+  border-radius: 6px;
+  background-color: var(--clr1);
+  color: #fff;
+  font-size: g.rem(14);
+  line-height: 1;
+}
+
+.p-footernav__button {
+  @extend %footernav__button;
+  border-top: 1px solid var(--clrg300);
+  border-right: 1px solid var(--clrg300);
+
+  &-icon {
+    position: absolute;
+    top: 33%;
+    left: 50%;
+    width: g.rem(28);
+    transform: translate(-50%, -50%);
+    color: var(--clr1);
+  }
+  &-icon-insta {
+    position: absolute;
+    top: 37%;
+    left: 50%;
+    width: g.rem(28);
+    transform: translate(-50%, -50%);
+    color: var(--clr1);
+  }
+
+  &--reserve {
+    @extend %footernav__button__right;
+  }
+  &--reserve-inner {
+    @extend %footernav__button__right__inner;
+    pointer-events: none;
+  }
+  &--reserve-icon {
+    width: g.rem(26);
+    margin-right: g.rem(6);
+    color: #fff;
+  }
+  &--tel {
+    @extend %footernav__button__right;
+  }
+  &--tel-inner {
+    @extend %footernav__button__right__inner;
+  }
+  &--tel-icon {
+    width: g.rem(22);
+    margin-right: g.rem(6);
+    color: #fff;
+  }
+}
 
 .p-footernav {
 
