@@ -30,14 +30,12 @@
 @use "component/_login";
 @use "component/_pagenation";
 @use "component/_style" as c-content;
-@use "component/_validation";
 
 // -----------------------------------------------------------------
 // Object / Project
 // -----------------------------------------------------------------
 
 @use "project/_button" as p-button;
-@use "project/_entrystep";
 @use "project/_footer" as p-footer;
 @use "project/_form";
 @use "project/_header" as p-header;
