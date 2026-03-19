@@ -1136,23 +1136,25 @@
   }
 }
 @layer utilities {
+  /*!important は @import "tailwindcss" important で自動付与されるため省略。
+     万一優先度の問題が出た場合はここに明示追加する。*/
   .l-container {
-    margin-inline: auto !important;
-    width: 100% !important;
+    margin-inline: auto;
+    width: 100%;
     @media (width >= 576px) {
-      max-width: 540px !important;
+      max-width: 540px;
     }
     @media (width >= 811px) {
-      max-width: 960px !important;
+      max-width: 960px;
     }
     @media (width >= 1025px) {
-      max-width: 1152px !important;
+      max-width: 1152px;
     }
     @media (width >= 1280px) {
-      max-width: 1200px !important;
+      max-width: 1200px;
     }
     @media (width >= 1366px) {
-      max-width: 1260px !important;
+      max-width: 1260px;
     }
   }
 }
