@@ -1,6 +1,6 @@
 <article class="">
 <div class="c-headline__outer">
-    <div class="container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
+    <div class="l-container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
       <div class="c-headline__frame" >
         <h1 class="c-headline__title c-headline__title--long"><span class="">THANKS</span></h1>
         <div class="c-headline__detail">
@@ -11,8 +11,8 @@
     </div>
   </div>
 
-  <div class="l-container">
-  <div class="container mx-auto flex flex-wrap justify-center">
+  <div class="l-container-py">
+  <div class="l-container mx-auto flex flex-wrap justify-center">
   <div class="w-full md:w-10/12 lg:w-9/12 xl:w-8/12">
   <ul class="p-entrystep px-gutter-row md:px-0">
       <?php component_listItemEntrystep('input', '01', '入力画面'); ?>
@@ -23,7 +23,7 @@
   </div>
 
 
-  <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+  <div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
     <div class="w-full md:w-11/12 xl:w-10/12 p-entrystep__caption">
       <p class="p-typ">フォーム送信が完了いたしました。<br class="sm:hidden">記入いただいたメールアドレスに<br class="max-sm:hidden">自動返信メールをお送りしていますのでご確認ください。</p>
       <p class="p-typ mt-2 md:mt-3">自動返信メールが誤って迷惑メールと判断されてしまい<br class="max-sm:hidden">「迷惑メールフォルダ」や「削除フォルダ」「スパムフォルダ」等に<br class="max-sm:hidden">届いてしまう可能性がございます。<br><strong>自動返信メールが届かない場合、</strong><br class="max-sm:hidden">恐れ入りますが一度「迷惑メールフォルダ」などをご確認ください。</p>
@@ -31,7 +31,7 @@
     </div>
   </div>
 
-  <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0  mt-6 md:mt-8">
+  <div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0  mt-6 md:mt-8">
     <div class="p-button__wrap">
 <?php
   $args = array(

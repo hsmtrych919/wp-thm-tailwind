@@ -5,7 +5,7 @@
 
 <article class="mt-9 md:mt-10">
 
-<section class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 c-replace__flex-start js-replace-height">
+<section class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 c-replace__flex-start js-replace-height">
   <div class="c-replace__content--left">
     <h2 class="p-ttl__large">c-replace__flex-start</h2>
     <div class="c-replace__pic--right js-replace-pic">
@@ -19,7 +19,7 @@
   </div>
 </section>
 
-<section class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 c-replace__flex-end js-replace-height mt-5 ">
+<section class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 c-replace__flex-end js-replace-height mt-5 ">
   <div class="c-replace__content--right">
     <h2 class="p-ttl__large">c-replace__flex-end</h2>
     <div class="c-replace__pic--left js-replace-pic">
@@ -38,7 +38,7 @@
 
 
 <article>
-  <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+  <div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
     <div class="w-full md:w-10/12 xl:w-9/12 flex flex-wrap justify-center js-inview__fade--pre">
       <div class="w-full sm:w-7/12 md:w-8/12 sm:pr-gutter-2 md:pr-gutter-3">
         <h2 class="p-ttl__small ">この文章はダミーテキストです。</h2>
@@ -57,7 +57,7 @@
 
 <article class="mt-6">
 <h1>レイアウト / c-split</h1>
-<div class="l-container">
+<div class="l-container-py">
 
   <div class="l-split__outer">
     <div class="l-split__thumbnail--left">
@@ -92,7 +92,7 @@
 
 
 <article class="test">
-<div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+<div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
   <div class="w-full sm:w-full md:w-full">
     <ul class="grid gap-x-grid-gutter grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 c-likepost__list js-fadeup__stagger--list">
 <?php
@@ -130,7 +130,7 @@ component_listItemLikepost($args)
 
 <!-- salon -->
 <article class="mt-7 md:mt-8 p-front-salon__outer">
-    <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+    <div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
       <div class="w-full md:w-full">
       <div class="p-front-salon__content">
         <span class="p-front-salon__lead">SALON</span>
@@ -162,7 +162,7 @@ component_buttonLink($args)
 
 <!-- service -->
 <article class="p-front-service__outer">
-    <div class="container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
+    <div class="l-container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
       <div class="w-full md:w-10/12">
       <div class="p-front-service__content">
         <span class="p-front-service__lead">SERVICE</span>
@@ -187,7 +187,7 @@ $args = array(
 
 
       <div class="p-front-service__pic js-fadeup__once"><img src='<?php echo get_template_directory_uri(); ?>/img/a_02.jpg' alt="ギッシュのサロン"></div>
-      <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0  mt-5">
+      <div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0  mt-5">
         <div class="p-button__wrap">
   <?php
   $args = array(
@@ -206,14 +206,14 @@ $args = array(
 
 <!-- menu -->
 <article class="p-front-menu__outer">
-<div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+<div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
       <div class="w-full">
         <span class="p-front-menu__lead">MENU</span>
         <h1 class="p-front-menu__title"><span class="p-ttl__large">ギッシュこだわりの<br class="sm:hidden">メニュー紹介</span></h1>
       </div>
 </div>
 
-<div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+<div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
   <div class="w-full sm:w-full md:w-full">
     <ul class="grid gap-x-grid-gutter grid-cols-1 sm:grid-cols-1 lg:grid-cols-3 p-front-menu__list js-fadeup__stagger--list">
 <?php
@@ -245,7 +245,7 @@ component_listItemMenuIntroduction($args);
   </div>
 </div>
 
-<div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0  mt-5">
+<div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0  mt-5">
         <div class="p-button__wrap">
   <?php
   $args = array(
@@ -264,7 +264,7 @@ component_listItemMenuIntroduction($args);
 
 <!-- staff -->
 <article class="p-front-staff__outer">
-    <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+    <div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
       <div class="w-full md:w-full">
       <div class="p-front-staff__content">
         <span class="p-front-staff__lead">STAFF</span>

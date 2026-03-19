@@ -1,4 +1,4 @@
-    <div class="container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
+    <div class="l-container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
     <div class="w-full md:w-full xl:w-10/12">
 
 

@@ -9,7 +9,7 @@ $post_slug = $post_obj->post_name;
 
 <section class="p-salon-info__outer">
 
-<div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+<div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
   <div class="w-full">
     <h2 class="p-salonlist__title ">
       <span class="p-ttl__small"><span class="text-clr1">#</span> サロン情報</span>
@@ -17,7 +17,7 @@ $post_slug = $post_obj->post_name;
   </div>
   </div>
 
-  <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 p-salon-info__content">
+  <div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 p-salon-info__content">
 
     <div class="w-full md:w-full lg:w-7/12">
       <dl class="p-salon-info__dl">
@@ -157,7 +157,7 @@ $post_slug = $post_obj->post_name;
 
     </div>
 
-<div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 mt-5 md:mt-6">
+<div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 mt-5 md:mt-6">
   <div class="c-button-2columns__frame--button">
     <div class="c-button-2columns__button">
 <?php

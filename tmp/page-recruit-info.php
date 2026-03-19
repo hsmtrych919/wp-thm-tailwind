@@ -5,7 +5,7 @@ $recruitSalon = (is_page('recruit/info-guiches')) ? 'guiches' : 'soho' ;
 ?>
 <article class="">
 <div class="c-headline__outer">
-    <div class="container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
+    <div class="l-container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
       <div class="c-headline__frame" >
         <h1 class="c-headline__title c-headline__title--long"><span class="">RECRUIT</span></h1>
         <div class="c-headline__detail">
@@ -17,7 +17,7 @@ $recruitSalon = (is_page('recruit/info-guiches')) ? 'guiches' : 'soho' ;
   </div>
 
   <section class=" mt-7 md:mt-8">
-    <div class="container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
+    <div class="l-container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
       <div class="w-full sm:w-full xl:w-10/12">
       <dl class="p-recruit-info__dl">
 

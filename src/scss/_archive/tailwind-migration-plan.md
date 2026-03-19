@@ -198,7 +198,7 @@ foundation 配下の SCSS 変数を性質ごとに分類し、変換先を決定
 
 | 用途 | 方式 | Tailwind クラス構成 |
 |---|---|---|
-| **ページレイアウト・カラム分割** | **Flex** | `container mx-auto flex flex-wrap justify-center` + `w-{n}/12` |
+| **ページレイアウト・カラム分割** | **Flex** | `l-container mx-auto flex flex-wrap justify-center` + `w-{n}/12` |
 | **リピートグリッド（カード等）** | **CSS Grid** | `grid grid-cols-{n}` + gap（§ガター議論で決定） |
 | **コンポーネント内部** | **FLOCSS 維持** | `.c-button`, `.p-header` 等（§4） |
 
@@ -207,7 +207,7 @@ foundation 配下の SCSS 変数を性質ごとに分類し、変換先を決定
 | 廃止 | 代替 | 備考 |
 |---|---|---|
 | `.l-row` | `flex flex-wrap justify-center` | ユーティリティ直書き |
-| `.l-row--container` | `container mx-auto flex flex-wrap justify-center` | 同上。`container` は `tailwind.config.js` で max-width をカスタム |
+| `.l-row--container` | `l-container mx-auto flex flex-wrap justify-center` | 同上。`l-container` は `tailwind-base.css` `@layer utilities` で BP 別 max-width を定義 |
 | `.c-col--12` | `w-full` | Flex 子要素の幅指定 |
 | `.c-col--11` | `w-11/12` | 同上 |
 | `.c-col__md--8` | `md:w-8/12` | レスポンシブ幅 |
@@ -249,7 +249,7 @@ foundation 配下の SCSS 変数を性質ごとに分類し、変換先を決定
 </div>
 
 <!-- ■ ページレイアウト: 移行後（Flex） -->
-<div class="container mx-auto flex flex-wrap justify-center （ガター別議論）">
+<div class="l-container mx-auto flex flex-wrap justify-center （ガター別議論）">
   <div class="w-full sm:w-8/12 md:w-10/12">
     コンテンツ
   </div>

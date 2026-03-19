@@ -1,4 +1,4 @@
-  <div class="container mx-auto flex flex-wrap justify-center md:px-gutter-row xl:px-0">
+  <div class="l-container mx-auto flex flex-wrap justify-center md:px-gutter-row xl:px-0">
 
     <div class="w-full md:w-8/12 l-blog__main">
 <!-- post -->
@@ -11,7 +11,7 @@
   <?php endif; ?>
 <!-- /post -->
 
-    <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 mt-5">
+    <div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 mt-5">
       <?php fn_pagination($wp_query); ?>
     </div>
     </div>

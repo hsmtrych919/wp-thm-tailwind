@@ -233,7 +233,7 @@ if($isSubmit){
 
 <article class="">
 <div class="c-headline__outer">
-    <div class="container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
+    <div class="l-container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
       <div class="c-headline__frame" >
         <h1 class="c-headline__title c-headline__title--long"><span class="">CONTACT</span></h1>
         <div class="c-headline__detail">
@@ -244,8 +244,8 @@ if($isSubmit){
     </div>
   </div>
 
-  <div class="l-container">
-  <div class="container mx-auto flex flex-wrap justify-center">
+  <div class="l-container-py">
+  <div class="l-container mx-auto flex flex-wrap justify-center">
   <div class="w-full md:w-10/12 lg:w-9/12 xl:w-8/12">
   <ul class="p-entrystep px-gutter-row md:px-0">
       <?php component_listItemEntrystep('input', '01', '入力画面'); ?>
@@ -254,10 +254,10 @@ if($isSubmit){
       </ul>
     </div>
   </div>
-  <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+  <div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
   <p class="w-full sm:w-10/12 p-entrystep__caption">以下の内容で間違いがなければ、<br class="max-sm:hidden">「送信する」ボタンを押してください。</p>
   </div>
-  <div class="container mx-auto flex flex-wrap justify-center mt-1.5 md:mt-2"><div class="w-full md:w-10/12 lg:w-9/12 xl:w-8/12">
+  <div class="l-container mx-auto flex flex-wrap justify-center mt-1.5 md:mt-2"><div class="w-full md:w-10/12 lg:w-9/12 xl:w-8/12">
     <div class="p-form">
 
 <div class="form_confirm">

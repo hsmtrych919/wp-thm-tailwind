@@ -18,9 +18,9 @@ module.exports = {
     // --- container ---
     // 出典: _variables.scss L37-41 ($container-max-*)
     // 計画書 §7 / Step 3-1: container の max-width を BP 別に定義。
-    // Tailwind v4 では v3 compat の container.screens が二重定義を生成するため、
-    // tailwind-base.css 側で @source not inline("container") + @layer utilities
-    // による単一定義に移行した。BP→max-width 対応は計画書と同一:
+    // .container → .l-container にリネーム済み（tailwind-base.css @layer utilities で定義）。
+    // Tailwind built-in .container との競合なし。@source not inline は削除済み。
+    // BP→max-width 対応:
     //   sm(576px)→540px, md(811px)→960px, lg(1025px)→1152px,
     //   xl(1280px)→1200px, 2xl(1366px)→1260px
 
@@ -159,16 +159,6 @@ module.exports = {
         fz34: '2.125rem',
         fz35: '2.1875rem',
         fz36: '2.25rem',
-      },
-
-      // --- maxWidth ---
-      // 出典: _variables.scss L37-41 ($container-max-*)
-      maxWidth: {
-        'container-sm': '540px',
-        'container-md': '960px',
-        'container-lg': '1152px',
-        'container-xl': '1200px',
-        'container-xxl': '1260px',
       },
 
       // --- padding (gutter系) ---
