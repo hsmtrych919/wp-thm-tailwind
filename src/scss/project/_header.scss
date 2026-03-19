@@ -197,6 +197,12 @@ $nav__button-bdc:rgba(#e8e8e8, .5) !default;
   }
 
   .p-nav__overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
     z-index: index($z, overlay);
     background: var(--grd1);
     // background: linear-gradient(140deg, var(--clr4), var(--clr2));

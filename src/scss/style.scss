@@ -25,17 +25,11 @@
 @use "component/scroll-hint";
 
 // component
-@use "component/_header" as c-header;
-@use "component/_footer" as c-footer;
 @use "component/_button" as c-button;
 @use "component/_google-map";
 @use "component/_login";
 @use "component/_pagenation";
-@use "component/_post" as c-post;
-@use "component/_post-feed";
-@use "component/_search";
 @use "component/_style" as c-content;
-@use "component/_typ" as c-typ;
 @use "component/_validation";
 
 // -----------------------------------------------------------------

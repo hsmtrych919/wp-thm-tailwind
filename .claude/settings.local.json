@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /Users/hsmtrychmba/www/study/learning-claude-2026/wp-thm/src/scss/project -type f -name *.scss)"
+    ]
+  }
+}

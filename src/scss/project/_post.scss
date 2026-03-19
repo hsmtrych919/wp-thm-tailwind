@@ -29,6 +29,9 @@ $separate-info-sm: 100% - $separate-thumbnail-sm;
 
 @layer components {
 
+img.size-orig_thumbnail_small, img.size-square_thumbnail_small {
+  width: 100%;
+}
 
 //
 // archive
