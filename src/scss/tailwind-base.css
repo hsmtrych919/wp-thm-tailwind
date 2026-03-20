@@ -12,8 +12,8 @@
  * --------------------------------------------------------------- */
 
 @layer utilities {
-  /* !important 省略。@layer utilities がレイヤー最高優先のため現状不要。
-     優先度の問題が出た場合はここに明示追加する。 */
+  /* .l-container は横幅系 utility（w-*, max-w-* 等）と併用しない設計。
+     併用はデザインシステム上の誤用のため !important は不要。 */
   .l-container {
     margin-inline: auto;
     width: 100%;
