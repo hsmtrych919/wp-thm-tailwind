@@ -414,3 +414,27 @@ Phase 5 完了。次の Phase は計画書に未定義。
 - `src/scss/style.scss` では再構成対象の component/project 二重 import は解消済み
 - `src/scss/component/_header.scss` は現時点で存在しない
 - `src/js/header.js` と `src/scss/project/_header.scss` の overlay クラス参照は `p-nav__overlay` に揃っている
+
+---
+
+## 2026-03-20 リモート main 取り込み後の確認
+
+### 状態: 実施済み（origin/main 取り込み済み）
+
+### この時点の理解
+
+- `git fetch origin main && git merge origin/main` 実施済み
+- container リネーム対応は main 取り込み後の現状として解消済み
+  - `.container`（横幅制御）→ `.l-container`
+  - 旧 `.l-container`（上下 padding）→ `.l-container-py`
+  - `max-w-container-*` デッドコード削除済み
+  - `@source not inline("container")` 削除済み
+- `p-ttl__rhombus--inner` の `letter-spacing` 移行ミスも修正済み
+- `scss-system-review-report.md` の 2-2「container の二重定義 → 解決済み」は現状認識と一致
+- `scss-system-review-report.md` の 2-1 / 2-2 はともに解消済みという認識でよい
+- 次段階は、現状に追いついていない `src/scss/readme.md` を更新する段階
+
+### 補足
+
+- `.l-container` のコメントは、レイヤー優先度ではなく「横幅系 utility と併用しない設計」という意図が分かる文面に更新済み
+- この時点では README 追記前。コード・SCSS 実装の追加変更は行っていない

@@ -12,8 +12,9 @@
  * --------------------------------------------------------------- */
 
 @layer utilities {
-  /* .l-container は横幅系 utility（w-*, max-w-* 等）と併用しない設計。
-     併用はデザインシステム上の誤用のため !important は不要。 */
+  /* .l-container はレイアウトの骨格を定義するクラスであり、
+    横幅系 utility（w-*, max-w-* 等）とは併用しない。
+   併用はデザインシステム上の誤用として扱うため !important は付けない。 */
   .l-container {
     margin-inline: auto;
     width: 100%;
