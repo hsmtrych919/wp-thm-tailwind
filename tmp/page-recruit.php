@@ -1,13 +1,13 @@
 <article class="">
 
   <section class="p-recruit__outer--message">
-  <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+  <div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
     <div class="w-full p-ttl__recruit">
       <h2 class="p-ttl__recruit--main"><span class="text-clr3">代表あいさつ</span></h2>
       <p class="p-ttl__recruit--sub text-clr1">MESSAGE</p>
     </div>
   </div>
-  <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 p-recruit__content--istop">
+  <div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 p-recruit__content--istop">
       <div class="w-full sm:w-8/12 md:w-8/12 lg:w-9/12">
         <p class="p-typ">創業当時を振り返ると、髪が伸びてボサボサの人は、大抵元気がないです。身なりをきちんとすれば、もっと晴れやかな気分になるのにと歯がゆい気持ちになりました。それから店舗を拡大して地域に身近なサロンとして運営を進めてきました。そして今では8店舗展開するまでに成長しました。<br>小牧周辺に店舗を増やしてきたのは理由があります。僕は、自分自身が輝くよりも、まず身のまわりを良くしようと励むことを大切にしています。小牧一帯の人たちがイキイキとすれば、社員の士気もあがり、好環境が生まれる。そのエネルギーを感じながら僕自身も前へ歩んで行きたいと思うんです。まわりを良くするというポリシーからギッシュでは、人とのつながりを大切にした教育をしています。人の温かみを体感することが、人に優しく接する基盤になるからです。</p>
         <p class="p-typ__s font-medium mt-2 md:mt-3 text-clr4">10人の社長をつくることが目標</p>
@@ -23,7 +23,7 @@
     </div>
   </section>
 
-  <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 mt-4 md:mt-5">
+  <div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 mt-4 md:mt-5">
   <div class="c-button-2columns__frame--button">
     <div class="c-button-2columns__button">
 <?php

@@ -1,10 +1,10 @@
-<div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+<div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
       <div class="w-full">
         <h2 class="p-salonlist__title"><span class="p-ttl__small"><span class="text-clr1">#</span> カット</span></h2>
       </div>
     </div>
 
-    <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 p-menu__content">
+    <div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 p-menu__content">
       <div class="w-full">
         <p class="p-typ__xs text-gray-700">※シャンプー・ブロー・5分間マッサージサービス。</p>
       </div>

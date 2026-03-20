@@ -1,6 +1,6 @@
 <article class="">
   <div class="c-headline-pic__outer">
-    <div class="container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
+    <div class="l-container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
       <div class="c-headline-pic__frame js-headline-frame" >
         <h1 class="c-headline-pic__title c-headline-pic__title--long"><span class="c-headline-pic__typ--for-gsap">COMPANY</span></h1>
         <div class="c-headline-pic__pic js-headline-pic" >
@@ -15,16 +15,16 @@
   </div>
 
   <div class="mt-7 md:mt-8">
-    <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 p-company__frame">
+    <div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 p-company__frame">
     <div class="w-full sm:w-full lg:w-8/12">
 
       <section class="">
-      <div class="container mx-auto flex flex-wrap justify-center">
+      <div class="l-container mx-auto flex flex-wrap justify-center">
           <div class="w-full">
             <h2 class="p-salonlist__title "><span class="p-ttl__small"><span class="text-clr1">#</span> 会社概要</span></h2>
           </div>
         </div>
-        <div class="container mx-auto flex flex-wrap justify-start p-company__content">
+        <div class="l-container mx-auto flex flex-wrap justify-start p-company__content">
         <div class="w-full">
           <dl class="p-company-detail__dl">
       <?php
@@ -57,12 +57,12 @@
           </div>
       </section>
       <section class="mt-7 md:mt-8">
-      <div class="container mx-auto flex flex-wrap justify-center ">
+      <div class="l-container mx-auto flex flex-wrap justify-center ">
           <div class="w-full">
             <h2 class="p-salonlist__title "><span class="p-ttl__small"><span class="text-clr1">#</span> 沿革</span></h2>
           </div>
         </div>
-        <div class="container mx-auto flex flex-wrap justify-start  p-company__content">
+        <div class="l-container mx-auto flex flex-wrap justify-start  p-company__content">
         <div class="w-full">
           <dl class="p-company-detail__dl">
       <?php

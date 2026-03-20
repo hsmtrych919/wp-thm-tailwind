@@ -24,7 +24,7 @@ function staffName() {
 
 <article class="" id="post-<?php the_ID(); ?>">
 <div class="c-headline__outer">
-    <div class="container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
+    <div class="l-container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
       <div class="c-headline__frame" >
         <h1 class="c-headline__title"><span class="">STAFF</span></h1>
       </div>
@@ -32,7 +32,7 @@ function staffName() {
   </div>
 
   <div class="p-staff__content">
-  <div class="container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
+  <div class="l-container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
     <div class="p-staff__frame">
         <div class="p-staff__name-wrap--sp"><?php staffName() ?></div>
 

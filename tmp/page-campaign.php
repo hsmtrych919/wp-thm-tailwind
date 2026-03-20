@@ -5,7 +5,7 @@ $notice_all = '<p class="text-fz14 2xl:text-fz15 text-gray-700 mt-1">※価格�
 
 <article class="">
   <div class="c-headline-pic__outer">
-    <div class="container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
+    <div class="l-container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
       <div class="c-headline-pic__frame js-headline-frame" >
         <h1 class="c-headline-pic__title c-headline-pic__title--long"><span class="c-headline-pic__typ--for-gsap">CAMPAIGN</span></h1>
         <div class="c-headline-pic__pic js-headline-pic" >
@@ -20,7 +20,7 @@ $notice_all = '<p class="text-fz14 2xl:text-fz15 text-gray-700 mt-1">※価格�
   </div>
 
   <section class=" mt-6">
-      <div class="container mx-auto flex flex-wrap justify-between px-gutter-row xl:px-0">
+      <div class="l-container mx-auto flex flex-wrap justify-between px-gutter-row xl:px-0">
         <div class="p-campaign__content">
 
         <div class="flex flex-wrap justify-center">

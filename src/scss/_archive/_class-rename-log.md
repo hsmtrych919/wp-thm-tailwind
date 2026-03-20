@@ -218,6 +218,24 @@
 
 ---
 
+## Container リファクタリング（✅ 完了）
+
+### Phase A: .l-container → .l-container-py
+
+| 旧クラス | 新クラス | 備考 | ステータス |
+|---|---|---|---|
+| `l-container` | `l-container-py` | 上下 padding クラス。責務を名前に反映 | ✅ |
+| `l-container__blog` | `l-container-py--blog` | BEM `__` → `--`（バリエーション） | ✅ |
+| `l-container__search` | `l-container-py--search` | BEM `__` → `--`（バリエーション） | ✅ |
+
+### Phase B: .container → .l-container
+
+| 旧クラス | 新クラス | 備考 | ステータス |
+|---|---|---|---|
+| `container` | `l-container` | 横幅制御クラス。Tailwind built-in との競合解消 | ✅ |
+
+---
+
 ## Phase 4: コンポーネント・プロジェクト層（⏳ 未着手）
 
 > Phase 4 ではコンポーネントクラス名自体は変更しない（`@layer components` で維持）。

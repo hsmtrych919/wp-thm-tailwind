@@ -1,6 +1,6 @@
 <article class="">
   <div class="c-headline-pic__outer">
-    <div class="container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
+    <div class="l-container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
       <div class="c-headline-pic__frame js-headline-frame" >
         <h1 class="c-headline-pic__title"><span class="c-headline-pic__typ--for-gsap">Q&A</span></h1>
         <div class="c-headline-pic__pic js-headline-pic" >
@@ -15,7 +15,7 @@
   </div>
   <div class="mt-7 md:mt-8">
 
-    <div class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+    <div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
       <div class="w-full md:w-full">
 
 <?php

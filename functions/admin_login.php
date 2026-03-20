@@ -71,7 +71,7 @@ add_action( 'login_footer', 'custom_login_footer',21);
 function custom_login_footer() {
 ?>
 <footer class="l-footer p-footer">
-  <ul class="container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 p-footer__list">
+  <ul class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 p-footer__list">
   <li class="p-footer__item-copy--alone">&copy; <?php echo date('Y'); echo " "; bloginfo( 'name' ); ?>.</li>
   </ul>
 </footer>

@@ -35,10 +35,12 @@ sample.html 作成を通じた SCSS + Tailwind ハイブリッドシステムの
 - `letter-spacing: 2em` / `4em` が極端に広い
 - 移行時のミス。適切な値に修正が必要
 
-### 2-2. container の二重定義（後回し）
-- Tailwind 側で container を定義（config で BP 別 max-width）
-- SCSS 側にも `l-container` 系が存在
-- ボリュームがあるため後回し
+### 2-2. container の二重定義 → 解決済み
+- `.container`（横幅制御）→ `.l-container` にリネーム（tailwind-base.css @layer utilities）
+- `.l-container`（上下padding）→ `.l-container-py` にリネーム（layout/_content.scss @layer components）
+- `max-w-container-*` デッドコード削除（tailwind.config.js）
+- `@source not inline("container")` 削除
+- 詳細: `container-refactor-plan.md`
 
 ---
 
