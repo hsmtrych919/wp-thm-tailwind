@@ -314,7 +314,7 @@ export function effectClipPath(elemTarget, elemTrigger){
  * マーカー演出
  */
 export function markerAdvantage(){
-  const elem = document.querySelector('.p-advantage__message');
+  const elem = document.querySelector('.advantage__message');
   gsap.fromTo(elem, {
     backgroundSize:'0% 100%',
   },
@@ -322,7 +322,7 @@ export function markerAdvantage(){
     duration: 0.6,
     ease: 'power4.out',
     scrollTrigger: {
-      trigger: '.p-advantage__message',
+      trigger: '.advantage__message',
       start: 'top bottom-=20%' ,
       toggleActions: 'restart none none reverse',
     }
@@ -338,7 +338,7 @@ export function thumbnailInstagram(){
     autoAlpha: 0,
     duration: 0.4,
     scrollTrigger: {
-      trigger: '.p-instagram__feed',
+      trigger: '.instagram__feed',
       start: 'top bottom-=20%' ,
       // toggleActions: 'restart none none reverse',
     },

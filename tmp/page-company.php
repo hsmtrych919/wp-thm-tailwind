@@ -1,32 +1,32 @@
 <article class="">
-  <div class="c-headline-pic__outer">
-    <div class="l-container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
-      <div class="c-headline-pic__frame js-headline-frame" >
-        <h1 class="c-headline-pic__title c-headline-pic__title--long"><span class="c-headline-pic__typ--for-gsap">COMPANY</span></h1>
-        <div class="c-headline-pic__pic js-headline-pic" >
-        <span class="c-headline-pic__pic--ract"></span>
+  <div class="headline-pic__outer">
+    <div class="container-width mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
+      <div class="headline-pic__frame js-headline-frame" >
+        <h1 class="headline-pic__title headline-pic__title--long"><span class="headline-pic__typ--for-gsap">COMPANY</span></h1>
+        <div class="headline-pic__pic js-headline-pic" >
+        <span class="headline-pic__pic--ract"></span>
         <img src='<?php echo get_template_directory_uri(); ?>/img/c_company.jpg' alt="COMPANY">
         </div>
-        <div class="c-headline-pic__detail c-headline-pic__typ--for-gsap">
-          <p class="p-typ">トータルビューティーサロンを愛知県小牧市・江南市・北名古屋市・名古屋市で8店舗展開中。ギッシュの会社概要と沿革。</p>
+        <div class="headline-pic__detail headline-pic__typ--for-gsap">
+          <p class="typ">トータルビューティーサロンを愛知県小牧市・江南市・北名古屋市・名古屋市で8店舗展開中。ギッシュの会社概要と沿革。</p>
         </div>
       </div>
     </div>
   </div>
 
   <div class="mt-7 md:mt-8">
-    <div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 p-company__frame">
+    <div class="container-width mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 company__frame">
     <div class="w-full sm:w-full lg:w-8/12">
 
       <section class="">
-      <div class="l-container mx-auto flex flex-wrap justify-center">
+      <div class="container-width mx-auto flex flex-wrap justify-center">
           <div class="w-full">
-            <h2 class="p-salonlist__title "><span class="p-ttl__small"><span class="text-clr1">#</span> 会社概要</span></h2>
+            <h2 class="salonlist__title "><span class="ttl__small"><span class="text-clr1">#</span> 会社概要</span></h2>
           </div>
         </div>
-        <div class="l-container mx-auto flex flex-wrap justify-start p-company__content">
+        <div class="container-width mx-auto flex flex-wrap justify-start company__content">
         <div class="w-full">
-          <dl class="p-company-detail__dl">
+          <dl class="company-detail__dl">
       <?php
       $data = array(
       array('dt' => '会社名', 'dd' => '有限会社 ギッシュ'),
@@ -42,9 +42,9 @@
       );
 
       foreach ($data as $index => $item) {
-      echo '<div class="p-company-detail__dl--row">';
+      echo '<div class="company-detail__dl--row">';
       if ($index === 0) {
-          echo '<dt class="p-company-detail__dt--first">' . $item['dt'] . '</dt>';
+          echo '<dt class="company-detail__dt--first">' . $item['dt'] . '</dt>';
       } else {
           echo '<dt>' . $item['dt'] . '</dt>';
       }
@@ -57,14 +57,14 @@
           </div>
       </section>
       <section class="mt-7 md:mt-8">
-      <div class="l-container mx-auto flex flex-wrap justify-center ">
+      <div class="container-width mx-auto flex flex-wrap justify-center ">
           <div class="w-full">
-            <h2 class="p-salonlist__title "><span class="p-ttl__small"><span class="text-clr1">#</span> 沿革</span></h2>
+            <h2 class="salonlist__title "><span class="ttl__small"><span class="text-clr1">#</span> 沿革</span></h2>
           </div>
         </div>
-        <div class="l-container mx-auto flex flex-wrap justify-start  p-company__content">
+        <div class="container-width mx-auto flex flex-wrap justify-start  company__content">
         <div class="w-full">
-          <dl class="p-company-detail__dl">
+          <dl class="company-detail__dl">
       <?php
       $data = array(
       array('dt' => '1991年10月', 'dd' => '1号店OPEN　布袋店'),
@@ -84,9 +84,9 @@
       );
 
       foreach ($data as $index => $item) {
-      echo '<div class="p-company-detail__dl--row">';
+      echo '<div class="company-detail__dl--row">';
       if ($index === 0) {
-          echo '<dt class="p-company-detail__dt--first">' . $item['dt'] . '</dt>';
+          echo '<dt class="company-detail__dt--first">' . $item['dt'] . '</dt>';
       } else {
           echo '<dt>' . $item['dt'] . '</dt>';
       }
@@ -100,7 +100,7 @@
       </section>
     </div>
     <div class="lg:w-4/12  md:pl-gutter-3 hidden lg:block">
-      <div class="p-company__thumbnail">
+      <div class="company__thumbnail">
         <img src='<?php echo get_template_directory_uri(); ?>/img/a_03.jpg' alt="COMPANY">
 
       </div>

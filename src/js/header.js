@@ -9,12 +9,12 @@ import { mediaQueryLg, mediaQueryXl } from './media-query';
 export function navMenuMobile() {
   // オーバーレイ要素作成
   const nodeHeader = document.querySelector('#grobal__header');
-  nodeHeader.insertAdjacentHTML('beforeend', '<div class="p-nav__overlay" id="grobal__nav--overlay"></div>');
+  nodeHeader.insertAdjacentHTML('beforeend', '<div class="nav__overlay" id="grobal__nav--overlay"></div>');
 
   const nodeNav = document.querySelector('#grobal__nav');
   const nodeToolbar = document.querySelector('#grobal__nav--toolbar');
-  const nodeToolbarLine = document.querySelector('button .p-toolbar__line');
-  const nodeBtn = document.querySelectorAll('#grobal__nav a[class^="p-nav__"]');
+  const nodeToolbarLine = document.querySelector('button .toolbar__line');
+  const nodeBtn = document.querySelectorAll('#grobal__nav a[class^="nav__"]');
   const nodeBtnClose = document.querySelector('#grobal__nav--close');
   const nodeOverlay = document.querySelector('#grobal__nav--overlay');
   const nodeBody = document.querySelector('body');

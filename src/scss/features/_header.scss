@@ -16,8 +16,21 @@ $nav__button-bdc:rgba(#e8e8e8, .5) !default;
   //
 
 
-  .p-header {
+  .header {
+    position: fixed;
+    top: 0;
+    width: 100%;
     z-index: g.get_zindex(header);
+
+    @media #{g.$md} {
+      height: var(--header-height);
+    }
+    &--static {
+      width: 100%;
+    }
+    &--absolute {
+      position: absolute;
+    }
 
     &__logo-block {
       flex: 0 1 96px;
@@ -46,7 +59,7 @@ $nav__button-bdc:rgba(#e8e8e8, .5) !default;
       }
     }
     &__logo-block--login {
-      @extend .p-header__logo-block;
+      @extend .header__logo-block;
       margin-right: auto !important;
       margin-left: auto !important;
     }
@@ -89,16 +102,37 @@ $nav__button-bdc:rgba(#e8e8e8, .5) !default;
     }
   }
 
-  .p-header__row.js-active {
+  .header__row.js-active {
     @media #{g.$lg} {
       // background-color: #fff;
+    }
+  }
+
+  .header.js-scroll {
+    // smからは上部固定で表示させたまま
+    @media #{g.$maxSm} {
+      transform: translate3d(0, g.rem(-50), 0);
+      transition: transform 0.2s ease-in-out;
+    }
+  }
+
+  .header.js-open {
+    top: 0 !important;
+    height: 100%;
+    transform: translate3d(0, 0, 0) !important;
+  }
+
+  .header.js-scroll--up {
+    // smからは上部固定で表示させたまま
+    @media #{g.$maxSm} {
+      transform: translate3d(0, 0, 0);
     }
   }
 
   //
   // toolbar
   //
-  .p-toolbar__button {
+  .toolbar__button {
     display: inline-block;
     position: relative;
     width: g.rem(30);
@@ -116,7 +150,7 @@ $nav__button-bdc:rgba(#e8e8e8, .5) !default;
     }
   }
 
-  .p-toolbar__line {
+  .toolbar__line {
     $border_height: g.rem(2);
     $border-position: g.rem(5);
     display: block;
@@ -143,7 +177,7 @@ $nav__button-bdc:rgba(#e8e8e8, .5) !default;
     }
   }
 
-  .p-toolbar__line.js-open {
+  .toolbar__line.js-open {
     background-color: transparent !important;
 
     &::before, &::after {
@@ -159,7 +193,7 @@ $nav__button-bdc:rgba(#e8e8e8, .5) !default;
     }
   }
 
-  .p-toolbar {
+  .toolbar {
     display: flex;
     position: absolute;
     z-index: index($z, toolbar);
@@ -186,9 +220,9 @@ $nav__button-bdc:rgba(#e8e8e8, .5) !default;
   }
 
 
-  .p-toolbar[data-navmenu="open"] {
+  .toolbar[data-navmenu="open"] {
 
-    .p-toolbar__subtitle {
+    .toolbar__subtitle {
 
       @media #{g.$sm} {
         color: #fff;
@@ -196,7 +230,7 @@ $nav__button-bdc:rgba(#e8e8e8, .5) !default;
     }
   }
 
-  .p-nav__overlay {
+  .nav__overlay {
     display: none;
     position: fixed;
     top: 0;
@@ -214,9 +248,13 @@ $nav__button-bdc:rgba(#e8e8e8, .5) !default;
   //
 
 
-  .p-nav {
+  .nav {
     display: none;
+    position: fixed;
+    top: g.rem(-100);
     z-index: index($z, nav);
+    width: 100%;
+    height: 0;
     padding-top: g.rem(70);
     overflow: auto;
     opacity: 0;
@@ -225,9 +263,13 @@ $nav__button-bdc:rgba(#e8e8e8, .5) !default;
     @media #{g.$lg} {
       display: block !important;
       position: relative;
+      top: 0 !important;
+      width: auto !important;
+      height: auto !important;
       padding-top: 0;
       overflow: visible;
       opacity: 1 !important;
+      transform: translate3d(0, 0, 0);
       // background: #ddd;
       line-height: 1;
     }
@@ -372,11 +414,11 @@ $nav__button-bdc:rgba(#e8e8e8, .5) !default;
     }
   }
 
-  .p-nav__button {
+  .nav__button {
     @include nav__button;
   }
 
-  .p-nav__button--recruit {
+  .nav__button--recruit {
     background-color: #fff;
     color: var(--clr1);
     @include g.hover() {
@@ -398,7 +440,7 @@ $nav__button-bdc:rgba(#e8e8e8, .5) !default;
     }
   }
 
-  .p-nav__button--children {
+  .nav__button--children {
     @include nav__button;
     position: relative;
     padding-left: g.rem(48);
@@ -426,7 +468,7 @@ $nav__button-bdc:rgba(#e8e8e8, .5) !default;
     }
   }
 
-  .p-nav {
+  .nav {
 
     &__list--children {
       display: block;
@@ -451,8 +493,8 @@ $nav__button-bdc:rgba(#e8e8e8, .5) !default;
 
 
   // dropdown使用時
-  // nav.l-nav.p-nav .p-nav__item.js-nav--dropdown .p-nav__list--children のスタイリング更新
-  // .p-nav__list--children {
+  // nav.l-nav.nav .nav__item.js-nav--dropdown .nav__list--children のスタイリング更新
+  // .nav__list--children {
   //   @media #{g.$lg} {
   //     top: g.rem(54);
   //     background-color: rgba(color.scale(g.$clr1, $lightness: 5%), 0.9);
@@ -460,7 +502,7 @@ $nav__button-bdc:rgba(#e8e8e8, .5) !default;
   // }
 
   // dropdown 含め各ボタン のスタイリング更新
-  // nav.l-nav.p-nav .c-nav__button, nav.l-nav.p-nav .c-nav__buton--children
+  // nav.l-nav.nav .c-nav__button, nav.l-nav.nav .c-nav__buton--children
   // .c-nav__button, .c-nav__buton--children {
   //   @media #{g.$lg} {
   //     padding-top: g.rem(20);
@@ -473,8 +515,8 @@ $nav__button-bdc:rgba(#e8e8e8, .5) !default;
   // }
 
 
-  .l-header.js-open {
-    .p-toolbar__login--typ, .p-toolbar__login::after {
+  .header.js-open {
+    .toolbar__login--typ, .toolbar__login::after {
       color: #fff;
     }
   }

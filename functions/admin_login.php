@@ -46,21 +46,21 @@ add_action( 'login_header', 'custom_login_header');
 function custom_login_header() {
   echo get_template_part('tmp/google-tag-manager/tmp', 'gtm-body');
 ?>
-  <header class="l-header--static">
-    <div class="p-header__row">
-      <div class="p-header__logo-block p-header__logo-block--login">
-        <h1 class="p-header__logo items-center"><img src='<?php echo get_template_directory_uri(); ?>/img/logo.svg' alt=""></h1>
+  <header class="header--static">
+    <div class="header__row">
+      <div class="header__logo-block header__logo-block--login">
+        <h1 class="header__logo items-center"><img src='<?php echo get_template_directory_uri(); ?>/img/logo.svg' alt=""></h1>
       </div>
     </div>
   </header>
-<div class="l-main__nav-less">
-<div class="p-ttl__bg-grd--wrap">
-  <h1><span class="p-ttl__bg-grd">ログイン画面</span></h1>
+<div class="main__nav-less">
+<div class="ttl__bg-grd--wrap">
+  <h1><span class="ttl__bg-grd">ログイン画面</span></h1>
 </div>
 <?php }
 
 
-// wp-login.php <div class="clear"> の前に出力。.l-main__nav-less閉じる
+// wp-login.php <div class="clear"> の前に出力。.main__nav-less閉じる
 add_action( 'login_footer', 'custom_login_div_close',);
 function custom_login_div_close() {
   echo "</div>";
@@ -70,9 +70,9 @@ function custom_login_div_close() {
 add_action( 'login_footer', 'custom_login_footer',21);
 function custom_login_footer() {
 ?>
-<footer class="l-footer p-footer">
-  <ul class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 p-footer__list">
-  <li class="p-footer__item-copy--alone">&copy; <?php echo date('Y'); echo " "; bloginfo( 'name' ); ?>.</li>
+<footer class="footer">
+  <ul class="container-width mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0 footer__list">
+  <li class="footer__item-copy--alone">&copy; <?php echo date('Y'); echo " "; bloginfo( 'name' ); ?>.</li>
   </ul>
 </footer>
 <?php }

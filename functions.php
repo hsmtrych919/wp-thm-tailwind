@@ -254,7 +254,7 @@ function post_pagination($use_query = null, $range = 2)
         $pages = 1;
     }
   if (1 != $pages) {
-    echo '<ul class="c-pagenation">';
+    echo '<ul class="pagenation">';
     for ($i = 1; $i <= $pages; $i++) {
       //1～3ページまでの設定
       if ($paged <= $range) {
@@ -288,7 +288,7 @@ function post_pagination($use_query = null, $range = 2)
     //next icon
     if ($paged < $pages) {
       echo '<li><a href="' . get_pagenum_link($paged + 1) . '">';
-      echo '<svg class="c-pagenation__icon" data-slot="icon" fill="none" stroke-width="1" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path clip-rule="evenodd" fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"></path></svg>';
+      echo '<svg class="pagenation__icon" data-slot="icon" fill="none" stroke-width="1" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path clip-rule="evenodd" fill-rule="evenodd" d="M16.28 11.47a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 0 1-1.06-1.06L14.69 12 7.72 5.03a.75.75 0 0 1 1.06-1.06l7.5 7.5Z"></path></svg>';
       echo '</a></li>';
       if (!is_mobile()) {
         echo '<li><a href="' . get_pagenum_link($pages) . '">' . $pages . '</a></li>';
@@ -435,8 +435,8 @@ function iframe_in_youtube($the_content)
 add_filter('the_content', 'add_ttl_class_filter');
 function add_ttl_class_filter($content)
 {
-  $class_h2 = 'p-ttl__post--single-h2';
-  $class_h3 = 'p-ttl__post--single-h3';
+  $class_h2 = 'ttl__post--single-h2';
+  $class_h3 = 'ttl__post--single-h3';
   // クラス設定されていたもの
   $content = preg_replace(
     '/(<h2.*? class=".*?)(".*?>)/',

@@ -7,33 +7,40 @@
 
 
 @layer components {
+  //
+  // container-width（横幅制御）
+  // 出典: _variables.scss L37-41 ($container-max-*)
+  // Tailwind v4 の built-in container は screens 値をそのまま max-width に
+  // 使うため、breakpoint と異なる max-width（例: 811px→960px）を設定できない。
+  // container-width は Tailwind が生成するクラスパターンに存在せず競合なし。
+  //
 
-  .l-main {
-    position: relative;
-    padding-top: var(--header-height);
-  }
-
-
-  .l-blog__main {
-
+  .container-width {
+    margin-inline: auto;
+    width: 100%;
+    @media #{g.$sm} {
+      max-width: 540px;
+    }
     @media #{g.$md} {
-      padding-right: g.rem(56);
+      max-width: 960px;
+    }
+    @media #{g.$lg} {
+      max-width: 1152px;
+    }
+    @media #{g.$xl} {
+      max-width: 1200px;
+    }
+    @media #{g.$xxl} {
+      max-width: 1260px;
     }
   }
 
-  .l-blog__sidebar {
-    margin-top: g.rem(56);
-
-    @media #{g.$md} {
-      margin-top: 0;
-    }
-  }
 
   //
-  // l-container-py
+  // container-py
   //
 
-  .l-container-py {
+  .container-py {
     padding-top: g.rem(32);
     padding-bottom: g.rem(32);
 
@@ -66,11 +73,33 @@
   }
 
 
+  .main {
+    position: relative;
+    padding-top: var(--header-height);
+  }
+
+
+  .blog__main {
+
+    @media #{g.$md} {
+      padding-right: g.rem(56);
+    }
+  }
+
+  .blog__sidebar {
+    margin-top: g.rem(56);
+
+    @media #{g.$md} {
+      margin-top: 0;
+    }
+  }
+
+
   //
   // split
   //
 
-  .l-split__outer {
+  .split__outer {
     width: 100%;
     padding: 0 g.rem(20);
 
@@ -82,12 +111,12 @@
 
     &--reverse {
 
-      @extend .l-split__outer;
+      @extend .split__outer;
       flex-direction: row-reverse;
     }
   }
 
-  %l-split__thumbnail {
+  %split__thumbnail {
     width: 100%;
 
     @media #{g.$sm} {
@@ -99,11 +128,11 @@
     }
   }
 
-  .l-split__thumbnail {
+  .split__thumbnail {
 
     &--left {
 
-      @extend %l-split__thumbnail;
+      @extend %split__thumbnail;
 
       @media #{g.$sm} {
         // padding-right: calc(var(--unit) * 2);
@@ -117,7 +146,7 @@
 
     &--right {
 
-      @extend %l-split__thumbnail;
+      @extend %split__thumbnail;
 
       @media #{g.$sm} {
         // padding-left: calc(var(--unit) * 2);
@@ -130,7 +159,7 @@
     }
   }
 
-  %l-split__content {
+  %split__content {
     width: 100%;
 
     @media #{g.$sm} {
@@ -147,11 +176,11 @@
     }
   }
 
-  .l-split__content {
+  .split__content {
 
     &--left {
 
-      @extend %l-split__content;
+      @extend %split__content;
 
       @media #{g.$sm} {
         padding-left: var(--gutter-row);
@@ -164,7 +193,7 @@
 
     &--right {
 
-      @extend %l-split__content;
+      @extend %split__content;
 
       @media #{g.$sm} {
         padding-right: var(--gutter-row);
@@ -177,7 +206,7 @@
   }
 
 
-  .l-split__content--mt {
+  .split__content--mt {
     margin-top: g.rem(24);
     @media #{g.$sm} {
       margin-top: 0;

@@ -232,33 +232,33 @@ if($isSubmit){
 <?php get_header(); ?>
 
 <article class="">
-<div class="c-headline__outer">
-    <div class="l-container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
-      <div class="c-headline__frame" >
-        <h1 class="c-headline__title c-headline__title--long"><span class="">CONTACT</span></h1>
-        <div class="c-headline__detail">
+<div class="headline__outer">
+    <div class="container-width mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
+      <div class="headline__frame" >
+        <h1 class="headline__title headline__title--long"><span class="">CONTACT</span></h1>
+        <div class="headline__detail">
     <p class="">
-    <span class="p-ttl__xsmall text-clr3"><span class="text-clr1">#</span> 入力内容の確認</span></p>
+    <span class="ttl__xsmall text-clr3"><span class="text-clr1">#</span> 入力内容の確認</span></p>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="l-container-py">
-  <div class="l-container mx-auto flex flex-wrap justify-center">
+  <div class="container-py">
+  <div class="container-width mx-auto flex flex-wrap justify-center">
   <div class="w-full md:w-10/12 lg:w-9/12 xl:w-8/12">
-  <ul class="p-entrystep px-gutter-row md:px-0">
+  <ul class="entrystep px-gutter-row md:px-0">
       <?php component_listItemEntrystep('input', '01', '入力画面'); ?>
       <?php component_listItemEntrystep('confirm', '02', '内容確認', 'is-active'); ?>
       <?php component_listItemEntrystep('send', '03', '送信完了'); ?>
       </ul>
     </div>
   </div>
-  <div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
-  <p class="w-full sm:w-10/12 p-entrystep__caption">以下の内容で間違いがなければ、<br class="max-sm:hidden">「送信する」ボタンを押してください。</p>
+  <div class="container-width mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+  <p class="w-full sm:w-10/12 entrystep__caption">以下の内容で間違いがなければ、<br class="max-sm:hidden">「送信する」ボタンを押してください。</p>
   </div>
-  <div class="l-container mx-auto flex flex-wrap justify-center mt-1.5 md:mt-2"><div class="w-full md:w-10/12 lg:w-9/12 xl:w-8/12">
-    <div class="p-form">
+  <div class="container-width mx-auto flex flex-wrap justify-center mt-1.5 md:mt-2"><div class="w-full md:w-10/12 lg:w-9/12 xl:w-8/12">
+    <div class="form">
 
 <div class="form_confirm">
 <form id="form_recaptcha" action="<?php echo $fileName; ?>" method="POST" >
@@ -272,9 +272,9 @@ if($isSubmit){
 <?php
 if( isset( $inputSendtype ) && $inputSendtype !== "" ){
 ?>
-<div class="p-form__group--confirm" >
-<div class="p-form__ttl--confirm"><span class="p-form__ttl">送信内容</span></div>
-<div class="p-form__input--confirm">
+<div class="form__group--confirm" >
+<div class="form__ttl--confirm"><span class="form__ttl">送信内容</span></div>
+<div class="form__input--confirm">
 <?php
   echo $inputSendtype ;
   echo "<input type=\"hidden\" name=\"送信内容\" value=\"".$inputSendtype."\">" ;
@@ -285,9 +285,9 @@ if( isset( $inputSendtype ) && $inputSendtype !== "" ){
 
 
 <!-- お名前 -->
-<div class="p-form__group--confirm" >
-<div class="p-form__ttl--confirm"><span class="p-form__ttl">お名前</span></div>
-<div class="p-form__input--confirm">
+<div class="form__group--confirm" >
+<div class="form__ttl--confirm"><span class="form__ttl">お名前</span></div>
+<div class="form__input--confirm">
 <?php
   echo $inputName ;
   echo "<input type=\"hidden\" name=\"お名前\" value=\"".$inputName."\">" ;
@@ -296,9 +296,9 @@ if( isset( $inputSendtype ) && $inputSendtype !== "" ){
 </div>
 
 <!-- 電話番号 -->
-<div class="p-form__group--confirm" >
-<div class="p-form__ttl--confirm"><span class="p-form__ttl">電話番号</span></div>
-<div class="p-form__input--confirm">
+<div class="form__group--confirm" >
+<div class="form__ttl--confirm"><span class="form__ttl">電話番号</span></div>
+<div class="form__input--confirm">
 <?php
   echo $inputTel ;
   echo "<input type=\"hidden\" name=\"電話番号\" value=\"".$inputTel."\">" ;
@@ -307,9 +307,9 @@ if( isset( $inputSendtype ) && $inputSendtype !== "" ){
 </div>
 
 <!-- メールアドレス -->
-<div class="p-form__group--confirm" >
-<div class="p-form__ttl--confirm"><span class="p-form__ttl">メールアドレス</span></div>
-<div class="p-form__input--confirm">
+<div class="form__group--confirm" >
+<div class="form__ttl--confirm"><span class="form__ttl">メールアドレス</span></div>
+<div class="form__input--confirm">
 <?php
   echo $inputEmail ;
   echo "<input type=\"hidden\" name=\"メールアドレス\" value=\"".$inputEmail."\">" ;
@@ -321,9 +321,9 @@ if( isset( $inputSendtype ) && $inputSendtype !== "" ){
 <?php
 if( isset( $inputPostalCode ) && $inputPostalCode !== "" ){
 ?>
-<div class="p-form__group--confirm" >
-<div class="p-form__ttl--confirm"><span class="p-form__ttl">郵便番号</span></div>
-<div class="p-form__input--confirm">
+<div class="form__group--confirm" >
+<div class="form__ttl--confirm"><span class="form__ttl">郵便番号</span></div>
+<div class="form__input--confirm">
 <?php
   $convert = mb_convert_kana($inputPostalCode, "na");
   $outFirst = substr($convert ,0,3);
@@ -341,9 +341,9 @@ if( isset( $inputPostalCode ) && $inputPostalCode !== "" ){
 <?php
 if( isset( $inputRegion ) && $inputRegion !== "" && isset( $inputCity ) && $inputCity !== "" ){
 ?>
-<div class="p-form__group--confirm" >
-<div class="p-form__ttl--confirm"><span class="p-form__ttl">ご住所</span></div>
-<div class="p-form__input--confirm">
+<div class="form__group--confirm" >
+<div class="form__ttl--confirm"><span class="form__ttl">ご住所</span></div>
+<div class="form__input--confirm">
 <?php
   $out = $inputRegion." ".$inputCity." ".$inputExAdd;
   echo $out;
@@ -358,9 +358,9 @@ if( isset( $inputRegion ) && $inputRegion !== "" && isset( $inputCity ) && $inpu
 <?php
 if( isset( $inputInquiry ) && $inputInquiry !== "" ){
 ?>
-<div class="p-form__group--confirm" >
-<div class="p-form__ttl--confirm"><span class="p-form__ttl">お問い合わせ内容</span></div>
-<div class="p-form__input--confirm text-fz16 2xl:text-fz17">
+<div class="form__group--confirm" >
+<div class="form__ttl--confirm"><span class="form__ttl">お問い合わせ内容</span></div>
+<div class="form__input--confirm text-fz16 2xl:text-fz17">
 <?php
   // textareaの改行をhtmlに反映。取得データには加工無しで反映されている
   echo nl2br($inputInquiry);
@@ -377,22 +377,22 @@ if( isset( $inputInquiry ) && $inputInquiry !== "" ){
   <?php if(!$tokenValidateError): ?>
     <input type="hidden" name="recaptchaToken" id="recaptchaToken">
     <input type="hidden" name="input_submit" value="isSubmit">
-    <div class="w-full mt-3 md:mt-4"><input type="submit" value="送信する" class="p-submit__button"></div>
+    <div class="w-full mt-3 md:mt-4"><input type="submit" value="送信する" class="submit__button"></div>
   <?php endif; ?>
-    <div class="w-full mt-3 md:mt-4"><input type="button" value="入力画面に戻る" onClick="history.back()" class="p-submit__button--back"></div>
+    <div class="w-full mt-3 md:mt-4"><input type="button" value="入力画面に戻る" onClick="history.back()" class="submit__button--back"></div>
 <?php } else if ($emailValidationError) { ?>
   <div class="w-full mt-3 md:mt-4">
     <p class="sm:text-center text-fz14 2xl:text-fz15 text-red">メールアドレスの形式が正しくありません。<br>お手数おかけしますが正しいメールアドレスを入力してください。</p>
   </div>
   <div class="w-full mt-3 md:mt-4">
-  <a class="p-submit__button--back text-fz16 2xl:text-fz17" href='<?php echo home_url('/form-contact'); ?>'>フォーム入力に戻る</a>
+  <a class="submit__button--back text-fz16 2xl:text-fz17" href='<?php echo home_url('/form-contact'); ?>'>フォーム入力に戻る</a>
   </div>
 <?php } else { ?>
   <div class="w-full mt-3 md:mt-4">
     <p class="sm:text-center text-fz14 2xl:text-fz15">申し訳ございません。プログラムによりスパムの疑いが検出されました。<br>お手数おかけしますがフォームの再入力をお願いいたします。</p>
   </div>
   <div class="w-full mt-3 md:mt-4">
-  <a class="p-submit__button--back text-fz16 2xl:text-fz17" href='<?php echo home_url('/form-contact'); ?>'>フォーム入力に戻る</a>
+  <a class="submit__button--back text-fz16 2xl:text-fz17" href='<?php echo home_url('/form-contact'); ?>'>フォーム入力に戻る</a>
   </div>
 <?php } ?>
 

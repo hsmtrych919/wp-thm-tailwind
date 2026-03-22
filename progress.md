@@ -438,3 +438,116 @@ Phase 5 完了。次の Phase は計画書に未定義。
 
 - `.l-container` のコメントは、レイヤー優先度ではなく「横幅系 utility と併用しない設計」という意図が分かる文面に更新済み
 - この時点では README 追記前。コード・SCSS 実装の追加変更は行っていない
+
+---
+
+## 2026-03-22 SCSS ディレクトリ構造リストラクチャ
+
+### 計画書: `scss-directory-restructure-plan-v2.md`
+
+### Step 1: 事前調査 — 完了
+
+- `prefix-inventory.md` 作成済み（全 l-/c-/p- 利用箇所の定義記録 + 利用記録）
+
+### Step 2: vendor 系先行処理 — 完了
+
+- `c-micromodal__*` → `micromodal__*` に接頭辞除外（SCSS + PHP footer.php）
+- ベンダー 4 ディレクトリを `component/` → `vendor/` に移動
+- `project/_footer.scss` の FontAwesome `@use` パスを `vendor/` に修正
+- `style.scss` のベンダー `@use` パスを `vendor/` に更新
+
+### Step 3: layout/header, footer → project/ に統合 — 完了
+
+- **header**: `l-header` のスタイル（position:fixed, top:0, width, md時height）を `p-header` に統合。`l-header--static` → `p-header--static`, `l-header--absolute` → `p-header--absolute`。JS state（js-scroll, js-open, js-scroll--up）を `p-header.*` セレクタで `project/_header.scss` に移動。`.l-nav` のスタイルを `.p-nav` に統合
+- **footer**: `l-footer` のスタイル（width:100%）を `p-footer` に統合。`l-footernav` のスタイル（position:fixed, z-index, bottom:0, width:100%）を `p-footernav` に統合。PHP から `l-footer`, `l-footernav` 削除
+- `layout/_header.scss`, `layout/_footer.scss` 削除
+- header.php, footer.php, functions/admin_login.php, tmp/tmp-nav-main.php のクラス名更新
+
+### Step 4: layout/_content.scss → project/_layout.scss — 完了
+
+- `layout/_content.scss` → `project/_layout.scss` にリネーム移動
+- `layout/` ディレクトリ削除
+
+### Step 5: .l-container を tailwind-base.css → _layout.scss に移植 — 完了
+
+- CSS 構文を SCSS 構文（`@media #{g.$sm}` 等）に変換
+- `@layer components` 内に配置
+- `tailwind-base.css` は `@import` + `@config` の 2 行のみに
+- CSS 出力: margin-inline:auto, width:100%, BP別 max-width 5段階（540/960/1152/1200/1260px）維持確認
+
+### Step 6: component/_button.scss → project/_button.scss に統合 — 完了
+
+- c-button と p-button は同一要素での同時使用なし（ケース 2: 同ファイル共存）
+- mixin, @keyframes, クラス定義すべてを project/_button.scss に移植
+
+### Step 7: component/_style.scss → project/_style.scss に統合 — 完了
+
+- 同時使用なし（ケース 2）
+- `@use "sass:math"` を追加
+- `%placeholder` + クラス定義すべてを project/_style.scss に追記
+
+### Step 8: component/ 残ファイル → project/ に移動 — 完了
+
+- `_google-map.scss`, `_login.scss`, `_pagenation.scss` を `project/` に移動
+- `component/_archive/` 内ファイルを `src/scss/_archive/` に移動
+- `component/` ディレクトリ削除
+
+### 構造再編フェーズ完了時点の状態
+
+- 全自作 SCSS が `project/` に集約済み
+- `component/` ディレクトリ削除済み
+- `layout/` ディレクトリ削除済み
+- `vendor/` にベンダー CSS 4 ディレクトリ（fontawesome, micromodal, swiper, scroll-hint）
+- `l-header.js-scroll` 等のセレクタは `header.js-scroll` に変更済みだが、JS は `#grobal__header`（=`header__row`）に class を付与しており、`<header>` 要素とは異なる。これは既存の動作であり移行時の問題ではない
+
+### Step 9: FLOCSS 接頭辞一括除外 (p-/c-) — 完了
+
+- 全 SCSS ファイルから `p-`, `c-` 接頭辞を除外
+- 全 PHP ファイル（~30+ファイル）から `p-`, `c-` 接頭辞を除外
+- 全 JS ファイル（header.js, app.js, gsap.js）から `p-`, `c-` 接頭辞を除外
+- `_tailwind-base-layer.scss` の `.p-form` → `.form` を手動修正（agent が見落とし）
+- mixin 名 `c-button` → `btn-base` にリネーム（project/_button.scss）
+
+### Step 10: l-container-py → container-py — 完了
+
+- SCSS: `_layout.scss` の `.l-container-py` → `.container-py`（バリアント含む）
+- PHP: 12 箇所 / 11 ファイルを置換
+- ビルド成功、CSS 出力で padding 値維持確認
+
+### Step 11: l-container → container-width — 完了
+
+- SCSS: `_layout.scss` の `.l-container` → `.container-width`
+- PHP: 73 箇所 / 28 ファイルを一括置換
+- JS: 該当なし
+- ビルド成功、CSS 出力で `margin-inline: auto`, `width: 100%`, BP 別 max-width 5 段階（540/960/1152/1200/1260px）維持確認
+
+### Step 12: project/ → features/ にリネーム — 完了
+
+- `src/scss/project/` → `src/scss/features/` にディレクトリリネーム
+- `style.scss` の全 `@use` パスを `project/` → `features/` に書き換え
+- セクションコメント更新（`Object / Project` → `Features`, `Object / Component` → `Vendor / Shared`）
+- ビルド成功
+
+### Step 13: ドキュメント更新 — 完了
+
+- `src/scss/_archive/_class-rename-log.md`: Step 2, 3, 9, 10, 11 のリネーム記録を追記
+- `src/scss/readme.md`: ディレクトリ構成を `features/` + `vendor/` 体制に全面更新。FLOCSS 除外済みの記載追加
+- `CLAUDE.md`: ディレクトリ構造、禁止事項の例示クラス名、参照ファイルテーブルを更新
+
+### リストラクチャ全体の完了状態
+
+全 13 Step 完了。最終ディレクトリ構成:
+
+```
+src/scss/
+├── style.scss
+├── _tailwind-base-layer.scss
+├── tailwind-base.css
+├── readme.md
+├── global/          ← 共通 API
+├── features/        ← 全自作 SCSS（旧 layout/ + component/ + project/）
+├── vendor/          ← サードパーティ CSS
+└── _archive/        ← 退避済み SCSS + 資料
+```
+
+FLOCSS 接頭辞（`l-`, `c-`, `p-`）は SCSS / PHP / JS の全箇所から除外済み。クラス命名は BEM のみ。

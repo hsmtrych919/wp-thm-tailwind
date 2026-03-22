@@ -34,14 +34,14 @@ if ( is_archive() || is_404() || is_search()){
 <?php if ( is_page('form-contact-chk') ) : ?>
 <body id="top">
   <?php echo get_template_part('tmp/google-tag-manager/tmp', 'gtm-body'); ?>
-  <header class="l-header--static">
-    <div class="p-header__row">
-      <div class="p-header__logo-block p-header__logo-block--login">
-        <h1 class="p-header__logo items-center"><img src='<?php echo get_template_directory_uri(); ?>/img/logo.svg' alt=""></h1>
+  <header class="header--static">
+    <div class="header__row">
+      <div class="header__logo-block header__logo-block--login">
+        <h1 class="header__logo items-center"><img src='<?php echo get_template_directory_uri(); ?>/img/logo.svg' alt=""></h1>
       </div>
     </div>
   </header>
-  <div id="<?php echo esc_html($page_id); ?>" class="l-main__nav-less">
+  <div id="<?php echo esc_html($page_id); ?>" class="main__nav-less">
 
 <?php elseif ( is_page('lp') ) : ?>
 
@@ -49,18 +49,18 @@ if ( is_archive() || is_404() || is_search()){
 <body id="top">
   <?php echo get_template_part('tmp/google-tag-manager/tmp', 'gtm-body'); ?>
 
-  <header class="l-header <?= is_page('form-contact') ? 'l-header--absolute' : '' ?> p-header">
-    <div class="p-header__row" id="grobal__header">
+  <header class="header <?= is_page('form-contact') ? 'header--absolute' : '' ?>">
+    <div class="header__row" id="grobal__header">
 
     <?php if ( is_front_page() ) : ?>
-      <h1 class="p-header__logo-block js-initial" id="front-logo">
+      <h1 class="header__logo-block js-initial" id="front-logo">
     <?php else : ?>
-      <h1 class="p-header__logo-block">
+      <h1 class="header__logo-block">
     <?php endif; ?>
-        <a class="p-header__logo" href='<?php echo home_url('/'); ?>'><img src='<?php echo get_template_directory_uri(); ?>/img/logo.svg' alt=""></a>
+        <a class="header__logo" href='<?php echo home_url('/'); ?>'><img src='<?php echo get_template_directory_uri(); ?>/img/logo.svg' alt=""></a>
       </h1>
       <?php get_template_part('tmp/tmp', 'nav-main'); ?>
     </div>
   </header>
-  <div id="<?php echo esc_html($page_id); ?>" class="l-main">
+  <div id="<?php echo esc_html($page_id); ?>" class="main">
 <?php endif; ?>

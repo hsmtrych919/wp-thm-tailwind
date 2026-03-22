@@ -1,7 +1,7 @@
-<div class="p-sidebar px-gutter-row md:px-0">
-  <div class="p-ttl__widget">
-    <p class="p-ttl__widget--caption">What's New</p>
-    <h2 class="p-ttl__widget--bar"><span class="p-ttl__widget">おすすめ新着ブログ</span></h2>
+<div class="sidebar px-gutter-row md:px-0">
+  <div class="ttl__widget">
+    <p class="ttl__widget--caption">What's New</p>
+    <h2 class="ttl__widget--bar"><span class="ttl__widget">おすすめ新着ブログ</span></h2>
   </div>
 
 <!-- post -->
@@ -15,16 +15,16 @@
   <?php if ( $query->have_posts() ) : ?>
     <?php while ( $query->have_posts() ) : $query->the_post(); ?>
 
-  <article id="post-<?php the_ID(); ?>" <?php post_class( 'p-sidebar__post-archive' ) ?> >
-    <a href="<?php the_permalink(); ?>" class="p-sidebar__post--item">
+  <article id="post-<?php the_ID(); ?>" <?php post_class( 'sidebar__post-archive' ) ?> >
+    <a href="<?php the_permalink(); ?>" class="sidebar__post--item">
 
-    <div class="p-sidebar__post--thumbnail">
+    <div class="sidebar__post--thumbnail">
       <?php fn_thumbnail_square_thumbnail(); ?>
     </div>
 
-    <div class="p-sidebar__post--info">
+    <div class="sidebar__post--info">
 <?php if( is_mobile()) : ?>
-      <h3 class="p-ttl__post--widget">
+      <h3 class="ttl__post--widget">
   <?php
     if (mb_strlen($post->post_title, 'UTF-8') > 18) {
       $title = mb_substr($post->post_title, 0, 18, 'UTF-8');
@@ -42,8 +42,8 @@
     }
   ?>
       </h3>
-      <p class="p-sidebar__post--date"><time datetime="<?php the_time('y-m-d'); ?>"><?php the_time('Y/m/d') ?></time></p>
-      <p class="p-sidebar__post--excerpt">
+      <p class="sidebar__post--date"><time datetime="<?php the_time('y-m-d'); ?>"><?php the_time('Y/m/d') ?></time></p>
+      <p class="sidebar__post--excerpt">
 <?php
   if ( empty(get_the_excerpt()) ) {
     echo'閲覧するにはログインが必要です。';
@@ -51,7 +51,7 @@
 ?>
       </p>
 <?php elseif( wp_is_mobile()) : ?>
-      <h3 class="p-ttl__post--widget">
+      <h3 class="ttl__post--widget">
   <?php
     if (mb_strlen($post->post_title, 'UTF-8') > 18) {
       $title = mb_substr($post->post_title, 0, 18, 'UTF-8');
@@ -69,8 +69,8 @@
     }
   ?>
       </h3>
-      <p class="p-sidebar__post--date"><time datetime="<?php the_time('y-m-d'); ?>"><?php the_time('Y/m/d') ?></time></p>
-      <p class="p-sidebar__post--excerpt">
+      <p class="sidebar__post--date"><time datetime="<?php the_time('y-m-d'); ?>"><?php the_time('Y/m/d') ?></time></p>
+      <p class="sidebar__post--excerpt">
 <?php
   if ( empty(get_the_excerpt()) ) {
     echo'閲覧するにはログインが必要です。';
@@ -80,7 +80,7 @@
 ?>
       </p>
 <?php else: ?>
-      <h3 class="p-ttl__post--widget">
+      <h3 class="ttl__post--widget">
   <?php
     if (mb_strlen($post->post_title, 'UTF-8') > 20) {
       $title = mb_substr($post->post_title, 0, 20, 'UTF-8');
@@ -98,8 +98,8 @@
     }
   ?>
       </h3>
-      <p class="p-sidebar__post--date"><time datetime="<?php the_time('y-m-d'); ?>"><?php the_time('Y/m/d') ?></time></p>
-      <p class="p-sidebar__post--excerpt">
+      <p class="sidebar__post--date"><time datetime="<?php the_time('y-m-d'); ?>"><?php the_time('Y/m/d') ?></time></p>
+      <p class="sidebar__post--excerpt">
 <?php
   if ( empty(get_the_excerpt()) ) {
     echo'閲覧するにはログインが必要です。';

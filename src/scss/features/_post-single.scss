@@ -6,7 +6,7 @@
 // -----------------------------------------------------------------
 @layer components {
 
-.p-post-single {
+.post-single {
   width: 100%;
 
   &__info {
@@ -73,7 +73,7 @@
   }
 }
 
-.p-post-single__content {
+.post-single__content {
   margin-top: g.rem(32);
   font-size: g.rem(16);
   line-height: 2;
@@ -109,7 +109,7 @@ img.aligncenter { display: block; margin: 0 auto; }
 //author
 //
 
-.p-author {
+.author {
 
   &::before {
     content: "";

@@ -10,37 +10,32 @@
 // Layout
 // -----------------------------------------------------------------
 
-@use "layout/_content";
-@use "layout/_header" as l-header;
-@use "layout/_footer" as l-footer;
+@use "features/_layout";
 
 // -----------------------------------------------------------------
-// Object / Component
+// Vendor / Shared
 // -----------------------------------------------------------------
 
 // vendor
-@use "component/fontawesome-free-5.14.0";
-@use "component/micromodal/micromodal";
-@use "component/swiper/swiper-bundle";
-@use "component/scroll-hint";
+@use "vendor/fontawesome-free-5.14.0";
+@use "vendor/micromodal/micromodal";
+@use "vendor/swiper/swiper-bundle";
+@use "vendor/scroll-hint";
 
-// component
-@use "component/_button" as c-button;
-@use "component/_google-map";
-@use "component/_login";
-@use "component/_pagenation";
-@use "component/_style" as c-content;
+@use "features/_google-map";
+@use "features/_login";
+@use "features/_pagenation";
 
 // -----------------------------------------------------------------
-// Object / Project
+// Features
 // -----------------------------------------------------------------
 
-@use "project/_button" as p-button;
-@use "project/_footer" as p-footer;
-@use "project/_form";
-@use "project/_header" as p-header;
-@use "project/_post" as p-post;
-@use "project/_post-single";
-@use "project/_style" as p-content;
-@use "project/_search" as p-search;
-@use "project/_typ" as p-typ;
+@use "features/_button" as button;
+@use "features/_footer" as footer;
+@use "features/_form";
+@use "features/_header" as header;
+@use "features/_post" as post;
+@use "features/_post-single";
+@use "features/_style" as content;
+@use "features/_search" as search;
+@use "features/_typ" as typ;

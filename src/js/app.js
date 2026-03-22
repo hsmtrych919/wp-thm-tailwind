@@ -45,7 +45,7 @@ appInitializer.addInitializer('Link Ignore', async () => {
 
 // ドロップダウン
 appInitializer.addInitializer('Navigation', async () => {
-  navDropdown('.p-nav__item.js-nav--dropdown', '.js-nav--dropdown .p-nav__list--children');
+  navDropdown('.nav__item.js-nav--dropdown', '.js-nav--dropdown .nav__list--children');
   navMenuMobile();
 });
 

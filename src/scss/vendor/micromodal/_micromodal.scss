@@ -12,7 +12,7 @@
 
 @layer components {
 
-.c-micromodal__outer {
+.micromodal__outer {
   display: none;
   &.is-open {
     display: block;
@@ -32,7 +32,7 @@
   }
 }
 
-.c-micromodal {
+.micromodal {
   &__overlay {
     display: flex;
     position: fixed;
@@ -88,11 +88,11 @@
 
 @layer components {
 
-.c-micromodal__outer[aria-hidden="false"] .c-micromodal__overlay {
+.micromodal__outer[aria-hidden="false"] .micromodal__overlay {
   // animation: mmfadeIn .3s ease;
 }
 
-.c-micromodal__outer[aria-hidden="true"] .c-micromodal__overlay {
+.micromodal__outer[aria-hidden="true"] .micromodal__overlay {
   animation: mmfadeOut .3s ease;
 }
 

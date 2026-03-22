@@ -236,10 +236,79 @@
 
 ---
 
-## Phase 4: コンポーネント・プロジェクト層（⏳ 未着手）
+## Phase 4: コンポーネント・プロジェクト層（✅ 完了）
 
 > Phase 4 ではコンポーネントクラス名自体は変更しない（`@layer components` で維持）。
-> ただし内部で使用しているクラスの変更があれば、ここに記録する。
+
+---
+
+## SCSS ディレクトリ構造リストラクチャ（✅ 完了）
+
+### Step 2: vendor 系 c- 接頭辞除外
+
+| 旧クラス | 新クラス | 対象ファイル | ステータス |
+|---|---|---|---|
+| `c-micromodal__overlay` | `micromodal__overlay` | SCSS + footer.php | ✅ |
+| `c-micromodal__container` | `micromodal__container` | SCSS + footer.php | ✅ |
+| `c-micromodal__header` | `micromodal__header` | SCSS + footer.php | ✅ |
+| `c-micromodal__title` | `micromodal__title` | SCSS + footer.php | ✅ |
+| `c-micromodal__close` | `micromodal__close` | SCSS + footer.php | ✅ |
+| `c-micromodal__content` | `micromodal__content` | SCSS + footer.php | ✅ |
+| `c-micromodal__btn` | `micromodal__btn` | SCSS + footer.php | ✅ |
+| `c-micromodal__btn-primary` | `micromodal__btn-primary` | SCSS + footer.php | ✅ |
+| `c-micromodal__footer` | `micromodal__footer` | SCSS + footer.php | ✅ |
+
+### Step 3: layout → project 統合時のクラス名変更
+
+| 旧クラス | 新クラス | 備考 | ステータス |
+|---|---|---|---|
+| `l-header` | `p-header` に統合 | 同一要素 (ケース1) | ✅ |
+| `l-header--static` | `p-header--static` | バリアント統合 | ✅ |
+| `l-header--absolute` | `p-header--absolute` | バリアント統合 | ✅ |
+| `l-header.js-scroll` | `p-header.js-scroll` | JS state セレクタ | ✅ |
+| `l-header.js-open` | `p-header.js-open` | JS state セレクタ | ✅ |
+| `l-header.js-scroll--up` | `p-header.js-scroll--up` | JS state セレクタ | ✅ |
+| `l-nav` | `p-nav` に統合 | 同一要素 (ケース1) | ✅ |
+| `l-footer` | `p-footer` に統合 | 同一要素 (ケース1) | ✅ |
+| `l-footernav` | `p-footernav` に統合 | スタイル統合 | ✅ |
+| `l-main` | — | PHP のみ。SCSS定義なし | ✅ |
+
+### Step 9: FLOCSS 接頭辞一括除外 (p-/c-)
+
+| 旧接頭辞 | 除外後 | 適用範囲 | ステータス |
+|---|---|---|---|
+| `p-header*` | `header*` | SCSS + PHP + JS | ✅ |
+| `p-footer*` | `footer*` | SCSS + PHP + JS | ✅ |
+| `p-toolbar*` | `toolbar*` | SCSS + PHP + JS | ✅ |
+| `p-nav*` | `nav*` | SCSS + PHP + JS | ✅ |
+| `p-button*` | `button*` | SCSS + PHP | ✅ |
+| `p-form*` | `form*` | SCSS + PHP | ✅ |
+| `p-post*` | `post*` | SCSS + PHP | ✅ |
+| `p-search*` | `search*` | SCSS + PHP | ✅ |
+| `p-ttl*` | `ttl*` | SCSS + PHP | ✅ |
+| `p-style*` | `style*` | SCSS + PHP | ✅ |
+| `p-salon*` | `salon*` | SCSS + PHP | ✅ |
+| `p-advantage*` | `advantage*` | SCSS + PHP + JS | ✅ |
+| `p-instagram*` | `instagram*` | SCSS + PHP + JS | ✅ |
+| `c-button*` | `button*` | SCSS + PHP | ✅ |
+| `c-replace*` | `replace*` | SCSS + PHP | ✅ |
+| `c-pagenation*` | `pagenation*` | SCSS + PHP | ✅ |
+| `c-scroll-hint*` | `scroll-hint*` (元から) | — | — |
+| `p-form` (.form scope) | `form` | _tailwind-base-layer.scss | ✅ |
+
+### Step 10: l-container-py → container-py
+
+| 旧クラス | 新クラス | 対象ファイル | ステータス |
+|---|---|---|---|
+| `l-container-py` | `container-py` | SCSS + PHP (12箇所/11ファイル) | ✅ |
+| `l-container-py--blog` | `container-py--blog` | SCSS + PHP | ✅ |
+| `l-container-py--search` | `container-py--search` | SCSS + PHP | ✅ |
+
+### Step 11: l-container → container-width
+
+| 旧クラス | 新クラス | 対象ファイル | ステータス |
+|---|---|---|---|
+| `l-container` | `container-width` | SCSS + PHP (73箇所/28ファイル) | ✅ |
 
 ---
 
@@ -251,3 +320,4 @@
 | 2026-03-14 | 2 | Phase 2 全変換表を転記（ステータスは ⏳ 未着手） |
 | 2026-03-14 | 2 | Phase 2 全 Step 完了。全ステータスを ✅ に更新 |
 | 2026-03-15 | 3 | Phase 3 全変換表を記入。全ステータスを ✅ に更新 |
+| 2026-03-22 | リストラクチャ | Step 2 (vendor c- 除外), Step 3 (layout→project 統合), Step 9 (FLOCSS 一括除外), Step 10 (l-container-py→container-py), Step 11 (l-container→container-width) を記録 |

@@ -7,7 +7,7 @@
 
 @layer components {
 
-.c-gmap {
+.gmap {
   width: 100%;
   height: g.rem(360);
   overflow: hidden;
@@ -24,7 +24,7 @@
   }
 }
 
-.c-gmap__link {
+.gmap__link {
   font-size: g.rem(15);
   text-decoration: underline;
   @media #{g.$xl} {

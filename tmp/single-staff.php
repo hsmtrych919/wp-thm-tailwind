@@ -15,82 +15,80 @@ if ($staff_salon && !is_wp_error($staff_salon)) {
 };
 
 function staffName() {
-  echo '<p class="p-staff__name--position">' . get_field('staff_position') . '</p>';
-  echo '<p class="p-staff__name">' . get_the_title() . '</p>';
-  echo '<p class="p-staff__name--ruby">' . get_field('staff_ruby') . '</p>';
+  echo '<p class="staff__name--position">' . get_field('staff_position') . '</p>';
+  echo '<p class="staff__name">' . get_the_title() . '</p>';
+  echo '<p class="staff__name--ruby">' . get_field('staff_ruby') . '</p>';
 }
 
 ?>
 
 <article class="" id="post-<?php the_ID(); ?>">
-<div class="c-headline__outer">
-    <div class="l-container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
-      <div class="c-headline__frame" >
-        <h1 class="c-headline__title"><span class="">STAFF</span></h1>
+<div class="headline__outer">
+    <div class="container-width mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
+      <div class="headline__frame" >
+        <h1 class="headline__title"><span class="">STAFF</span></h1>
       </div>
     </div>
   </div>
 
-  <div class="p-staff__content">
-  <div class="l-container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
-    <div class="p-staff__frame">
-        <div class="p-staff__name-wrap--sp"><?php staffName() ?></div>
+  <div class="staff__content">
+  <div class="container-width mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
+    <div class="staff__frame">
+        <div class="staff__name-wrap--sp"><?php staffName() ?></div>
 
-      <div class="p-staff__pic">
+      <div class="staff__pic">
         <p class=""><?php echo wp_get_attachment_image( get_post_meta( $post->ID, 'staff_img', true ), 'full' ); ?></p>
       </div>
 
 
-      <div class="p-staff__detail">
-        <div class="p-staff__name-wrap--pc"><?php staffName() ?></div>
+      <div class="staff__detail">
+        <div class="staff__name-wrap--pc"><?php staffName() ?></div>
 
-        <dl class="p-staff-detail__dl">
+        <dl class="staff-detail__dl">
 <?php
         if (isset($staff_birth) && $staff_birth !== '' ) {
-          echo '<div class="p-staff-detail__dl--row">';
+          echo '<div class="staff-detail__dl--row">';
           echo '<dt>生年月日</dt>';
           echo '<dd>' . $staff_birth . '</dd>';
           echo '</div>';
         }
         if (isset($staff_from) && $staff_from !== '' ) {
-          echo '<div class="p-staff-detail__dl--row">';
+          echo '<div class="staff-detail__dl--row">';
           echo '<dt>出身</dt>';
           echo '<dd>' . $staff_from . '</dd>';
           echo '</div>';
         }
         if (isset($staff_blood) && $staff_blood !== '' ) {
-          echo '<div class="p-staff-detail__dl--row">';
+          echo '<div class="staff-detail__dl--row">';
           echo '<dt>血液型</dt>';
           echo '<dd>' . $staff_blood . '</dd>';
           echo '</div>';
         }
         if (isset($staff_hobby) && $staff_hobby !== '' ) {
-          echo '<div class="p-staff-detail__dl--row">';
+          echo '<div class="staff-detail__dl--row">';
           echo '<dt>趣味</dt>';
           echo '<dd>' . $staff_hobby . '</dd>';
           echo '</div>';
         }
         if (isset($staff_comment) && $staff_comment !== '' ) {
-          echo '<div class="p-staff-detail__dl--row">';
+          echo '<div class="staff-detail__dl--row">';
           echo '<dt>コメント</dt>';
           echo '<dd>' . $staff_comment . '</dd>';
           echo '</div>';
         }
 ?>
           </dl>
-        <div class="p-staff__button">
+        <div class="staff__button">
 <?php
   $args = array(
     'link_slug' => 'salon/' . $staff_salon_slug,
-    'className' => 'c-button__grd',
+    'className' => 'button__grd',
     'text' => '勤務サロンへ',
 );
 component_buttonLink($args);
 ?>
         </div>
       </div>
-
-
     </div>
 </div>
 <!-- /.l-row -->

@@ -5,7 +5,16 @@
 // mixin
 // -----------------------------------------------------------------
 
-@mixin c-button {
+
+@mixin button__width {
+  width: 300px;
+  max-width: 100%;
+  @media #{g.$md} {
+    width: 360px;
+  }
+}
+
+@mixin btn-base {
   display: block;
   position: relative;
   max-width: 100%;
@@ -65,7 +74,7 @@
 
 @mixin button-arrow-hover {
   @include g.hover {
-    .c-button__icon--arrow {
+    .button__icon--arrow {
       transform: translate3d(g.rem(4), -50%, 0);
     }
   }
@@ -106,10 +115,46 @@
 // -----------------------------------------------------------------
 // style
 // -----------------------------------------------------------------
+
 @layer components {
 
-  .c-button {
-    @include c-button;
+.button__wrap {
+  @include button__width;
+}
+
+.button__wrap--readmore {
+  width: 300px;
+  @media #{g.$lg} {
+    width: 280px;
+  }
+}
+
+
+#anc_service {
+  height: 0;
+  margin-top: calc(var(--header-height) * -1.2);
+  padding-top: calc(var(--header-height) * 1.2);
+
+  @media #{g.$sm} {
+    margin-top: calc(var(--header-height) * -1);
+    padding-top: var(--header-height);
+  }
+}
+
+#anc_short, #anc_medium, #anc_long, #anc_creative, #anc_kitatoyama, #anc_komaki, #anc_tokadai, #anc_konan, #anc_kitanagoya {
+  height: 0;
+  margin-top: calc(var(--header-height) * -1.2);
+  padding-top: calc(var(--header-height) * 1.2);
+
+  @media #{g.$xl} {
+    margin-top: calc(var(--header-height) * -1.4);
+    padding-top: calc(var(--header-height) * 1.4);
+  }
+}
+
+
+  .button {
+    @include btn-base;
     padding: g.rem(20) g.rem(18) g.rem(16);
     font-size: g.rem(17);
     @media #{g.$lg} {
@@ -121,7 +166,7 @@
       font-size: g.rem(19);
     }
     &--thin {
-      @include c-button;
+      @include btn-base;
       padding: g.rem(16) g.rem(14) g.rem(14);
       font-size: g.rem(17);
       @media #{g.$xxl} {
@@ -130,7 +175,7 @@
     }
   }
 
-  .c-button__icon--arrow {
+  .button__icon--arrow {
     position: absolute;
     top: 50%;
     right: g.rem(6);
@@ -140,7 +185,7 @@
     animation: iconAnimation 3.5s infinite;
   }
 
-  .c-button__icon--external {
+  .button__icon--external {
     position: absolute;
     top: 50%;
     right: g.rem(8);
@@ -148,7 +193,7 @@
     transform: translate3d(0, -50%, 0);
   }
 
-  .c-button__icon--tel {
+  .button__icon--tel {
     position: absolute;
     top: 52.5%;
     left: g.rem(12);
@@ -157,7 +202,7 @@
   }
 
 
-  .c-button__grd {
+  .button__grd {
     @include button__color(
       $clr: #fff,
     $bgc: var(--clr1),
@@ -169,23 +214,20 @@
       opacity: var(--img-hover-opacity);
     }
     @include button-arrow-hover;
-    // .c-button__arrow {
-    //   color: #fff;
-    // }
   }
 
 
-  .c-button__clr1 {
+  .button__clr1 {
     @include button__color(
       $clr: #fff,
-    $bgc: #4fba43, 
+    $bgc: #4fba43,
     $clr-hover: #fff,
     $bgc-hover: #47a73c
   );
     @include button-arrow-hover;
   }
 
-  .c-button__clr1--border {
+  .button__clr1--border {
     @include button__color--border(
       $clr: var(--clr1),
     $bgc: #fff,
@@ -197,7 +239,7 @@
     @include button-arrow-hover;
   }
 
-  .c-button__clr1--toc {
+  .button__clr1--toc {
     @include button__color--border(
       $clr: var(--clr1),
     $bgc: #fff,
@@ -210,10 +252,10 @@
   }
 
 
-  .c-button__clr2 {
+  .button__clr2 {
     @include button__color(
       $clr: #fff,
-    $bgc: #9bd22d, 
+    $bgc: #9bd22d,
     $clr-hover: #fff,
     $bgc-hover: #8cbd29
   );
@@ -221,7 +263,7 @@
   }
 
 
-  .c-button__clr2--border {
+  .button__clr2--border {
     @include button__color--border(
       $clr: var(--clr2),
     $bgc: #fff,
@@ -233,18 +275,18 @@
     @include button-arrow-hover;
   }
 
-  .c-button__clr3 {
+  .button__clr3 {
     @include button__color(
       $clr: #fff,
     $bgc: #846708,
     $clr-hover: #fff,
-    $bgc-hover: #725907 
+    $bgc-hover: #725907
   );
     @include button-arrow-hover;
   }
 
 
-  .c-button__rakuten {
+  .button__rakuten {
     @include button__color(
       $clr: #fff,
     $bgc: #bf0000,
@@ -254,7 +296,7 @@
     @include btn-ec-flare($clr:#bf0000, $delay:0.5s);
   }
 
-  .c-button__amazon {
+  .button__amazon {
     @include button__color(
       $clr: #fff,
     $bgc: #ff9900,
@@ -264,38 +306,38 @@
     @include btn-ec-flare($clr:#ff9900, $delay:1s);
   }
 
-  .c-button__tel--salon {
+  .button__tel--salon {
     @include button__color(
       $clr: #fff,
-    $bgc: #4fba43, 
+    $bgc: #4fba43,
     $clr-hover: #fff,
     $bgc-hover: #47a73c
   );
     padding-left: g.rem(48) !important;
     @include g.hover {
-      .c-button__icon--tel {
+      .button__icon--tel {
         color: #fff;
       }
     }
-    .c-button__icon--tel {
+    .button__icon--tel {
       color: #fff;
     }
   }
 
-  .c-button__tel--family {
+  .button__tel--family {
     @include button__color(
       $clr: #fff,
-    $bgc: #9bd22d, 
+    $bgc: #9bd22d,
     $clr-hover: #fff,
     $bgc-hover: #8cbd29
   );
     padding-left: g.rem(48) !important;
     @include g.hover {
-      .c-button__icon--tel {
+      .button__icon--tel {
         color: #fff;
       }
     }
-    .c-button__icon--tel {
+    .button__icon--tel {
       color: #fff;
     }
   }
@@ -411,4 +453,3 @@
 //   animation-iteration-count: infinite;
 //   animation-fill-mode: both
 // }
-

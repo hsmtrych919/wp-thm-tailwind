@@ -2,7 +2,7 @@
 
 このファイルを見れば、現時点の SCSS と Tailwind の構成、役割分担、ビルド経路、archive の位置、どこが現役でどこが履歴かを把握できるようにまとめています。
 
-最終更新: 2026-03-19
+最終更新: 2026-03-22
 
 ## 1. 現在の結論
 
@@ -22,9 +22,8 @@
 
 3. 既存テーマ SCSS の現役モジュール
 - `src/scss/global/`
-- `src/scss/layout/`
-- `src/scss/component/`
-- `src/scss/project/`
+- `src/scss/features/`
+- `src/scss/vendor/`
 
 出力は最終的に 1 本です。
 
@@ -45,18 +44,16 @@
   - Tailwind v4 の入口 CSS
 - `global/`
   - 全体共通 API。変数定義、関数、mixin、breakpoint を公開
-- `layout/`
-  - レイアウト層の現役 SCSS
-- `component/`
-  - コンポーネント層の現役 SCSS と現役 vendor
-- `project/`
-  - ページや機能単位の現役 SCSS
+- `features/`
+  - レイアウト、コンポーネント、ページ固有スタイルを機能単位で管理する SCSS
+  - 旧 `layout/`, `component/`, `project/` を統合したもの
+- `vendor/`
+  - サードパーティ CSS（FontAwesome, Micromodal, Swiper, Scroll Hint）
 
 ### archive
 - `_archive/`
-  - 廃止済み foundation / utility / mixins と、移行時の議論・棚卸し資料
-- `component/_archive/`
-  - 現在ビルドに入れていない component 系 SCSS の退避先
+  - 廃止済み foundation / utility / mixins / component と、移行時の議論・棚卸し資料
+  - 旧 `component/_archive/` の内容もここに統合済み
 
 ### すでに消えたディレクトリ
 - `foundation/`
@@ -65,6 +62,12 @@
   - archive 退避後に空になったため削除済み
 - `mixins/`
   - archive 退避後に空になったため削除済み
+- `layout/`
+  - `features/` に統合後、削除済み
+- `component/`
+  - 自作 SCSS は `features/` に、vendor は `vendor/` に、archive は `_archive/` に移動後、削除済み
+- `project/`
+  - `features/` にリネーム
 
 ## 3. どのファイルが build graph に入るか
 
@@ -76,7 +79,6 @@
 
 - `style.scss` で `@use` されていないファイル
 - `_archive/` 配下
-- `component/_archive/` 配下
 
 例外はありません。まず `style.scss` を見れば、ビルドに入るかどうかが分かります。
 
@@ -88,17 +90,17 @@ Sass 側の本体です。
 
 役割:
 - `_tailwind-base-layer.scss` を読み込む
-- `layout/`, `component/`, `project/` の現役 SCSS を束ねる
-- active vendor の SCSS を読み込む
+- `features/` の現役 SCSS を束ねる
+- `vendor/` の SCSS を読み込む
 
 実務上の意味:
 - ここに `@use` があるかで build graph 内外を判断する
 - archive 済みファイルは、ここから参照しない状態で保持する
 
-2026-03-19 時点の補足:
-- `component/_validation.scss` と `project/_entrystep.scss` は build graph から外れた
-- これらの定義は `project/_form.scss` に統合済み
-- したがって form 関連の現役定義は `project/_form.scss` を見ればよい
+2026-03-22 時点の補足:
+- 旧 `component/_validation.scss` と旧 `project/_entrystep.scss` は build graph から外れている
+- これらの定義は `features/_form.scss` に統合済み
+- form 関連の現役定義は `features/_form.scss` を見ればよい
 
 ### `src/scss/tailwind-base.css`
 
@@ -155,7 +157,7 @@ Sass partial です。
 - `theme()` 関数による SCSS → Tailwind config の値参照
 
 ### SCSS が担うもの
-- 既存クラス構造の維持（`@layer components` 内で BEM クラスを定義）
+- 既存クラス構造の維持（`@layer components` 内で BEM クラスを定義。FLOCSS 接頭辞は除外済み）
 - `@use` / `@forward` による分割管理
 - `rem()`, `get_vw()`, `get_zindex()`, `unicode()` などの関数
 - `hover` などの mixin
@@ -174,7 +176,7 @@ breakpoints は SCSS (`global/_variables.scss`) と Tailwind (`tailwind.config.j
 - Tailwind だけで完結しているわけではない
 - SCSS だけでも完結していない
 - 既存テーマの class 設計を維持しながら、Tailwind を基盤へ差し込んでいる状態
-- 機能単位で統合が進んだ結果、以前は別 partial だった定義が `project/_form.scss` のような feature 単位の partial に集約されることがある
+- 機能単位で統合が進んだ結果、以前は別 partial だった定義が `features/_form.scss` のような feature 単位の partial に集約されている
 
 ## 7. `global/` の役割
 
@@ -246,17 +248,17 @@ breakpoints は SCSS (`global/_variables.scss`) と Tailwind (`tailwind.config.j
 
 ## 9. 現在の vendor の扱い
 
-`component/` には、通常コンポーネントと vendor SCSS が混在しています。
+vendor SCSS は `vendor/` ディレクトリに集約されている。
 
-### 現役 vendor
+### 現役 vendor（`vendor/` 配下）
 - `fontawesome-free-5.14.0/`
 - `micromodal/`
 - `swiper/`
 - `scroll-hint/`
 
-### 現在は build graph 外だが保管しているもの
-- `component/_archive/ultimate-member/`
-- `component/_archive/wp-instagram-feed/`
+### 現在は build graph 外だが保管しているもの（`_archive/` 配下）
+- `ultimate-member/`
+- `wp-instagram-feed/`
 
 両ファイルとも旧 SCSS 変数を CSS 変数に置換済み。active 化時にそのまま使える状態。
 
@@ -273,11 +275,9 @@ archive は単なるゴミ箱ではありません。
 - foundation の旧ファイル
 - utility の旧ファイル
 - mixins の旧ファイル
-- 旧計画補助資料、議論ログ、棚卸しログ
-
-### `component/_archive/` にあるもの
-- 現在未使用の component 系 SCSS
-- 現在 build graph 外の vendor（SCSS 変数は CSS 変数化済み）
+- component の旧ファイル（_tab, _table, _toggle 等）
+- build graph 外の vendor（ultimate-member, wp-instagram-feed。SCSS 変数は CSS 変数化済み）
+- 旧計画補助資料、議論ログ、棚卸しログ、クラス名変更ログ
 
 ## 11. 今このファイルだけ見れば押さえるべきこと
 
@@ -288,10 +288,11 @@ archive は単なるゴミ箱ではありません。
 3. Tailwind の入口は `src/scss/tailwind-base.css`。
 4. `_tailwind-base-layer.scss` は Tailwind 移行済み CSS の受け皿であって、Tailwind 本体ではない。
 5. `global/` が共通 API と変数定義の両方を担う（旧 `foundation/` は廃止済み）。
-6. `utility/` と `mixins/` は現役ディレクトリとしては消えており、内容は archive 側へ移っている。
-7. `component/_archive/` は現在ビルドに入っていない SCSS の保管場所。
-8. SCSS と Tailwind は並存ではあるが、出力は最終的に 1 本へ統合される。
-9. form 関連の現役定義は `project/_form.scss` に集約されており、旧 `component/_validation.scss` と旧 `project/_entrystep.scss` は現役ファイルではない。
+6. `features/` が全自作 SCSS を機能単位で管理する（旧 `layout/`, `component/`, `project/` を統合）。
+7. `vendor/` がサードパーティ CSS を管理する（FontAwesome, Micromodal, Swiper, Scroll Hint）。
+8. FLOCSS 接頭辞（`l-`, `c-`, `p-`）は全て除外済み。クラス命名は BEM のみ。
+9. SCSS と Tailwind は並存ではあるが、出力は最終的に 1 本へ統合される。
+10. form 関連の現役定義は `features/_form.scss` に集約されている。
 
 ## 12. 現在の参照順序
 

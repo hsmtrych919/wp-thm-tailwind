@@ -10,11 +10,11 @@ function component_listItemMenuIntroduction($args) {
     $content = isset($args['content']) ? wp_kses_post($args['content']) : '';
 ?>
 <li>
-    <div class="p-front-menu__item " href='<?php echo esc_url($url); ?>'>
-        <p class="p-front-menu__thumbnail"><img src='<?php echo $image; ?>' alt="<?php echo esc_attr($lead_text); ?>"></p>
-        <div class="p-front-menu__content">
-            <p class="p-front-menu__lead--detail"><?php echo esc_html($lead_text); ?></p>
-            <div class="p-front-menu__detail">
+    <div class="front-menu__item " href='<?php echo esc_url($url); ?>'>
+        <p class="front-menu__thumbnail"><img src='<?php echo $image; ?>' alt="<?php echo esc_attr($lead_text); ?>"></p>
+        <div class="front-menu__content">
+            <p class="front-menu__lead--detail"><?php echo esc_html($lead_text); ?></p>
+            <div class="front-menu__detail">
                 <p><?php echo $content; ?></p>
             </div>
         </div>

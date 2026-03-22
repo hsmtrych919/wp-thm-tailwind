@@ -385,11 +385,11 @@
 }
 
 // =================================================================
-// @layer components — .p-form CSS 変数
+// @layer components — .form CSS 変数
 // =================================================================
 
 @layer components {
-  .p-form {
+  .form {
     /* --- input 系（10 変数） --- */
     --form-padding-x: 0.625rem;
     --form-padding-y: 0.625rem;

@@ -1,21 +1,21 @@
 <article class="">
-  <div class="c-headline-pic__outer">
-    <div class="l-container mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
-      <div class="c-headline-pic__frame js-headline-frame" >
-        <h1 class="c-headline-pic__title"><span class="c-headline-pic__typ--for-gsap">Q&A</span></h1>
-        <div class="c-headline-pic__pic js-headline-pic" >
-        <span class="c-headline-pic__pic--ract"></span>
+  <div class="headline-pic__outer">
+    <div class="container-width mx-auto flex flex-wrap justify-start px-gutter-row xl:px-0">
+      <div class="headline-pic__frame js-headline-frame" >
+        <h1 class="headline-pic__title"><span class="headline-pic__typ--for-gsap">Q&A</span></h1>
+        <div class="headline-pic__pic js-headline-pic" >
+        <span class="headline-pic__pic--ract"></span>
         <img src='<?php echo get_template_directory_uri(); ?>/img/c_qa.jpg' alt="Q&A">
         </div>
-        <div class="c-headline-pic__detail c-headline-pic__typ--for-gsap">
-          <p class="p-typ">初めてギッシュにご来店される方に向けて、お客様からのよくある質問をご紹介します。</p>
+        <div class="headline-pic__detail headline-pic__typ--for-gsap">
+          <p class="typ">初めてギッシュにご来店される方に向けて、お客様からのよくある質問をご紹介します。</p>
         </div>
       </div>
     </div>
   </div>
   <div class="mt-7 md:mt-8">
 
-    <div class="l-container mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
+    <div class="container-width mx-auto flex flex-wrap justify-center px-gutter-row xl:px-0">
       <div class="w-full md:w-full">
 
 <?php
@@ -78,9 +78,9 @@ $content = array(
 
 
 foreach ($content as $qa) {
-    echo '<div class="p-qa__frame">';
-    echo '<p class="p-qa__question">' . $qa['question'] . '</p>';
-    echo '<p class="p-qa__answer"><span class="text-clr1">A. </span>' . wp_kses_post($qa['answer']) . '</p>';
+    echo '<div class="qa__frame">';
+    echo '<p class="qa__question">' . $qa['question'] . '</p>';
+    echo '<p class="qa__answer"><span class="text-clr1">A. </span>' . wp_kses_post($qa['answer']) . '</p>';
     echo '</div>';
 }
 ?>

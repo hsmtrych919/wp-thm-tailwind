@@ -10,16 +10,16 @@ function component_listItemService($args) {
     $content = isset($args['content']) ? wp_kses_post($args['content']) : '';
 ?>
     <li>
-        <div class="p-service__frame">
-            <p class="p-service__icon">
+        <div class="service__frame">
+            <p class="service__icon">
                 <img src='<?php echo $image; ?>' alt="<?php echo $title; ?>">
             </p>
-            <div class="p-service__content">
-                <h2 class="p-service__content--title">
+            <div class="service__content">
+                <h2 class="service__content--title">
                     <span class="text-gray-700"><?php echo $number; ?>.</span>
                     <?php echo $title; ?>
                 </h2>
-                <p class="p-service__content--detail">
+                <p class="service__content--detail">
                     <?php echo $content; ?>
                 </p>
             </div>

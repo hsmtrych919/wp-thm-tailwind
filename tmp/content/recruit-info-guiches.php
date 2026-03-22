@@ -1,7 +1,7 @@
 <?php
 global $salonInfomation;
 $dataTokadai = $salonInfomation['tokadai'];
-$icon_tel = '<svg class="c-button__icon--tel" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path clip-rule="evenodd" fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"></path></svg>';
+$icon_tel = '<svg class="button__icon--tel" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path clip-rule="evenodd" fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z"></path></svg>';
 
 $data = array(
 array('dt' => '職種', 'dd' => 'アシスタント・レセプション・アイリスト・ネイリスト・エステティシャン・高校卒'),
@@ -24,9 +24,9 @@ array('dt' => '応募方法', 'dd' => 'お気軽にお電話の上、履歴書(�
 );
 
 foreach ($data as $index => $item) {
-echo '<div class="p-recruit-info__dl--row">';
+echo '<div class="recruit-info__dl--row">';
 if ($index === 0) {
-echo '<dt class="p-recruit-info__dt--first">' . $item['dt'] . '</dt>';
+echo '<dt class="recruit-info__dt--first">' . $item['dt'] . '</dt>';
 } else {
 echo '<dt>' . $item['dt'] . '</dt>';
 }
@@ -35,21 +35,21 @@ echo '</div>';
 }
 ?>
 
-<div class="p-recruit-info__dl--row">
+<div class="recruit-info__dl--row">
     <dt>受付連絡先</dt>
     <dd>
 
       <p>受付・面接は桃花台店まで</p>
       <?php if( is_mobile()) : ?>
         <div class="flex flex-wrap justify-center mt-1">
-            <div class="p-button__wrap">
-              <a href="tel:<?php echo esc_attr($dataTokadai['tel_href']); ?>" class="c-button c-button__tel">
+            <div class="button__wrap">
+              <a href="tel:<?php echo esc_attr($dataTokadai['tel_href']); ?>" class="button button__tel">
               <?php echo $icon_tel; ?><span>電話する</span>
             </a>
             </div>
           </div>
       <?php else: ?>
-        <span class="p-typ__m">TEL. <?php echo esc_attr($dataTokadai['tel']); ?></span>
+        <span class="typ__m">TEL. <?php echo esc_attr($dataTokadai['tel']); ?></span>
       <?php endif; ?>
 
     </dd>

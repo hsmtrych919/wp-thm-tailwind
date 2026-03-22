@@ -1,7 +1,7 @@
 @charset "utf-8";
 @use "sass:math";
 @use "../global" as g;
-@use "../component/fontawesome-free-5.14.0/_mixins" as m;
+@use "../vendor/fontawesome-free-5.14.0/_mixins" as m;
 // -----------------------------------------------------------------
 // style
 // -----------------------------------------------------------------
@@ -49,7 +49,8 @@
   }
 }
 
-.p-footer {
+.footer {
+  width: 100%;
   margin-top: g.rem(56);
   padding: g.rem(24) 0;
   background-color: #fff;
@@ -102,7 +103,7 @@
   }
 }
 
-.p-footer__links {
+.footer__links {
   display: none;
   @media #{g.$sm} {
     display: flex;
@@ -137,7 +138,7 @@
 }
 
 
-.p-footer__fade--button {
+.footer__fade--button {
   position: fixed;
   z-index: 510;
   right: 0;
@@ -150,7 +151,7 @@
   }
 }
 
-.p-footer-fix__reserve {
+.footer-fix__reserve {
   @media #{g.$maxMd} {
     display: none !important;
   }
@@ -184,7 +185,7 @@
 }
 
 
-.p-footer__fade-link {
+.footer__fade-link {
   display: block;
   position: relative;
   width: g.rem(56);
@@ -203,7 +204,7 @@
   }
 }
 
-.p-footer__fade-icon {
+.footer__fade-icon {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -251,7 +252,7 @@
   line-height: 1;
 }
 
-.p-footernav__button {
+.footernav__button {
   @extend %footernav__button;
   border-top: 1px solid var(--clrg300);
   border-right: 1px solid var(--clrg300);
@@ -298,7 +299,11 @@
   }
 }
 
-.p-footernav {
+.footernav {
+  position: fixed;
+  z-index: g.get_zindex(footer);
+  bottom: 0;
+  width: 100%;
 
   &__list {
     display: flex;
@@ -337,7 +342,7 @@
   }
 }
 
-.p-footer-modal {
+.footer-modal {
   &__wrap {
     padding-top: calc(var(--gutter-row) * 1.5);
     padding-right: calc(var(--gutter-row) * 1.5);

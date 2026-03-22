@@ -1,12 +1,12 @@
 <?php
 function component_listItemEntrystep($step, $caption, $path, $isActiveClass = '') {
   $classes = array(
-      'p-entrystep__item--' . esc_attr($step),
+      'entrystep__item--' . esc_attr($step),
       $isActiveClass,
   );
 
   echo '<li class="' . esc_attr(implode(' ', $classes)) . '">';
-  echo '<svg class="p-entrystep__icon" data-slot="icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">';
+  echo '<svg class="entrystep__icon" data-slot="icon" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">';
 
   switch ($step) {
       case 'input':
@@ -23,7 +23,7 @@ function component_listItemEntrystep($step, $caption, $path, $isActiveClass = ''
   }
 
   echo '</svg>';
-  echo '<span class="p-entrystep__title"><span class="p-entrystep__title--caption">ステップ' . esc_html($caption) . '</span>' . esc_html($path) . '</span>';
+  echo '<span class="entrystep__title"><span class="entrystep__title--caption">ステップ' . esc_html($caption) . '</span>' . esc_html($path) . '</span>';
   echo '</li>';
 }
 ?>

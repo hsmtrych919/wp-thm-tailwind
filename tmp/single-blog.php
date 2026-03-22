@@ -1,28 +1,28 @@
-<div class="l-container-py--blog">
-  <div class="l-container mx-auto flex flex-wrap justify-center md:px-gutter-row xl:px-0">
+<div class="container-py--blog">
+  <div class="container-width mx-auto flex flex-wrap justify-center md:px-gutter-row xl:px-0">
 
-    <div class="w-full md:w-8/12 l-blog__main">
+    <div class="w-full md:w-8/12 blog__main">
 <?php
   if ( have_posts() ) :
     while ( have_posts() ) : the_post();
 ?>
-  <article id="post-<?php the_ID(); ?>" <?php post_class( 'p-post-single px-gutter-row md:px-0' ) ?> >
-    <div class="p-ttl__post--single">
-      <h1 class="p-ttl__post--single p-ttl__ptn-dgnl"><?php the_title(); ?></h1>
+  <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-single px-gutter-row md:px-0' ) ?> >
+    <div class="ttl__post--single">
+      <h1 class="ttl__post--single ttl__ptn-dgnl"><?php the_title(); ?></h1>
     </div>
-    <div class="p-post-single__info">
-      <p class="p-post-single__date"><time datetime="<?php the_time('y-m-d'); ?>"><?php the_time('Y/m/d') ?></time></p>
-      <div class="p-post-single__category--title">カテゴリー :</div>
+    <div class="post-single__info">
+      <p class="post-single__date"><time datetime="<?php the_time('y-m-d'); ?>"><?php the_time('Y/m/d') ?></time></p>
+      <div class="post-single__category--title">カテゴリー :</div>
       <p class="inline-block">
 <?php
   $category = get_the_category();
   if ( $category[0] ) {
-    echo '<a href="' . get_category_link( $category[0]->term_id ) . '" class="p-post-single__category--button">' . $category[0]->cat_name . '</a>';
+    echo '<a href="' . get_category_link( $category[0]->term_id ) . '" class="post-single__category--button">' . $category[0]->cat_name . '</a>';
     }
   ?>
       </p>
     </div>
-    <div class="p-post-single__content"><?php the_content(); ?></div>
+    <div class="post-single__content"><?php the_content(); ?></div>
 
   </article>
 <?php
@@ -34,10 +34,10 @@
 
 
 
-  <div class="p-related px-gutter-row md:px-0 mt-4 md:mt-5">
-  <div class="p-ttl__widget">
-    <p class="p-ttl__widget--caption">Related Posts</p>
-    <h2 class="p-ttl__widget--bar"><span class="p-ttl__widget">おすすめ関連記事</span></h2>
+  <div class="related px-gutter-row md:px-0 mt-4 md:mt-5">
+  <div class="ttl__widget">
+    <p class="ttl__widget--caption">Related Posts</p>
+    <h2 class="ttl__widget--bar"><span class="ttl__widget">おすすめ関連記事</span></h2>
   </div>
 <?php
 //カテゴリ情報から半年分の関連記事を5個ランダムに呼び出す
@@ -63,13 +63,13 @@ $query = new WP_Query($args); ?>
 
   <?php if( $query -> have_posts() ): ?>
   <?php while ($query -> have_posts()) : $query -> the_post(); ?>
-    <article id="post-<?php the_ID(); ?>" <?php post_class( 'p-related__post-archive' ) ?> >
-        <a href="<?php the_permalink(); ?>" class="p-related__post--item">
-        <div class="p-related__post--thumbnail">
+    <article id="post-<?php the_ID(); ?>" <?php post_class( 'related__post-archive' ) ?> >
+        <a href="<?php the_permalink(); ?>" class="related__post--item">
+        <div class="related__post--thumbnail">
           <?php fn_thumbnail_square_thumbnail(); ?>
         </div>
-        <div class="p-related__post--info">
-          <h3 class="p-ttl__post--widget-related">
+        <div class="related__post--info">
+          <h3 class="ttl__post--widget-related">
 <?php if( is_mobile()) : ?>
   <?php
     if (mb_strlen($post->post_title, 'UTF-8') > 20) {
@@ -98,7 +98,7 @@ $query = new WP_Query($args); ?>
 <?php endif; ?>
           </h3>
 
-          <p class="p-related__post--excerpt">
+          <p class="related__post--excerpt">
 <?php if ( is_mobile() ) : ?>
   <?php
       if ( empty(get_the_excerpt()) ) {
@@ -131,7 +131,7 @@ $query = new WP_Query($args); ?>
     </div>
     <!-- /.l-main-blog -->
 
-    <div class="w-full md:w-4/12 l-blog__sidebar">
+    <div class="w-full md:w-4/12 blog__sidebar">
       <?php get_sidebar( $name = 'search' ) ?>
       <?php get_sidebar( $name = 'latest' ) ?>
       <?php get_sidebar( $name = 'blogs' ) ?>
