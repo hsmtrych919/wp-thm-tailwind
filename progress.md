@@ -1,6 +1,6 @@
 # 移行進捗
 
-## 現在: Phase 5 完了 + 2026-03-19 SCSS 再構成後整理まで反映済み
+## 現在: Phase 5 完了 → ディレクトリリストラクチャ完了 → readme 整備完了
 
 ---
 
@@ -551,3 +551,54 @@ src/scss/
 ```
 
 FLOCSS 接頭辞（`l-`, `c-`, `p-`）は SCSS / PHP / JS の全箇所から除外済み。クラス命名は BEM のみ。
+
+---
+
+## 2026-03-22 sample.html 運用チェック
+
+### 状態: 完了
+
+### 実施内容
+
+- sample.html のクラス名を接頭辞除外後の命名に更新
+- `max-w-container-*` を `container-width` パターンに置換
+- Tailwind JIT 用のダミー PHP（`_sample-classes.php`）を作成し、sample.html 固有の 8 ユーティリティクラスをスキャン対象に追加
+- `npm run build` 全 4 ステージ（scss, concat, postcss, webpack）成功
+- CSS 出力にすべての SCSS コンポーネントクラスと Tailwind ユーティリティが含まれることを確認
+- ダミー PHP 削除
+
+### 結果
+
+ビルドエラーなし、移行起因の破損なし。報告ファイルの作成は不要と判断。
+
+---
+
+## 2026-03-23 src/scss/readme.md 整備
+
+### 状態: 完了
+
+### 実施内容
+
+- 旧 readme.md を `readme_old.md` に退避（ユーザー実施済み）
+- 新 readme.md を 13 章構成で作成:
+  1. 目的と対象読者
+  2. アーキテクチャ概要
+  3. Tailwind と SCSS の役割分担
+  4. 新規クラス作成の判断フロー
+  5. 命名規則
+  6. コンテナとレイアウト
+  7. タイポグラフィ
+  8. 余白の考え方
+  9. レスポンシブ対応
+  10. ビルドパイプライン
+  11. 共通 API（global/）
+  12. デザイントークン
+  13. リセット CSS の前提
+- ユーザーフィードバックに基づく修正:
+  - §6 基本コンテナの `justify-center` をデフォルトに（ユーザー修正反映）
+  - §6 split レイアウトを AI 利用禁止に変更
+  - §8 spacing スケールに 8 の倍数基準を明記
+  - §8 Tailwind カスタムパディング表に `gutter-1.5` を追加（`tailwind.config.js` には既に定義済み）
+- 別 AI（GPT）のレビュー指摘を反映:
+  - §7 `text-clr*` の定義箇所を `features/_typ.scss` → `tailwind.config.js` の `theme.colors` に修正
+  - SCSS 定義ではなく Tailwind 生成ユーティリティである旨を明記
